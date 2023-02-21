@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GradeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +29,9 @@ Route::group(
         	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
 
             Route::get('/',fn()=>view('layouts.master'))->name('master');
+
+
+            Route::resource('grade',GradeController::class);
 
     });
 
