@@ -10,6 +10,5 @@
 <!-- main script file  -->
 <script src='assets/js/soft-ui-dashboard-tailwind.js?v=1.0.4' async></script>
 
-<script src="../path/to/flowbite/dist/flowbite.min.js"></script>
 
 
