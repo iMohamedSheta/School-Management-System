@@ -10,7 +10,7 @@
 
     {{-- ----------- Links ------------- --}}
 
-    @include('layouts.app')
+    @include('layouts.links')
 
     {{-- ----------- Links ------------- --}}
 

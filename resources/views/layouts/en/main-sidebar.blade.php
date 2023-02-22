@@ -36,13 +36,8 @@
               </div>
               <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.dashboard")}}</span>
             </a>
-          </li>    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-          <li>
-              <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                  {{ $properties['native'] }}
-              </a>
           </li>
-        @endforeach
+
         </ul>
       </div>
 
