@@ -10,7 +10,7 @@
 
     {{-- ----------- Links ------------- --}}
 
-    @include('layouts.app')
+    @include('layouts.links')
 
     {{-- ----------- Links ------------- --}}
 
@@ -20,8 +20,7 @@
 
 
 
-<body class="m-0 font-sans antialiased font-normal text-base leading-default bg-gray-50 text-slate-500" style="height:100vh;">
-
+    <body class="m-0 font-sans antialiased font-normal text-base leading-default bg-gray-50 text-slate-500 h-screen" >
 
                                 {{------------------------ Sidebar  ----------------------------------}}
 
