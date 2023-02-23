@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\GradeController;
 use Illuminate\Support\Facades\Route;
+use Laravel\Jetstream\Jetstream;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,16 +15,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+require_once(__DIR__.'/Jetstream.php');
+
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('dashboard', function () {
+        return view('layouts.master');
+    })->name('dashboard');
+});
 
 
 
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth' ]
     ], function(){
 
         	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
@@ -39,15 +54,7 @@ Route::group(
 
 /** OTHER PAGES THAT SHOULD NOT BE LOCALIZED **/
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+
 
 
 
