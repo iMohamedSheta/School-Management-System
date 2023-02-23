@@ -6,6 +6,7 @@
 
 return [
 
-    "dashboard" => "لوحة التحكم"
+    "dashboard" => "لوحة التحكم",
+    "grades" => "الدرجات",
 
 ];
