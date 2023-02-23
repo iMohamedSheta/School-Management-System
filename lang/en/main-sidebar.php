@@ -6,6 +6,8 @@
 
 return [
 
-    "dashboard" => "Dashboard"
+    "dashboard" => "Dashboard",
+    "grades" => "Grades",
+
 
 ];
