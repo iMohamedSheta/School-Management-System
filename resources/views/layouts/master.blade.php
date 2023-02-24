@@ -20,7 +20,7 @@
 
 
 
-    <body class="m-0 font-sans antialiased font-normal text-base leading-default bg-gray-50 text-slate-500 h-screen" >
+    <body class="m-0 font-sans antialiased font-normal text-base leading-default bg-gray-50 text-slate-500 h-screen " >
 
                                 {{------------------------ Sidebar  ----------------------------------}}
 
@@ -47,7 +47,7 @@
         @switch(App::getlocale())
 
             @case('ar')
-                <main class="ease-soft-in-out xl:mr-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
+                <main id="main" class="ease-soft-in-out xl:mr-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
             @break
 
             @case('en')
@@ -82,11 +82,19 @@
 
 
 
-                                {{------------------------ Content  ----------------------------------}}
+            {{------------------------ Content  ----------------------------------}}
 
-        {{-- @yield('content') --}}
+            <div class="py-12">
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                        <div style="height:175vh">
+                            {{-- @yield('content') --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                                {{--------------------- End Content  ----------------------------------}}
+            {{--------------------- End Content  ----------------------------------}}
 
 
 

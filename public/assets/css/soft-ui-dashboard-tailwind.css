@@ -2418,6 +2418,10 @@ h6 {
   display: none;
 }
 
+.dash-hidden {
+  display: none;
+}
+
 .h-19\.5 {
   height: 4.875rem;
 }
