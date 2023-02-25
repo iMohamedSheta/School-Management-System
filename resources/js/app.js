@@ -74,6 +74,30 @@ sidebariconOnly.onclick = function myFunction() {
 
 
 
+      aside.onclick = function myFunction()
+      {
+                if(window.innerWidth > 1024){
+                    sidebariconOnly1.style.display="inline-block";
+                    sidebariconOnly2.style.display="inline-block";
+                    sidebariconOnly3.style.display="inline-block";
+                    sidebariconOnly4.style.display="inline-flex";
+                    sidebariconOnly5.style.display="inline-block";
+                    sidebariconOnly6.style.display="inline-block";
+                    aside.style.background="transparent";
+                    if (typeof mainRight === 'undefined')
+                    {
+                        mainLeft.style.marginLeft = "20vw";
+                    }
+                    else
+                    {
+                    mainRight.style.marginRight = "20vw";
+                    }
+            }
+
+            }
+
+
+
       let myDocument = document.documentElement;
       let fullscreenbtn = document.getElementById("fullscreenbtn");
       let fullscreenicon = document.getElementById("fullscreenicon");
