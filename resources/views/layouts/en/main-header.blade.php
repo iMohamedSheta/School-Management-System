@@ -10,7 +10,8 @@
           <li class="text-sm pl-2 capitalize leading-normal text-slate-700 before:float-left before:pr-2 before:text-gray-600 before:content-['/']" aria-current="page">Dashboard</li>
         </ol>
         <h6 class="mb-0 font-bold capitalize">Dashboard</h6>
-      </nav>
+    </nav>
+
 
 
       <div class="flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
@@ -35,9 +36,10 @@
             </a>
         </li>
 
-        <a class="flex items-center pr-4" href="javascript:;" >
+        <a class="flex items-center pr-4 " href="javascript:;" >
             <div id="fullscreenbtn"  aria-label="Close"><i id="fullscreenicon" class="fas fa-expand"></i></div>
         </a>
+
         {{-- ---------------------------------------------- --}}
 
         <ul class="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
