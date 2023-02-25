@@ -22,10 +22,13 @@
                         </div>
                     </a>
                 </li>
+                <i class="flex items-center pr-4" >
+                    <div id="fullscreenbtn"  aria-label="Close"><i id="fullscreenicon" class="fas fa-expand"></i></div>
+                </i>
 
-              <div class="flex items-center mt-2 grow sm:mt-0 md:mr-0 lg:flex lg:basis-auto">
+              <div class="flex items-center mt-2 grow sm:mt-0 md:mr-0 lg:flex lg:basis-auto ">
                   <div class="flex items-center md:ml-auto md:pr-4">
-                      <div class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ease-soft">
+                      <div class="hs:hidden md:flex  relative flex flex-wrap items-stretch w-full transition-all rounded-lg ease-soft">
                           <span
                               class="text-sm ease-soft leading-5.6 absolute z-50 -mr-px flex h-full items-center whitespace-nowrap rounded-lg rounded-tl-none rounded-bl-none border border-l-0 border-solid border-transparent bg-transparent py-2 px-2.5 text-center font-normal text-slate-500 transition-all">
                               <i class="fas fa-search" aria-hidden="true"></i>
@@ -35,13 +38,9 @@
                               placeholder="أكتب هنا..." />
                         </div>
                   </div>
+
+
                   <ul class="flex flex-row justify-end pl-0 pr-10 mb-0 ml-0 mr-auto list-none md-max:w-full">
-
-
-
-
-
-
 
                       <!-- online builder btn  -->
                       <!-- <li class="flex items-center">

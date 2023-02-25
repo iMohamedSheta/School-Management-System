@@ -47,15 +47,15 @@
         @switch(App::getlocale())
 
             @case('ar')
-                <main id="main" class="ease-soft-in-out xl:mr-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
+                <main id="mainRight" class="ease-soft-in-out xl:mr-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
             @break
 
             @case('en')
-                <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
+                <main id="mainLeft" class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
             @break
 
         @default
-            <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
+            <main id="mainLeft" class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
 
         @endswitch
 
@@ -114,18 +114,18 @@
             @include('layouts.en.footer')
 
         @endswitch
-                                {{------------------------ End Footer  --------------------------------}}
+        {{------------------------ End Footer  --------------------------------}}
 
     </main>
             {{-------------------------------------------------------- End Main Tag  -------------------------------------------------------------------}}
 
+
+
+                        {{----------------------------------------------- Footer scripts  ----------------------------------------------------}}
+                    @include('layouts.footer-scripts')
+                        {{-------------------------------------------  End Footer scripts  ----------------------------------------------------}}
+
 </body>
-
-
-
-            {{----------------------------------------------- Footer scripts  ----------------------------------------------------}}
-        @include('layouts.footer-scripts')
-            {{-------------------------------------------  End Footer scripts  ----------------------------------------------------}}
 
 
 

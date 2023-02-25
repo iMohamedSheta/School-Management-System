@@ -46,7 +46,7 @@
                 </li>
 
                 <ul  id="data-accordion-icon" class="hidden px-4">
-                    <div class="border-r-2 border-gray-400 border-shadow">
+                    <div class="border-r-2 border-gray-400 ">
                     <li class="w-full mt-2 ">
                         <a aria-controls="dropdown-example" data-collapse-toggle="dropdown-example" class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700 {{ (Route::currentRouteName()== 'welcome') ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
                             href="{{ route('master') }}">

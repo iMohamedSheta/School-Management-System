@@ -31,13 +31,10 @@ listopennavbar.onclick=function myFunction() {
 }
 
 
-let displaytype = 'inline-block';
 
 let sidebariconOnly =document.getElementById("sidebaricononlys");
 
-sidebariconOnly.onclick =
-
-    function myFunction() {
+sidebariconOnly.onclick = function myFunction() {
         if (sidebariconOnly1.style.display === "none") {
           sidebariconOnly1.style.display="inline-block";
           sidebariconOnly2.style.display="inline-block";
@@ -46,7 +43,14 @@ sidebariconOnly.onclick =
           sidebariconOnly5.style.display="inline-block";
           sidebariconOnly6.style.display="inline-block";
           aside.style.background="transparent";
-          main.style.marginRight = "20vw";
+          if (typeof mainRight === 'undefined')
+          {
+              mainLeft.style.marginLeft = "20vw";
+          }
+          else
+          {
+          mainRight.style.marginRight = "20vw";
+          }
 
         } else {
           sidebariconOnly1.style.display="none";
@@ -56,8 +60,60 @@ sidebariconOnly.onclick =
           sidebariconOnly5.style.display="none";
           sidebariconOnly6.style.display="none";
           aside.style.background = "white";
-          main.style.marginRight = "10vw";
+
+          if (typeof mainRight === 'undefined')
+          {
+              mainLeft.style.marginLeft = "10vw";
+          }
+          else
+          {
+          mainRight.style.marginRight = "10vw";
+          }
         }
       }
+
+
+
+      let myDocument = document.documentElement;
+      let fullscreenbtn = document.getElementById("fullscreenbtn");
+      let fullscreenicon = document.getElementById("fullscreenicon");
+
+fullscreenbtn.onclick = function(){
+if(fullscreenbtn.ariaLabel == "Open"){
+        if (myDocument.requestFullscreen) {
+            myDocument.requestFullscreen();
+        }
+        else if (myDocument.msRequestFullscreen) {
+            myDocument.msRequestFullscreen();
+        }
+        else if (myDocument.mozRequestFullScreen) {
+            myDocument.mozRequestFullScreen();
+        }
+        else if(myDocument.webkitRequestFullscreen) {
+            myDocument.webkitRequestFullscreen();
+        }
+        fullscreenbtn.ariaLabel = "Close";
+        fullscreenicon.setAttribute("class",'fa-solid fa-square-xmark text-lg');
+    }
+    else{
+        if(document.exitFullscreen) {
+            document.exitFullscreen();
+        }
+        else if(document.msexitFullscreen) {
+            document.msexitFullscreen();
+        }
+        else if(document.mozexitFullscreen) {
+            document.mozexitFullscreen();
+        }
+        else if(document.webkitexitFullscreen) {
+            document.webkitexitFullscreen();
+        }
+
+        fullscreenbtn.ariaLabel = "Open";
+        fullscreenicon.setAttribute("class",'fas fa-expand');
+    }
+};
+
+
 
 
