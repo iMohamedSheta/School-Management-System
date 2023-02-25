@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="{{App::getlocale()}}" >
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png" />
     <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" >
     <title>{{ config('app.name') }} - Dashboard </title>
 
     {{-- ----------- Links ------------- --}}
@@ -20,22 +21,24 @@
 
 
 
-    <body class="m-0 font-sans antialiased font-normal text-base leading-default bg-gray-50 text-slate-500 h-screen" >
+    <body class="m-0 font-sans antialiased font-normal text-base leading-default bg-gray-50 text-slate-500 h-screen " >
 
                                 {{------------------------ Sidebar  ----------------------------------}}
 
     @switch(App::getlocale())
-
+                                    {{-- Right to left language put them with case ar --}}
+    {{-- @case('Right to left language') --}}
         @case('ar')
-            @include('layouts.ar.main-sidebar')
+            @include('layouts.rtl.main-sidebar')
         @break
-
+                                    {{-- Left to right language put them with case en --}}
+    {{-- @case('Left to right language') --}}
         @case('en')
-            @include('layouts.en.main-sidebar')
+            @include('layouts.ltr.main-sidebar')
         @break
-
+                                        {{-- Default Language (Only Choose One!) --}}
     @default
-        @include('layouts.en.main-sidebar')
+        @include('layouts.ltr.main-sidebar')
 
     @endswitch
 
@@ -45,17 +48,19 @@
             {{------------------------------------------------------ Main Tag  ------------------------------------------------------------}}
 
         @switch(App::getlocale())
-
+                                    {{-- Right to left language put them with case ar --}}
+    {{-- @case('Right to left language') --}}
             @case('ar')
-                <main class="ease-soft-in-out xl:mr-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
+                <main id="mainRight" class="ease-soft-in-out xl:mr-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
             @break
-
+                                    {{-- Left to right language put them with case en --}}
+    {{-- @case('Left to right language') --}}
             @case('en')
-                <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
+                <main id="mainLeft" class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
             @break
-
+                                        {{-- Default Language (Only Choose One!) --}}
         @default
-            <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
+            <main id="mainLeft" class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
 
         @endswitch
 
@@ -64,17 +69,19 @@
                                 {{------------------------ Navbar  ----------------------------------}}
 
         @switch(App::getlocale())
-
+                                    {{-- Right to left language put them with case ar --}}
+    {{-- @case('Right to left language') --}}
             @case('ar')
-                @include('layouts.ar.main-header')
+                @include('layouts.rtl.main-header')
             @break
-
+                                    {{-- Left to right language put them with case en --}}
+    {{-- @case('Left to right language') --}}
             @case('en')
-                @include('layouts.en.main-header')
+                @include('layouts.ltr.main-header')
             @break
-
+                                        {{-- Default Language (Only Choose One!) --}}
         @default
-            @include('layouts.en.main-header')
+            @include('layouts.ltr.main-header')
 
         @endswitch
                             {{------------------------ END Navbar  ----------------------------------}}
@@ -82,42 +89,54 @@
 
 
 
-                                {{------------------------ Content  ----------------------------------}}
+            {{------------------------ Content  ----------------------------------}}
 
-        {{-- @yield('content') --}}
+            <div class="py-12">
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                        <div style="height:175vh">
+                            {{-- @yield('content') --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                                {{--------------------- End Content  ----------------------------------}}
+            {{--------------------- End Content  ----------------------------------}}
 
 
 
 
                                 {{------------------------ Footer  ----------------------------------}}
         @switch(App::getlocale())
-
+                                    {{-- Right to left language put them with case en --}}
+    {{-- @case('Right to left language') --}}
             @case('ar')
-                @include('layouts.ar.footer')
+                @include('layouts.rtl.footer')
             @break
-
+                                    {{-- Left to right language put them with case en --}}
+    {{-- @case('Left to right language') --}}
             @case('en')
-                @include('layouts.en.footer')
+                @include('layouts.ltr.footer')
             @break
-
+                                        {{-- Default Language (Only Choose One!) --}}
         @default
-            @include('layouts.en.footer')
+            @include('layouts.ltr.footer')
 
         @endswitch
-                                {{------------------------ End Footer  --------------------------------}}
+        {{------------------------ End Footer  --------------------------------}}
 
     </main>
             {{-------------------------------------------------------- End Main Tag  -------------------------------------------------------------------}}
-
-</body>
 
 
 
             {{----------------------------------------------- Footer scripts  ----------------------------------------------------}}
         @include('layouts.footer-scripts')
             {{-------------------------------------------  End Footer scripts  ----------------------------------------------------}}
+
+
+
+</body>
 
 
 

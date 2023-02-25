@@ -37,7 +37,7 @@ Route::middleware([
     Route::group(
         [
             'prefix' => LaravelLocalization::setLocale(),
-            'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth' ]
+            'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
         ], function(){
 
                      /** ADD ALL LOCALIZED AND AUTHENTICATED ROUTES Down THIS **/
