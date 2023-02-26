@@ -9,6 +9,7 @@
 
     <!-- Main Styling -->
     <link href="{{ asset('assets/css/soft-ui-dashboard-tailwind.css?v=1.0.4') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{asset('assets/fonts/changafont/static/Changa-Light.ttf')}}">
 
     @vite(['resources/css/app.css','resources/js/app.js'])
 
@@ -26,10 +27,10 @@
                 @font-face
                 {
                     src: url(assets/fonts/changafont/static/Changa-Light.ttf);
-                    font-family:'Changa';
+                    font-family:'Changa-Light';
                 }
                 body{
-                        font-family:'Changa', sans-serif!important;
+                        font-family:'Changa-Light', sans-serif!important;
                     }
             </style>
         @break

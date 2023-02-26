@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png" />
     <link rel="icon" type="image/png" href="assets/img/favicon.png" />
     <meta name="csrf-token" content="{{ csrf_token() }}" >
-    <title>{{ config('app.name') }} - Dashboard </title>
+    <title>{{ config('app.name') }} - @yield('Pagetitle','Dashboard') </title>
 
     {{-- ----------- Links ------------- --}}
 
@@ -41,6 +41,8 @@
         @include('layouts.ltr.main-sidebar')
 
     @endswitch
+
+
 
                                 {{------------------------ End Sidebar  --------------------------------}}
 
@@ -95,7 +97,7 @@
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                         <div style="height:175vh">
-                            {{-- @yield('content') --}}
+                            @yield('Content')
                         </div>
                     </div>
                 </div>

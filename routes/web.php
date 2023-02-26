@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\GradeController;
+use App\Http\Controllers\Grades\GradeController;
+use App\Http\Livewire\Grades\Grades;
 use Illuminate\Support\Facades\Route;
 use Laravel\Jetstream\Jetstream;
 
@@ -45,9 +46,14 @@ Route::middleware([
                 Route::get('/',fn()=>view('layouts.master'))->name('master');
 
 
-                Route::resource('grade',GradeController::class);
-
                 Route::get('dashboard',fn()=>view('dashboard'))->name('dashbaord');
+
+
+                    Route::group(['namespace' => 'Grades'],function(){
+
+                    Route::get('grade',[GradeController::class,'index'])->name('grade');
+
+                });
 
         });
 
