@@ -7,12 +7,14 @@
     <!-- Popper -->
     <script src="https://unpkg.com/@popperjs/core@2"></script>
 
+        @livewireStyles()
+        @powerGridStyles()
+
     <!-- Main Styling -->
     <link href="{{ asset('assets/css/soft-ui-dashboard-tailwind.css?v=1.0.4') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('assets/fonts/changafont/static/Changa-Light.ttf')}}">
 
     @vite(['resources/css/app.css','resources/js/app.js'])
-
 
 
 
@@ -26,7 +28,7 @@
                 html{direction:rtl;}
                 @font-face
                 {
-                    src: url(assets/fonts/changafont/static/Changa-Light.ttf);
+                    src: url(../../../assets/fonts/changafont/static/Changa-Light.ttf);
                     font-family:'Changa-Light';
                 }
                 body{

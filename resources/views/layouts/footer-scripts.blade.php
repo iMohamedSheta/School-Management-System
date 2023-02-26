@@ -12,3 +12,5 @@
 
 
 
+@livewireScripts()
+@powerGridScripts()

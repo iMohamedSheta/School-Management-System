@@ -53,7 +53,7 @@
                                     {{-- Right to left language put them with case ar --}}
     {{-- @case('Right to left language') --}}
             @case('ar')
-                <main id="mainRight" class="ease-soft-in-out xl:mr-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
+                <main id="mainRight" class="ease-soft-in-out xl:mr-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200 ">
             @break
                                     {{-- Left to right language put them with case en --}}
     {{-- @case('Left to right language') --}}
@@ -96,9 +96,7 @@
             <div class="py-12">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                        <div style="height:175vh">
                             @yield('Content')
-                        </div>
                     </div>
                 </div>
             </div>

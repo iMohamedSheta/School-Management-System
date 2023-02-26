@@ -49,11 +49,12 @@ Route::middleware([
                 Route::get('dashboard',fn()=>view('dashboard'))->name('dashbaord');
 
 
-                    Route::group(['namespace' => 'Grades'],function(){
+                    Route::group(['namespace' => 'Grades'],function()
+                    {
 
-                    Route::get('grade',[GradeController::class,'index'])->name('grade');
+                        Route::get('grade',[GradeController::class,'index'])->name('grade');
 
-                });
+                    });
 
         });
 

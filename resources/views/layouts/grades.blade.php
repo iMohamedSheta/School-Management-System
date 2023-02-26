@@ -7,7 +7,9 @@
 
 @section('Content')
 
-@livewire('grades')
+<div class="p-6" >
+<livewire:grade-table/>
+</div>
 
 @endsection
 
