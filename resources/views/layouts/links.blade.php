@@ -1,5 +1,4 @@
     <!--     Fonts and icons     -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <!-- Nucleo Icons -->
@@ -22,11 +21,23 @@
     @switch(App::getlocale())
 
         @case('ar')
-            <style> html{direction:rtl;}</style>
+            <style>
+                html{direction:rtl;}
+                @font-face
+                {
+                    src: url(assets/fonts/changafont/static/Changa-Light.ttf);
+                    font-family:'Changa';
+                }
+                body{
+                        font-family:'Changa', sans-serif!important;
+                    }
+            </style>
         @break
 
         @case('en')
-            <style> html{direction:ltr;}</style>
+            <style>
+                html{direction:ltr;}
+            </style>
         @break
 
     @default
