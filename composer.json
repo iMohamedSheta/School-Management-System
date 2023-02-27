@@ -13,7 +13,9 @@
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^2.11",
         "mcamara/laravel-localization": "^1.8",
-        "power-components/livewire-powergrid": "^3.7"
+        "power-components/livewire-powergrid": "^3.7",
+        "spatie/laravel-translatable": "^6.3",
+        "yoeunes/toastr": "^2.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

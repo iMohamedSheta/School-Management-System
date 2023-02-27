@@ -25,19 +25,7 @@ class GradeController extends Controller
      */
     public function create(Request $request): RedirectResponse
     {
-        $newgrade = $request->validate([
-            'name'=>'required|unique:posts|max:255',
-            'notes'=>'nullable'
-        ]);
-        if($newgrade)
-        {
-            Grade::create([
-                'name'=>  $request->name,
-                'notes'=> $request->notes,
-            ]);
-        }
 
-            return Redirect::route('grade');
 
     }
 
@@ -47,6 +35,29 @@ class GradeController extends Controller
     public function store(Request $request): RedirectResponse
     {
         //
+        $newgrade = $request->validate([
+            'name_en'=>'required',
+            'name_ar'=>'required',
+            'notes'=>'nullable'
+        ]);
+        if($newgrade)
+        {
+            Grade::create([
+                'name'=>
+                    [
+                        'en'=> $request->name_en,
+                        'ar'=> $request->name_ar,
+                    ],
+                'notes'=> $request->notes,
+            ]);
+
+            toastr()->success(trans('alert.createdgrade'));
+            return Redirect::route('grade');
+
+        }
+        toastr()->error('Oops! Something went wrong!');
+
+            return Redirect::route('grade');
     }
 
     /**
@@ -76,8 +87,17 @@ class GradeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id): RedirectResponse
+    public function destroy($id): RedirectResponse
     {
         //
+        $deletegrade = Grade::destroy($id);
+        if($deletegrade)
+        {
+            toastr()->success(trans('alert.deletedgrade'));
+            return Redirect::route('grade');
+        }
+        toastr()->error('Oops! Something went wrong!');
+        return Redirect::route('grade');
+
     }
 }

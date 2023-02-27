@@ -33,8 +33,8 @@
                               class="text-sm ease-soft leading-5.6 absolute z-50 -mr-px flex h-full items-center whitespace-nowrap rounded-lg rounded-tl-none rounded-bl-none border border-l-0 border-solid border-transparent bg-transparent py-2 px-2.5 text-center font-normal text-slate-500 transition-all">
                               <i class="fas fa-search" aria-hidden="true"></i>
                           </span>
-                          <input type="text"
-                              class="text-sm px-8 focus:shadow-soft-primary-outline pr-8.75 ease-soft w-1/100 leading-5.6 relative -mr-px block min-w-0 flex-auto rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 pl-0 text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow"
+                          <input type="search"
+                              class="text-sm px-8 focus:shadow-soft-primary-outline pr-8.75 ease-soft w-1/100 leading-5.6 relative -mr-px block min-w-0 flex-auto rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 pl-0 text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow" value=""
                               placeholder="{{trans('header.search-placeholder')}}" />
                         </div>
                   </div>

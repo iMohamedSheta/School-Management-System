@@ -152,6 +152,40 @@ final class GradeTable extends PowerGridComponent
 ;
     }
 
+    public function header(): array
+    {
+        return [
+            Button::add('bulk-sold-out')
+                ->class('btn btn-dark my-1 inline-block fa-regular fa-trash-can')
+                ->emit('bulkDeleteAllEvent', [])
+        ];
+    }
+
+    protected function getListeners()
+    {
+        return array_merge(
+            parent::getListeners(), [
+                'bulkDeleteAllEvent',
+            ]);
+    }
+
+
+
+
+
+    public function bulkDeleteAllEvent(): void
+    {
+        if (count($this->checkboxValues) == 0) {
+            $this->dispatchBrowserEvent('showAlert', ['message' => 'You must select at least one item!']);
+
+            return;
+        }
+
+        $ids = implode(', ', $this->checkboxValues);
+        grade::destroy($this->checkboxValues);
+
+    }
+
     /*
     |--------------------------------------------------------------------------
     | Actions Method
@@ -167,19 +201,21 @@ final class GradeTable extends PowerGridComponent
      */
 
 
-    // public function actions(): array
-    // {
-    //    return [
-    //        Button::make('edit', 'Edit')
-    //            ->class('bg-indigo-500 cursor-pointer text-white px-3 py-2.5 m-1 rounded text-sm')
-    //            ->route('grade.edit', ['grade' => 'id']),
+    public function actions(): array
+    {
+       return [
+        //    Button::make('edit', 'Edit')
+        //        ->class('bg-indigo-500 cursor-pointer text-white px-3 py-2.5 m-1 rounded text-sm')
+        //        ->route('grade.edit', ['grade' => 'id']),
 
-    //        Button::make('destroy', 'Delete')
-    //            ->class('bg-red-500 cursor-pointer text-white px-3 py-2 m-1 rounded text-sm')
-    //            ->route('grade.destroy', ['grade' => 'id'])
-    //            ->method('delete')
-    //     ];
-    // }
+           Button::make('destroy', 'Delete')
+               ->class('bg-red-500 cursor-pointer text-white px-3 py-2 m-1 rounded text-sm')
+               ->target('_self')
+               ->route('grade.destroy', ['id'])
+               ->method('delete')
+
+        ];
+    }
 
 
     /*

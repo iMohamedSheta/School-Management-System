@@ -55,7 +55,8 @@ Route::middleware([
                     {
 
                         Route::get('grade',[GradeController::class,'index'])->name('grade');
-                        Route::post('grade',[GradeController::class,'create'])->name('grade.create');
+                        Route::post('grade',[GradeController::class,'store'])->name('grade.store');
+                        Route::delete("grade/delete/{id}",[GradeController::class,'destroy'])->name('grade.destroy');
 
                     });
 
