@@ -42,6 +42,7 @@ sidebariconOnly.onclick = function myFunction() {
           sidebariconOnly4.style.display="inline-flex";
           sidebariconOnly5.style.display="inline-block";
           sidebariconOnly6.style.display="inline-block";
+          sidebariconOnly7.style.display="inline-block";
           aside.style.background="transparent";
           if (typeof mainRight === 'undefined')
           {
@@ -59,6 +60,7 @@ sidebariconOnly.onclick = function myFunction() {
           sidebariconOnly4.style.display="none";
           sidebariconOnly5.style.display="none";
           sidebariconOnly6.style.display="none";
+          sidebariconOnly7.style.display="none";
           aside.style.background = "white";
 
           if (typeof mainRight === 'undefined')
@@ -83,6 +85,7 @@ sidebariconOnly.onclick = function myFunction() {
                     sidebariconOnly4.style.display="inline-flex";
                     sidebariconOnly5.style.display="inline-block";
                     sidebariconOnly6.style.display="inline-block";
+                    sidebariconOnly7.style.display="inline-block";
                     aside.style.background="transparent";
                     if (typeof mainRight === 'undefined')
                     {

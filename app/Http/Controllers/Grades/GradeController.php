@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Grades;
 
+use App\Http\Controllers\Controller;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -11,11 +13,11 @@ class GradeController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): Response
+    public function index(): View
     {
         //
+        return view('layouts.grades');
     }
-
     /**
      * Show the form for creating a new resource.
      */

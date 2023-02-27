@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\GradeController;
+use App\Http\Controllers\Grades\GradeController;
+use App\Http\Livewire\Grades\Grades;
 use Illuminate\Support\Facades\Route;
 use Laravel\Jetstream\Jetstream;
 
@@ -15,7 +16,6 @@ use Laravel\Jetstream\Jetstream;
 |
 */
 
-require_once(__DIR__.'/Jetstream.php');
 
 
 // Route::get('/', function () {
@@ -42,12 +42,23 @@ Route::middleware([
 
                      /** ADD ALL LOCALIZED AND AUTHENTICATED ROUTES Down THIS **/
 
+                    //Auth Routes Page Add.
+                    require_once(__DIR__.'/Jetstream.php');
+
                 Route::get('/',fn()=>view('layouts.master'))->name('master');
 
 
-                Route::resource('grade',GradeController::class);
+                // Route::get('dashboard',fn()=>view('dashboard'))->name('dashbaord');
 
-                Route::get('dashboard',fn()=>view('dashboard'))->name('dashbaord');
+
+                Route::group(['namespace' => 'Grades'],function()
+                    {
+
+                        Route::get('grade',[GradeController::class,'index'])->name('grade');
+
+                    });
+
+
 
         });
 
