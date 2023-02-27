@@ -55,6 +55,7 @@ Route::middleware([
                     {
 
                         Route::get('grade',[GradeController::class,'index'])->name('grade');
+                        Route::post('grade',[GradeController::class,'create'])->name('grade.create');
 
                     });
 

@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Grades;
 
 use App\Http\Controllers\Controller;
+use App\Models\Grade;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Redirect;
 
 class GradeController extends Controller
 {
@@ -21,9 +23,22 @@ class GradeController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): Response
+    public function create(Request $request): RedirectResponse
     {
-        //
+        $newgrade = $request->validate([
+            'name'=>'required|unique:posts|max:255',
+            'notes'=>'nullable'
+        ]);
+        if($newgrade)
+        {
+            Grade::create([
+                'name'=>  $request->name,
+                'notes'=> $request->notes,
+            ]);
+        }
+
+            return Redirect::route('grade');
+
     }
 
     /**
