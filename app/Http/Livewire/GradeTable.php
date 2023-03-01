@@ -7,9 +7,13 @@ use App\Models\grade;
 use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\QueryException;
+use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Redirect;
+use Livewire\Redirector;
 use PowerComponents\LivewirePowerGrid\Rules\{Rule, RuleActions};
 use PowerComponents\LivewirePowerGrid\Traits\ActionButton;
 use PowerComponents\LivewirePowerGrid\{Button, Column, Exportable, Footer, Header, PowerGrid, PowerGridComponent, PowerGridEloquent};
+
 
 final class GradeTable extends PowerGridComponent
 {
@@ -24,6 +28,8 @@ final class GradeTable extends PowerGridComponent
     */
     public $name;
     public $notes;
+    public $dataField;
+
 
     public function setUp(): array
     {
@@ -114,7 +120,7 @@ final class GradeTable extends PowerGridComponent
     |
     */
 
-     /**
+    /**
      * PowerGrid Columns.
      *
      * @return array<int, Column>
@@ -122,8 +128,12 @@ final class GradeTable extends PowerGridComponent
     public function columns(): array
     {
         return [
+
             Column::make('ID', 'id')
-                ->makeInputRange(),
+                ->makeInputRange()
+                ->hidden(true,false)
+                ->withCount("Num"),
+
 
             Column::make('NAME', 'name')
                 ->sortable()
@@ -141,12 +151,15 @@ final class GradeTable extends PowerGridComponent
             Column::make('CREATED AT', 'created_at_formatted', 'created_at')
                 ->searchable()
                 ->sortable()
-                ->makeInputDatePicker(),
+                ->makeInputDatePicker()
+                ->hidden(true,false),
 
             Column::make('UPDATED AT', 'updated_at_formatted', 'updated_at')
                 ->searchable()
                 ->sortable()
-                ->makeInputDatePicker(),
+                ->makeInputDatePicker()
+                ->hidden(true,false),
+
 
         ]
 ;
@@ -173,16 +186,19 @@ final class GradeTable extends PowerGridComponent
 
 
 
-    public function bulkDeleteAllEvent(): void
+    public function bulkDeleteAllEvent(): Redirector
     {
         if (count($this->checkboxValues) == 0) {
-            $this->dispatchBrowserEvent('showAlert', ['message' => 'You must select at least one item!']);
-
-            return;
+            $this->dispatchBrowserEvent('showAlert', ['message' => trans('alert.errorselect')]);
+            return Redirect::route('grade');
         }
-
         $ids = implode(', ', $this->checkboxValues);
-        grade::destroy($this->checkboxValues);
+       $delete= grade::destroy($this->checkboxValues);
+       if($delete){
+        return Redirect::route('grade')->with('success',trans('alert.deletedselected'));
+       }
+       return Redirect::route('grade')->with('error',trans('alert.error'));
+       // ->with('error', trans('alert.deletedselected'));
 
     }
 
@@ -194,7 +210,7 @@ final class GradeTable extends PowerGridComponent
     |
     */
 
-     /**
+    /**
      * PowerGrid grade Action Buttons.
      *
      * @return array<int, Button>
@@ -203,16 +219,17 @@ final class GradeTable extends PowerGridComponent
 
     public function actions(): array
     {
-       return [
+        return [
         //    Button::make('edit', 'Edit')
         //        ->class('bg-indigo-500 cursor-pointer text-white px-3 py-2.5 m-1 rounded text-sm')
-        //        ->route('grade.edit', ['grade' => 'id']),
+        //        ->route('grade.edit',['id'])
+        //        ->openModal(),
+            Button::make('destroy', 'Delete')
+                ->class('bg-red-500 cursor-pointer text-white px-3 py-2 m-1 rounded text-sm ')
+                ->target('_self')
+                ->route('grade.destroy', ['id'])
+                ->method('delete')
 
-           Button::make('destroy', 'Delete')
-               ->class('bg-red-500 cursor-pointer text-white px-3 py-2 m-1 rounded text-sm')
-               ->target('_self')
-               ->route('grade.destroy', ['id'])
-               ->method('delete')
 
         ];
     }
@@ -248,9 +265,10 @@ final class GradeTable extends PowerGridComponent
     public function onUpdatedEditable(string $id, string $field, string $value): void
 {
     try {
-   $updated = grade::query()->findOrFail($id)->update([
+    $updated = grade::query()->findOrFail($id)->update([
         $field => $value,
     ]);} catch (QueryException $exception) {
+
         $updated = false;
     }
 

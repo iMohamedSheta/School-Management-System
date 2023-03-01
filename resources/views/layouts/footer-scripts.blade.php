@@ -16,6 +16,7 @@
 @powerGridScripts()
 
 
+
 <script>
     window.addEventListener('showAlert', event => {
         alert(event.detail.message);

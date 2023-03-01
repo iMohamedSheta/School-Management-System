@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Redirect;
 
+
 class GradeController extends Controller
 {
     /**
@@ -17,7 +18,7 @@ class GradeController extends Controller
      */
     public function index(): View
     {
-        //
+        //Return view for user
         return view('layouts.grades');
     }
     /**
@@ -34,7 +35,7 @@ class GradeController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        //
+        //Create New Grade and Validate the data
         $newgrade = $request->validate([
             'name_en'=>'required',
             'name_ar'=>'required',
@@ -51,13 +52,13 @@ class GradeController extends Controller
                 'notes'=> $request->notes,
             ]);
 
-            toastr()->success(trans('alert.createdgrade'));
-            return Redirect::route('grade');
 
-        }
-        toastr()->error('Oops! Something went wrong!');
+            return Redirect::route('grade')->with('success', trans('alert.createdgrade'));
+        };
 
-            return Redirect::route('grade');
+
+
+            return Redirect::route('grade')->with('error', trans('alert.error'));
     }
 
     /**
@@ -89,15 +90,16 @@ class GradeController extends Controller
      */
     public function destroy($id): RedirectResponse
     {
-        //
+        //Delete All Grade Selected in GradeTable
         $deletegrade = Grade::destroy($id);
+
         if($deletegrade)
         {
-            toastr()->success(trans('alert.deletedgrade'));
-            return Redirect::route('grade');
+
+            return Redirect::route('grade')->with('success',trans('alert.deletedgrade'));
         }
-        toastr()->error('Oops! Something went wrong!');
-        return Redirect::route('grade');
+
+        return Redirect::route('grade')->with('error', trans('alert.error'));
 
     }
 }

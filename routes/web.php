@@ -4,6 +4,7 @@ use App\Http\Controllers\Grades\GradeController;
 use App\Http\Livewire\Grades\Grades;
 use Illuminate\Support\Facades\Route;
 use Laravel\Jetstream\Jetstream;
+use RealRashid\SweetAlert\Facades\Alert;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,13 @@ Route::middleware([
             'prefix' => LaravelLocalization::setLocale(),
             'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
         ], function(){
+
+                    Route::get('welcome',function(){
+
+                        toast('Success Toast','success');
+                        return view('welcome');
+
+                    });
 
                      /** ADD ALL LOCALIZED AND AUTHENTICATED ROUTES Down THIS **/
 
