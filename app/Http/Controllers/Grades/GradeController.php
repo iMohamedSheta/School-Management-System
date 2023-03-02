@@ -30,35 +30,46 @@ class GradeController extends Controller
 
     }
 
-    /**
-     * Store a newly created resource in storage.
+    /*
+       * This method expects a POST request with form data containing the name_en, name_ar, and notes fields.
+        It first validates the data using the validate() method of the $request object.
+        If validation passes, it creates a new Grade object with the English and Arabic names and notes,
+        and saves it to the database using the create() method. It then redirects back to the 'grade' page with a success message.
+        If validation fails, it redirects back to the 'grade' page with an error message.
+       * Note that this method uses Laravel's built-in localization feature, which allows for translation of messages and other text elements.
+        The trans() function is used to translate the 'alert.createdgrade' and 'alert.error' strings into the appropriate language based on the current locale.
      */
-    public function store(Request $request): RedirectResponse
-    {
-        //Create New Grade and Validate the data
-        $newgrade = $request->validate([
-            'name_en'=>'required',
-            'name_ar'=>'required',
-            'notes'=>'nullable'
-        ]);
-        if($newgrade)
+
+
+        public function store(Request $request): RedirectResponse
         {
-            Grade::create([
-                'name'=>
-                    [
-                        'en'=> $request->name_en,
-                        'ar'=> $request->name_ar,
-                    ],
-                'notes'=> $request->notes,
+            //Create New Grade and Validate the data
+            $newgrade = $request->validate([
+                'name_en'=>'required',
+                'name_ar'=>'required',
+                'notes'=>'nullable'
             ]);
 
-            return Redirect::route('grade')->with('success', trans('alert.createdgrade'));
-        };
+            // If validation passed, create a new grade and save it to the database
+            if($newgrade)
+            {
+                Grade::create([
+                    'name'=>
+                        [
+                            'en'=> $request->name_en,
+                            'ar'=> $request->name_ar,
+                        ],
+                    'notes'=> $request->notes,
+                ]);
 
+                // Redirect to the 'grade' page with a success message
+                return Redirect::route('grade')->with('success', trans('alert.createdgrade'));
+            };
 
-
+            // If validation failed, redirect to the 'grade' page with an error message
             return Redirect::route('grade')->with('error', trans('alert.error'));
-    }
+        }
+
 
     /**
      * Display the specified resource.
@@ -87,18 +98,21 @@ class GradeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id): RedirectResponse
-    {
-        //Delete All Grade Selected in GradeTable
-        $deletegrade = Grade::destroy($id);
-
-        if($deletegrade)
+        public function destroy($id): RedirectResponse
         {
+            // Delete the grade with the given ID from the database
+            $deletegrade = Grade::destroy($id);
 
-            return Redirect::route('grade')->with('success',trans('alert.deletedgrade'));
+            // If the grade was successfully deleted...
+            if($deletegrade)
+            {
+                // Return a redirect to the grade route with a success message in the session
+                return Redirect::route('grade')->with('success',trans('alert.deletedgrade'));
+            }
+
+            // If the grade was not successfully deleted...
+            // Return a redirect to the grade route with an error message in the session
+            return Redirect::route('grade')->with('error', trans('alert.error'));
         }
 
-        return Redirect::route('grade')->with('error', trans('alert.error'));
-
-    }
 }

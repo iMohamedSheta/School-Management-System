@@ -6,11 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png" />
     <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+
+    <!-- Set the CSRF token for the document. -->
     <meta name="csrf-token" content="{{ csrf_token() }}" >
+
+    <!-- Set the title of the document based on the current page title. -->
     <title>{{ config('app.name') }} - @yield('Pagetitle','Dashboard') </title>
 
     {{-- ----------- Links ------------- --}}
 
+    <!-- Include links to external resources such as CSS files and JavaScript libraries. -->
     @include('layouts.links')
 
     {{-- ----------- Links ------------- --}}
@@ -24,6 +29,7 @@
     <body class="m-0 font-sans antialiased font-normal text-base leading-default bg-gray-50 text-slate-500 h-screen " >
 
                                 {{------------------------ Sidebar  ----------------------------------}}
+                                        <!-- Include the main sidebar for the application. -->
 
     @switch(App::getlocale())
                                     {{-- Right to left language put them with case ar --}}
@@ -48,6 +54,8 @@
 
 
             {{------------------------------------------------------ Main Tag  ------------------------------------------------------------}}
+                                            <!-- Create the main container for the application. -->
+                                    <!-- Determine the language direction and include the appropriate sidebar -->
 
         @switch(App::getlocale())
                                     {{-- Right to left language put them with case ar --}}
@@ -69,6 +77,8 @@
 
 
                                 {{------------------------ Navbar  ----------------------------------}}
+                                            <!-- Include the application navbar. -->
+                            <!-- Determine the language direction and include the appropriate navbar -->
 
         @switch(App::getlocale())
                                     {{-- Right to left language put them with case ar --}}
