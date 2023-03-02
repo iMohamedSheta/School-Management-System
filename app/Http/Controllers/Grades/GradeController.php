@@ -52,7 +52,6 @@ class GradeController extends Controller
                 'notes'=> $request->notes,
             ]);
 
-
             return Redirect::route('grade')->with('success', trans('alert.createdgrade'));
         };
 

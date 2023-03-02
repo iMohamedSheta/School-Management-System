@@ -28,7 +28,6 @@ final class GradeTable extends PowerGridComponent
     */
     public $name;
     public $notes;
-    public $dataField;
 
 
     public function setUp(): array

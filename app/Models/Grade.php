@@ -18,5 +18,11 @@ class Grade extends Model
         'notes',
     ];
 
+    //To Overwrite asJson Method which Trait HasTrasnslation has
+    protected function asJson($value)
+    {
+        return json_encode($value,JSON_UNESCAPED_UNICODE);
+    }
+
 
 }
