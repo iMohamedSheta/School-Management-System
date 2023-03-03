@@ -36,6 +36,8 @@ use Illuminate\Support\Facades\Route;
 
 
                     Route::middleware(['auth', 'isAdmin'])->group(function () {
+                        Route::get('/user/search', [UserRoleController::class, 'searchUsers'])->name('user.search');
+
 
 
                             // Define a route group for grade-related pages

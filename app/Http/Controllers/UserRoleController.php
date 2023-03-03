@@ -41,4 +41,17 @@ class UserRoleController extends Controller
         $user->roles()->attach($role);
         return redirect()->back()->with('success', 'Role assigned successfully');
     }
+
+
+
+    public function searchUsers(Request $request)
+    {
+        $search = $request->input('search');
+
+        $users = User::where('name', 'like', '%'.$search.'%')->get();
+
+        return response()->json($users);
+    }
+
+
 }

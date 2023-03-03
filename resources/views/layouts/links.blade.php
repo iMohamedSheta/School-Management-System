@@ -6,6 +6,7 @@
     <link href="{{ asset('assets/css/nucleo-svg.css') }}" rel="stylesheet" />
     <!-- Popper -->
     <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
         @livewireStyles()
         @powerGridStyles()

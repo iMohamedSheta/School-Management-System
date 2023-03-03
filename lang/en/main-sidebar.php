@@ -13,6 +13,7 @@ return [
     "classes" => "Classes",
     'profile' => 'Profile`',
     'roles' => 'Users Roles',
+    'user-role.index' => 'Users Roles',
     'profile.show' => 'Profile',
 
 
