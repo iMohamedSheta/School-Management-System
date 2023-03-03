@@ -7,7 +7,7 @@
         $field   = $column->dataField != '' ? $column->dataField : $column->field;
     @endphp
     <td class="{{ $theme->table->tdBodyClass . ' '.$column->bodyClass ?? '' }}"
-        style="{{ $column->hidden === true ? 'display:none': '' }}; {{ $theme->table->tdBodyStyle . ' '.$column->bodyStyle ?? '' }}"
+        style="{{ $column->hidden === true ? 'display:none': '' }};max-width:50px;overflow-x:auto; {{ $theme->table->tdBodyStyle . ' '.$column->bodyStyle ?? '' }}"
     >
         @if(data_get($column->editable, 'hasPermission') && !str_contains($field, '.'))
             <span class="{{ $theme->clickToCopy->spanClass }}">

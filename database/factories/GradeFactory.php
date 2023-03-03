@@ -10,21 +10,14 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class GradeFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
+    protected $model = Grade::class;
 
-     protected $model = Grade::class;
-
-    public function definition(): array
+    public function definition(): Array
     {
         return [
-                'name' => $this ->faker->name(),
-                'notes' => $this -> faker -> title()
-
-            //
+            'name' => $this->faker->name,
+            'notes' => $this->faker->optional()->text,
         ];
     }
 }
+

@@ -12,6 +12,7 @@ return [
     "grade" => 'Students Grades',
     "classes" => "Classes",
     'profile' => 'Profile`',
+    'roles' => 'Users Roles',
     'profile.show' => 'Profile',
 
 

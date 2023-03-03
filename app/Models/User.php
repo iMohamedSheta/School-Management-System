@@ -58,4 +58,44 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+
+    public function hasRole($role)
+    {
+        return $this->roles()->where('name', $role)->exists();
+    }
+
+
+
+
+
+        public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
+
+    public function isAdmin()
+    {
+        return $this->roles()->where('name', 'Admin')->exists();
+    }
+
+    public function isTeacher()
+    {
+        return $this->roles()->where('name', 'Teacher')->exists();
+    }
+
+    public function isStudent()
+    {
+        return $this->roles()->where('name', 'Student')->exists();
+    }
+
+    public function isParent()
+    {
+        return $this->roles()->where('name', 'Parent')->exists();
+    }
+
+
+
+
+
 }

@@ -6,3 +6,14 @@
 
 
 
+.sidebar-collapsed .sidebar-icon {
+    display: inline-block;
+}
+
+.sidebar-collapsed .sidebar-logo {
+    display: none;
+}
+
+.sidebar-collapsed .sidebar-menu-item {
+    display: none;
+}
