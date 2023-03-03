@@ -89,7 +89,7 @@
                         href="{{ route('grade') }}">
                         <div
                         class="{{ Route::currentRouteName() == 'grade' ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                        <i class="fa-solid fa-award {{Route::currentRouteName() == 'grade' ? 'text-white' : ''}}"></i>
+                        <i class="fa-solid fa-graduation-cap {{Route::currentRouteName() == 'grade' ? 'text-white' : ''}}"></i>
                         </div>
                        <div id="sidebariconOnly3">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.grades")}}</span></div>
                     </a>
