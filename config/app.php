@@ -213,6 +213,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        "isAdmin" =>\App\Http\Middleware\AdminMiddleware::class,
+
 
     ])->toArray(),
 

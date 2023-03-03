@@ -3,6 +3,7 @@
 
 // Import the necessary classes and libraries
 use App\Http\Controllers\Grades\GradeController;
+use App\Http\Controllers\UserRoleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,11 +33,24 @@ use Illuminate\Support\Facades\Route;
                     'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
                 ], function(){
 
-                    // Define a localized welcome page that displays a success toast
-                    Route::get('welcome',function(){
-                        toast('Success Toast','success');
-                        return view('welcome');
+
+
+                    Route::middleware(['auth', 'isAdmin'])->group(function () {
+
+
+                            // Define a route group for grade-related pages
+                            Route::group(['namespace' => 'Grades'],function()
+                            {
+                                // Define a route for the grade index page
+                                Route::get('grade',[GradeController::class,'index'])->name('grade');
+                                // Define a route for the grade store action
+                                Route::post('grade',[GradeController::class,'store'])->name('grade.store');
+                                // Define a route for the grade delete action
+                                Route::delete("grade/delete/{id}",[GradeController::class,'destroy'])->name('grade.destroy');
+                            });
+
                     });
+
 
                     // Import Jetstream authentication routes
                     require_once(__DIR__.'/Jetstream.php');
@@ -44,16 +58,12 @@ use Illuminate\Support\Facades\Route;
                     // Define a route for the application's homepage
                     Route::get('/',fn()=>view('layouts.master'))->name('master');
 
-                    // Define a route group for grade-related pages
-                    Route::group(['namespace' => 'Grades'],function() {
-                        // Define a route for the grade index page
-                        Route::get('grade',[GradeController::class,'index'])->name('grade');
-                        // Define a route for the grade store action
-                        Route::post('grade',[GradeController::class,'store'])->name('grade.store');
-                        // Define a route for the grade delete action
-                        Route::delete("grade/delete/{id}",[GradeController::class,'destroy'])->name('grade.destroy');
-                    });
+
+                    Route::get('roles',[UserRoleController::class,'index'])->name('user-role.index');
+                    Route::post('roles',[UserRoleController::class,'assignrole'])->name('user-role.assign');
+
                 });
+
 
             // Define other pages that require authentication but should not be localized
 
