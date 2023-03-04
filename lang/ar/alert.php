@@ -13,4 +13,6 @@ return
     'createdgrade'=>"تم اضافة مرحلة دراسية جديدة بنجاح.",
     'deletedgrade'=>"تم حذف المرحلة الدراسية بنجاح.",
     'deletedselected'=>"تم حذف العناصر المحددة بنجاح.",
+    'added-role'=>"تم, اضافة دور :role للمستخدم :name.",
+    'error-role-exists'=>"المستخدم :name يملك بالفعل دور :role !",
 ];

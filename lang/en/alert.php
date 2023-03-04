@@ -13,4 +13,7 @@ return
     'createdgrade'=>'A New Grade has been Created successfully!',
     'deletedgrade'=>'Grade has been Deleted successfully!',
     'deletedselected'=>'items has been Deleted successfully!',
+    'added-role'=>"Done, Added role :role to the user :name.",
+    "error-role-exists"=> "Failed, User :name Already have role :role !",
+
 ];

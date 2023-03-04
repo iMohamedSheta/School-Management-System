@@ -3,6 +3,7 @@
 
 // Import the necessary classes and libraries
 use App\Http\Controllers\Grades\GradeController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserRoleController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,9 +37,9 @@ use Illuminate\Support\Facades\Route;
 
 
                     Route::middleware(['auth', 'isAdmin'])->group(function () {
-                        Route::get('/user/search', [UserRoleController::class, 'searchUsers'])->name('user.search');
-
-
+                        Route::get('/user/search', [SearchController::class, 'searchUsers'])->name('user.search');
+                        Route::get('roles',[UserRoleController::class,'index'])->name('user-role.index');
+                        Route::post('roles',[UserRoleController::class,'assignrole'])->name('user-role.assign');
 
                             // Define a route group for grade-related pages
                             Route::group(['namespace' => 'Grades'],function()
@@ -61,8 +62,6 @@ use Illuminate\Support\Facades\Route;
                     Route::get('/',fn()=>view('layouts.master'))->name('master');
 
 
-                    Route::get('roles',[UserRoleController::class,'index'])->name('user-role.index');
-                    Route::post('roles',[UserRoleController::class,'assignrole'])->name('user-role.assign');
 
                 });
 
