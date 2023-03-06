@@ -23,6 +23,7 @@
 
 
 
+
     {{-- Direction --}}
 
     @switch(App::getlocale())

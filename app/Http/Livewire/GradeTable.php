@@ -30,15 +30,15 @@ final class GradeTable extends PowerGridComponent
     public $notes;
 
 
+
+
     public function setUp(): array
     {
         $this->showCheckBox();
 
 
         return [
-            Exportable::make('export')
-                ->striped()
-                ->type(Exportable::TYPE_XLS, Exportable::TYPE_CSV),
+
             Header::make()->showSearchInput()
             ->showToggleColumns(),
             Footer::make()

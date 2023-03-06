@@ -66,7 +66,10 @@ class User extends Authenticatable
     }
 
 
-
+    public function classroom()
+    {
+        return $this->belongsTo(Classroom::class);
+    }
 
 
         public function roles()

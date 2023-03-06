@@ -16,7 +16,7 @@
      <hr class="h-px mt-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent" />
 
      <!-- change h-sidenav-no-pro to h-sidenav when pro is up -->
-     <div class="items-center block w-auto max-h-screen overflow-auto h-sidenav-no-pro grow basis-full">
+     <div class="items-center block w-auto max-h-screen h-screen overflow-auto h-sidenav-no-pro grow basis-full">
        <ul class="flex flex-col pl-0 mb-0 ">
 
              <li class="mt-0.5 w-full " >
@@ -119,6 +119,19 @@
                         <i class="fas fa-user-shield {{Route::currentRouteName() == 'user-role.index' ? 'text-white' : ''}}"></i>
                         </div>
                        <div id="sidebariconOnly8">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.roles")}}</span></div>
+                    </a>
+                </li>
+
+
+                <li class="w-full mt-2 ">
+                    <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                     {{ (Route::currentRouteName()== "classrooms.index") ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                        href="{{ route("classrooms.index") }}">
+                        <div
+                        class="{{ Route::currentRouteName() == 'classrooms.index' ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                        <i class="fas fa-user-shield {{Route::currentRouteName() == "classrooms.index" ? 'text-white' : ''}}"></i>
+                        </div>
+                       <div id="sidebariconOnly9">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.classes")}}</span></div>
                     </a>
                 </li>
 
