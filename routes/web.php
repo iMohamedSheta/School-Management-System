@@ -2,9 +2,13 @@
 <?php
 
 // Import the necessary classes and libraries
+
+use App\Http\Controllers\Classrooms\ClassroomController;
 use App\Http\Controllers\Grades\GradeController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserRoleController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\FormRepeater;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +40,19 @@ use Illuminate\Support\Facades\Route;
 
 
                     Route::middleware(['auth', 'isAdmin'])->group(function () {
+                        Route::get('roles',[UserRoleController::class,'index'])->name('user-role.index');
+                        Route::post('roles',[UserRoleController::class,'assignrole'])->name('user-role.assign');
+                        Route::get('/user/search', [SearchController::class, 'searchUsers'])->name('user.search');
+
+                        Route::group(['namespace' => 'Classrooms'], function () {
+                            Route::get('classrooms', [ClassroomController::class, 'index'])->name('classrooms.index');
+                            Route::post('classrooms', [FormRepeater::class, 'store'])->name('classroom.store');
+                            Route::get('classrooms/{classroom}/edit', [ClassroomController::class, 'edit'])->name('classroom.edit');
+                            Route::put('classrooms/{classroom}', [ClassroomController::class, 'update'])->name('classroom.update');
+                            Route::delete('classrooms/{classroom}', [ClassroomController::class, 'destroy'])->name('classroom.destroy');
+                        });
+
+
 
 
                             // Define a route group for grade-related pages
@@ -59,8 +76,6 @@ use Illuminate\Support\Facades\Route;
                     Route::get('/',fn()=>view('layouts.master'))->name('master');
 
 
-                    Route::get('roles',[UserRoleController::class,'index'])->name('user-role.index');
-                    Route::post('roles',[UserRoleController::class,'assignrole'])->name('user-role.assign');
 
                 });
 

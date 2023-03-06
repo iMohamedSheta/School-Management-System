@@ -11,8 +11,24 @@ Alpine.start();
 import "flowbite/dist/flowbite";
 
 
+//Rotate-90 for any icon have search-input and search-icon as class
+
+const searchInputAny=document.querySelectorAll('.search-input');
+const searchIconsAny=document.querySelectorAll('.search-icon');
+
+searchInputAny.forEach(function(searchInput, index) {
+searchInput.addEventListener('focus', function() {
+    searchIconsAny[index].classList.add('rotate-icon');
+});
+
+searchInput.addEventListener('blur', function() {
+    searchIconsAny[index].classList.remove('rotate-icon');
+});
+
+});
 
 
+//Arrow Action for sidbar
 var arrowicon = document.getElementById("arrowicon");
 var listopennavbar =document.getElementById("listopennavbar");
 
@@ -32,8 +48,11 @@ listopennavbar.onclick=function myFunction() {
 
 
 
-let sidebariconOnly =document.getElementById("sidebaricononlys");
 
+
+//collapse sidebar for and show only icon
+
+let sidebariconOnly =document.getElementById("sidebaricononlys");
 
     sidebariconOnly.onclick = function myFunction() {
         var i = 1;
@@ -60,6 +79,10 @@ let sidebariconOnly =document.getElementById("sidebaricononlys");
         }
     }
 
+
+
+
+    // Open Sidebar after click on the collapsed sidebar
 
 
     aside.onclick = function myFunction() {
@@ -91,7 +114,7 @@ let sidebariconOnly =document.getElementById("sidebaricononlys");
 
 
 
-
+// Full Screen Api
 
     let myDocument = document.documentElement;
     let fullscreenbtn = document.getElementById("fullscreenbtn");
@@ -148,4 +171,6 @@ let sidebariconOnly =document.getElementById("sidebaricononlys");
             fullscreenicon.setAttribute("class",'fa-solid fa-square-xmark text-lg');
         }
     };
+
+
 

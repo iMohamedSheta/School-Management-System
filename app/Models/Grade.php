@@ -21,6 +21,17 @@ class Grade extends Model
         'notes',
     ];
 
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
+
+
+    public function classrooms()
+    {
+        return $this->hasMany(Classroom::class);
+    }
+
 
     // To overwrite the default behavior of the asJson() method from the HasTranslations trait...
     protected function asJson($value)

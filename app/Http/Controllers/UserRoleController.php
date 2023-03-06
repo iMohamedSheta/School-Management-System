@@ -9,12 +9,20 @@ use Illuminate\Support\Facades\Validator;
 
 class UserRoleController extends Controller
 {
+
+
+
+
     public function index()
     {
         $users = User::all();
         $roles = Role::all();
         return view('roles', compact('users', 'roles'));
     }
+
+
+
+
 
     public function assignRole(Request $request)
     {
@@ -30,15 +38,21 @@ class UserRoleController extends Controller
 
         $user = User::find($request->input('user_id'));
         $role = Role::find($request->input('role_id'));
-
+        $trans_var = ['name'=>$user->name,'role'=>$role->name];
         // Check if the user already has the role
         if ($user->hasRole($role->name))
         {
-            return redirect()->back()->withErrors(['role_id' => 'The user already has this role.']);
+            return redirect()->back()->with('error',trans('alert.error-role-exists',$trans_var));
         }
 
 
         $user->roles()->attach($role);
-        return redirect()->back()->with('success', 'Role assigned successfully');
+        return redirect()->back()->with('success', trans('alert.added-role',$trans_var));
     }
+
+
+
+
+
+
 }

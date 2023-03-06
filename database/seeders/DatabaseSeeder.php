@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        \App\Models\User::factory(500)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
 
-        $this->call(GradeSeeder::class);
+        // $this->call(GradeSeeder::class);
 
     }
 }
