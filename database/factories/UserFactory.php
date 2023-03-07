@@ -35,7 +35,7 @@ class UserFactory extends Factory
             'profile_photo_path' => null,
             'current_team_id' => null,
         ];
-    }hash()
+    }
 
     /**
      * Indicate that the model's email address should be unverified.

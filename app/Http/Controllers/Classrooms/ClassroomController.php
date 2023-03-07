@@ -29,28 +29,8 @@ class ClassroomController extends Controller
     public function store(Request $request)
     {
 
+            // The Store Method now on FormRepeater Class in livewire folder
 
-        // Validate the request data
-        $validatedData = Validator::make([
-            'name*' => 'required|string|max:255',
-            'description*' => 'nullable|string',
-        ])->validate();
-
-        if ($validatedData) {
-            // Loop through each field and store it in the database
-            foreach ($validatedData as $field) {
-                // Create a new Classroom model instance
-                $classroom = new Classroom;
-                $classroom->name = $field['name'];
-                $classroom->description = $field['description'];
-                $classroom->save();
-            }
-            return redirect()->route('classrooms.index')
-                             ->with('success', 'Classroom created successfully');
-        }
-
-        return redirect()->route('classrooms.index')
-                         ->with('error', trans('alert.error'));
     }
 
 
@@ -81,17 +61,18 @@ class ClassroomController extends Controller
 
         $classroom->update($validatedData);
 
-        return redirect()->route('classrooms.index')
-                            ->with('success', 'Classroom updated successfully');
+        return redirect()->back()->with('success', trans('alert.update_classroom_success'));
+
     }
 
 
 
     public function destroy(Classroom $classroom)
     {
+        $classroom::where('id',$classroom->id)->get();
         $classroom->delete();
 
-        return redirect()->route("classrooms.index")
-                                ->with('success', 'Classroom deleted successfully');
+        return redirect()->back()->with('success', trans('alert.delete_classroom_success',['name'=>$classroom->name]));
+
     }
 }
