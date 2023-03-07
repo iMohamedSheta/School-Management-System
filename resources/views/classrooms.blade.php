@@ -59,6 +59,9 @@
                                 {{ __('Description') }}
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center" style="max-width: 150px;">
+                                {{ __('Grade') }}
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center" style="max-width: 150px;">
                                 {{ __('Actions') }}
                             </th>
 
@@ -75,6 +78,9 @@
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-center" style="max-width: 150px;">
                                     {{ $classroom->description ?? '-' }}
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center" style="max-width: 150px;">
+                                    {{ $classroom->grade->name ?? '-' }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap flex justify-center">
                                     <button  data-modal-target="grade-modal1"   data-modal-toggle="grade-modal1"

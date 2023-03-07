@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Classroom;
+use App\Models\Grade;
 use Livewire\Component;
 
 class FormRepeater extends Component
@@ -10,7 +11,7 @@ class FormRepeater extends Component
     public $fields = [];
     public $name;
     public $description;
-
+    public $grade;
     public function addField()
     {
         $this->fields[] = [
@@ -30,11 +31,13 @@ class FormRepeater extends Component
         // add the main form data to the $data array
         $name = $this->name;
         $description = $this->description;
+        $grade = $this->grade;
 
         if (!empty($name)) {
             $data[] = [
                 'name' => $name,
                 'description' => $description,
+                'grade_id'=> $grade,
             ];
         }
 
@@ -42,11 +45,13 @@ class FormRepeater extends Component
         foreach ($this->fields as $index => $field) {
             $name = $field['name'];
             $description = $field['description'];
+            $grade = $field['grade'];
 
             if (!empty($name)) {
                 $data[] = [
                     'name' => $name,
                     'description' => $description,
+                    'grade_id'=> $grade,
                 ];
             }
         }
@@ -64,6 +69,7 @@ class FormRepeater extends Component
 
     public function render()
     {
-        return view('livewire.form-repeater');
+        $grades= Grade::all();
+        return view('livewire.form-repeater',compact('grades'));
     }
 }
