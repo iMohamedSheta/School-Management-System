@@ -44,6 +44,42 @@
                         </div>
                     @endif
 
+
+                                    <!-- Edit modal -->
+                    <div id="grade-modal1" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden max-md:w-screen max-md:h-screen p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
+                        <div class="relative w-full h-full max-w-md md:h-auto">
+                            <!-- Modal content -->
+                            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                <!-- Close button -->
+                            <button type="button" class="absolute top-3 {{LaravelLocalization::getCurrentLocale() == 'ar' ? "left-2.5" : "right-2.5" }}
+                            text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-hide="grade-modal1">
+                            <i class="fa-solid fa-square-xmark text-2xl"></i>
+                            <span class="sr-only">Close modal</span>
+                            </button>
+                            <!-- Modal header and form -->
+                            <div class="px-6 py-6 lg:px-8">
+                            <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">{{ trans('main.edit-classroom') }}</h3>
+                            <form class="space-y-6" action="{{route("classroom.store")}}" method="post">
+                                @csrf
+                                <input type="hidden" id="edit-classroom-id" name="id" value="">
+                                <!-- Grade name in English -->
+                                <div>
+                                <label for="classroom_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ trans('main.classroom-name') }}</label>
+                                <input type="text" name="name" id="classroom_name" class="@error('name') is-invalid @enderror bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" value="{{old('name')}}" >
+                                </div>
+                                <!-- Grade notes -->
+                                <div>
+                                <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{trans('main.classroom-description')}}</label>
+                                <textarea id="message" name="description" rows="4" class="@error('notes') is-invalid @enderror block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">{{old('description')}}</textarea>
+                                </div>
+                                <!-- Submit button -->
+                                <button  class="btn btn-dark w-full font-medium rounded-lg text-sm px-5 py-2.5 text-center ">{{trans('main.add')}}</button>
+                            </form>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+
                 </div>
 
                 <table class="min-w-full divide-y divide-gray-200">
@@ -59,6 +95,9 @@
                                 {{ __('Description') }}
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center" style="max-width: 150px;">
+                                {{ __('Grade') }}
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center" style="max-width: 150px;">
                                 {{ __('Actions') }}
                             </th>
 
@@ -67,14 +106,17 @@
                     <tbody class="bg-white divide-y divide-gray-200">
                         @forelse ($classrooms as $classroom)
                             <tr>
-                                <td class="px-6 py-4 whitespace-nowrap text-center" style="max-width: 150px;">
+                                <td class="px-6 py-4 whitespace-nowrap text-center overflow-auto" style="max-width: 150px;">
                                     {{ $classroom->id }}
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-center" style="max-width: 150px;">
+                                <td class="px-6 py-4 whitespace-nowrap text-center overflow-auto" style="max-width: 150px;">
                                     {{ $classroom->name }}
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-center" style="max-width: 150px;">
+                                <td class="px-6 py-4 whitespace-nowrap text-center overflow-auto" style="max-width: 150px;">
                                     {{ $classroom->description ?? '-' }}
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center overflow-auto" style="max-width: 150px;">
+                                    {{ $classroom->grade->name ?? '-' }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap flex justify-center">
                                     <button  data-modal-target="grade-modal1"   data-modal-toggle="grade-modal1"
@@ -113,7 +155,7 @@
 
             <!-- Main modal -->
             <div id="grade-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden max-md:w-screen max-md:h-screen p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
-                <div class="relative w-full h-full max-w-md md:h-auto max-h-screen">
+                <div class="relative w-full h-full max-w-3xl md:h-auto max-h-screen">
                 <!-- Modal content -->
                 <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 overflow-y-auto">
                     <!-- Close button -->
@@ -124,7 +166,6 @@
                     <!-- Modal header and form -->
                     <div class="px-6 py-6 lg:px-8">
                     <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">{{ trans('main.add-classroom') }}</h3>
-
 
                         <!-- Form Repeater -->
                         <livewire:form-repeater />
@@ -138,41 +179,7 @@
 
 
 
-            <!-- Edit modal -->
-           <!-- Edit modal -->
-           <div id="grade-modal1" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden max-md:w-screen max-md:h-screen p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
-            <div class="relative w-full h-full max-w-md md:h-auto">
-                <!-- Modal content -->
-                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                    <!-- Close button -->
-                <button type="button" class="absolute top-3 {{LaravelLocalization::getCurrentLocale() == 'ar' ? "left-2.5" : "right-2.5" }}
-                text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-hide="grade-modal1">
-                <i class="fa-solid fa-square-xmark text-2xl"></i>
-                <span class="sr-only">Close modal</span>
-                </button>
-                <!-- Modal header and form -->
-                <div class="px-6 py-6 lg:px-8">
-                <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">{{ trans('main.edit-classroom') }}</h3>
-                <form class="space-y-6" action="{{route("classroom.store")}}" method="post">
-                    @csrf
-                    <input type="hidden" id="edit-classroom-id" name="id" value="">
-                    <!-- Grade name in English -->
-                    <div>
-                    <label for="classroom_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ trans('main.classroom-name') }}</label>
-                    <input type="text" name="name" id="classroom_name" class="@error('name') is-invalid @enderror bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" value="{{old('name')}}" >
-                    </div>
-                    <!-- Grade notes -->
-                    <div>
-                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{trans('main.classroom-description')}}</label>
-                    <textarea id="message" name="description" rows="4" class="@error('notes') is-invalid @enderror block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">{{old('description')}}</textarea>
-                    </div>
-                    <!-- Submit button -->
-                    <button  class="btn btn-dark w-full font-medium rounded-lg text-sm px-5 py-2.5 text-center ">{{trans('main.add')}}</button>
-                </form>
-                </div>
-            </div>
-            </div>
-             </div>
+
 
 
 

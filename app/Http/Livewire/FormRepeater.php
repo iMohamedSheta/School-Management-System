@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Classroom;
+use App\Models\Grade;
 use Livewire\Component;
 
 class FormRepeater extends Component
@@ -10,6 +11,8 @@ class FormRepeater extends Component
     public $fields = [];
     public $name;
     public $description;
+    public $grade;
+
 
     public function addField()
     {
@@ -24,46 +27,68 @@ class FormRepeater extends Component
         unset($this->fields[$index]);
         $this->fields = array_values($this->fields);
     }
+
+
     public function store()
     {
+        // Initialize an empty array to store the classroom data
         $data = [];
-        // add the main form data to the $data array
+
+        // Retrieve the main form data and add it to the $data array
         $name = $this->name;
         $description = $this->description;
+        $grade = $this->grade;
 
-        if (!empty($name)) {
+        // Validate the main form data
+        if (!empty($name) && !empty($grade)) {
             $data[] = [
                 'name' => $name,
                 'description' => $description,
+                'grade_id'=> $grade,
             ];
         }
+        else {
+            // Redirect back to the index page with an error message if the main form data is not valid
+            return redirect()->route('classrooms.index')->with('error', trans('alert.error-classrooms-info'));
+        }
 
-        // loop through fields from the repeater
+        // Loop through the fields from the repeater and add them to the $data array
         foreach ($this->fields as $index => $field) {
             $name = $field['name'];
             $description = $field['description'];
+            $grade = $field['grade'];
 
-            if (!empty($name)) {
+            // Validate the field data
+            if (!empty($name) && !empty($grade)) {
                 $data[] = [
                     'name' => $name,
                     'description' => $description,
+                    'grade_id'=> $grade,
                 ];
+            }
+            else {
+                // Redirect back to the index page with an error message if any field data is not valid
+                return redirect()->route('classrooms.index')->with('error', trans('alert.error-classrooms-info'));
             }
         }
 
+        // Save the classroom data to the database
+        $create_classrooms = Classroom::insert($data);
+        if($create_classrooms) {
+            // Redirect back to the index page with a success message if the classroom data was saved successfully
+            return redirect()->route('classrooms.index')->with('success', trans('alert.classrooms-created'));
+        }
 
-
-        // do something with $data, such as save to database
-        Classroom::insert($data);
-
-        session()->flash('success', 'Classroom created successfully...');
-        return redirect()->route('classrooms.index');
+        // Redirect back to the index page with an error message if the classroom data could not be saved
+        return redirect()->route('classrooms.index')->with('error', trans('alert.error-create-classrooms'));
     }
+
 
 
 
     public function render()
     {
-        return view('livewire.form-repeater');
+        $grades= Grade::all();
+        return view('livewire.form-repeater',compact('grades'));
     }
 }

@@ -17,6 +17,7 @@ return
     'role'=>'Role',
     'select-user'=> "Search for a user...",
     'select-role'=> "-- Select Role --",
+    'select-grade'=> "-- Select Grade --",
     'assign'=> "Assign Role",
     'add-classroom'=>'Add Classroom',
     'classroom-name'=>'Classroom Name',
