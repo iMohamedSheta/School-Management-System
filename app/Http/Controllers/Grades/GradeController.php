@@ -98,21 +98,35 @@ class GradeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-        public function destroy($id): RedirectResponse
-        {
-            // Delete the grade with the given ID from the database
-            $deletegrade = Grade::destroy($id);
+    public function destroy($id): RedirectResponse
+    {
 
-            // If the grade was successfully deleted...
-            if($deletegrade)
-            {
-                // Return a redirect to the grade route with a success message in the session
-                return Redirect::route('grade')->with('success',trans('alert.deletedgrade'));
-            }
+        // Retrieve the grade with the given ID // You can use Findorfail too..
+        $grade = Grade::find($id);
 
-            // If the grade was not successfully deleted...
-            // Return a redirect to the grade route with an error message in the session
-            return Redirect::route('grade')->with('error', trans('alert.error'));
+        // If the grade doesn't exist, return a redirect with an error message
+        if (!$grade) {
+            return Redirect::route('grade')->with('error', trans('alert.invalidgrade'));
         }
+
+        // If the grade has classrooms, return a redirect with an error message
+        if ($grade->classrooms()->exists()) {
+            return Redirect::route('grade')->with('error', trans('alert.gradehasclassrooms'));
+        }
+
+        // Delete the grade with the given ID from the database
+        $deletegrade = Grade::destroy($id);
+
+        // If the grade was successfully deleted...
+        if($deletegrade)
+        {
+            // Return a redirect to the grade route with a success message in the session
+            return Redirect::route('grade')->with('success',trans('alert.deletedgrade'));
+        }
+
+        // If the grade was not successfully deleted...
+        // Return a redirect to the grade route with an error message in the session
+        return Redirect::route('grade')->with('error', trans('alert.error'));
+    }
 
 }

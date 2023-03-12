@@ -43,13 +43,15 @@ use App\Http\Livewire\FormRepeater;
                         Route::get('roles',[UserRoleController::class,'index'])->name('user-role.index');
                         Route::post('roles',[UserRoleController::class,'assignrole'])->name('user-role.assign');
                         Route::get('/user/search', [SearchController::class, 'searchUsers'])->name('user.search');
+                        Route::get('classrooms/search', [SearchController::class, 'searchClassrooms'])->name('classrooms.search');
+
 
                         Route::group(['namespace' => 'Classrooms'], function () {
                             Route::get('classrooms', [ClassroomController::class, 'index'])->name('classrooms.index');
                             Route::post('classrooms', [FormRepeater::class, 'store'])->name('classroom.store');
-                            Route::get('classrooms/{classroom}/edit', [ClassroomController::class, 'edit'])->name('classroom.edit');
-                            Route::put('classrooms/{classroom}', [ClassroomController::class, 'update'])->name('classroom.update');
+                            Route::put('classrooms/{id}', [ClassroomController::class, 'update'])->name('classroom.update');
                             Route::delete('classrooms/{classroom}', [ClassroomController::class, 'destroy'])->name('classroom.destroy');
+                            Route::delete('classrooms', [ClassroomController::class, 'deleteSelected'])->name('classroom.deleteselected');
                         });
 
 

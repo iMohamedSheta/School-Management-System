@@ -6,7 +6,7 @@ use App\Models\Classroom;
 use App\Models\Grade;
 use Livewire\Component;
 
-class FormRepeater extends Component
+class ClassroomFormRepeater extends Component
 {
     public $fields = [];
     public $name;
@@ -89,6 +89,6 @@ class FormRepeater extends Component
     public function render()
     {
         $grades= Grade::all();
-        return view('livewire.form-repeater',compact('grades'));
+        return view('livewire.classroom-form-repeater',compact('grades'));
     }
 }

@@ -1,7 +1,4 @@
 
-
-
-
 <form class="space-y-6" wire:submit.prevent="store" method="post">
     @csrf
     <div class="container mx-auto">

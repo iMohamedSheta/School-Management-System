@@ -15,7 +15,8 @@ class ClassroomController extends Controller
     public function index()
     {
         $classrooms = Classroom::paginate(10);
-        return view("classrooms", compact('classrooms'));
+        $grades = Grade::all();
+        return view("classrooms", compact('classrooms',"grades"));
     }
 
 
@@ -52,14 +53,23 @@ class ClassroomController extends Controller
 
 
 
-    public function update(Request $request, Classroom $classroom)
+    public function update(Request $request)
     {
+        $classroom= Classroom::where('id',$request->id);
+
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'description' => 'nullable',
+            'grade'=>'required'
         ]);
 
-        $classroom->update($validatedData);
+        $classroom->update(
+            [
+                'name'=>$request->name,
+                'description'=>$request->description,
+                'grade_id'=>$request->grade
+            ]
+        );
 
         return redirect()->back()->with('success', trans('alert.update_classroom_success'));
 
@@ -75,4 +85,39 @@ class ClassroomController extends Controller
         return redirect()->back()->with('success', trans('alert.delete_classroom_success',['name'=>$classroom->name]));
 
     }
+
+
+    public function deleteSelected(Request $request)
+    {
+            $selectedIds = explode(',', $request->selected_classrooms_ids);
+
+
+           // Loop through the selected grades and check if they have classrooms
+            foreach ($selectedIds as $id)
+            {
+
+                $classroom = Classroom::find($id);
+                // If the grade doesn't have classrooms, add its ID to the $idsToDelete array
+                if ($classroom) {
+                    $idsToDelete[] = $id;
+                }
+            }
+
+            if(empty($idsToDelete))
+            {
+                return redirect()->back()->with('error', trans('alert.errorselect'));
+            }
+
+            if (count($idsToDelete) > 0) {
+                Classroom::destroy($idsToDelete);
+
+                return redirect()->back()->with('success', trans('alert.deletedselected'));
+            }
+
+            return redirect()->back()->with('error', trans('alert.error'));
+
+
+    }
+
+
 }
