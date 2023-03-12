@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Classroom;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -18,4 +19,17 @@ class SearchController extends Controller
 
         return response()->json($users);
     }
+
+
+    public function searchClassrooms(Request $request)
+{
+    $search = $request->input('q');
+    $classrooms = Classroom::where('name', 'LIKE', "%$search%")
+                            ->orWhere('description', 'LIKE', "%$search%")
+                            ->orderBy('name')
+                            ->get();
+
+    return response()->json($classrooms);
+}
+
 }

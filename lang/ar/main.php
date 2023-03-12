@@ -11,7 +11,7 @@ return
     'grade-name-en'=> 'اسم المرحلة الدراسية بالغة الانجليزية',
     'grade-notes'=> 'معلومات عن المرحلة الدراسية',
     'add'=> 'اضافة',
-    'delete-selected'=>"مسح المحدد",
+    'delete-selected'=>"حذف المحدد",
     'assign-roles'=>'اضافة ادوار للمستخدمين',
     'user'=>'المستخدم',
     'role'=>'الدور',
@@ -27,6 +27,13 @@ return
     'edit-classroom'=>"تعديل الفصل الدراسي",
     "add-field-classes"=>"اضافة فصل",
     "remove-field-classes"=>"حذف الفصل",
+    'edit-grade'=>'تعديل المرحلة الدراسية',
+    "no-grade"=>"لا توجد مراحل دراسية.",
+    'edit'=>'تعديل',
+    'search'=>"البحث",
+    'delete-classrooms-title' => 'هل أنت متأكد من أنك تريد حذف هذه الفصول الدراسية؟',
+    'delete-classrooms-confirm' => 'نعم، أنا متأكد',
+    'delete-classrooms-cancel' => 'لا، الغاء',
 
 
 

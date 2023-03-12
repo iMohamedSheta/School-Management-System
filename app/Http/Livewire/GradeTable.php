@@ -184,22 +184,63 @@ final class GradeTable extends PowerGridComponent
 
 
 
-
     public function bulkDeleteAllEvent(): Redirector
     {
-        if (count($this->checkboxValues) == 0) {
-            $this->dispatchBrowserEvent('showAlert', ['message' => trans('alert.errorselect')]);
-            return Redirect::route('grade');
-        }
-        $ids = implode(', ', $this->checkboxValues);
-       $delete= grade::destroy($this->checkboxValues);
-       if($delete){
-        return Redirect::route('grade')->with('success',trans('alert.deletedselected'));
-       }
-       return Redirect::route('grade')->with('error',trans('alert.error'));
-       // ->with('error', trans('alert.deletedselected'));
+        // Get the selected grade IDs from the checkbox values
+        $selectedIds = $this->checkboxValues;
 
+        // If no grades were selected, show an error message and redirect to the grade page
+        if (count($selectedIds) == 0) {
+            // $this->dispatchBrowserEvent('showAlert', ['message' => trans('alert.errorselect')]);
+            return Redirect::route('grade')->with("error",trans('alert.errorselect'));
+        }
+
+        // Initialize an array to store the IDs of the grades that can be deleted
+        $idsToDelete = [];
+
+        // Initialize an empty string to store the names of the grades that can't be deleted
+        $namesOfGradesWithClassrooms = '';
+
+        // Loop through the selected grades and check if they have classrooms
+        foreach ($selectedIds as $id) {
+            $grade = Grade::find($id);
+
+            // If the grade doesn't have classrooms, add its ID to the $idsToDelete array
+            if (!$grade->classrooms()->exists()) {
+                $idsToDelete[] = $id;
+            } else {
+                // If the grade has classrooms, add its name to the $namesOfGradesWithClassrooms string
+                $namesOfGradesWithClassrooms .= $grade->name . ', ';
+            }
+        }
+
+        // Delete the grades that don't have classrooms
+        if (count($idsToDelete) > 0) {
+            Grade::destroy($idsToDelete);
+
+            // Check if there is Selected Grades with Classrooms
+            if(!empty($namesOfGradesWithClassrooms))
+            {
+                // Return Success message with Error message if there is some grades deleted and some are not.
+                $errorMsg = trans('alert.cantdeletedgrades') . ': ' . $namesOfGradesWithClassrooms;
+                return Redirect::route('grade')->with('success', trans('alert.deletedselected'))->with('error', $errorMsg);
+            }
+            return Redirect::route('grade')->with('success', trans('alert.deletedselected'));
+        }
+
+        // If no grades were deleted, show an error message and redirect to the grade page
+        if (!empty($namesOfGradesWithClassrooms)) {
+            // Remove the last comma and space from the $namesOfGradesWithClassrooms string
+            $namesOfGradesWithClassrooms = substr($namesOfGradesWithClassrooms, 0, -2);
+
+            $errorMsg = trans('alert.cantdeletedgrades') . ': ' . $namesOfGradesWithClassrooms;
+            return Redirect::route('grade')->with('error', $errorMsg);
+        }
+
+        // If there were no grades with classrooms, show a general error message and redirect to the grade page
+        return Redirect::route('grade')->with('error', trans('alert.gradehasclassrooms'));
     }
+
 
     /*
     |--------------------------------------------------------------------------

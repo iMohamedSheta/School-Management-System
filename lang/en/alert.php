@@ -20,6 +20,16 @@ return
     'update_classroom_success' => 'Success! Your classrooms have been updated successfully.',
     'delete_classroom_success' => 'Success! Your classroom :name have been deleted successfully.',
     'error-classrooms-info'=>"Please enter the classroom name and grade level for the class.",
+    "gradehasclassrooms" => "The grade cannot be deleted as it has associated classrooms.",
+    "invalidgrade" => "The requested grade is invalid.",
+    'errorselect'=>"Their is no selected items.",
+    "cantdeletedgrades" => "The following grades cannot be deleted because they have classrooms associated with them",
+    "nograderemoved" => "No grades were removed",
+    'delete-selected'=>"Delete Selected"
+
+
+
+
 
 
 
