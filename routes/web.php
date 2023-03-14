@@ -9,6 +9,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserRoleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\FormRepeater;
+use Barryvdh\Debugbar\Facades\Debugbar;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,9 +47,11 @@ use App\Http\Livewire\FormRepeater;
                         Route::get('classrooms/search', [SearchController::class, 'searchClassrooms'])->name('classrooms.search');
 
 
+
                         Route::group(['namespace' => 'Classrooms'], function () {
                             Route::get('classrooms', [ClassroomController::class, 'index'])->name('classrooms.index');
-                            Route::post('classrooms', [FormRepeater::class, 'store'])->name('classroom.store');
+                            Route::put('classrooms', [FormRepeater::class, 'store'])->name('classroom.store');
+                            Route::post('classrooms', [ClassroomController::class, 'filterGrades'])->name('classroom.filter');
                             Route::put('classrooms/{id}', [ClassroomController::class, 'update'])->name('classroom.update');
                             Route::delete('classrooms/{classroom}', [ClassroomController::class, 'destroy'])->name('classroom.destroy');
                             Route::delete('classrooms', [ClassroomController::class, 'deleteSelected'])->name('classroom.deleteselected');

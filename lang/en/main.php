@@ -34,6 +34,13 @@ return
     'delete-classrooms-title' => 'Are you sure you want to delete these selected classrooms?',
     'delete-classrooms-confirm' => 'Yes, I\'m sure',
     'delete-classrooms-cancel' => 'No, cancel',
+    'all-grades'=>'All Grades',
+    'grade'=>'Grade',
+    'description'=>"Description",
+    'classroomname'=>'Classroom Name',
+    'actions'=>'Actions',
+    'no-classrooms'=>'No classrooms found.',
+
 
 
 

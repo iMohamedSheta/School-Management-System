@@ -186,6 +186,8 @@ return [
         /*
          * Package Service Providers...
          */
+        Barryvdh\Debugbar\ServiceProvider::class,
+
 
         /*
          * Application Service Providers...
@@ -217,6 +219,8 @@ return [
         "isStudent" =>\App\Http\Middleware\StudentMiddleware::class,
         "isTeacher" =>\App\Http\Middleware\TeacherMiddleware::class,
         "isParent" =>\App\Http\Middleware\ParentMiddleware::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+
 
 
     ])->toArray(),

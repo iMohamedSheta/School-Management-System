@@ -4,7 +4,7 @@ import Alpine from 'alpinejs';
 import focus from '@alpinejs/focus';
 window.Alpine = Alpine;
 import "@fortawesome/fontawesome-free/css/all.css";
-
+import 'simplebar/dist/simplebar.min.css';
 Alpine.plugin(focus);
 
 Alpine.start();

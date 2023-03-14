@@ -34,6 +34,12 @@ return
     'delete-classrooms-title' => 'هل أنت متأكد من أنك تريد حذف هذه الفصول الدراسية؟',
     'delete-classrooms-confirm' => 'نعم، أنا متأكد',
     'delete-classrooms-cancel' => 'لا، الغاء',
+    'all-grades'=>"جميع المراحل",
+    'grade' => 'المرحلة الدراسية',
+    'description' => 'الوصف',
+    'classroomname' => 'اسم الفصل الدراسي',
+    'actions' => 'الإجراءات',
+    'no-classrooms'=>'لا توجد فصول دراسية.',
 
 
 
