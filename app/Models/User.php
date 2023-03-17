@@ -66,6 +66,9 @@ class User extends Authenticatable
     }
 
 
+
+
+
     public function classroom()
     {
         return $this->belongsTo(Classroom::class);
@@ -97,6 +100,44 @@ class User extends Authenticatable
         return $this->roles()->where('name', 'Parent')->exists();
     }
 
+
+
+    //--------------------------
+    public function parent()
+    {
+        if ($this->isParent())
+        {
+            return $this->hasOne(MyParent::class)->withDefault();
+        }
+        else
+        {
+            return abort(403,'Unauthorized action.');
+        }
+    }
+
+        // public function teacher()
+    // {
+    //     return $this->hasOne(Teacher::class);
+    // }
+
+    // public function student()
+    // {
+    //     return $this->hasOne(Student::class);
+    // }
+
+//     public function createInfo($info)
+// {
+//     if ($this->isParent()) {
+//         $this->parent()->create($info);
+//      }// elseif ($this->isTeacher()) {
+//     //     $this->teacher()->create($info);
+//     // } elseif ($this->isStudent()) {
+//     //     $this->student()->create($info);
+//     // }
+//     // elseif ($this->isAdmin()) {
+//     //     $this->admin()->create($info);
+//     // }
+// }
 
 
 

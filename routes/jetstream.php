@@ -47,3 +47,11 @@ Route::group(['middleware' => config('jetstream.middleware', ['web'])], function
         });
     });
 });
+
+
+
+
+
+
+
+

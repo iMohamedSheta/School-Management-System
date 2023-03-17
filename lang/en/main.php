@@ -40,6 +40,18 @@ return
     'classroomname'=>'Classroom Name',
     'actions'=>'Actions',
     'no-classrooms'=>'No classrooms found.',
+    'name'=>'Name',
+    'email'=>'Email',
+    'password'=>'Password',
+    'confirm-password'=>'Confirm Password',
+    'Register'=>'Register User',
+    'terms-of-service'=>'Terms of Service',
+    'privacy-policy'=>'Privacy Policy',
+    'agree'=>'User agreed to the :terms_of_service and :privacy_policy',
+    'account-info'=>'Account Info',
+    'personal-info'=>'Personal Info',
+    'review'=>'Review',
+    'confirmation'=>'Confirmation',
 
 
 

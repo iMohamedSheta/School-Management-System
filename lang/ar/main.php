@@ -40,6 +40,19 @@ return
     'classroomname' => 'اسم الفصل الدراسي',
     'actions' => 'الإجراءات',
     'no-classrooms'=>'لا توجد فصول دراسية.',
+    'name'=>'الاسم',
+    'email'=>'البريد الالكتروني',
+    'password'=>'الرقم السري',
+    'confirm-password'=>'تأكيد الرقم السري',
+    'register'=>'تسجيل المستخدم',
+    'terms-of-service'=>'شروط الخدمة',
+    'privacy-policy'=>'سياسة الخصوصية',
+    'agree'=>'تمت الموافقة علي :terms_of_service و :privacy_policy',
+    'account-info'=>'معلومات البريد الالكتروني',
+    'personal-info'=>'المعلومات الشخصية',
+    'review'=>'استعراض البيانات',
+    'confirmation'=>'التأكيد',
+
 
 
 

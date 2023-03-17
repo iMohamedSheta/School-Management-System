@@ -28,23 +28,24 @@ searchInput.addEventListener('blur', function() {
 });
 
 
-//Arrow Action for sidbar
-var arrowicon = document.getElementById("arrowicon");
-var listopennavbar =document.getElementById("listopennavbar");
 
-let rotateVariable='';
+var listItems = document.querySelectorAll("#aside .listopennavbar");
 
-listopennavbar.onclick=function myFunction() {
+listItems.forEach(function(listItem) {
+  var arrowIcon = listItem.querySelector(".arrowicon");
+  var isOpen = false;
 
-    if(rotateVariable == ''){
-        rotateVariable ="rotate-180";
+  listItem.addEventListener("click", function() {
+    isOpen = !isOpen;
+
+    if (isOpen) {
+      arrowIcon.classList.add("rotate-180");
+    } else {
+      arrowIcon.classList.remove("rotate-180");
     }
-    else{
-        rotateVariable = '';
-    }
-    arrowicon.setAttribute('class',rotateVariable +" fa-solid fa-chevron-down px-3 shrink-0 transition-transform duration-200");
+  });
+});
 
-}
 
 
 
