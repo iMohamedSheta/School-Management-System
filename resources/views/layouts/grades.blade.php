@@ -7,7 +7,7 @@
 
 @section('Content')
 
-<div class="p-6" >
+<div class="p-6 bg-white sm:rounded-lg shadow-xl" >
 
         <!-- Modal toggle to add new grade -->
         <div>

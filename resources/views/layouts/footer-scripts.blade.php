@@ -12,6 +12,8 @@
 {{-- <link rel="stylesheet" href="https://unpkg.com/simplebar@5.3.0/dist/simplebar.min.css" /> --}}
 <script src="https://unpkg.com/simplebar@5.3.0/dist/simplebar.min.js"></script>
 
+
+
 <script>
     const simplebarElements = document.querySelectorAll('.simplebar');
     simplebarElements.forEach(el => new SimpleBar(el));

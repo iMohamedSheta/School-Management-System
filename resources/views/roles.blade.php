@@ -7,7 +7,7 @@
 
 @section('Content')
 <!-- The form is wrapped in a flex container which centers the content horizontally. -->
-<div class="flex justify-center">
+<div class="flex justify-center bg-white sm:rounded-lg shadow-xl ">
 
     <!-- This div specifies the width of the form on larger screens. -->
     <div class="w-full lg:w-8/12 md:py-12 hs:py-2 hs:m-6">

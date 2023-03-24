@@ -91,7 +91,11 @@ body {
     padding: .75rem 1.5rem;
     font-size: .75rem;
     border-radius: .5rem;
-    transition: all .15s ease-in
+    transition: all .15s ease-in;
+    -webkit-transition: all .15s ease-in;
+    -moz-transition: all .15s ease-in;
+    -ms-transition: all .15s ease-in;
+    -o-transition: all .15s ease-in;
 }
 
 @media (prefers-reduced-motion:reduce) {
@@ -1393,14 +1397,6 @@ sup {
 3. Remove gaps between table borders by default.
 */
 
-table {
-  text-indent: 0;
-  /* 1 */
-  border-color: inherit;
-  /* 2 */
-  border-collapse: collapse;
-  /* 3 */
-}
 
 /*
 1. Change the font styles in all browsers.
@@ -1408,6 +1404,28 @@ table {
 3. Remove default padding in all browsers.
 */
 
+
+
+  figure table {
+    width: 100%;
+    display: block;
+    flex-wrap: wrap;
+    max-width:46vw;
+    overflow-x: scroll;
+  }
+
+  figure table th,
+  figure table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+  }
+
+  figure table tbody {
+    overflow: auto;
+    overflow-wrap: break-word;
+    background-color: #1c2330;
+    color: whitesmoke;
+  }
 button,
 input,
 optgroup,
@@ -1443,17 +1461,6 @@ select {
 2. Remove default button styles.
 */
 
-button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
-  -webkit-appearance: button;
-  /* 1 */
-  background-color: transparent;
-  /* 2 */
-  background-image: none;
-  /* 2 */
-}
 
 /*
 Use the modern Firefox focus style for all focusable elements.

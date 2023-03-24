@@ -6,8 +6,8 @@
 @extends("layouts.master")
 @section('Pagetitle','Add Users')
 @section('Content')
-<div class="pb-14 pt-7 flex">
-<div class="block px-[10%]  mt-[5%]">
+<div class="pb-14 pt-7 flex bg-white sm:rounded-lg shadow-xl">
+<div class="block px-[10%]  mt-[5%] ">
 
     <ol class="relative text-gray-500 border-r border-gray-200 dark:border-gray-700 dark:text-gray-400">
         <li class="mb-10 mr-6">

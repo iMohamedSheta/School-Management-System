@@ -9,14 +9,18 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class User extends Authenticatable
+class User extends Authenticatable implements HasMedia
 {
     use HasApiTokens;
     use HasFactory;
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    use InteractsWithMedia;
+
 
     /**
      * The attributes that are mass assignable.
@@ -28,6 +32,9 @@ class User extends Authenticatable
         'email',
         'password',
     ];
+
+
+
 
     /**
      * The attributes that should be hidden for serialization.
@@ -113,6 +120,11 @@ class User extends Authenticatable
         {
             return abort(403,'Unauthorized action.');
         }
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
     }
 
         // public function teacher()

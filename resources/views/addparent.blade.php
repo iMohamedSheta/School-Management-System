@@ -6,7 +6,7 @@
 
 @section('Content')
 
-<livewire:add-parent>
+<livewire:add-user>
 
 @endsection
 

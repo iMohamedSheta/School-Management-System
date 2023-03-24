@@ -6,6 +6,8 @@
 use App\Actions\Fortify\CreateNewUser;
 use App\Http\Controllers\Classrooms\ClassroomController;
 use App\Http\Controllers\Grades\GradeController;
+use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserRoleController;
 use Illuminate\Support\Facades\Route;
@@ -44,6 +46,8 @@ use Laravel\Fortify\Http\Controllers\TwoFactorQrCodeController;
 use Laravel\Fortify\Http\Controllers\TwoFactorSecretKeyController;
 use Laravel\Fortify\Http\Controllers\VerifyEmailController;
 use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserController;
+use App\Http\Livewire\PostComponent;
+use App\Http\Livewire\PostShow;
 
 // This comment section is a description of the purpose of the file and how it is used.
 
@@ -103,6 +107,7 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
 
 
 
+
                             // Define a route group for grade-related pages
                             Route::group(['namespace' => 'Grades'],function()
                             {
@@ -122,7 +127,13 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
 
                     // Define a route for the application's homepage
                     Route::get('/',fn()=>view('layouts.master'))->name('master');
+                    Route::view('posts',"posts")->name('posts.index');
 
+                    Route::post('posts',[PostComponent::class,'uploadImage'])->name('posts.image-upload');
+                    Route::post('posts/save',[PostComponent::class,'savePost'])->name('posts.save');
+                    Route::delete('post/delete',[PostController::class,'destroy'])->name('posts.destroy');
+                    Route::get('post/{id}',[PostController::class,'index'])->name('post.show');
+                    Route::delete('notification/read',[NotificationController::class,'removeNewCommmentNotification'])->name('notificationNewComment.remove');
 
 
                 });

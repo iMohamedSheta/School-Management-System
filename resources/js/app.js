@@ -10,6 +10,61 @@ Alpine.plugin(focus);
 Alpine.start();
 import "flowbite/dist/flowbite";
 
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
+
+const locale = document.querySelector('meta[name="locale"]').getAttribute('content');
+
+
+class LaravelUploadAdapter {
+    constructor(loader) {
+        this.loader = loader;
+    }
+
+    upload() {
+        return this.loader.file.then(file => new Promise((resolve, reject) => {
+            let formData = new FormData();
+            formData.append('upload', file);
+
+            axios.post(imageUploadRoute ,formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            }).then(response => {
+                resolve({
+                    default: response.data.url
+                });
+            }).catch(error => {
+                reject(error.response.data.errors.upload);
+            });
+        }));
+    }
+}
+
+function CustomUploadAdapterPlugin(editor) {
+    editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
+        return new LaravelUploadAdapter(loader);
+    };
+}
+
+
+
+
+const editor = ClassicEditor.create(document.querySelector('#ckeditor'), {
+  // CKEditor configuration options
+  language: locale,
+  extraPlugins: [ CustomUploadAdapterPlugin ],
+
+}).then((editor) => {
+  console.log('Editor was initialized', editor);
+}).catch((error) => {
+  console.error(error);
+});
+
+
+
+
+
 
 //Rotate-90 for any icon have search-input and search-icon as class
 

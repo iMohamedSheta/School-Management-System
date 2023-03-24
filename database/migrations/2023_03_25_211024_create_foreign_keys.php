@@ -40,6 +40,24 @@ return new class extends Migration
             $table->foreign('Religion_Mother_id')->references('id')->on('religions');
 
         });
+
+        Schema::table('posts', function (Blueprint $table) {
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        });
+
+        Schema::table('post_upvotes', function (Blueprint $table) {
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        });
+        Schema::table('post_downvotes', function (Blueprint $table) {
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        });
+        Schema::table('post_comments', function (Blueprint $table) {
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+        });
+
     }
 
 
@@ -72,6 +90,21 @@ return new class extends Migration
             $table->dropForeign(['Nationality_Mother_id']);
             $table->dropForeign(['Blood_Type_Mother_id']);
             $table->dropForeign(['Religion_Mother_id']);
+        });
+        Schema::table('posts', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+        });
+        Schema::table('post_upvotes', function (Blueprint $table) {
+            $table->dropForeign(['post_id']);
+            $table->dropForeign(['user_id']);
+        });
+        Schema::table('post_downvotes', function (Blueprint $table) {
+            $table->dropForeign(['post_id']);
+            $table->dropForeign(['user_id']);
+        });
+        Schema::table('post_comments', function (Blueprint $table) {
+            $table->dropForeign(['post_id']);
+            $table->dropForeign(['user_id']);
         });
 
 
