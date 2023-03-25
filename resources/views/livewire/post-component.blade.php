@@ -150,27 +150,27 @@
     </div>
     <div class="px-5 py-2">
         <a href="#">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{$post->title}}</h5>
+                <h5 class="mb-2 text-2xl pb-2 border-b font-bold tracking-tight text-gray-900 dark:text-white">{{$post->title}}</h5>
         </a>
             <p class="mb-2 font-normal text-gray-700 dark:text-gray-400">
                 {!! preg_replace('/<img[^>]+>/i', '', $post->content) !!}
             </p>
     </div>
     <div class="px-4 py-1 flex justify-start">
-        <button wire:click="upvote({{$post->id}})" class="btn btn-dark px-2 py-3 btn-3xl flex items-center">
-            <i class="fa-sharp fa-solid fa-caret-up fa-2xl p-1 " style="font-size: 34px;"></i>
+        <button wire:click="upvote({{$post->id}})" class=" px-2 py-3 flex  focus:active:text-gray-800 focus:text-gray-800 items-center ">
+            <i class="fa-sharp fa-solid fa-caret-up fa-2xl p-1 " style="font-size: 65px;"></i>
                         <span class="sr-only">Icon description</span>
-            <div class="mx-2 inline" style="font-size:14px">
-            {{$post->count_upvotes}}
-            </div>
-        </button>
-        <button wire:click="downvote({{$post->id}})"  class="btn btn-primary px-2 py-3  mx-6 btn-3xl  flex items-center">
-            <i class="fa-sharp fa-solid fa-caret-down fa-2xl p-1" style="font-size:34px"></i>
+                    </button>
+                    <div class="ml-2 flex justify-center items-center " style="font-size:18px">
+                    {{$post->count_upvotes}}
+                    </div>
+        <button wire:click="downvote({{$post->id}})"  class=" px-1 py-3 mb-3    flex items-center focus:active:text-red-600 focus:text-red-600">
+            <i class="fa-sharp fa-solid fa-caret-down fa-2xl p-1" style="font-size:65px"></i>
             <span class="sr-only">Icon description</span>
-            <div class="mx-2 inline" style="font-size:14px">
-                {{$post->count_downvotes}}
-            </div>
         </button>
+        <div class="ml-2 flex justify-center items-center" style="font-size:18px">
+            {{$post->count_downvotes}}
+        </div>
     </div>
     <div class="px-5 py-1">
         <div class="border-t-2 mb-4"></div>
@@ -247,31 +247,31 @@
 
                         @if( (Auth::user()->id ==$comment->user->id) || (Auth::user()->id == $post->user->id) || (auth()->user()->isAdmin()) )
                         <div class="absolute top-0 {{ in_array(app()->getLocale(), ['ar', 'he', 'fa', 'ur']) ? 'left-0' : 'right-0'}} ">
-                            <button id="dropdownCommentbtn-{{$comment->id}}" data-dropdown-toggle="dropdownComment-{{$comment->id}}" class="inline-flex items-center p-4 text-sm font-medium text-center text-gray-900 bg-white rounded-lg focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button">
+                            <button id="dropdownCommentbtn-{{$comment->id}}" data-dropdown-toggle="dropdownComment-{{$comment->id}}" class="inline-flex pt-4 px-4 items-center  text-sm font-medium text-center text-gray-900 bg-white rounded-lg focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button">
                                 <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path></svg>
                             </button>
                             <!-- Dropdown comment menu -->
-                                <div id="dropdownComment-{{$comment->id}}" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCommentbtn-{{$comment->id}}">
-                                        <li>
-                                            <button data-modal-target="editcomment-modal-{{$comment->id}}" data-modal-toggle="editcomment-modal-{{$comment->id}}" class="block text-center w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{{ trans('main.edit') }}</button>
-                                        </li>
-
-                                    </ul>
-
-                                        <div class="">
-                                            <button type="button" wire:click='deleteComment({{$comment->id}})' class="block w-full px-4 py-2 text-sm rounded-b-lg text-white bg-red-600 hover:bg-red-500 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">{{trans('main.delete')}}</button>
-                                        </div>
-                                </div>
+                            <div id="dropdownComment-{{$comment->id}}" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-12 dark:bg-gray-700 dark:divide-gray-600">
+                                @if( (Auth::user()->id ==$comment->user->id))
+                                <ul class=" text-sm text-gray-700 dark:text-gray-200 " aria-labelledby="dropdownCommentbtn-{{$comment->id}}">
+                                    <li>
+                                        <button data-modal-target="editcomment-modal-{{$comment->id}}" data-modal-toggle="editcomment-modal-{{$comment->id}}" class="block text-center w-full px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i class="fa-solid fa-pencil "></i></button>
+                                    </li>
+                                </ul>
+                                @endif
+                                    <div class="">
+                                        <button type="button" wire:click='deleteComment({{$comment->id}})' class="block w-full px-4 py-3 text-sm rounded-b-lg text-white bg-red-600 hover:bg-red-500 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"><i class="fa-solid fa-trash "></i></button>
+                                    </div>
                             </div>
-                            @endif
+                        </div>
+                        @endif
                     </div>
 
                     </div>
 
                 </li>
 
-                        @if( (Auth::user()->id ==$comment->user->id) || (Auth::user()->id == $post->user->id) || (auth()->user()->isAdmin()) )
+                        @if( (Auth::user()->id == $comment->user->id))
                             <!-- edit comment modal -->
                             <div id="editcomment-modal-{{$comment->id}}" tabindex="-1" aria-hidden="true" class="fixed  top-0 left-0 right-0 z-999 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full">
                                     <div class="relative w-full h-full max-w-2xl md:h-auto">
@@ -283,13 +283,13 @@
                                             </button>
                                             <div class="px-6 py-6 lg:px-8">
                                                 <div>
-                                                    <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">{{ trans('main.edit-comment') }} </h3>
+                                                    <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white"><i class="fa-solid fa-pencil mx-1"></i> {{ trans('main.edit-comment') }}</h3>
                                                 </div>
                                                 <form class="space-y-6" action="#">
                                                     <div>
                                                         <textarea id="message" rows="4" class="block p-2.5  w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >{{$comment->comment}}</textarea>
                                                     </div>
-                                                    <button class="btn btn-dark w-full">{{trans('main.edit')}}</button>
+                                                    <button class="btn btn-dark w-full"><i class="fa-solid fa-pencil mx-1"></i> {{trans('main.edit')}} </button>
                                                 </form>
                                             </div>
                                         </div>

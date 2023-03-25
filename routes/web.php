@@ -101,8 +101,10 @@ use App\Http\Livewire\PostShow;
                         });
 
 
-                        Route::get('parent',fn()=>view('addparent'))->name('parent.index');
-                        Route::get('parent/add',fn()=>view('addparent'))->name('parent.add');
+                        Route::get('users/add',fn()=>view('addusers'))->name('users.add');
+                        Route::get('/parents/search', [SearchController::class, 'searchParents'])->name('parents.search');
+
+                        //Route::get('parent/add',fn()=>view('addparent'))->name('parent.add');
 
 
 

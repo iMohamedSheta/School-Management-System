@@ -58,6 +58,25 @@ return new class extends Migration
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
         });
 
+        Schema::table('teachers', function (Blueprint $table) {
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('specialization_id')->references('id')->on('specializations')->onDelete('cascade');
+            $table->foreign('gender_id')->references('id')->on('genders')->onDelete('cascade');
+            $table->foreign('nationality_id')->references('id')->on('nationalities');
+            $table->foreign('blood_type_id')->references('id')->on('type__bloods');
+            $table->foreign('religion_id')->references('id')->on('religions');
+        });
+        Schema::table('students', function (Blueprint $table) {
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('gender_id')->references('id')->on('genders')->onDelete('cascade');
+            $table->foreign('nationality_id')->references('id')->on('nationalities')->onDelete('cascade');
+            $table->foreign('blood_type_id')->references('id')->on('type__bloods')->onDelete('cascade');
+            $table->foreign('grade_id')->references('id')->on('grades')->onDelete('cascade');
+            $table->foreign('classroom_id')->references('id')->on('classrooms')->onDelete('cascade');
+            $table->foreign('parent_id')->references('id')->on('my_parents')->onDelete('cascade');
+            $table->foreign('religion_id')->references('id')->on('religions');
+        });
+
     }
 
 
@@ -105,6 +124,23 @@ return new class extends Migration
         Schema::table('post_comments', function (Blueprint $table) {
             $table->dropForeign(['post_id']);
             $table->dropForeign(['user_id']);
+        });
+        Schema::table('teachers', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+            $table->dropForeign(['specialization_id']);
+            $table->dropForeign(['gender_id']);
+            $table->dropForeign(['nationality_id']);
+            $table->dropForeign(['blood_type_id']);
+            $table->dropForeign(['religion_id']);
+        });
+        Schema::table('students', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+            $table->dropForeign(['gender_id']);
+            $table->dropForeign(['nationality_id']);
+            $table->dropForeign(['grade_id']);
+            $table->dropForeign(['classroom_id']);
+            $table->dropForeign(['parent_id']);
+            $table->dropForeign(['religion_id']);
         });
 
 
