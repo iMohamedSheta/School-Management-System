@@ -23,6 +23,7 @@ return [
     'users'=>'Users',
     'posts.index'=>'Discussions',
     'post.show'=>'Discussion',
+    'users.add'=>'Register Users',
 
 
 

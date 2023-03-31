@@ -55,12 +55,12 @@ class ClassroomFormRepeater extends Component
 
         // Loop through the fields from the repeater and add them to the $data array
         foreach ($this->fields as $index => $field) {
+            // Validate the field data
+            if (!empty($field['name']) && $field['grade'] && $grade !== trans('main.select-grade')) {
             $name = $field['name'];
             $description = $field['description'];
             $grade = $field['grade'];
 
-            // Validate the field data
-            if (!empty($name) && isset($grade) && $grade !== trans('main.select-grade')) {
                 $data[] = [
                     'name' => $name,
                     'description' => $description,

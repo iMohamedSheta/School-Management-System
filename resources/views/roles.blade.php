@@ -18,8 +18,8 @@
             <form method="post" action="{{ route("user-role.assign") }}">
                 @csrf
                 <label for="search_users" class="my-2">{{__('main.user')}} </label>
-                    <div class="relative">
-                        <input type="text" id="search_users" name="search" class="w-full search-input py-2 pl-10 pr-6 leading-tight text-gray-700 bg-white border border-gray-300 rounded-lg shadow-md appearance-none focus:outline-none focus:shadow-outline" autocomplete="off"  placeholder="{{__('main.select-user')}}">
+                   <div class="relative">
+                         <input type="text" id="search_users" name="search" class="w-full search-input py-2 pl-10 pr-6 leading-tight text-gray-700 bg-white border border-gray-300 rounded-lg shadow-md appearance-none focus:outline-none focus:shadow-outline" autocomplete="off"  placeholder="{{__('main.select-user')}}">
                         <div id="search-icon" class="absolute top-0 search-icon left-0 mt-2 ml-2 text-gray-400 cursor-pointer transform transition-transform ">
                         <i class="fas fa-search"></i>
                     </div>

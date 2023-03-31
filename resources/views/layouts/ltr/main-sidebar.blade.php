@@ -3,7 +3,7 @@
         <i class="absolute top-0 right-0 hidden p-4 opacity-50 cursor-pointer fas fa-times text-slate-400 xl:hidden" sidenav-close></i>
         <a class="block px-8 py-6 m-0 text-sm whitespace-nowrap text-slate-700" href="{{route('master')}}" target="_blank">
             <img src={{asset("assets/img/logo-ct.png")}} class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-8" alt="main_logo" />
-            <div id="sidebariconOnly1">
+            <div id="sidebariconOnly1" class="sidebar-icon">
                 <span class="ml-1 font-semibold transition-all duration-200 ease-nav-brand ">{{ config('app.name') }}</span>
             </div>
         </a>
@@ -20,7 +20,7 @@
                         {{ Route::currentRouteName() == "master" ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }}">
                         <i class="fa-solid fa-house {{ Route::currentRouteName() == 'master' ? 'text-white' : ''}}"></i>
                     </div>
-                    <div id="sidebariconOnly6">
+                    <div id="sidebariconOnly6" class="sidebar-icon">
                         <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.dashboard")}}</span>
                     </div>
                 </a>
@@ -34,7 +34,7 @@
                 <div class="{{ Route::currentRouteName() == 'profile.show' ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
                     <i class="fas fa-user-shield  {{Route::currentRouteName() == 'profile.show' ? 'text-white' : ''}}"></i>
                 </div>
-                <div id="sidebariconOnly7">
+                <div id="sidebariconOnly7" class="sidebar-icon">
 
                     <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.profile")}}</span>
                 </div>
@@ -48,7 +48,7 @@
                 <div class="{{ Route::currentRouteName() == 'user-role.index' ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
                     <i class="fas fa-user-shield  {{Route::currentRouteName() == 'user-role.index' ? 'text-white' : ''}}"></i>
                 </div>
-                <div id="sidebariconOnly8">
+                <div id="sidebariconOnly8" class="sidebar-icon">
 
                     <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.roles")}}</span>
                 </div>
@@ -63,7 +63,7 @@
                 <div class="{{ Route::currentRouteName() == 'grade' ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
                     <i class="fa-solid fa-graduation-cap {{Route::currentRouteName() == 'grade' ? 'text-white' : ''}}"></i>
                 </div>
-                <div id="sidebariconOnly5">
+                <div id="sidebariconOnly5" class="sidebar-icon">
 
                     <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.grades")}}</span>
                 </div>
@@ -76,7 +76,7 @@
                 <div class="{{ Route::currentRouteName() == "classrooms.index" ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
                     <i class="fas fa-chalkboard-teacher  {{Route::currentRouteName() == "classrooms.index" ? 'text-white' : ''}}"></i>
                 </div>
-                <div id="sidebariconOnly9">
+                <div id="sidebariconOnly9" class="sidebar-icon">
 
                     <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.classes")}}</span>
                 </div>
@@ -90,7 +90,7 @@
                 <div class="{{ Route::currentRouteName() == 'welcome' ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
                     <i class="fa-solid fa-house {{ Route::currentRouteName() == 'welcome' ? 'text-white' : ''}}"></i>
                 </div>
-                <div id="sidebariconOnly2">
+                <div id="sidebariconOnly2" class="sidebar-icon">
                     <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.classes")}}</span>
                     <i  id="arrowicon" class="fa-solid fa-chevron-down px-3  shrink-0"></i>
                 </div>
@@ -102,7 +102,7 @@
                                 <div class="{{ Route::currentRouteName() == 'welcome' ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
                                 <i class="fa-solid fa-house {{ Route::currentRouteName() == 'welcome' ? 'text-white' : ''}}"></i>
                                 </div>
-                                <div id="sidebariconOnly3">
+                                <div id="sidebariconOnly3" class="sidebar-icon">
                                     <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.classes")}}</span>
                                 </div>
                             </a>
@@ -112,7 +112,7 @@
                                 <div class="{{ Route::currentRouteName() == 'welcome' ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
                                 <i class="fa-solid fa-house {{ Route::currentRouteName() == 'welcome' ? 'text-white' : ''}}"></i>
                                 </div>
-                                <div id="sidebariconOnly4">
+                                <div id="sidebariconOnly4" class="sidebar-icon">
                                     <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.classes")}}</span>
                                 </div>
                             </a>

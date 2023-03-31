@@ -6,14 +6,15 @@ window.Alpine = Alpine;
 import "@fortawesome/fontawesome-free/css/all.css";
 import 'simplebar/dist/simplebar.min.css';
 Alpine.plugin(focus);
+import flatpickr from "flatpickr";
+
 
 Alpine.start();
-import "flowbite/dist/flowbite";
 
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-
-
+import "flowbite/dist/flowbite";
 const locale = document.querySelector('meta[name="locale"]').getAttribute('content');
+
 
 
 class LaravelUploadAdapter {
@@ -107,62 +108,50 @@ listItems.forEach(function(listItem) {
 
 
 //collapse sidebar for and show only icon
+let sidebariconOnly = document.getElementById("sidebaricononlys");
 
-let sidebariconOnly =document.getElementById("sidebaricononlys");
-
-    sidebariconOnly.onclick = function myFunction() {
-        var i = 1;
-        var sidebarIcon;
-        while ((sidebarIcon = document.getElementById('sidebariconOnly' + i)) !== null) {
-        if (sidebarIcon.style.display === "none") {
-            sidebarIcon.style.display = "inline-block";
-            aside.style.background = "transparent";
-            if (typeof mainRight === 'undefined') {
-            mainLeft.style.marginLeft = "20vw";
-            } else {
-            mainRight.style.marginRight = "20vw";
-            }
-        } else {
-            sidebarIcon.style.display = "none";
-            aside.style.background = "white";
-            if (typeof mainRight === 'undefined') {
-            mainLeft.style.marginLeft = "10vw";
-            } else {
-            mainRight.style.marginRight = "10vw";
-            }
-        }
-        i++;
-        }
+sidebariconOnly.onclick = function myFunction() {
+  var icons = document.getElementsByClassName("sidebar-icon");
+  for (var i = 0; i < icons.length; i++) {
+    var icon = icons[i];
+    if (icon.style.display === "none") {
+      icon.style.display = "inline-block";
+      aside.style.background = "transparent";
+      if (typeof mainRight === 'undefined') {
+        mainLeft.style.marginLeft = "20vw";
+      } else {
+        mainRight.style.marginRight = "20vw";
+      }
+    } else {
+      icon.style.display = "none";
+      aside.style.background = "white";
+      if (typeof mainRight === 'undefined') {
+        mainLeft.style.marginLeft = "10vw";
+      } else {
+        mainRight.style.marginRight = "10vw";
+      }
     }
+  }
+}
 
 
-
-
-    // Open Sidebar after click on the collapsed sidebar
-
-
+    //expand sidebar when click on white sidebar
     aside.onclick = function myFunction() {
         if (window.innerWidth > 1024) {
-        var i = 1;
-        while (true) {
-            var sidebariconOnlyId = "sidebariconOnly" + i;
-            var sidebariconOnlyElement = document.getElementById(sidebariconOnlyId);
-            if (!sidebariconOnlyElement) {
-            break;
-            }
-            sidebariconOnlyElement.style.display = "inline-block";
-            i++;
-        }
-        aside.style.background = "transparent";
-        if (typeof mainRight === 'undefined') {
+          var collapsedSidebars = document.getElementsByClassName("sidebar-icon");
+          for (var i = 0; i < collapsedSidebars.length; i++) {
+            var collapsedSidebar = collapsedSidebars[i];
+            collapsedSidebar.style.display = "inline-block";
+          }
+          aside.style.background = "transparent";
+          if (typeof mainRight === 'undefined') {
             mainLeft.style.marginLeft = "20vw";
-        } else {
+          } else {
             mainRight.style.marginRight = "20vw";
+          }
         }
-        }
-    }
-
-
+      }
+      
 
 
 

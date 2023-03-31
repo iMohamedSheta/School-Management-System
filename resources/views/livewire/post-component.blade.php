@@ -150,7 +150,7 @@
     </div>
     <div class="px-5 py-2">
         <a href="#">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{$post->title}}</h5>
+                <h5 class="mb-2 text-2xl pb-2 border-b font-bold tracking-tight text-gray-900 dark:text-white">{{$post->title}}</h5>
         </a>
             <p class="mb-2 font-normal text-gray-700 dark:text-gray-400">
                 {!! preg_replace('/<img[^>]+>/i', '', $post->content) !!}

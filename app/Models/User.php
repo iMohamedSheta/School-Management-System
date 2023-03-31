@@ -121,35 +121,34 @@ class User extends Authenticatable implements HasMedia
             return abort(403,'Unauthorized action.');
         }
     }
+    public function teacher()
+    {
+        if ($this->isTeacher())
+        {
+            return $this->hasOne(Teacher::class)->withDefault();
+        }
+        else
+        {
+            return abort(403,'Unauthorized action.');
+        }
+    }
+    public function student()
+    {
+        if ($this->isStudent())
+        {
+            return $this->hasOne(Student::class)->withDefault();
+        }
+        else
+        {
+            return abort(403,'Unauthorized action.');
+        }
+    }
 
     public function posts()
     {
         return $this->hasMany(Post::class);
     }
 
-        // public function teacher()
-    // {
-    //     return $this->hasOne(Teacher::class);
-    // }
-
-    // public function student()
-    // {
-    //     return $this->hasOne(Student::class);
-    // }
-
-//     public function createInfo($info)
-// {
-//     if ($this->isParent()) {
-//         $this->parent()->create($info);
-//      }// elseif ($this->isTeacher()) {
-//     //     $this->teacher()->create($info);
-//     // } elseif ($this->isStudent()) {
-//     //     $this->student()->create($info);
-//     // }
-//     // elseif ($this->isAdmin()) {
-//     //     $this->admin()->create($info);
-//     // }
-// }
 
 
 

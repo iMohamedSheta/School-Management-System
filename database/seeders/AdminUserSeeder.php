@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\MyParent;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -184,6 +185,7 @@ class AdminUserSeeder extends Seeder
             foreach ($Parents as $Parent) {
                 $user = User::create($Parent);
                 $user->roles()->attach($ParentRole);
+                MyParent::create(["user_id"=>$user->id]);
             }
 
         }
