@@ -39,9 +39,27 @@
                         <input type="submit" value="Search" style="display: none;">
                         <div id="search-results" class="bg-white border border-gray-300 rounded-lg my-2 w-full"></div>
                     </form>
+                    <div>
+                        <form method="post" action="{{route('classroom.filter')}}" id="classroom-form">
+                            @csrf
+                            <label for="underline_select" class="sr-only">Underline select</label>
+                            <select id="grade-select" name="Grade_id" required class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+
+                                <option selected disabled>{{trans('main.select-grade')}}</option>
+                                <option value="AllGrades">{{trans('main.all-grades')}}</option>
+                                @forelse ($grades as $grade )
+                                <option value="{{$grade->id}}">{{$grade->name}}</option>
+                                @empty
+                                <option value="">{{ trans('main.no-grade') }}</option>
+                                @endforelse
+                            </select>
+                        </form>
+                    </div>
                 </div>
 
+
                 </div>
+
                 <table class="min-w-full divide-y divide-gray-200" id="classrooms-table">
                     <thead class="bg-gray-50">
                         <tr>
@@ -52,19 +70,19 @@
                                 </div>
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center" style="max-width: 150px;">
-                                {{ __('ID') }}
+                                {{ __('#') }}
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center" style="max-width: 150px;">
-                                {{ __('Name') }}
+                                {{ __('main.classroomname') }}
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center" style="max-width: 150px;">
-                                {{ __('Description') }}
+                                {{ __('main.description') }}
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center" style="max-width: 150px;">
-                                {{ __('Grade') }}
+                                {{ __('main.grade') }}
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center" style="max-width: 150px;">
-                                {{ __('Actions') }}
+                                {{ __('main.actions') }}
                             </th>
 
                         </tr>
@@ -79,19 +97,19 @@
                                         <input id="classroom-{{ $classroom->id }}-checkbox" type="checkbox" value="{{ $classroom->id }}" style="color:#cb0c9f;" class="w-4 h-4  bg-gray-100 border-gray-300 rounded focus:ring-0   dark:ring-offset-gray-800 focus:ring-1 dark:bg-gray-700 dark:border-gray-600">
                                     </div>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-center overflow-auto" style="max-width: 150px;">
-                                    {{ $classroom->id }}
+                                <td class="px-6 py-3 whitespace-nowrap text-center overflow-auto simplebar " style="max-width: 150px;">
+                                    {{ $loop->iteration }}
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-center overflow-auto" style="max-width: 150px;">
+                                <td class="px-6 py-3 whitespace-nowrap text-center overflow-auto simplebar" style="max-width: 150px;">
                                     {{ $classroom->name }}
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-center overflow-auto" style="max-width: 150px;">
+                                <td class="px-6 py-3 whitespace-nowrap text-center overflow-auto simplebar" style="max-width: 150px;">
                                     {{ $classroom->description ?? '-' }}
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-center overflow-auto" style="max-width: 150px;">
+                                <td class="px-6 py-3 whitespace-nowrap text-center overflow-auto simplebar" style="max-width: 150px;">
                                     {{ $classroom->grade->name ?? '-' }}
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap flex justify-center">
+                                <td class="px-6 py-3 whitespace-nowrap flex justify-center ">
                                     <button  data-modal-target="grade-modal{{$classroom->id}}"   data-modal-toggle="grade-modal{{$classroom->id}}"
                                     onclick="document.getElementById('edit-classroom-id').value = '{{ $classroom->id }}';"
                                         class="btn btn-dark btn-sm  mx-2">{{ __('main.edit') }}
@@ -159,7 +177,7 @@
                         @empty
                             <tr>
                                 <td colspan="4" class="px-6 py-4 whitespace-nowrap">
-                                    {{ __('No classrooms found.') }}
+                                    {{ __('main.no-classrooms') }}
                                 </td>
                             </tr>
                         @endforelse
@@ -220,9 +238,9 @@
                             <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">{{trans('main.delete-classrooms-title')}}</h3>
                             <input class="text" type="hidden" id="selected_classrooms_ids" name="selected_classrooms_ids" value="">
                             <button data-modal-hide="grade-modal-deleteAll" type="submit" id="delete-selected-btn" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
-                                {{trans('main.delete-classrooms-confirm')}}
+                                {{trans('main.confirm')}}
                             </button>
-                            <button data-modal-hide="grade-modal-deleteAll" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">{{trans('main.delete-classrooms-cancel')}}</button>
+                            <button data-modal-hide="grade-modal-deleteAll" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">{{trans('main.cancel')}}</button>
                         </div>
                         </form>
                     </div>
@@ -233,8 +251,8 @@
 
 
 
+{{-- Search Classrooms --}}
 <script type="module">
-
     import { setupSearchClassrooms } from "{{ asset('search.js') }}";
 
     // Get the input elements
@@ -243,10 +261,29 @@
 
     // Add Search for Users Function
     setupSearchClassrooms(searchInput);
-
 </script>
 
+{{-- Filter Classrooms --}}
+<script>
+    // Get references to the select element and the form element
+    var gradeSelect = document.getElementById('grade-select');
+    var classroomForm = document.getElementById('classroom-form');
 
+    // Add an event listener to the select element that listens for changes
+    gradeSelect.addEventListener('change', function() {
+        // Submit the form when the select element changes
+        classroomForm.submit();
+        // Store the selected value in localStorage
+        localStorage.setItem('selectedGrade', this.value);
+    });
+
+    // When the page loads, check if there is a value stored in localStorage
+    var selectedGrade = localStorage.getItem('selectedGrade');
+    if (selectedGrade) {
+        // If there is a value stored, set the value of the select element to that value
+        gradeSelect.value = selectedGrade;
+    }
+</script>
 
 
 

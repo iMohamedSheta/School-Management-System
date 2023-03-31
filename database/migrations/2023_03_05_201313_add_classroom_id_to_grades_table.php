@@ -11,15 +11,13 @@ class AddClassroomIdToGradesTable extends Migration
     {
         Schema::table('grades', function (Blueprint $table) {
             $table->unsignedBigInteger('classroom_id')->nullable();
-            $table->foreign('classroom_id')->references('id')->on('classrooms');
         });
     }
 
     public function down()
     {
         Schema::table('grades', function (Blueprint $table) {
-            $table->dropForeign(['classroom_id']);
-            $table->dropColumn('classroom_id');
+                $table->dropColumn('classroom_id');
         });
     }
 }

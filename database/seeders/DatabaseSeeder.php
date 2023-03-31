@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,7 +13,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\User::factory(500)->create();
+
+
+        $this->call(BloodTableSeeder::class);
+        $this->call(GradeSeeder::class);
+        $this->call(NationalitieTableSeeder::class);
+        $this->call(ReligionTableSeeder::class);
+        $this->call(RoleSeeder::class);
+        $this->call(AdminUserSeeder::class);
+
+
+
+
+
+        // \App\Models\User::factory(500)->create();
+
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

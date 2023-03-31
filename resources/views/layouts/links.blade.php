@@ -11,6 +11,7 @@
     {{-- Jquery CDN --}}
     {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
 
+
         @livewireStyles()
         @powerGridStyles()
 
@@ -21,9 +22,7 @@
         @vite(['resources/css/app.css','resources/js/app.js'])
 
 
-        <script>
-            window.onrea
-        </script>
+
 
 
 

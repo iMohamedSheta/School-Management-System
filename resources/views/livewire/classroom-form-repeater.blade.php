@@ -1,5 +1,6 @@
 
 <form class="space-y-6" wire:submit.prevent="store" method="post">
+    @method('put')
     @csrf
     <div class="container mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">

@@ -54,5 +54,36 @@ class UserRoleController extends Controller
 
 
 
+    public function test()
+    {
+        $user= User::find(4);
+        $parent = $user->parent()->first();
+        $name=$parent->Name_Father;
+        // $user->parent()->create(
+        //     [
+        //         'Name_Father'=>"LOL We did it",
+        //         'National_ID_Father'=> "15454",
+        //         'Passport_ID_Father'=>"484848",
+        //         'Phone_Father'=>"54548",
+        //         'Job_Father'=>'sasa',
+        //         'Nationality_Father_id'=>'2',
+        //         'Blood_Type_Father_id'=>'2',
+        //         'Religion_Father_id'=>'2',
+        //         'Address_Father'=>'sas',
+        //         'Name_Mother'=>'mas',
+        //         'National_ID_Mother'=>'mas',
+        //         'Passport_ID_Mother'=>'mas',
+        //         'Phone_Mother'=>'mas',
+        //         'Job_Mother'=>'mas',
+        //         'Nationality_Mother_id'=>'2',
+        //         'Blood_Type_Mother_id'=>'2',
+        //         'Religion_Mother_id'=>'2',
+        //         'Address_Mother'=>'2',
+        //     ]);
+
+            return $name;
+    }
+
+
 
 }

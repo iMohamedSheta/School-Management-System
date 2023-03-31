@@ -39,8 +39,9 @@ class ClassroomFormRepeater extends Component
         $description = $this->description;
         $grade = $this->grade;
 
+
         // Validate the main form data
-        if (!empty($name) && !empty($grade)) {
+        if (!empty($name) && isset($grade) && $grade  !== trans('main.select-grade')) {
             $data[] = [
                 'name' => $name,
                 'description' => $description,
@@ -59,7 +60,7 @@ class ClassroomFormRepeater extends Component
             $grade = $field['grade'];
 
             // Validate the field data
-            if (!empty($name) && !empty($grade)) {
+            if (!empty($name) && isset($grade) && $grade !== trans('main.select-grade')) {
                 $data[] = [
                     'name' => $name,
                     'description' => $description,

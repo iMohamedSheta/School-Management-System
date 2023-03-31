@@ -4,11 +4,66 @@ import Alpine from 'alpinejs';
 import focus from '@alpinejs/focus';
 window.Alpine = Alpine;
 import "@fortawesome/fontawesome-free/css/all.css";
-
+import 'simplebar/dist/simplebar.min.css';
 Alpine.plugin(focus);
 
 Alpine.start();
 import "flowbite/dist/flowbite";
+
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
+
+const locale = document.querySelector('meta[name="locale"]').getAttribute('content');
+
+
+class LaravelUploadAdapter {
+    constructor(loader) {
+        this.loader = loader;
+    }
+
+    upload() {
+        return this.loader.file.then(file => new Promise((resolve, reject) => {
+            let formData = new FormData();
+            formData.append('upload', file);
+
+            axios.post(imageUploadRoute ,formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            }).then(response => {
+                resolve({
+                    default: response.data.url
+                });
+            }).catch(error => {
+                reject(error.response.data.errors.upload);
+            });
+        }));
+    }
+}
+
+function CustomUploadAdapterPlugin(editor) {
+    editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
+        return new LaravelUploadAdapter(loader);
+    };
+}
+
+
+
+
+const editor = ClassicEditor.create(document.querySelector('#ckeditor'), {
+  // CKEditor configuration options
+  language: locale,
+  extraPlugins: [ CustomUploadAdapterPlugin ],
+
+}).then((editor) => {
+  console.log('Editor was initialized', editor);
+}).catch((error) => {
+  console.error(error);
+});
+
+
+
+
 
 
 //Rotate-90 for any icon have search-input and search-icon as class
@@ -28,23 +83,24 @@ searchInput.addEventListener('blur', function() {
 });
 
 
-//Arrow Action for sidbar
-var arrowicon = document.getElementById("arrowicon");
-var listopennavbar =document.getElementById("listopennavbar");
 
-let rotateVariable='';
+var listItems = document.querySelectorAll("#aside .listopennavbar");
 
-listopennavbar.onclick=function myFunction() {
+listItems.forEach(function(listItem) {
+  var arrowIcon = listItem.querySelector(".arrowicon");
+  var isOpen = false;
 
-    if(rotateVariable == ''){
-        rotateVariable ="rotate-180";
+  listItem.addEventListener("click", function() {
+    isOpen = !isOpen;
+
+    if (isOpen) {
+      arrowIcon.classList.add("rotate-180");
+    } else {
+      arrowIcon.classList.remove("rotate-180");
     }
-    else{
-        rotateVariable = '';
-    }
-    arrowicon.setAttribute('class',rotateVariable +" fa-solid fa-chevron-down px-3 shrink-0 transition-transform duration-200");
+  });
+});
 
-}
 
 
 

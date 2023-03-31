@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Role;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -17,8 +18,11 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         Registered::class => [
             SendEmailVerificationNotification::class,
+            AttachUserRole::class,
         ],
     ];
+
+
 
     /**
      * Register any events for your application.
@@ -34,5 +38,15 @@ class EventServiceProvider extends ServiceProvider
     public function shouldDiscoverEvents(): bool
     {
         return false;
+    }
+}
+
+class AttachUserRole
+{
+    public function __invoke(Registered $event)
+    {
+        $user = $event->user;
+        $role = Role::find(request('role'));
+        $user->roles()->attach($role);
     }
 }

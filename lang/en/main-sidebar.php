@@ -16,6 +16,13 @@ return [
     'user-role.index' => 'Users Roles',
     'profile.show' => 'Profile',
     "classrooms.index"=>'Classrooms',
+    'parent'=>'Parents',
+    'parent.index'=>'Parents',
+    'parent.add'=>'Add Parents',
+    'register'=>'Register Users',
+    'users'=>'Users',
+    'posts.index'=>'Discussions',
+    'post.show'=>'Discussion',
 
 
 

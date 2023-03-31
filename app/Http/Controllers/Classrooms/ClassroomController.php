@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Classroom;
 use App\Models\Grade;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
 class ClassroomController extends Controller
@@ -116,8 +117,20 @@ class ClassroomController extends Controller
 
             return redirect()->back()->with('error', trans('alert.error'));
 
-
     }
 
+
+
+    public function filterGrades(Request $request)
+    {
+        $grade_id = $request->Grade_id;
+        if($grade_id == "AllGrades")
+        {
+            return Redirect::route('classrooms.index');
+        }
+        $grades = Grade::all();
+        $classrooms= Classroom::select('*')->where('grade_id',$grade_id)->paginate();
+        return view("classrooms",compact('grades','classrooms'));
+    }
 
 }

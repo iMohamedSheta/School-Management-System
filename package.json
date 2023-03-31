@@ -6,8 +6,10 @@
     },
     "devDependencies": {
         "@alpinejs/focus": "^3.10.5",
+        "@ckeditor/ckeditor5-build-classic": "^36.0.1",
         "@tailwindcss/forms": "^0.5.2",
         "@tailwindcss/typography": "^0.5.0",
+        "@types/simplebar": "^5.3.3",
         "alpinejs": "^3.0.6",
         "autoprefixer": "^10.4.7",
         "axios": "^1.1.2",
@@ -17,7 +19,9 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "@ckeditor/ckeditor5-alignment": "^36.0.1",
         "@fortawesome/fontawesome-free": "^6.3.0",
-        "flowbite": "^1.6.3"
+        "flowbite": "^1.6.3",
+        "simplebar": "^6.2.1"
     }
 }
