@@ -24,6 +24,9 @@ return [
     'posts.index'=>'Discussions',
     'post.show'=>'Discussion',
     'users.add'=>'Register Users',
+    'students.index'=>"Students",
+    'students'=>"Students",
+    'student.info'=>"Student information",
 
 
 

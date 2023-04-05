@@ -4,6 +4,7 @@
 
 
 @extends('layouts.master')
+@section('Pagetitle',"Classrooms")
 
 @section('Content')
 
@@ -18,7 +19,7 @@
                 <!-- Modal toggle to add new grade -->
                 <div class="flex items-center">
                     <div class="btn btn-sm btn-dark fs:hidden sm:block" data-modal-target="grade-modal"  data-modal-toggle="grade-modal" >
-                            {{ trans('main.add-classroom') }}
+                        <i class="fa-solid fa-pen mx-1"></i>{{ trans('main.add-classroom') }}
                     </div>
                     {{-- Phone Button with icon --}}
                     <div class="btn btn-sm btn-dark fs:block sm:hidden px-3 py-2 "  data-modal-target="grade-modal"  data-modal-toggle="grade-modal" >
@@ -26,7 +27,7 @@
                     </div>
 
                     <div class="btn btn-sm btn-danger mx-2" data-modal-target="grade-modal-deleteAll" id="deleteAllbtn" hidden  data-modal-toggle="grade-modal-deleteAll">
-                            {{ trans('main.delete-selected') }}
+                        <i class="fa-solid fa-trash text-white hover:text-whitesmoke mx-1"></i>  {{ trans('main.delete-selected') }}
                     </div>
                 </div>
 
@@ -60,7 +61,7 @@
 
                 </div>
 
-                <table class="min-w-full divide-y divide-gray-200" id="classrooms-table">
+                <table class="min-w-full divide-y divide-gray-200" id="multiselect-table">
                     <thead class="bg-gray-50">
                         <tr>
                             <th>
@@ -88,7 +89,7 @@
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
-                        <div id="classrooms-table">
+                        <div id="multiselect-table">
                         @forelse ($classrooms as $classroom)
                             <tr>
                                 <td>
@@ -111,8 +112,8 @@
                                 </td>
                                 <td class="px-6 py-3 whitespace-nowrap flex justify-center ">
                                     <button  data-modal-target="grade-modal{{$classroom->id}}"   data-modal-toggle="grade-modal{{$classroom->id}}"
-                                    onclick="document.getElementById('edit-classroom-id').value = '{{ $classroom->id }}';"
-                                        class="btn btn-dark btn-sm  mx-2">{{ __('main.edit') }}
+                                    onclick="document.getElementById('edit-classroom-id').value = '{{ $classroom->id }}';" class="mx-4">
+                                    <i class="fa-sharp fa-solid fa-pen-to-square fa-lg hover:text-gray-800"></i>
                                     </button>
 
 
@@ -170,7 +171,7 @@
                                     <form action="{{ route('classroom.destroy', $classroom) }}" method="POST" class="inline">
                                         @csrf
                                         @method('DELETE')
-                                        <button  class="btn btn-danger btn-sm mx-2">{{ __('main.delete') }}</button>
+                                        <button class="mx-4 my-1"><i class="fa-solid fa-trash text-red-600 hover:text-red-500 fa-lg"></i></button>
                                     </form>
                                 </td>
                             </tr>
@@ -236,7 +237,7 @@
                         <div class="p-6 text-center">
                             <svg aria-hidden="true" class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">{{trans('main.delete-classrooms-title')}}</h3>
-                            <input class="text" type="hidden" id="selected_classrooms_ids" name="selected_classrooms_ids" value="">
+                            <input class="text" type="hidden" id="selected_ids" name="selected_classrooms_ids" value="">
                             <button data-modal-hide="grade-modal-deleteAll" type="submit" id="delete-selected-btn" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
                                 {{trans('main.confirm')}}
                             </button>

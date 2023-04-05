@@ -32,7 +32,9 @@ return
     'no-grade'=>'There is no Grades.',
     'edit'=>'Edit',
     'search'=>"Search",
-    'delete-classrooms-title' => 'Are you sure you want to delete these selected classrooms?',
+    'delete-classrooms-title' => 'Are you sure you want to delete these selected Classrooms?',
+    'delete-students-title' => 'Are you sure you want to delete these selected Students?',
+    'delete-student-title' => 'Are you sure you want to delete Student :name ?',
     'confirm' => 'Yes, I\'m sure',
     'cancel' => 'No, cancel',
     'all-grades'=>'All Grades',
@@ -92,6 +94,10 @@ return
     'select-classroom'=>"Select Classroom",
     'select-grade'=>"Select Grade",
     'search-parent'=>'Search Parent',
+    'avatar'=> "Avatar",
+    'studentname'=>"Student Name",
+    'classroom'=>"Classroom",
+    'no-students'=>"There is no registered Students.",
 
 
 

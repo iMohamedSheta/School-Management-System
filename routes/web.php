@@ -8,11 +8,11 @@ use App\Http\Controllers\Classrooms\ClassroomController;
 use App\Http\Controllers\Grades\GradeController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserRoleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\FormRepeater;
-use Barryvdh\Debugbar\Facades\Debugbar;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +48,7 @@ use Laravel\Fortify\Http\Controllers\VerifyEmailController;
 use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserController;
 use App\Http\Livewire\PostComponent;
 use App\Http\Livewire\PostShow;
+use App\Http\Livewire\StudentsTable;
 
 // This comment section is a description of the purpose of the file and how it is used.
 
@@ -103,6 +104,11 @@ use App\Http\Livewire\PostShow;
 
                         Route::get('users/add',fn()=>view('addusers'))->name('users.add');
                         Route::get('/parents/search', [SearchController::class, 'searchParents'])->name('parents.search');
+                        Route::get('students',[StudentController::class,"index"])->name('students.index');
+
+                        Route::get('student/information/{id}',[StudentController::class,"studentInfoView"])->name('student.info');
+                        Route::delete('student/delete',[StudentController::class,"destroy"])->name('student.destroy');
+                        Route::delete('students/delete',[StudentController::class,"deleteSelected"])->name('students.selected.destroy');
 
                         //Route::get('parent/add',fn()=>view('addparent'))->name('parent.add');
 

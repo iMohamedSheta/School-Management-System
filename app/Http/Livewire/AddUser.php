@@ -193,20 +193,21 @@ class AddUser extends Component
 
     public function insertParentInfo()
     {
+
         $validatedData = $this->validate([
             'user_created_id' => 'required|exists:users,id',
             'Name_Father' => 'required|string',
-            'National_ID_Father' => "required_if:Passport_ID_Father,null",
-            'Passport_ID_Father' => 'required_if:National_ID_Father,null',
-            'Phone_Father' => 'required',
+            'National_ID_Father' => "required_if:Passport_ID_Father,Null",
+            'Passport_ID_Father' => 'required_if:National_ID_Father,Null',
+            'Phone_Father' => 'required|integer',
             'Address_Father' => 'required',
             'Nationality_Father_id' => 'required',
             'Religion_Father_id' => 'required',
 
             'Name_Mother' => 'required|string',
-            'National_ID_Mother' => "required_if:Passport_ID_Mother,null",
-            'Passport_ID_Mother' => 'required_if:National_ID_Mother,null',
-            'Phone_Mother' => 'required',
+            'National_ID_Mother' => "required_if:Passport_ID_Mother,Null",
+            'Passport_ID_Mother' => 'required_if:National_ID_Mother,Null',
+            'Phone_Mother' => 'required|integer',
             'Address_Mother' => 'required',
             'Nationality_Mother_id' => 'required',
             'Religion_Mother_id' => 'required',

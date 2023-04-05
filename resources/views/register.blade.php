@@ -4,7 +4,6 @@
 
 
 @extends("layouts.master")
-@section('Pagetitle','Add Users')
 @section('Content')
 <div class="pb-14 pt-7 flex bg-white sm:rounded-lg shadow-xl">
 <div class="block px-[10%]  mt-[5%] ">

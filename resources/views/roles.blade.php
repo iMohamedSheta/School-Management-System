@@ -4,6 +4,7 @@
 
 
 @extends('layouts.master')
+@section('Pagetitle',"Roles")
 
 @section('Content')
 <!-- The form is wrapped in a flex container which centers the content horizontally. -->

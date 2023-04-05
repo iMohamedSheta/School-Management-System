@@ -19,6 +19,7 @@ return
     'error-create-classrooms'=> "Sorry, we were unable to create your classrooms. Please try again later or contact support for assistance.",
     'update_classroom_success' => 'Success! Your classrooms have been updated successfully.',
     'delete_classroom_success' => 'Success! Your classroom :name have been deleted successfully.',
+    'delete_student_success' => 'Success! Student :name have been deleted successfully.',
     'error-classrooms-info'=>"Please enter the classroom name and grade level for the class.",
     "gradehasclassrooms" => "The grade cannot be deleted as it has associated classrooms.",
     "invalidgrade" => "The requested grade is invalid.",

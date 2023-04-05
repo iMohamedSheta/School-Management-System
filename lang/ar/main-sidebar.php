@@ -24,6 +24,9 @@ return [
     'posts.index'=>'المناقشات',
     'post.show'=>'المناقشة',
     'users.add'=>'اضافة مستخدمين',
+    'students.index'=>"الطلاب",
+    'students'=>"الطلاب",
+    'student.info'=>"معلومات الطالب",
 
 
 

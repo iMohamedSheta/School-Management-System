@@ -33,6 +33,8 @@ return
     'edit'=>'تعديل',
     'search'=>"البحث",
     'delete-classrooms-title' => 'هل أنت متأكد من أنك تريد حذف هذه الفصول الدراسية؟',
+    'delete-students-title' => 'هل أنت متأكد من أنك تريد حذف الطلاب المحددين',
+    'delete-student-title' => 'هل أنت متأكد من أنك تريد حذف الطالب :name ?',
     'confirm' => 'نعم، أنا متأكد',
     'cancel' => 'لا، الغاء',
     'all-grades'=>"جميع المراحل",
@@ -92,6 +94,10 @@ return
     'select-classroom'=>"اختيار فصل دراسي",
     'select-grade'=>"اختيار مرحلة دراسية",
     'search-parent'=>'البحث عن الاباء',
+    'avatar'=> "الصورة",
+    'studentname'=>"اسم الطالب",
+    'classroom'=>"الفصل الدراسي",
+    'no-students'=>"لا يوجد طلاب مسجلين.",
 
 
 ];
