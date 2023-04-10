@@ -27,6 +27,13 @@ return [
     'students.index'=>"الطلاب",
     'students'=>"الطلاب",
     'student.info'=>"معلومات الطالب",
+    'student.edit'=>"تعديل معلومات الطالب",
+    'student.email.edit'=>"تعديل البريد الالكتروني للطالب",
+    'teachers'=>"الاساتذة",
+    'teachers.index'=>"الاساتذة",
+    'teacher.info'=>"معلومات الاستاذ",
+    'teacher.edit'=>"تعديل معلومات الاستاذ",
+    'teacher.email.edit'=>"تعديل البريد الالكتروني للاستاذ",
 
 
 

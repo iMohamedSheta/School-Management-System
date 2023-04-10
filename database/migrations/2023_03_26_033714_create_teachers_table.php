@@ -15,13 +15,14 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id')->unique();
             $table->string('teacher_name');
+            $table->string('teacher_job')->nullable();
             $table->string('phone_teacher')->nullable();
             $table->string('national_id_teacher')->nullable();
             $table->string('passport_id_teacher')->nullable();
             $table->bigInteger('nationality_id')->unsigned()->nullable();
             $table->bigInteger('blood_type_id')->unsigned()->nullable();
             $table->bigInteger('religion_id')->unsigned()->nullable();
-            $table->bigInteger('specialization_id')->unsigned();
+            $table->bigInteger('specialization_id')->unsigned()->nullable();
             $table->bigInteger('gender_id')->unsigned();
             $table->date('joining_date');
             $table->text('address');

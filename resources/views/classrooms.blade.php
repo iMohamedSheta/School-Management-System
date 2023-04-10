@@ -267,7 +267,7 @@
 {{-- Filter Classrooms --}}
 <script>
     // Get references to the select element and the form element
-    var gradeSelect = document.getElementById('grade-select');
+     var gradeSelect = document.getElementById('grade-select');
     var classroomForm = document.getElementById('classroom-form');
 
     // Add an event listener to the select element that listens for changes

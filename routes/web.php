@@ -9,7 +9,9 @@ use App\Http\Controllers\Grades\GradeController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserRoleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\FormRepeater;
@@ -104,11 +106,23 @@ use App\Http\Livewire\StudentsTable;
 
                         Route::get('users/add',fn()=>view('addusers'))->name('users.add');
                         Route::get('/parents/search', [SearchController::class, 'searchParents'])->name('parents.search');
-                        Route::get('students',[StudentController::class,"index"])->name('students.index');
 
+
+                        Route::get('students',[StudentController::class,"index"])->name('students.index');
                         Route::get('student/information/{id}',[StudentController::class,"studentInfoView"])->name('student.info');
+                        Route::get('student/edit/{id}',[StudentController::class,"studentInfoEditView"])->name('student.edit');
+                        Route::get('student/email/edit/{id}',[StudentController::class,"studentEmailEditView"])->name('student.email.edit');
                         Route::delete('student/delete',[StudentController::class,"destroy"])->name('student.destroy');
                         Route::delete('students/delete',[StudentController::class,"deleteSelected"])->name('students.selected.destroy');
+
+
+
+                        Route::get('teachers',[TeacherController::class,'index'])->name('teachers.index');
+                        Route::get('teacher/information/{id}',[TeacherController::class,"teacherInfoView"])->name('teacher.info');
+                        Route::get('teacher/edit/{id}',[TeacherController::class,"teacherInfoEditView"])->name('teacher.edit');
+                        Route::get('teacher/email/edit/{id}',[TeacherController::class,"teacherEmailEditView"])->name('teacher.email.edit');
+                        Route::delete('teacher/delete',[TeacherController::class,"destroy"])->name('teacher.destroy');
+                        Route::delete('teachers/delete',[TeacherController::class,"deleteSelected"])->name('teachers.selected.destroy');
 
                         //Route::get('parent/add',fn()=>view('addparent'))->name('parent.add');
 
@@ -134,7 +148,7 @@ use App\Http\Livewire\StudentsTable;
                     require_once(__DIR__.'/Jetstream.php');
 
                     // Define a route for the application's homepage
-                    Route::get('/',fn()=>view('layouts.master'))->name('master');
+                    Route::get('/',[DashboardController::class,'index'])->name('master');
                     Route::view('posts',"posts")->name('posts.index');
 
                     Route::post('posts',[PostComponent::class,'uploadImage'])->name('posts.image-upload');

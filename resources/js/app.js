@@ -6,6 +6,7 @@ window.Alpine = Alpine;
 import "@fortawesome/fontawesome-free/css/all.css";
 import 'simplebar/dist/simplebar.min.css';
 Alpine.plugin(focus);
+
 import flatpickr from "flatpickr";
 
 
@@ -285,6 +286,9 @@ sidebariconOnly.onclick = function myFunction() {
             selected_ids.value = selected;
         }
     }
+
+
+
 
 
 

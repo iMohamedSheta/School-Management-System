@@ -1,13 +1,11 @@
 
-
-
 @extends('layouts.master')
 
-@section('Pagetitle',"Student information")
+@section('Pagetitle',"Teacher information")
 
 @section('Content')
 
-    <livewire:student-information :student="$student">
+<livewire:teacher-information :teacher="$teacher">
 
 
 <style>
@@ -27,12 +25,15 @@
         {
             visibility: hidden;
         }
+        #print-icon
+        {
+            visibility: hidden;
+        }
         .two-columns-print {
         column-count: 2;
         column-gap: 1rem;
     }
     }
-    </style>
-
+</style>
 
 @endsection

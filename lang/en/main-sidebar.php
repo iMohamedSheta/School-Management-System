@@ -27,7 +27,12 @@ return [
     'students.index'=>"Students",
     'students'=>"Students",
     'student.info'=>"Student information",
-
-
+    'student.edit'=>"Edit Student information",
+    'student.email.edit'=>"Edit Student Email information",
+    'teachers'=>"Teachers",
+    'teachers.index'=>"Teachers",
+    'teacher.info'=>"Teacher Information",
+    'teacher.edit'=>"Edit Teacher Information",
+    'teacher.email.edit'=>"Edit Teacher Email information",
 
 ];

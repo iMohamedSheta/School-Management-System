@@ -40,9 +40,36 @@
 <livewire:post-component>
 
 
-<script>
-    const imageUploadRoute = "{{route('posts.image-upload')}}";
-    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-</script>
+@endsection
 
+@section('scripts')
+    <script>
+        const imageUploadRoute = "{{route('posts.image-upload')}}";
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    </script>
+
+<script>
+    // Add click event listener to copy link buttons
+    const copyBtns = document.querySelectorAll('.copy-link-btn');
+    copyBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const url = btn.dataset.url;
+
+        // Create temporary input element to copy URL
+        const tempInput = document.createElement('input');
+        tempInput.setAttribute('value', url);
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+
+        // Change button text to "Copied!" and then revert it back after a short delay
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check mx-1"></i> {{trans("main.copied")}}';
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+        }, 1000);
+      });
+    });
+  </script>
 @endsection

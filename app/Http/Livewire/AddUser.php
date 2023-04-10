@@ -299,7 +299,7 @@ class AddUser extends Component
             'name_student' => 'required|string',
             'academic_year' => 'required',
             'date_birth' => 'required',
-            'blood_type_id' => 'required|exists:type__bloods,id',
+            'blood_type_id' => 'exists:type__bloods,id',
             'nationality_id' => 'required|exists:nationalities,id',
             'grade_id' => 'required|exists:grades,id',
             'classroom_id' => 'required|exists:classrooms,id',
@@ -318,7 +318,7 @@ class AddUser extends Component
             }
             else
             {
-                return redirect()->route('users.add')->with('error','The Parent Doesn\'t have information make sure you add this parent information before add student information.');
+                return redirect()->route('users.add')->with('error',trans('alert.father-info-empty'));
             }
 
             $createStudent = Student::create(

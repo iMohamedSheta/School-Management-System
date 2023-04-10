@@ -6,6 +6,10 @@
 
 return
 [
+    'users-numbers'=>"المستخدمين",
+    'students-numbers'=>"الطلاب",
+    'teachers-numbers'=>"الاساتذة",
+    'classrooms-numbers'=>"الفصول الدراسية",
     'add-grade'=>'اضافة مرحلة دراسية',
     'grade-name-ar'=> 'اسم المرحلة الدراسية بالغة العربية',
     'grade-name-en'=> 'اسم المرحلة الدراسية بالغة الانجليزية',
@@ -34,6 +38,7 @@ return
     'search'=>"البحث",
     'delete-classrooms-title' => 'هل أنت متأكد من أنك تريد حذف هذه الفصول الدراسية؟',
     'delete-students-title' => 'هل أنت متأكد من أنك تريد حذف الطلاب المحددين',
+    'delete-teachers-title' => 'هل أنت متأكد من أنك تريد حذف الاساتذة المحددين',
     'delete-student-title' => 'هل أنت متأكد من أنك تريد حذف الطالب :name ?',
     'confirm' => 'نعم، أنا متأكد',
     'cancel' => 'لا، الغاء',
@@ -98,6 +103,72 @@ return
     'studentname'=>"اسم الطالب",
     'classroom'=>"الفصل الدراسي",
     'no-students'=>"لا يوجد طلاب مسجلين.",
+    'print'=> "طباعة",
+    'father-name'=>"اسم الاب",
+    'mother-name'=>"اسم الام",
+    'gender'=>"النوع",
+    'nationality'=>'الجنسية',
+    'academic-year'=>'السنة الدراسية',
+    'blood-type'=>'فصيلة الدم',
+    'religion'=>'الديانة',
+    'student-email'=>'البريد الالكتروني للطالب',
+    'created_at'=>'تاريخ التسجيل',
+    'phone-father'=>'رقم هاتف الاب',
+    'student-form'=>'استمارة الطالب',
+    'teacher-form'=>'استمارة معلومات الاستاذ',
+    'student-form-info'=>'المعلومات الشخصية ومعلومات البريد الالكتروني علي النظام',
+    'teacher-form-info'=>'المعلومات الشخصية ومعلومات البريد الالكتروني للاستاذ :name علي النظام',
+    'student-info-edit'=>"تعديل معلومات الطالب",
+    'edit-teacher-info'=>"تعديل معلومات الاستاذ",
+    'edit-info'=>'تعديل المعلومات',
+    'add-father-info'=>'تسجيل بيانات اولياء الامور - بيانات الاب',
+    'father-national-id'=>'الرقم القومي للاب',
+    'father-passport-id'=>'رقم الباسبور للاب',
+    'father-phone'=>'رقم هاتف الاب',
+    'father-job'=>'وظيفة الاب',
+    'father-address'=>'عنوان الاب',
+    'add-mother-info'=>'تسجيل بيانات اولياء الامور - بيانات الام',
+    'mother-national-id'=>'الرقم القومي للام',
+    'mother-passport-id'=>'رقم الباسبور للام',
+    'mother-phone'=>'رقم هاتف الام',
+    'mother-job'=>'وظيفة الام',
+    'mother-address'=>'عنوان الام',
+    'add-teacher-info'=>"تسجيل بيانات الاستاذ",
+    'national-id'=>"الرقم القومي",
+    'passport-id'=>'رقم الباسبور',
+    'phone'=>'رقم الهاتف',
+    'address'=>'العنوان',
+    'add-student-info'=>'تسجيل بيانات التلميذ',
+    'parent-info'=>'البيانات  الشخصية للاباء المسجلين',
+    'father-bloodtype'=>'فصيلة دم الاب',
+    'father-nationality'=>'جنسية الاب',
+    'father-religion'=>'ديانة الاب',
+    'mother-bloodtype'=>'فصيلة دم الام',
+    'mother-nationality'=>'جنسية الام',
+    'mother-religion'=>'ديانة الام',
+    'teacher-info'=>"البيانات  الشخصية للاستاذ",
+    'specialization'=>'التخصص',
+    'student-info'=>"البيانات الشخصية للطالب",
+    'reset_password'=>'اعادة التعين',
+    'new_password'=>'الرقم السري الجديد',
+    'confirm_new_password'=>'تأكيد الرقم السري الجديد',
+    'edit-name-and-email'=>'تعديل اسم البريد والبريد الالكتروني',
+    'edit-password-info'=>'اعادة تعين رقم سري جديد',
+    'no-teachers'=>"لا يوجد اساتذة مسجلين.",
+    'teacher-edit-email-title'=>'تعديل معلومات البريد الشخصي للمعلم :name',
+    'teacher-edit-email-body'=>'في هذه الصفحة تستطيع تعديل معلومات المستخدم, المستخدم في تسجيل الدخول داخل النظام للاستاذ :name.',
+    'student-edit-email-title'=>'تعديل معلومات البريد الشخصي للطالب :name',
+    'student-edit-email-body'=>'في هذه الصفحة تستطيع تعديل معلومات المستخدم, المستخدم في تسجيل الدخول داخل النظام للطالب :name.',
+
+
+
+
+
+
+
+
+
+
 
 
 ];

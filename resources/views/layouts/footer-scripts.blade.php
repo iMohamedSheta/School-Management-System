@@ -19,3 +19,8 @@
     simplebarElements.forEach(el => new SimpleBar(el));
   </script>
 
+
+
+
+
+@yield('scripts')

@@ -13,14 +13,29 @@ class StudentController extends Controller
 
     public function index()
     {
-        return view('students');
+        return view('students.students');
     }
 
     public function studentInfoView($id)
     {
         $student = Student::findOrFail($id);
-        return view('student-info',compact('student'));
+        return view('students.student-info',compact('student'));
     }
+
+    public function studentInfoEditView($id)
+    {
+        $student = Student::findOrFail($id);
+        return view("students.student-info-edit",compact('student'));
+    }
+
+
+    public function studentEmailEditView($id)
+    {
+        $student_user = User::findOrFail($id);
+
+        return view("students.student-email-edit",compact('student_user'));
+    }
+
 
     public function destroy(Request $request)
     {

@@ -3,8 +3,8 @@
 
 <div class="p-6 border-y-8 rounded-2xl sm:rounded-lg ">
 
-
-    {{-- <input wire:model="search" type="text" class="form-input w-full" placeholder="Search..."> --}}
+{{--
+    {{-- <input wire:model="search" type="text" class="form-input w-full" placeholder="Search...">
     <div class="bg-white p-4 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <div class="relative w-full">
             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -14,9 +14,9 @@
             <input type="search" id="floating_outlined" wire:model="search" class="search-input block px-4 pb-3 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
             <label for="floating_outlined"  class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 right-1">{{trans('main.search')}}</label>
             </div>
-            {{-- <input type="text"  wire:model="search" id="simple-search" class=" search-input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search" > --}}
+            {{-- <input type="text"  wire:model="search" id="simple-search" class=" search-input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search" >
         </div>
-    </div>
+    </div> --}}
 
 @forelse ($posts as $post)
 
@@ -250,6 +250,7 @@
                             <button id="dropdownCommentbtn-{{$comment->id}}" data-dropdown-toggle="dropdownComment-{{$comment->id}}" class="inline-flex pt-4 px-4 items-center  text-sm font-medium text-center text-gray-900 bg-white rounded-lg focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button">
                                 <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path></svg>
                             </button>
+                            
                             <!-- Dropdown comment menu -->
                             <div id="dropdownComment-{{$comment->id}}" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-2xl w-12 dark:bg-gray-700 dark:divide-gray-600">
                                 @if( (Auth::user()->id ==$comment->user->id))
@@ -331,29 +332,6 @@
 
 
 
-<script>
-  // Add click event listener to copy link buttons
-  const copyBtns = document.querySelectorAll('.copy-link-btn');
-  copyBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const url = btn.dataset.url;
 
-      // Create temporary input element to copy URL
-      const tempInput = document.createElement('input');
-      tempInput.setAttribute('value', url);
-      document.body.appendChild(tempInput);
-      tempInput.select();
-      document.execCommand('copy');
-      document.body.removeChild(tempInput);
-
-      // Change button text to "Copied!" and then revert it back after a short delay
-      const originalText = btn.innerHTML;
-      btn.innerHTML = '<i class="fas fa-check mx-1"></i> {{trans("main.copied")}}';
-      setTimeout(() => {
-        btn.innerHTML = originalText;
-      }, 1000);
-    });
-  });
-</script>
 
 

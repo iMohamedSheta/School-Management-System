@@ -245,7 +245,7 @@
             @if($parentStep == 1)
             <div class="w-full sm:max-w-md lg:max-w-2xl mt-6 px-6 pt-4  pb-2 bg-white shadow-md overflow-hidden sm:rounded-lg mx-auto">
                 <div class="pb-10 pt-2">
-                    <div class="text-xl pb-4 pt-2">تسجيل بيانات اولياء الامور - بيانات الاب</div>
+                    <div class="text-xl pb-4 pt-2">{{ trans('main.add-father-info') }}</div>
                     <form wire:submit.prevent="insertParentInfo" method="post">
                         @csrf
                         <input type="hidden" wire:model.defer="user_created_id">
@@ -254,7 +254,7 @@
                         @enderror
                         <div class="relative z-0 w-full mb-6 group">
                             <input type="text" wire:model.defer="Name_Father" id="floating_fathername" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" autocomplete="off" placeholder=" "  />
-                            <label for="floating_fathername" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">اسم الاب</label>
+                            <label for="floating_fathername" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{{ trans('main.father-name') }}</label>
                             @error('Name_Father')
                             <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
                             @enderror
@@ -262,14 +262,14 @@
                         <div class="grid md:grid-cols-2 md:gap-6">
                         <div class="relative z-0 w-full mb-6 group">
                             <input type="text" wire:model.defer="National_ID_Father" id="National_ID_Father" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" autocomplete="off" placeholder=" "  />
-                            <label for="National_ID_Father" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">الرقم القومي للاب</label>
+                            <label for="National_ID_Father" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{{ trans('main.father-national-id') }}</label>
                             @error('National_ID_Father')
                             <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="relative z-0 w-full mb-6 group">
                             <input type="text" wire:model.defer="Passport_ID_Father" id="Passport_ID_Father" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" autocomplete="off" placeholder=" "  />
-                            <label for="Passport_ID_Father" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">رقم الباسبور للاب</label>
+                            <label for="Passport_ID_Father" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{{ trans('main.father-passport-id') }}</label>
                             @error('Passport_ID_Father')
                             <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
                             @enderror
@@ -278,14 +278,14 @@
                         <div class="grid md:grid-cols-2 md:gap-6">
                         <div class="relative z-0 w-full mb-6 group">
                             <input type="tel" wire:model.defer="Phone_Father" id="Phone_Father" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" autocomplete="off" placeholder=" "  />
-                            <label for="Phone_Father" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">رقم هاتف الاب</label>
+                            <label for="Phone_Father" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{{ trans('main.father-phone') }}</label>
                             @error('Phone_Father')
                             <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="relative z-0 w-full mb-6 group">
                             <input type="text" wire:model.defer="Job_Father" id="Job_Father" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" autocomplete="off" placeholder=" "  />
-                            <label for="Job_Father" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">وظيفة الاب</label>
+                            <label for="Job_Father" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{{ trans('main.father-job') }}</label>
                             @error('Job_Father')
                             <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
                             @enderror
@@ -294,7 +294,7 @@
                         <div class="grid md:grid-cols-2 md:gap-6">
                             <div class="relative z-0 w-full mb-6 group">
                                 <input type="text" wire:model.defer="Address_Father" id="Address_Father" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" autocomplete="off" placeholder=" "  />
-                                <label for="Address_Father" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">عنوان الاب</label>
+                                <label for="Address_Father" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{{ trans('main.father-address') }}</label>
                                 @error('Address_Father')
                                 <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
                                 @enderror
@@ -351,11 +351,11 @@
 
                         <div class="w-full sm:max-w-md lg:max-w-2xl mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg mx-auto">
                             <div class="pb-10 pt-2">
-                                <div class="text-xl pb-4 pt-2">تسجيل بيانات اولياء الامور - بيانات الام</div>
+                                <div class="text-xl pb-4 pt-2">{{ trans('main.add-mother-info') }}</div>
                             {{-- Mother Information --}}
                             <div class="relative z-0 w-full mb-6 group  ">
                                 <input type="text" wire:model.defer="Name_Mother" id="Name_Mother" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" autocomplete="off" placeholder=" "  />
-                                <label for="Name_Mother" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">اسم الام</label>
+                                <label for="Name_Mother" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{{ trans('main.mother-name') }}</label>
                                 @error('Name_Mother')
                                 <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
                                 @enderror
@@ -363,14 +363,14 @@
                             <div class="grid md:grid-cols-2 md:gap-6">
                             <div class="relative z-0 w-full mb-6 group">
                                 <input type="text" wire:model.defer="National_ID_Mother" id="National_ID_Mother" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" autocomplete="off" placeholder=" "  />
-                                <label for="National_ID_Mother" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">الرقم القومي للام</label>
+                                <label for="National_ID_Mother" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{{ trans('main.mother-national-id') }}</label>
                                 @error('National_ID_Mother')
                                 <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="relative z-0 w-full mb-6 group">
                                 <input type="text" wire:model.defer="Passport_ID_Mother" id="Passport_ID_Mother" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" autocomplete="off" placeholder=" "  />
-                                <label for="Passport_ID_Mother" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">رقم الباسبور للام</label>
+                                <label for="Passport_ID_Mother" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{{ trans('main.mother-passport-id') }}</label>
                                 @error('Passport_ID_Mother')
                                 <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
                                 @enderror
@@ -379,14 +379,14 @@
                             <div class="grid md:grid-cols-2 md:gap-6">
                             <div class="relative z-0 w-full mb-6 group">
                                 <input type="tel" wire:model.defer="Phone_Mother" id="Phone_Mother" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" autocomplete="off" placeholder=" "  />
-                                <label for="Phone_Mother" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">رقم هاتف الام</label>
+                                <label for="Phone_Mother" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{{ trans('main.mother-phone') }}</label>
                                 @error('Phone_Mother')
                                 <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="relative z-0 w-full mb-6 group">
                                 <input type="text" wire:model.defer="Job_Mother" id="Job_Mother" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" autocomplete="off" placeholder=" "  />
-                                <label for="Job_Mother" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">وظيفة الام</label>
+                                <label for="Job_Mother" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{{ trans('main.mother-job') }}</label>
                                 @error('Job_Mother')
                                 <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
                                 @enderror
@@ -395,7 +395,7 @@
                             <div class="grid md:grid-cols-2 md:gap-6">
                                 <div class="relative z-0 w-full mb-6 group">
                                     <input type="text" wire:model.defer="Address_Mother" id="Address_Mother" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" autocomplete="off" placeholder=" "  />
-                                    <label for="Address_Mother" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">عنوان الام</label>
+                                    <label for="Address_Mother" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{{ trans('main.mother-address') }}</label>
                                     @error('Address_Mother')
                                     <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
                                     @enderror
@@ -462,7 +462,7 @@
             @if($user_created_role == "Teacher")
             <div class="w-full sm:max-w-md lg:max-w-2xl mt-0 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg mx-auto">
                 <div class="pb-10 pt-2">
-                    <div class="text-xl pb-4 pt-2">تسجيل بيانات الاستاذ</div>
+                    <div class="text-xl pb-4 pt-2">{{ trans('main.add-teacher-info') }}</div>
 
                     <form wire:submit.prevent="insertTeacherInfo" method="post">
                         @csrf
@@ -470,7 +470,7 @@
 
                         <div class="relative z-0 w-full mb-6 group">
                             <input type="text" wire:model.defer="teacher_name" id="teacher_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" autocomplete="off" placeholder=" "  />
-                            <label for="teacher_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">الاسم</label>
+                            <label for="teacher_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{{ trans('main.name') }}</label>
                             @error('teacher_name')
                             <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
                             @enderror
@@ -478,14 +478,14 @@
                         <div class="grid md:grid-cols-2 md:gap-6">
                         <div class="relative z-0 w-full mb-6 group">
                             <input type="text" wire:model.defer="national_id_teacher" id="national_id_teacher" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" autocomplete="off" placeholder=" "  />
-                            <label for="national_id_teacher" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">الرقم القومي </label>
+                            <label for="national_id_teacher" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{{ trans('main.national-id') }}</label>
                             @error('national_id_teacher')
                             <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="relative z-0 w-full mb-6 group">
                             <input type="text" wire:model.defer="passport_id_teacher" id="passport_id_teacher" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" autocomplete="off" placeholder=" "  />
-                            <label for="passport_id_teacher" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">رقم الباسبور </label>
+                            <label for="passport_id_teacher" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{{ trans('main.passport-id') }}</label>
                             @error('passport_id_teacher')
                             <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
                             @enderror
@@ -494,14 +494,14 @@
                         <div class="grid md:grid-cols-2 md:gap-6">
                         <div class="relative z-0 w-full mb-6 group">
                             <input type="tel" wire:model.defer="phone_teacher" id="phone_teacher" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" autocomplete="off" placeholder=" "  />
-                            <label for="phone_teacher" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">رقم الهاتف </label>
+                            <label for="phone_teacher" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{{ trans('main.phone') }}</label>
                             @error('phone_teacher')
                             <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="relative z-0 w-full mb-6 group">
                             <input type="text" wire:model.defer="address" id="address" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" autocomplete="off" placeholder=" "  />
-                            <label for="address" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">العنوان </label>
+                            <label for="address" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{{ trans('main.address') }}</label>
                             @error('address')
                             <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
                             @enderror
@@ -603,9 +603,9 @@
             @endif
 
             @if($user_created_role == "Student")
-                            <div class="w-full sm:max-w-md lg:max-w-2xl mt-0 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg mx-auto">
+            <div class="w-full sm:max-w-md lg:max-w-2xl mt-0 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg mx-auto">
                 <div class="pb-10 pt-2 w-full">
-                    <div class="text-xl pb-4 pt-2">تسجيل بيانات التلميذ</div>
+                    <div class="text-xl pb-4 pt-2">{{ trans('main.add-student-info') }}</div>
 
                     <form wire:submit.prevent="insertStudentInfo" method="post">
                         @csrf
@@ -616,7 +616,7 @@
 
                         <div class="relative z-0 w-full mb-6 group">
                             <input type="text" wire:model.defer="name_student" id="name_student" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" autocomplete="off" placeholder=" "  />
-                            <label for="name_student" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">الاسم</label>
+                            <label for="name_student" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{{ trans('main.name') }}</label>
                             @error('name_student')
                             <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
                             @enderror
@@ -624,13 +624,13 @@
                         <div class="grid md:grid-cols-2 md:gap-6">
                             <div class="relative z-0 w-full mb-6 group">
                                 <input type="text" wire:model.defer="academic_year" id="academic_year" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" autocomplete="off" placeholder=" "  />
-                                <label for="academic_year" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">العام الاكاديمي </label>
+                                <label for="academic_year" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{{ trans('main.academic-year') }}</label>
                                 @error('academic_year')
                                 <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="relative z-0 w-full mb-6 group ">
-                                <select id="grade_id" wire:model.defer="grade_id" name="grade_id" autocomplete="off" class="block py-2.5  px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-blue-600 peer" onchange="Livewire.emit('updatedGradeId', this.value)">                                                                   
+                                <select id="grade_id" wire:model.defer="grade_id" name="grade_id" autocomplete="off" class="block py-2.5  px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-blue-600 peer" onchange="Livewire.emit('updatedGradeId', this.value)">
                                     <option value="">{{__('main.select-grade')}}</option>
                                 @foreach ($grades as $grade)
                                     <option value="{{ $grade->id }}">{{ $grade->name }}</option>
@@ -816,82 +816,82 @@
             @if($user_created_role == "Parent")
             <div  class="w-full sm:max-w-md lg:max-w-2xl mt-6 px-6 pt-4  pb-2 bg-white shadow-md overflow-hidden sm:rounded-lg mx-auto border-4">
                 <div class="pb-10 pt-2">
-                    <div class="text-2xl py-2 border-b-2">البيانات  الشخصية للاباء المسجلين</div>
+                    <div class="text-2xl py-2 border-b-2">{{ trans('main.parent-info') }}</div>
                     <div class="mt-6">
                         <div class="relative z-0  group  p-2 grid grid-cols-1 md:gap-6">
                             <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg border-b-2 ">اسم الاب :  <span class="text-sm font-normal"> {{$user->parent->Name_Father ?? "undefined"}} </span> </h4>
+                                <h4 class="text-lg border-b-2 ">{{trans('main.father-name')}} :  <span class="text-sm font-normal"> {{$user->parent->Name_Father ?? "undefined"}} </span> </h4>
                             </div>
                         </div>
                         <div class="grid md:grid-cols-2 md:gap-6  p-2">
                             <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg  border-b-2">الرقم القومي للاب:  <span class="text-sm font-normal"> {{$user->parent->National_ID_Father ?? "undefined"}} </span> </h4>
+                                <h4 class="text-lg  border-b-2">{{ trans('main.father-national-id') }} :  <span class="text-sm font-normal"> {{$user->parent->National_ID_Father ?? "undefined"}} </span> </h4>
                             </div>
                         <div class="relative z-0 w-full  group">
-                            <h4 class="text-lg  border-b-2">رقم باسبور الاب :  <span class="text-sm font-normal"> {{$user->parent->Passport_ID_Father ?? "undefined"}} </span> </h4>
+                            <h4 class="text-lg  border-b-2"> {{ trans('main.father-passport-id') }} :  <span class="text-sm font-normal"> {{$user->parent->Passport_ID_Father ?? "undefined"}} </span> </h4>
                         </div>
                         </div>
                         <div class="p-2 grid md:grid-cols-2 md:gap-6 ">
                             <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg  border-b-2"> عنوان الاب :  <span class="text-sm font-normal"> {{$user->parent->Address_Father ?? "undefined"}} </span> </h4>
+                                <h4 class="text-lg  border-b-2">  {{ trans('main.father-address') }} :  <span class="text-sm font-normal"> {{$user->parent->Address_Father ?? "undefined"}} </span> </h4>
                             </div>
                             <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg  border-b-2">رقم الهاتف :  <span class="text-sm font-normal"> {{$user->parent->Phone_Father ?? "undefined"}} </span> </h4>
-                            </div>
-                        </div>
-                        <div class="grid md:grid-cols-2 md:gap-6 p-2">
-                            <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg border-b-2"> فصيلة دم الاب :  <span class="text-sm font-normal"> {{$user->parent->blood_type_father->name ?? "undefined"}} </span> </h4>
-                            </div>
-                            <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg border-b-2"> جنسية الاب :  <span class="text-sm font-normal"> {{$user->parent->nationality_father->name ?? "undefined"}} </span> </h4>
+                                <h4 class="text-lg  border-b-2"> {{ trans('father-phone') }} :  <span class="text-sm font-normal"> {{$user->parent->Phone_Father ?? "undefined"}} </span> </h4>
                             </div>
                         </div>
                         <div class="grid md:grid-cols-2 md:gap-6 p-2">
                             <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg border-b-2"> ديانة الاب :  <span class="text-sm font-normal"> {{$user->parent->religion_father->name ?? "undefined"}} </span> </h4>
+                                <h4 class="text-lg border-b-2"> {{ trans('main.father-bloodtype') }} :  <span class="text-sm font-normal"> {{$user->parent->blood_type_father->name ?? "undefined"}} </span> </h4>
+                            </div>
+                            <div class="relative z-0 w-full  group">
+                                <h4 class="text-lg border-b-2"> {{ trans('main.father-nationality') }} :  <span class="text-sm font-normal"> {{$user->parent->nationality_father->name ?? "undefined"}} </span> </h4>
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-2 md:gap-6 p-2">
+                            <div class="relative z-0 w-full  group">
+                                <h4 class="text-lg border-b-2"> {{trans('main.father-religion')}} :  <span class="text-sm font-normal"> {{$user->parent->religion_father->name ?? "undefined"}} </span> </h4>
                             </div>
                             <div class="relative z-0 w-full group ">
-                                <h4 class="text-lg border-b-2 "> وظيفة الاب :  <span class="text-sm font-normal"> {{$user->parent->Job_Father ?? "undefined"}}</span> </h4>
+                                <h4 class="text-lg border-b-2 ">  {{ trans('main.father-job') }} :  <span class="text-sm font-normal"> {{$user->parent->Job_Father ?? "undefined"}}</span> </h4>
                             </div>
                         </div>
                     </div>
                     <div class="mt-6">
                         <div class="relative z-0  group  p-2 grid grid-cols-1 md:gap-6">
                             <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg border-b-2 ">اسم الام :  <span class="text-sm font-normal"> {{$user->parent->Name_Mother ?? "undefined"}} </span> </h4>
+                                <h4 class="text-lg border-b-2 "> {{ trans('main.mother-name') }} :  <span class="text-sm font-normal"> {{$user->parent->Name_Mother ?? "undefined"}} </span> </h4>
                             </div>
                         </div>
                         <div class="grid md:grid-cols-2 md:gap-6  p-2">
                             <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg  border-b-2">الرقم القومي للام:  <span class="text-sm font-normal"> {{$user->parent->National_ID_Mother ?? "undefined"}} </span> </h4>
+                                <h4 class="text-lg  border-b-2">  {{ trans('main.mother-national-id') }} :  <span class="text-sm font-normal"> {{$user->parent->National_ID_Mother ?? "undefined"}} </span> </h4>
                             </div>
                         <div class="relative z-0 w-full  group">
-                            <h4 class="text-lg  border-b-2">رقم باسبور الام :  <span class="text-sm font-normal"> {{$user->parent->Passport_ID_Mother ?? "undefined"}} </span> </h4>
+                            <h4 class="text-lg  border-b-2"> {{ trans('main.mother-passport-id') }} :  <span class="text-sm font-normal"> {{$user->parent->Passport_ID_Mother ?? "undefined"}} </span> </h4>
                         </div>
                         </div>
                         <div class="p-2 grid md:grid-cols-2 md:gap-6 ">
                             <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg  border-b-2"> عنوان الام :  <span class="text-sm font-normal"> {{$user->parent->Address_Mother ?? "undefined"}} </span> </h4>
+                                <h4 class="text-lg  border-b-2"> {{ trans('main.mother-address') }} :  <span class="text-sm font-normal"> {{$user->parent->Address_Mother ?? "undefined"}} </span> </h4>
                             </div>
                             <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg  border-b-2">رقم هاتف الام :  <span class="text-sm font-normal"> {{$user->parent->Phone_Mother ?? "undefined"}} </span> </h4>
-                            </div>
-                        </div>
-                        <div class="grid md:grid-cols-2 md:gap-6 p-2">
-                            <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg border-b-2"> فصيلة دم الام :  <span class="text-sm font-normal"> {{$user->parent->blood_type_mother->name ?? "undefined"}} </span> </h4>
-                            </div>
-                            <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg border-b-2"> جنسية الام :  <span class="text-sm font-normal"> {{$user->parent->nationality_mother->name ?? "undefined"}} </span> </h4>
+                                <h4 class="text-lg  border-b-2">  {{ trans('main.mother-phone') }} :  <span class="text-sm font-normal"> {{$user->parent->Phone_Mother ?? "undefined"}} </span> </h4>
                             </div>
                         </div>
                         <div class="grid md:grid-cols-2 md:gap-6 p-2">
                             <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg border-b-2"> ديانة الام :  <span class="text-sm font-normal"> {{$user->parent->religion_mother->name ?? "undefined"}} </span> </h4>
+                                <h4 class="text-lg border-b-2"> {{ trans('main.mother-bloodtype') }} :  <span class="text-sm font-normal"> {{$user->parent->blood_type_mother->name ?? "undefined"}} </span> </h4>
+                            </div>
+                            <div class="relative z-0 w-full  group">
+                                <h4 class="text-lg border-b-2">  {{ trans('main.mother-nationality') }} :  <span class="text-sm font-normal"> {{$user->parent->nationality_mother->name ?? "undefined"}} </span> </h4>
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-2 md:gap-6 p-2">
+                            <div class="relative z-0 w-full  group">
+                                <h4 class="text-lg border-b-2">  {{ trans('main.mother-religion') }} :  <span class="text-sm font-normal"> {{$user->parent->religion_mother->name ?? "undefined"}} </span> </h4>
                             </div>
                             <div class="relative z-0 w-full group ">
-                                <h4 class="text-lg border-b-2 "> وظيفة الام :  <span class="text-sm font-normal"> {{$user->parent->Job_Mother ?? "undefined"}}</span> </h4>
+                                <h4 class="text-lg border-b-2 ">  {{ trans('main.mother-job') }} :  <span class="text-sm font-normal"> {{$user->parent->Job_Mother ?? "undefined"}}</span> </h4>
                             </div>
                         </div>
                     </div>
@@ -908,46 +908,46 @@
 
                 <div  class="w-full sm:max-w-md lg:max-w-2xl mt-6 px-6 pt-4  pb-2 bg-white shadow-md overflow-hidden sm:rounded-lg mx-auto border-4">
                     <div class="pb-10 pt-2">
-                        <div class="text-2xl py-2 border-b-2">البيانات  الشخصية للاستاذ</div>
+                        <div class="text-2xl py-2 border-b-2">{{ trans('main.teacher-info') }}</div>
                         <div class="mt-6">
                             <div class="relative z-0  group  p-2 grid grid-cols-2 md:gap-6">
                                 <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg border-b-2 ">الاسم :  <span class="text-sm font-normal"> {{$user->teacher->teacher_name ?? "undefined"}} </span> </h4>
+                                    <h4 class="text-lg border-b-2 ">{{ trans('main.name') }} :  <span class="text-sm font-normal"> {{$user->teacher->teacher_name ?? "undefined"}} </span> </h4>
                                 </div>
                                 <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg  border-b-2">الرقم القومي :  <span class="text-sm font-normal"> {{$user->teacher->national_id_teacher ?? "undefined"}} </span> </h4>
+                                <h4 class="text-lg  border-b-2">{{ trans('main.national-id') }} :  <span class="text-sm font-normal"> {{$user->teacher->national_id_teacher ?? "undefined"}} </span> </h4>
                                 </div>
                             </div>
                             <div class="grid md:grid-cols-2 md:gap-6  p-2">
                             <div class="relative z-0 w-full group ">
-                                <h4 class="text-lg border-b-2 "> تاريخ الانضمام :  <span class="text-sm font-normal"> {{$user->teacher->joining_date ?? "undefined"}} </span> </h4>
+                                <h4 class="text-lg border-b-2 "> {{ trans('main.joining-date') }} :  <span class="text-sm font-normal"> {{$user->teacher->joining_date ?? "undefined"}} </span> </h4>
                             </div>
                             <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg  border-b-2">رقم الباسبور :  <span class="text-sm font-normal"> {{$user->teacher->passport_id_teacher ?? "undefined"}} </span> </h4>
+                                <h4 class="text-lg  border-b-2"> {{ trans('main.passport-id') }} :  <span class="text-sm font-normal"> {{$user->teacher->passport_id_teacher ?? "undefined"}} </span> </h4>
                             </div>
                             </div>
                             <div class="p-2 grid md:grid-cols-2 md:gap-6 ">
                                 <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg  border-b-2"> التخصص :  <span class="text-sm font-normal"> {{$user->teacher->specialization->name ?? "undefined"}} </span> </h4>
+                                    <h4 class="text-lg  border-b-2"> {{ trans('main.specialization') }} :  <span class="text-sm font-normal"> {{$user->teacher->specialization->name ?? "undefined"}} </span> </h4>
                                 </div>
                                 <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg  border-b-2">رقم الهاتف :  <span class="text-sm font-normal"> {{$user->teacher->phone_teacher ?? "undefined"}} </span> </h4>
-                                </div>
-                            </div>
-                            <div class="grid md:grid-cols-2 md:gap-6 p-2">
-                                <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg border-b-2"> فصيلة الدم :  <span class="text-sm font-normal"> {{$user->teacher->blood_type->name ?? "undefined"}} </span> </h4>
-                                </div>
-                                <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg border-b-2"> الجنسية :  <span class="text-sm font-normal"> {{$user->teacher->nationality->name ?? "undefined"}} </span> </h4>
+                                    <h4 class="text-lg  border-b-2">{{ trans('main.phone') }} :  <span class="text-sm font-normal"> {{$user->teacher->phone_teacher ?? "undefined"}} </span> </h4>
                                 </div>
                             </div>
                             <div class="grid md:grid-cols-2 md:gap-6 p-2">
                                 <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg border-b-2"> الديانة :  <span class="text-sm font-normal"> {{$user->teacher->religion->name ?? "undefined"}} </span> </h4>
+                                    <h4 class="text-lg border-b-2"> {{ trans('main.blood-type') }} :  <span class="text-sm font-normal"> {{$user->teacher->blood_type->name ?? "undefined"}} </span> </h4>
                                 </div>
                                 <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg border-b-2"> الجنس :  <span class="text-sm font-normal"> {{$user->teacher->gender->name?? "undefined"}} </span> </h4>
+                                    <h4 class="text-lg border-b-2"> {{ trans('main.nationality') }} :  <span class="text-sm font-normal"> {{$user->teacher->nationality->name ?? "undefined"}} </span> </h4>
+                                </div>
+                            </div>
+                            <div class="grid md:grid-cols-2 md:gap-6 p-2">
+                                <div class="relative z-0 w-full  group">
+                                    <h4 class="text-lg border-b-2"> {{ trans('main.religion') }} :  <span class="text-sm font-normal"> {{$user->teacher->religion->name ?? "undefined"}} </span> </h4>
+                                </div>
+                                <div class="relative z-0 w-full  group">
+                                    <h4 class="text-lg border-b-2"> {{ trans('main.gender') }} :  <span class="text-sm font-normal"> {{$user->teacher->gender->name?? "undefined"}} </span> </h4>
                                 </div>
                             </div>
 
@@ -967,54 +967,54 @@
 
                 <div  class="w-full sm:max-w-md lg:max-w-2xl mt-6 px-6 pt-4  pb-2 bg-white shadow-md overflow-hidden sm:rounded-lg mx-auto border-4">
                     <div class="pb-10 pt-2">
-                        <div class="text-2xl py-2 border-b-2">البيانات  الشخصية للطالب</div>
+                        <div class="text-2xl py-2 border-b-2">{{ trans('main.student-infp') }}</div>
                         <div class="mt-6">
                             <div class="relative z-0  group  p-2 grid grid-cols-2 md:gap-6">
                                 <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg border-b-2 ">الاسم :  <span class="text-sm font-normal"> {{$user->student->name ?? "undefined"}} </span> </h4>
+                                    <h4 class="text-lg border-b-2 ">{{ trans('main.studentname') }} :  <span class="text-sm font-normal"> {{$user->student->name ?? "undefined"}} </span> </h4>
                                 </div>
                                 <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg  border-b-2">المرحلة الدراسية :  <span class="text-sm font-normal"> {{$user->student->grade->name ?? "undefined"}} </span> </h4>
+                                <h4 class="text-lg  border-b-2"> {{ trans('main.grade') }} :  <span class="text-sm font-normal"> {{$user->student->grade->name ?? "undefined"}} </span> </h4>
                                 </div>
                             </div>
                             <div class="grid md:grid-cols-2 md:gap-6  p-2">
                             <div class="relative z-0 w-full group ">
-                                <h4 class="text-lg border-b-2 ">  الفصل الدراسي :  <span class="text-sm font-normal"> {{$user->student->classroom->name?? "undefined"}} </span> </h4>
+                                <h4 class="text-lg border-b-2 "> {{ trans('main.classoom') }} :  <span class="text-sm font-normal"> {{$user->student->classroom->name?? "undefined"}} </span> </h4>
                             </div>
                             <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg border-b-2"> البريد الالكتروني :  <span class="text-sm font-normal"> {{$user->email ?? "undefined"}} </span> </h4>
+                                <h4 class="text-lg border-b-2"> {{ trans('main.student-email') }} :  <span class="text-sm font-normal"> {{$user->email ?? "undefined"}} </span> </h4>
                             </div>
                             </div>
                             <div class="p-2 grid md:grid-cols-2 md:gap-6 ">
                                 <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg  border-b-2"> السنة الدراسية :  <span class="text-sm font-normal"> {{$user->student->academic_year ?? "undefined"}} </span> </h4>
+                                    <h4 class="text-lg  border-b-2"> {{ trans('main.academic-year') }} :  <span class="text-sm font-normal"> {{$user->student->academic_year ?? "undefined"}} </span> </h4>
                                 </div>
                                 <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg  border-b-2"> تاريخ الميلاد :  <span class="text-sm font-normal"> {{$user->student->date_birth ?? "undefined"}} </span> </h4>
-                                </div>
-                            </div>
-                            <div class="grid md:grid-cols-2 md:gap-6 p-2">
-                                <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg border-b-2"> فصيلة الدم :  <span class="text-sm font-normal"> {{$user->student->blood_type->name ?? "undefined"}} </span> </h4>
-                                </div>
-                                <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg border-b-2"> الجنسية :  <span class="text-sm font-normal"> {{$user->student->nationality->name ?? "undefined"}} </span> </h4>
+                                    <h4 class="text-lg  border-b-2"> {{ trans('main.date-birth') }} :  <span class="text-sm font-normal"> {{$user->student->date_birth ?? "undefined"}} </span> </h4>
                                 </div>
                             </div>
                             <div class="grid md:grid-cols-2 md:gap-6 p-2">
                                 <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg border-b-2"> الديانة :  <span class="text-sm font-normal"> {{$user->student->religion->name ?? "undefined"}} </span> </h4>
+                                    <h4 class="text-lg border-b-2"> {{ trans('main.blood-type') }} :  <span class="text-sm font-normal"> {{$user->student->blood_type->name ?? "undefined"}} </span> </h4>
                                 </div>
                                 <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg border-b-2"> الجنس :  <span class="text-sm font-normal"> {{$user->student->gender->name?? "undefined"}} </span> </h4>
+                                    <h4 class="text-lg border-b-2"> {{ trans('main.nationality') }} :  <span class="text-sm font-normal"> {{$user->student->nationality->name ?? "undefined"}} </span> </h4>
                                 </div>
                             </div>
                             <div class="grid md:grid-cols-2 md:gap-6 p-2">
                                 <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg border-b-2"> اسم الام :  <span class="text-sm font-normal"> {{$user->student->parent->Name_Mother ?? "undefined"}} </span> </h4>
+                                    <h4 class="text-lg border-b-2"> {{ trans('main.religion') }} :  <span class="text-sm font-normal"> {{$user->student->religion->name ?? "undefined"}} </span> </h4>
                                 </div>
                                 <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg  border-b-2"> اسم الاب :  <span class="text-sm font-normal"> {{$user->student->parent->Name_Father ?? "undefined"}} </span> </h4>
+                                    <h4 class="text-lg border-b-2"> {{ trans('main.gender') }} :  <span class="text-sm font-normal"> {{$user->student->gender->name?? "undefined"}} </span> </h4>
+                                </div>
+                            </div>
+                            <div class="grid md:grid-cols-2 md:gap-6 p-2">
+                                <div class="relative z-0 w-full  group">
+                                    <h4 class="text-lg border-b-2"> {{ trans('main.mother-name') }} :  <span class="text-sm font-normal"> {{$user->student->parent->Name_Mother ?? "undefined"}} </span> </h4>
+                                </div>
+                                <div class="relative z-0 w-full  group">
+                                    <h4 class="text-lg  border-b-2"> {{ trans('main.father-name') }} :  <span class="text-sm font-normal"> {{$user->student->parent->Name_Father ?? "undefined"}} </span> </h4>
                                 </div>
                             </div>
 
