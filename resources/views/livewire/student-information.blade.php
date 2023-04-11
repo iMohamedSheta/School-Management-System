@@ -21,59 +21,59 @@
       <dl>
         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
           <dt class="text-sm font-medium text-gray-500">{{trans('main.studentname')}}</dt>
-          <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->name ?? "Undefined"}}</dd>
+          <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->name ?? trans('main.undefined')}}</dd>
         </div>
         <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
           <dt class="text-sm font-medium text-gray-500">{{ trans('main.father-name') }}</dt>
-          <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->parent->Name_Father ?? "Undefined"}}</dd>
+          <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->parent->Name_Father ?? trans('main.undefined')}}</dd>
         </div>
         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
           <dt class="text-sm font-medium text-gray-500">{{ trans('main.mother-name') }}</dt>
-          <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->parent->Name_Mother ?? "Undefined"}}</dd>
+          <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->parent->Name_Mother ?? trans('main.undefined')}}</dd>
         </div>
         <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
           <dt class="text-sm font-medium text-gray-500">{{trans('main.gender')}}</dt>
-          <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->gender->name ?? "Undefined"}}</dd>
+          <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->gender->name ?? trans('main.undefined')}}</dd>
         </div>
         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
           <dt class="text-sm font-medium text-gray-500">{{ trans('main.grade') }}</dt>
-          <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->grade->name ?? "Undefined"}}</dd>
+          <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->grade->name ?? trans('main.undefined')}}</dd>
         </div>
         <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt class="text-sm font-medium text-gray-500">{{ trans('main.classroom') }}</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->classroom->name ?? "Undefined"}}</dd>
+            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->classroom->name ?? trans('main.undefined')}}</dd>
         </div>
         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt class="text-sm font-medium text-gray-500">{{ trans('main.date-birth') }}</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->date_birth ?? "Undefined"}}</dd>
+            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->date_birth ?? trans('main.undefined')}}</dd>
         </div>
         <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt class="text-sm font-medium text-gray-500">{{ trans('main.nationality') }}</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->nationality->name ?? "Undefined"}}</dd>
+            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->nationality->name ?? trans('main.undefined')}}</dd>
         </div>
         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt class="text-sm font-medium text-gray-500">{{ trans('main.academic-year') }}</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->academic_year ?? "Undefined"}}</dd>
+            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->academic_year ?? trans('main.undefined')}}</dd>
         </div>
         <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt class="text-sm font-medium text-gray-500">{{ trans('main.blood-type') }}</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->blood_type->name ?? "Undefined"}}</dd>
+            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->blood_type->name ?? trans('main.undefined')}}</dd>
         </div>
         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt class="text-sm font-medium text-gray-500">{{ trans('main.religion') }}</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->religion->name ?? "Undefined"}}</dd>
+            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->religion->name ?? trans('main.undefined')}}</dd>
         </div>
         <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt class="text-sm font-medium text-gray-500">{{ trans('main.student-email') }}</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->user->email ?? "Undefined"}}</dd>
+            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->user->email ?? trans('main.undefined')}}</dd>
         </div>
         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt class="text-sm font-medium text-gray-500">{{ trans('main.created_at') }}</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->created_at ?? "Undefined"}}</dd>
+            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->created_at ?? trans('main.undefined')}}</dd>
         </div>
         <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt class="text-sm font-medium text-gray-500">{{ trans('main.phone-father') }}</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->parent->Phone_Father ?? "Undefined"}}</dd>
+            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$student->parent->Phone_Father ?? trans('main.undefined')}}</dd>
         </div>
       </dl>
     </div>

@@ -6,6 +6,7 @@
 
 return
 [
+    'undefined'=>'Undefined',
     'users-numbers'=>"Users",
     'students-numbers'=>"Students",
     'tearchers-numbers'=>"Teachers",
@@ -39,7 +40,10 @@ return
     'delete-classrooms-title' => 'Are you sure you want to delete these selected Classrooms?',
     'delete-students-title' => 'Are you sure you want to delete these selected Students?',
     'delete-teachers-title' => 'Are you sure you want to delete these selected Teachers?',
+    'delete-parents-title' => 'Are you sure you want to delete these selected Parents?',
     'delete-student-title' => 'Are you sure you want to delete Student :name ?',
+    'delete-teacher-title' => 'Are you sure you want to delete Teacher :name ?',
+    'delete-parent-title' => 'Are you sure you want to delete this Parent ?',
     'confirm' => 'Yes, I\'m sure',
     'cancel' => 'No, cancel',
     'all-grades'=>'All Grades',
@@ -157,7 +161,7 @@ return
     'teacher-edit-email-body'=>'In this page you can edit user information which he login into the system with for teacher :name.',
     'student-edit-email-title'=>'Edit Email Inforamtion for the Student :name',
     'student-edit-email-body'=>'In this page you can edit user information which he login into the system with for student :name.',
-
+    'sons'=>'Sons',
 
 
 

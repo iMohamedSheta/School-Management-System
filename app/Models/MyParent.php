@@ -39,6 +39,11 @@ class MyParent extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function students()
+    {
+        return $this->hasMany(Student::class,'parent_id');
+    }
+
 
     public function nationality_father()
     {

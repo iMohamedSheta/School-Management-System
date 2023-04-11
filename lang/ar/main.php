@@ -6,6 +6,7 @@
 
 return
 [
+    'undefined'=>'غير مسجل',
     'users-numbers'=>"المستخدمين",
     'students-numbers'=>"الطلاب",
     'teachers-numbers'=>"الاساتذة",
@@ -39,7 +40,10 @@ return
     'delete-classrooms-title' => 'هل أنت متأكد من أنك تريد حذف هذه الفصول الدراسية؟',
     'delete-students-title' => 'هل أنت متأكد من أنك تريد حذف الطلاب المحددين',
     'delete-teachers-title' => 'هل أنت متأكد من أنك تريد حذف الاساتذة المحددين',
+    'delete-parents-title' => 'هل أنت متأكد من أنك تريد حذف الاباء المحددين',
     'delete-student-title' => 'هل أنت متأكد من أنك تريد حذف الطالب :name ?',
+    'delete-teacher-title' => 'هل أنت متأكد من أنك تريد حذف الاستاذ :name ?',
+    'delete-parent-title' => 'هل أنت متأكد من أنك تريد حذف معلومات وبريد الابويين ?',
     'confirm' => 'نعم، أنا متأكد',
     'cancel' => 'لا، الغاء',
     'all-grades'=>"جميع المراحل",
@@ -159,6 +163,7 @@ return
     'teacher-edit-email-body'=>'في هذه الصفحة تستطيع تعديل معلومات المستخدم, المستخدم في تسجيل الدخول داخل النظام للاستاذ :name.',
     'student-edit-email-title'=>'تعديل معلومات البريد الشخصي للطالب :name',
     'student-edit-email-body'=>'في هذه الصفحة تستطيع تعديل معلومات المستخدم, المستخدم في تسجيل الدخول داخل النظام للطالب :name.',
+    'sons'=>'الابناء',
 
 
 

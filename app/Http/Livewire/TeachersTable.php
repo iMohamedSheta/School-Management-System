@@ -5,9 +5,12 @@ namespace App\Http\Livewire;
 use App\Models\Grade;
 use App\Models\Teacher;
 use Livewire\Component;
+use Livewire\WithPagination;
+
 
 class TeachersTable extends Component
 {
+    use WithPagination;
     public $search;
 
     public function render()
@@ -26,8 +29,7 @@ class TeachersTable extends Component
 
         $teachers = $teachersQuery->paginate(10);
 
-        $grades = Grade::all();
 
-        return view('livewire.teachers-table',compact('grades','teachers'));
+        return view('livewire.teachers-table',compact('teachers'));
     }
 }

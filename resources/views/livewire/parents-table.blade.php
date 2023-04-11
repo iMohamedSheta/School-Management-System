@@ -2,6 +2,8 @@
 
 
 
+
+
 <div  class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -43,16 +45,16 @@
                 {{ __('#') }}
             </th>
             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center" style="max-width: 150px;">
-                {{ __('main.avatar') }}
+                {{ __('main.father-name') }}
             </th>
             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center" style="max-width: 150px;">
-                {{ __('main.name') }}
+                {{ __('main.mother-name') }}
             </th>
             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center" style="max-width: 150px;">
-                {{ __('main.specialization') }}
+                {{ __('main.father-phone') }}
             </th>
             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center" style="max-width: 150px;">
-                {{ __('main.joining-date') }}
+                {{ __('main.mother-phone') }}
             </th>
             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center" style="max-width: 150px;">
                 {{ __('main.actions') }}
@@ -62,60 +64,60 @@
     </thead>
     <tbody class="bg-white divide-y divide-gray-200">
         <div id="multiselect-table">
-        @forelse ($teachers as $teacher)
+        @forelse ($parents as $parent)
             <tr>
                 <td>
                     <div class="flex items-center mr-4">
                         <label for="red-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"></label>
-                        <input id="teacher-{{ $teacher->id }}" type="checkbox" value={{$teacher->user_id}} style="color:#cb0c9f;" class="w-4 h-4  bg-gray-100 border-gray-300 rounded focus:ring-0   dark:ring-offset-gray-800 focus:ring-1 dark:bg-gray-700 dark:border-gray-600">
+                        <input id="parent-{{ $parent->id }}" type="checkbox" value={{$parent->user_id}} style="color:#cb0c9f;" class="w-4 h-4  bg-gray-100 border-gray-300 rounded focus:ring-0   dark:ring-offset-gray-800 focus:ring-1 dark:bg-gray-700 dark:border-gray-600">
                     </div>
                 </td>
                 <td class="px-6 py-3 whitespace-nowrap text-center overflow-auto simplebar " style="max-width: 150px;">
                     {{ $loop->iteration }}
                 </td>
                 <td class="px-6 py-3 whitespace-nowrap text-center overflow-auto simplebar" style="max-width: 150px;">
-                    <img class="object-cover mx-1 w-10 h-10 rounded-full" src="{{ $teacher->user->profile_photo_url }}" alt="{{ $teacher->user->name }}" />
+                    {{ $parent->Name_Father ?? '-' }}
                 </td>
                 <td class="px-6 py-3 whitespace-nowrap text-center overflow-auto simplebar" style="max-width: 150px;">
-                    {{ $teacher->teacher_name ?? '-' }}
+                    {{ $parent->Name_Mother ?? '-' }}
+                </td>
+                <td class="px-6 py-3 whitespace-nowrap text-center overflow-auto simplebar" style="max-width:150px;">
+                    {{ $parent->Phone_Father ?? '-' }}
                 </td>
                 <td class="px-6 py-3 whitespace-nowrap text-center overflow-auto simplebar" style="max-width: 150px;">
-                    {{ $teacher->specialization->name ?? '-' }}
-                </td>
-                <td class="px-6 py-3 whitespace-nowrap text-center overflow-auto simplebar" style="max-width: 150px;">
-                    {{ $teacher->joining_date ?? '-' }}
+                    {{ $parent->Phone_Mother ?? '-' }}
                 </td>
                 <td class="px-6 py-3 whitespace-nowrap flex justify-center ">
-                    <a href="{{route('teacher.info',$teacher->id)}}" target="_blank" class="mx-4">
+                    <a href="{{route('parent.info',$parent->id)}}" target="_blank" class="mx-4">
                         <i class="fa-solid fa-file-lines fa-lg hover:text-gray-800"></i>
                     </a>
-                    <a href="{{route('teacher.edit',$teacher->id)}}" target="_blank" class="mx-4">
+                    <a href="{{--route('parent.edit',$parent->id)--}}" target="_blank" class="mx-4">
                         <i class="fa-sharp fa-solid fa-pen-to-square fa-lg hover:text-gray-800"></i>
                     </a>
-                    <a href="{{route('teacher.email.edit',$teacher->user_id)}}" target="_blank" class="mx-4">
+                    <a href="{{--route('parent.email.edit',$parent->user_id)--}}" target="_blank" class="mx-4">
                         <i class="fa-solid fa-envelope-open-text fa-lg hover:text-gray-800"></i>
                     </a>
-                    <button  data-modal-target="modal-delete-{{$teacher->id}}"  data-modal-toggle="modal-delete-{{$teacher->id}}" class="mx-4 "><i class="fa-solid fa-trash text-red-600 hover:text-red-500 fa-lg"></i></button>
+                    <button  data-modal-target="modal-delete-{{$parent->id}}"  data-modal-toggle="modal-delete-{{$parent->id}}" class="mx-4 "><i class="fa-solid fa-trash text-red-600 hover:text-red-500 fa-lg"></i></button>
 
                                     <!-- Delete modal -->
-                <div  id="modal-delete-{{$teacher->id}}"  aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden max-md:w-screen max-md:h-screen md:py-[15%] md:px-[32%] overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
+                <div  id="modal-delete-{{$parent->id}}"  aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden max-md:w-screen max-md:h-screen md:py-[15%] md:px-[32%] overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
                     <div class="relative w-full h-full max-w-md md:h-auto">
-                        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 ">
-                            <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-hide="modal-delete-{{$teacher->id}}">
+                        <div class="block bg-white rounded-lg shadow dark:bg-gray-700 ">
+                            <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-hide="modal-delete-{{$parent->id}}">
                                 <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                                 <span class="sr-only">Close modal</span>
                             </button>
-                            <form  action="{{route("teacher.destroy")}}" method="post" class="inline">
+                            <form  action="{{route('parent.destroy')}}" method="post" class="inline">
                                 @method("delete")
                                 @csrf
-                            <div class="p-6 text-center">
+                            <div class="p-6 text-center break-words">
                                 <svg aria-hidden="true" class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">{{trans('main.delete-teacher-title',['name'=>$teacher->teacher_name])}}</h3>
-                                <input class="text" type="hidden"  name="teacherIdForDelete" value="{{$teacher->user_id}}">
-                                <button data-modal-hide="modal-delete-{{$teacher->id}}" type="submit"  class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+                                <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400 break-words">{{trans('main.delete-parent-title')}}</h3>
+                                <input class="text" type="hidden"  name="parentIdForDelete" value="{{$parent->user_id}}">
+                                <button data-modal-hide="modal-delete-{{$parent->id}}" type="submit"  class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
                                     {{trans('main.confirm')}}
                                 </button>
-                                <button data-modal-hide="modal-delete-{{$teacher->id}}" type="button"  class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">{{trans('main.cancel')}}</button>
+                                <button data-modal-hide="modal-delete-{{$parent->id}}" type="button"  class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">{{trans('main.cancel')}}</button>
                             </div>
                             </form>
                         </div>
@@ -127,7 +129,7 @@
         @empty
             <tr>
                 <td colspan="4" class="px-6 py-4 whitespace-nowrap">
-                    {{ __('main.no-teachers') }}
+                    {{ __('main.no-parents') }}
                 </td>
             </tr>
         @endforelse
@@ -137,7 +139,7 @@
 
 
 <div class="mt-4">
-    {{ $teachers->render() }}
+    {{ $parents->render() }}
 </div>
 
  <!-- DeleteAll modal -->
@@ -148,13 +150,13 @@
                 <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                 <span class="sr-only">Close modal</span>
             </button>
-            <form action="{{route('teachers.selected.destroy')}}" method="post">
+            <form action="{{route('parents.selected.destroy')}}" method="post">
                 @method("delete")
                 @csrf
             <div class="p-6 text-center">
                 <svg aria-hidden="true" class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">{{trans('main.delete-teachers-title')}}</h3>
-                <input class="text" type="hidden" id="selected_ids" name="selected_teachers_ids">
+                <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">{{trans('main.delete-parents-title')}}</h3>
+                <input class="text" type="hidden" id="selected_ids" name="selected_parents_ids">
                 <button data-modal-hide="modal-deleteAll" type="submit" id="delete-selected-btn" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
                     {{trans('main.confirm')}}
                 </button>

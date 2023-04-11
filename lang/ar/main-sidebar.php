@@ -34,6 +34,11 @@ return [
     'teacher.info'=>"معلومات الاستاذ",
     'teacher.edit'=>"تعديل معلومات الاستاذ",
     'teacher.email.edit'=>"تعديل البريد الالكتروني للاستاذ",
+    'parents'=>"الاباء",
+    'parents.index'=>"الاباء",
+    'parent.info'=>"معلومات الاباء",
+    'parent.edit'=>"تعديل معلومات الاباء",
+    'parent.email.edit'=>"تعديل البريد الالكتروني للاباء",
 
 
 

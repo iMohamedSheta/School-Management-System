@@ -34,5 +34,10 @@ return [
     'teacher.info'=>"Teacher Information",
     'teacher.edit'=>"Edit Teacher Information",
     'teacher.email.edit'=>"Edit Teacher Email information",
+    'teachers'=>"Parents",
+    'teachers.index'=>"Parents",
+    'teacher.info'=>"Parent Information",
+    'teacher.edit'=>"Edit Parent Information",
+    'teacher.email.edit'=>"Edit Parent Email information",
 
 ];

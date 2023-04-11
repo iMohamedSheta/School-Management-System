@@ -20,6 +20,7 @@ return
     'delete_classroom_success' => 'تم حذف الصف الدراسي :name بنجاح.!',
     'delete_student_success' => 'تم حذف الطالب :name بنجاح.!',
     'delete_teacher_success' => 'تم حذف الاستاذ :name بنجاح.!',
+    'delete_parent_success' => 'تم حذف معلومات وبريد الابويين بنجاح.!',
     'error-classrooms-info'=>"الرجاء إدخال اسم الصف والمرحلة الدراسية للصف الدراسي",
     "gradehasclassrooms" => "لا يمكن حذف المرحلة، حيث تحتوي المرحلة الدراسية على صفوف دراسية.",
     "invalidgrade" => "المرحلة الدراسية المطلوبة غير صالحة.",
