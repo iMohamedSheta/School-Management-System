@@ -30,8 +30,12 @@ return
     'delete-selected'=> "حذف المحدد",
     'father-info-empty'=>"ليس لدى ولي الأمر معلومات تأكد من إضافة معلومات اولياء الامور قبل إضافة معلومات الطالب.",
     'student-updated'=>"تم تحديث معلومات الطالب بنجاح.",
-    'teacher-updated'=>"تم تحديث معلومات الاستاذ :name بنجاح."
-
+    'parent-updated'=>"تم تحديث معلومات الابويين بنجاح.",
+    'teacher-updated'=>"تم تحديث معلومات الاستاذ :name بنجاح.",
+    'no_students_to_promote'=>"لا يوجد طلاب مسجلين في الفصل الدراسي لكي يتم ترقيتهم الي مرحلة اخري.",
+    'students_promoted'=>'تم ترقية جميع الطلاب بالمرحلة :old_grade والفصل :old_classroom الي المرحلة :new_grade والفصل :new_classroom.',
+    'promotion_rollback'=>'تم التراجع عن الترقية للطالب :name.',
+    'promotions_rollback'=>'تم التراجع عن الترقية للطلاب المحددين .',
 
 
 

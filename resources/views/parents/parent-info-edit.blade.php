@@ -9,18 +9,11 @@
 
 @section('Content')
 
-<livewire:teacher-info-edit :teacher="$teacher">
+<livewire:parents.parent-info-edit :parent="$parent">
 
 @endsection
 
 
 @section('scripts')
-<script>
-    flatpickr("#joining_date", {
-      dateFormat: "Y-m-d",
-      onChange: function(selectedDates, dateStr, instance) {
-        document.getElementById("joining_date").value = dateStr;
-      }
-    });
-</script>
+
 @endsection

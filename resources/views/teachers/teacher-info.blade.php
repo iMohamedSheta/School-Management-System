@@ -5,7 +5,7 @@
 
 @section('Content')
 
-<livewire:teacher-information :teacher="$teacher">
+<livewire:teachers.teacher-information :teacher="$teacher">
 
 
 <style>

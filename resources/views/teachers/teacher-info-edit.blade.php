@@ -9,7 +9,7 @@
 
 @section('Content')
 
-<livewire:teacher-info-edit :teacher="$teacher">
+<livewire:teachers.teacher-info-edit :teacher="$teacher">
 
 @endsection
 

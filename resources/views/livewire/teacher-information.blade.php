@@ -2,6 +2,10 @@
 
 
 
+
+
+
+
 <div class="overflow-hidden bg-white shadow sm:rounded-lg">
     <div id="print-content">
     <div class="px-4 py-5 sm:px-6">

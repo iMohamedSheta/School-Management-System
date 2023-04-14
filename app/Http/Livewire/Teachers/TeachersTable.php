@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Teachers;
 
 use App\Models\Grade;
 use App\Models\Teacher;

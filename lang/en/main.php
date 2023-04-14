@@ -161,7 +161,24 @@ return
     'teacher-edit-email-body'=>'In this page you can edit user information which he login into the system with for teacher :name.',
     'student-edit-email-title'=>'Edit Email Inforamtion for the Student :name',
     'student-edit-email-body'=>'In this page you can edit user information which he login into the system with for student :name.',
+    'parent-edit-email-title'=>'Edit Email Inforamtion for the Parent :father and :mother',
+    'parent-edit-email-body'=>'In this page you can edit user information which he login into the system with for Parent :father and :mother.',
     'sons'=>'Sons',
+    'edit-father-info'=>"Edit Father Information",
+    'edit-mother-info'=>"Edit Mother Information",
+    'promote_classroom'=>"Promote Classroom",
+    'promote_to'=>"Promote To",
+    'promote'=>"Promote",
+    'old_grade'=>'Old Grade',
+    'new_grade'=>'New Grade',
+    'current_grade'=>'Current Grade',
+    'old_classroom'=>'Old Classroom',
+    'new_classroom'=>'New Classroom',
+    'current_classroom'=>'Current Classroom',
+    'promotion-date'=>'Promotion Date',
+    'promotion_back_title'=>'Are you sure you want to cancel the promotion for the student :name ?',
+    'selected_promotions_back_title'=>'Are you sure you want to cancel the promotion for the student :name ?',
+
 
 
 

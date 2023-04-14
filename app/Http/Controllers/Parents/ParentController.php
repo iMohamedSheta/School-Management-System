@@ -1,50 +1,50 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Parents;
 
-use Illuminate\Http\Request;
-use App\Models\Teacher;
+use App\Http\Controllers\Controller;
+use App\Models\MyParent;
 use App\Models\User;
+use Illuminate\Http\Request;
 
-class TeacherController extends Controller
+class ParentController extends Controller
 {
     //
 
     public function index()
     {
-        return view('teachers.teachers');
+        return view('parents.parents');
     }
 
-    public function teacherInfoView($id)
+    public function parentInfoView($id)
     {
-        $teacher = Teacher::findOrFail($id);
-        return view('teachers.teacher-info',compact('teacher'));
+        $parent = MyParent::findOrFail($id);
+        return view('parents.parent-info',compact('parent'));
     }
 
-    public function teacherInfoEditView($id)
+    public function parentInfoEditView($id)
     {
-        $teacher = Teacher::findOrFail($id);
-        return view('teachers.teacher-info-edit',compact('teacher'));
+        $parent = MyParent::findOrFail($id);
+        return view("parents.parent-info-edit",compact('parent'));
+    }
+    public function parentEmailEditView($id)
+    {
+        $parent_user = User::findOrFail($id);
+        return view("parents.parent-email-edit",compact('parent_user'));
     }
 
-    public function teacherEmailEditView($id)
-    {
-        $teacher_user = User::findOrFail($id);
-        return view('teachers.teacher-email-edit',compact('teacher_user'));
-    }
 
     public function destroy(Request $request)
     {
         if(auth()->user()->isAdmin())
         {
-            $userId = $request->teacherIdForDelete;
+            $userId = $request->parentIdForDelete;
             $user = User::where('id',$userId)->first();
-            $userName=$user->teacher->teacher_name;
-            $deleteTeacherUser = $user->delete();
+            $deleteParentUser = $user->delete();
 
-            if($deleteTeacherUser)
+            if($deleteParentUser)
             {
-                return redirect()->back()->with('success', trans('alert.delete_teacher_success',['name'=>$userName]));
+                return redirect()->back()->with('success', trans('alert.delete_parent_success'));
             }
         }
 
@@ -58,7 +58,7 @@ class TeacherController extends Controller
 
         if(auth()->user()->isAdmin())
         {
-            $selectedIds = explode(',', $request->selected_teachers_ids);
+            $selectedIds = explode(',', $request->selected_parents_ids);
 
         //Loop through the selected students to get the user account and put all the id in array
 
@@ -82,5 +82,4 @@ class TeacherController extends Controller
 
         return redirect()->back()->with('error', trans('alert.error'));
     }
-
 }

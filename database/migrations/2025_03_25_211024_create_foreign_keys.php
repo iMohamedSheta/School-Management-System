@@ -75,6 +75,13 @@ return new class extends Migration
             $table->foreign('parent_id')->references('id')->on('my_parents')->onDelete('cascade');
             $table->foreign('religion_id')->references('id')->on('religions');
         });
+        Schema::table('promotions', function (Blueprint $table) {
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
+            $table->foreign('from_grade')->references('id')->on('grades')->onDelete('cascade');
+            $table->foreign('from_classroom')->references('id')->on('classrooms')->onDelete('cascade');
+            $table->foreign('to_grade')->references('id')->on('grades')->onDelete('cascade');
+            $table->foreign('to_classroom')->references('id')->on('classrooms')->onDelete('cascade');
+        });
 
     }
 
@@ -140,6 +147,13 @@ return new class extends Migration
             $table->dropForeign(['classroom_id']);
             $table->dropForeign(['parent_id']);
             $table->dropForeign(['religion_id']);
+        });
+        Schema::table('promotions', function (Blueprint $table) {
+            $table->dropForeign(['student_id']);
+            $table->dropForeign(['from_grade']);
+            $table->dropForeign(['from_classroom']);
+            $table->dropForeign(['to_grade']);
+            $table->dropForeign(['to_classroom']);
         });
 
 

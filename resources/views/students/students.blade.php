@@ -7,6 +7,6 @@
 @section('Content')
 
 
-<livewire:students-table>
+<livewire:students.students-table>
 
 @endsection

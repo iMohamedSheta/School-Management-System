@@ -9,7 +9,7 @@
 @section('Content')
 
 
-<livewire:teacher-email-edit :teacher_user="$teacher_user">
+<livewire:teachers.teacher-email-edit :teacher_user="$teacher_user">
 
 
 

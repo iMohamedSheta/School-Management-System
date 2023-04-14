@@ -5,8 +5,8 @@
 
 @section('Content')
 
-<livewire:teacher-information :teacher="$teacher">
 
+<livewire:parents.parent-information :parent="$parent">
 
 <style>
     @media print {

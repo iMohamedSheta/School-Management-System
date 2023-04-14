@@ -199,7 +199,7 @@ class AddUser extends Component
             'Name_Father' => 'required|string',
             'National_ID_Father' => "required_if:Passport_ID_Father,Null",
             'Passport_ID_Father' => 'required_if:National_ID_Father,Null',
-            'Phone_Father' => 'required|integer',
+            'Phone_Father' => 'required',
             'Address_Father' => 'required',
             'Nationality_Father_id' => 'required',
             'Religion_Father_id' => 'required',
@@ -207,7 +207,7 @@ class AddUser extends Component
             'Name_Mother' => 'required|string',
             'National_ID_Mother' => "required_if:Passport_ID_Mother,Null",
             'Passport_ID_Mother' => 'required_if:National_ID_Mother,Null',
-            'Phone_Mother' => 'required|integer',
+            'Phone_Mother' => 'required',
             'Address_Mother' => 'required',
             'Nationality_Mother_id' => 'required',
             'Religion_Mother_id' => 'required',
@@ -238,7 +238,7 @@ class AddUser extends Component
                     "Job_Mother" => $this->Job_Mother,
                     "Nationality_Mother_id" => $this->Nationality_Mother_id,
                     "Religion_Mother_id" => $this->Religion_Mother_id,
-                    "Blood_Type_Father_id" => $this->Blood_Type_Mother_id,
+                    "Blood_Type_Mother_id" => $this->Blood_Type_Mother_id,
 
                 ]
                 );
@@ -357,6 +357,10 @@ class AddUser extends Component
         }
     }
 
+    public function print()
+    {
+        $this->dispatchBrowserEvent('print');
+    }
 
 
         public function render()

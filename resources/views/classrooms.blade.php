@@ -32,6 +32,7 @@
                 </div>
 
                 <div class="relative ">
+                    <div class="w-80">
                     <div id="search-icon" class="absolute top-0 search-icon left-0 mt-2 ml-2 text-gray-400 cursor-pointer transform transition-transform ">
                         <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
                     </div>
@@ -40,6 +41,7 @@
                         <input type="submit" value="Search" style="display: none;">
                         <div id="search-results" class="bg-white border border-gray-300 rounded-lg my-2 w-full"></div>
                     </form>
+                    </div>
                     <div>
                         <form method="post" action="{{route('classroom.filter')}}" id="classroom-form">
                             @csrf
@@ -61,28 +63,28 @@
 
                 </div>
 
-                <table class="min-w-full divide-y divide-gray-200" id="multiselect-table">
-                    <thead class="bg-gray-50">
+                <table class="min-w-full divide-y divide-gray-200 text-sm" id="multiselect-table">
+                    <thead class="bg-gray-800 text-white" wire:ignore>
                         <tr>
-                            <th>
+                            <th scope="col" class=" text-xs  " >
                                 <div class="flex items-center mr-4">
                                     <label for="checkboxAll" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"></label>
                                     <input id="checkboxAll" type="checkbox" value="" style="color:#cb0c9f;" class="w-4 h-4 bg-gray-100 rounded focus:ring-0  dark:focus:ring-red-600 dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600" ">
                                 </div>
                             </th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center" style="max-width: 150px;">
+                            <th scope="col" class="px-6 py-2 text-xs font-medium  uppercase tracking-wider text-center" >
                                 {{ __('#') }}
                             </th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center" style="max-width: 150px;">
+                            <th scope="col" class="px-6 py-2 text-xs font-medium  uppercase tracking-wider text-center" >
                                 {{ __('main.classroomname') }}
                             </th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center" style="max-width: 150px;">
+                            <th scope="col" class="px-6 py-2 text-xs font-medium  uppercase tracking-wider text-center" >
                                 {{ __('main.description') }}
                             </th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center" style="max-width: 150px;">
+                            <th scope="col" class="px-6 py-2 text-xs font-medium  uppercase tracking-wider text-center" >
                                 {{ __('main.grade') }}
                             </th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center" style="max-width: 150px;">
+                            <th scope="col" class="px-6 py-2 text-xs font-medium  uppercase tracking-wider text-center" >
                                 {{ __('main.actions') }}
                             </th>
 
@@ -91,7 +93,7 @@
                     <tbody class="bg-white divide-y divide-gray-200">
                         <div id="multiselect-table">
                         @forelse ($classrooms as $classroom)
-                            <tr>
+                            <tr class="hover:bg-gray-50">
                                 <td>
                                     <div class="flex items-center mr-4">
                                         <label for="red-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"></label>

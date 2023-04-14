@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Parents;
 
 use App\Models\MyParent;
 use Livewire\Component;

@@ -39,6 +39,10 @@ return [
     'parent.info'=>"معلومات الاباء",
     'parent.edit'=>"تعديل معلومات الاباء",
     'parent.email.edit'=>"تعديل البريد الالكتروني للاباء",
+    'students.promotions.index'=>'ترقيات الطلاب',
+    'students.promotions.classroom'=>'ترقية فصل دراسي',
+    'students_promotions'=>'ترقيات الطلاب',
+    'students.promotions.table'=>'ترقيات الطلاب',
 
 
 

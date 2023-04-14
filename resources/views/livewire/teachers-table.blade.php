@@ -9,7 +9,7 @@
             <div class="p-6">
                 <div class="flex justify-between">
 
-                    <div class="flex items-end ">
+                    <div class="flex items-end w-80 mb-2">
                         <div class="relative w-full">
                             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                 <svg aria-hidden="true" class="search-icon transition mx-6  w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
@@ -30,8 +30,8 @@
         </div>
 
 
-<table class="min-w-full divide-y divide-gray-200" id="multiselect-table">
-    <thead class="bg-gray-50" wire:ignore>
+<table class="min-w-full max-w-7xl divide-y divide-gray-200 text-sm" id="multiselect-table">
+    <thead class="bg-gray-800 text-white" wire:ignore>
         <tr>
             <th>
                 <div class="flex items-center mr-4">
@@ -39,22 +39,19 @@
                     <input id="checkboxAll" type="checkbox" value="" style="color:#cb0c9f;" class="w-4 h-4 bg-gray-100 rounded focus:ring-0  dark:focus:ring-red-600 dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600" ">
                 </div>
             </th>
-            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center" style="max-width: 150px;">
+            <th scope="col" class="px-6 py-2 text-xs font-medium  uppercase tracking-wider text-center" >
                 {{ __('#') }}
             </th>
-            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center" style="max-width: 150px;">
-                {{ __('main.avatar') }}
-            </th>
-            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center" style="max-width: 150px;">
+            <th scope="col" class="px-6 py-2 text-xs font-medium  uppercase tracking-wider text-center" >
                 {{ __('main.name') }}
             </th>
-            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center" style="max-width: 150px;">
+            <th scope="col" class="px-6 py-2 text-xs font-medium  uppercase tracking-wider text-center" >
                 {{ __('main.specialization') }}
             </th>
-            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center" style="max-width: 150px;">
+            <th scope="col" class="px-6 py-2 text-xs font-medium  uppercase tracking-wider text-center" >
                 {{ __('main.joining-date') }}
             </th>
-            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center" style="max-width: 150px;">
+            <th scope="col" class="px-6 py-2 text-xs font-medium  uppercase tracking-wider text-center" >
                 {{ __('main.actions') }}
             </th>
 
@@ -63,39 +60,45 @@
     <tbody class="bg-white divide-y divide-gray-200">
         <div id="multiselect-table">
         @forelse ($teachers as $teacher)
-            <tr>
+            <tr class="hover:bg-gray-50">
+
                 <td>
                     <div class="flex items-center mr-4">
                         <label for="red-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"></label>
                         <input id="teacher-{{ $teacher->id }}" type="checkbox" value={{$teacher->user_id}} style="color:#cb0c9f;" class="w-4 h-4  bg-gray-100 border-gray-300 rounded focus:ring-0   dark:ring-offset-gray-800 focus:ring-1 dark:bg-gray-700 dark:border-gray-600">
                     </div>
                 </td>
-                <td class="px-6 py-3 whitespace-nowrap text-center overflow-auto simplebar " style="max-width: 150px;">
-                    {{ $loop->iteration }}
+
+                <td class="px-6 py-3 whitespace-nowrap text-center overflow-auto simplebar " >
+                    {{ getiteration($teachers,$loop) }}
                 </td>
-                <td class="px-6 py-3 whitespace-nowrap text-center overflow-auto simplebar" style="max-width: 150px;">
+                <th scope="row" class="flex items-center text-cemter justify-center px-6 py-2 text-gray-900 whitespace-nowrap dark:text-white">
                     <img class="object-cover mx-1 w-10 h-10 rounded-full" src="{{ $teacher->user->profile_photo_url }}" alt="{{ $teacher->user->name }}" />
-                </td>
-                <td class="px-6 py-3 whitespace-nowrap text-center overflow-auto simplebar" style="max-width: 150px;">
-                    {{ $teacher->teacher_name ?? '-' }}
-                </td>
-                <td class="px-6 py-3 whitespace-nowrap text-center overflow-auto simplebar" style="max-width: 150px;">
+                    <div class="pl-3">
+                        <div class="text-base font-semibold">{{ $teacher->teacher_name ?? '-' }}</div>
+                        <div class="font-normal text-gray-500">
+                            {{$teacher->user->email}}
+                        </div>
+                    </div>
+                </th>
+
+                <td class="px-6 py-3 whitespace-nowrap text-center overflow-auto simplebar" >
                     {{ $teacher->specialization->name ?? '-' }}
                 </td>
-                <td class="px-6 py-3 whitespace-nowrap text-center overflow-auto simplebar" style="max-width: 150px;">
+                <td class="px-6 py-3 whitespace-nowrap text-center overflow-auto simplebar" >
                     {{ $teacher->joining_date ?? '-' }}
                 </td>
-                <td class="px-6 py-3 whitespace-nowrap flex justify-center ">
-                    <a href="{{route('teacher.info',$teacher->id)}}" target="_blank" class="mx-4">
+                <td class="px-6 py-2 whitespace-nowrap  text-center ">
+                    <a href="{{route('teacher.info',$teacher->id)}}" target="_blank" class="mx-2">
                         <i class="fa-solid fa-file-lines fa-lg hover:text-gray-800"></i>
                     </a>
-                    <a href="{{route('teacher.edit',$teacher->id)}}" target="_blank" class="mx-4">
+                    <a href="{{route('teacher.edit',$teacher->id)}}" target="_blank" class="mx-2">
                         <i class="fa-sharp fa-solid fa-pen-to-square fa-lg hover:text-gray-800"></i>
                     </a>
-                    <a href="{{route('teacher.email.edit',$teacher->user_id)}}" target="_blank" class="mx-4">
+                    <a href="{{route('teacher.email.edit',$teacher->user_id)}}" target="_blank" class="mx-2">
                         <i class="fa-solid fa-envelope-open-text fa-lg hover:text-gray-800"></i>
                     </a>
-                    <button  data-modal-target="modal-delete-{{$teacher->id}}"  data-modal-toggle="modal-delete-{{$teacher->id}}" class="mx-4 "><i class="fa-solid fa-trash text-red-600 hover:text-red-500 fa-lg"></i></button>
+                    <button  data-modal-target="modal-delete-{{$teacher->id}}"  data-modal-toggle="modal-delete-{{$teacher->id}}" class="mx-2"><i class="fa-solid fa-trash text-red-600 hover:text-red-500 fa-lg"></i></button>
 
                                     <!-- Delete modal -->
                 <div  id="modal-delete-{{$teacher->id}}"  aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden max-md:w-screen max-md:h-screen md:py-[15%] md:px-[32%] overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">

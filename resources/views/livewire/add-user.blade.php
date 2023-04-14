@@ -10,30 +10,30 @@
         <div class="pb-14 pt-7 md:flex hs:block ">
             <div class="block px-[10%]  mt-[5%]">
 
-                <ol class="relative text-gray-500 border-r border-gray-200 dark:border-gray-700 dark:text-gray-400">
-                    <li class="mb-10 mr-6">
-                        <span class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -right-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
+                <ol class="relative text-gray-500 border-{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "r":'l'}} border-gray-200 dark:border-gray-700 dark:text-gray-400">
+                    <li class="mb-10 m{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "r":'l'}}-6">
+                        <span class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "right":'left'}}-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
                             <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a1 1 0 00-1 1v1a1 1 0 002 0V3a1 1 0 00-1-1zM4 4h3a3 3 0 006 0h3a2 2 0 012 2v9a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm2.5 7a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm2.45 4a2.5 2.5 0 10-4.9 0h4.9zM12 9a1 1 0 100 2h3a1 1 0 100-2h-3zm-1 4a1 1 0 011-1h2a1 1 0 110 2h-2a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                         </span>
                         <h3 class="font-medium leading-tight">{{ trans('main.account-info') }}</h3>
                         <p class="text-sm pt-2">{{ trans('main.account-info-details') }}</p>
                     </li>
-                    <li class="mb-10 mr-6">
-                        <span class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -right-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+                    <li class="mb-10 m{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "r":'l'}}-6">
+                        <span class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "right":'left'}}-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
                             <i class="fa-solid fa-user-shield"></i>
                         </span>
                         <h3 class="font-medium leading-tight">{{ trans('main.assign') }}</h3>
                         <p class="text-sm pt-2">{{ trans('main.assign-role-details') }}</p>
                     </li>
-                    <li class="mb-10 mr-6">
-                        <span class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -right-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+                    <li class="mb-10 m{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "r":'l'}}-6">
+                        <span class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "right":'left'}}-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
                             <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
                         </span>
                         <h3 class="font-medium leading-tight">{{ trans('main.personal-info') }}</h3>
                         <p class="text-sm pt-2">{{ trans('main.personal-info-details') }}</p>
                     </li>
-                    <li class="mr-6">
-                        <span class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -right-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+                    <li class="m{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "r":'l'}}-6">
+                        <span class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "right":'left'}}-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
                             <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                         </span>
                         <h3 class="font-medium leading-tight">{{ trans('main.review') }}</h3>
@@ -108,9 +108,9 @@
     <div class="pb-14 pt-7 flex">
         <div class="block px-[10%]  mt-[5%]">
 
-            <ol class="relative text-gray-500 border-r border-gray-200 dark:border-gray-700 dark:text-gray-400">
-                <li class="mb-10 mr-6">
-                    <span class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -right-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
+            <ol class="relative text-gray-500 border-{{ str_replace('_', '-', app()->getLocale()) == 'ar' ? 'r':'l'}} border-gray-200 dark:border-gray-700 dark:text-gray-400">
+                <li class="mb-10 m{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "r":'l'}}-6">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "right":'left'}}-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
                         <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400 absolute" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a1 1 0 00-1 1v1a1 1 0 002 0V3a1 1 0 00-1-1zM4 4h3a3 3 0 006 0h3a2 2 0 012 2v9a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm2.5 7a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm2.45 4a2.5 2.5 0 10-4.9 0h4.9zM12 9a1 1 0 100 2h3a1 1 0 100-2h-3zm-1 4a1 1 0 011-1h2a1 1 0 110 2h-2a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                         <svg class="checkmark " viewBox="0 0 52 52">
                                 <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
@@ -120,22 +120,22 @@
                     <h3 class="font-medium leading-tight">{{ trans('main.account-info') }}</h3>
                     <p class="text-sm pt-2">{{ trans('main.account-info-details') }}</p>
                 </li>
-                <li class="mb-10 mr-6">
-                        <span class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -right-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
+                <li class="mb-10 m{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "r":'l'}}-6">
+                        <span class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "right":'left'}}-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
                             <i class="fa-solid fa-user-shield"></i>
                     </span>
                     <h3 class="font-medium leading-tight">{{ trans('main.assign') }}</h3>
                         <p class="text-sm pt-2">{{ trans('main.assign-role-details') }}</p>
                 </li>
-                <li class="mb-10 mr-6">
-                    <span class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -right-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+                <li class="mb-10 m{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "r":'l'}}-6">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "right":'left'}}-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
                         <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
                     </span>
                     <h3 class="font-medium leading-tight">{{ trans('main.personal-info') }}</h3>
                     <p class="text-sm pt-2">{{ trans('main.personal-info-details') }}</p>
                 </li>
-                <li class="mr-6">
-                    <span class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -right-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+                <li class="m{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "r":'l'}}-6">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "right":'left'}}-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
                         <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                     </span>
                     <h3 class="font-medium leading-tight">{{ trans('main.review') }}</h3>
@@ -198,9 +198,9 @@
 
         <div class="pb-14 pt-8 md:flex hs:block">
             <div class="block md:px-[2%]  mt-[5%]">
-                <ol class="relative text-gray-500 border-r border-gray-200 dark:border-gray-700 dark:text-gray-400">
-                    <li class="mb-10 mr-6 w-full">
-                        <span class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -right-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
+                <ol class="relative text-gray-500 border-{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "r":'l'}} border-gray-200 dark:border-gray-700 dark:text-gray-400">
+                    <li class="mb-10 m{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "r":'l'}}-6 w-full">
+                        <span class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "right":'left'}}-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
                             <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400 absolute" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a1 1 0 00-1 1v1a1 1 0 002 0V3a1 1 0 00-1-1zM4 4h3a3 3 0 006 0h3a2 2 0 012 2v9a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm2.5 7a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm2.45 4a2.5 2.5 0 10-4.9 0h4.9zM12 9a1 1 0 100 2h3a1 1 0 100-2h-3zm-1 4a1 1 0 011-1h2a1 1 0 110 2h-2a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                             <svg class="checkmark " viewBox="0 0 52 52">
                                 <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
@@ -210,8 +210,8 @@
                         <h3 class="font-medium leading-tight">{{ trans('main.account-info') }}</h3>
                         <p class="text-sm pt-2">{{ trans('main.account-info-details') }}</p>
                     </li>
-                    <li class="mb-10 mr-6">
-                            <span class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -right-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
+                    <li class="mb-10 m{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "r":'l'}}-6">
+                            <span class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "right":'left'}}-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
                                 <i class="fa-solid fa-user-shield absolute"></i>
                                 <svg class="checkmark" viewBox="0 0 52 52">
                                     <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
@@ -221,15 +221,15 @@
                         <h3 class="font-medium leading-tight">{{ trans('main.assign') }}</h3>
                         <p class="text-sm pt-2">{{ trans('main.assign-role-details') }}</p>
                     </li>
-                    <li class="mb-10 mr-6">
-                        <span class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -right-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
+                    <li class="mb-10 m{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "r":'l'}}-6">
+                        <span class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "right":'left'}}-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
                             <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
                         </span>
                         <h3 class="font-medium leading-tight">{{ trans('main.personal-info') }}</h3>
                         <p class="text-sm pt-2">{{ trans('main.personal-info-details') }}</p>
                     </li>
-                    <li class="mr-6">
-                        <span class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -right-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+                    <li class="m{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "r":'l'}}-6">
+                        <span class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "right":'left'}}-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
                             <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                         </span>
                         <h3 class="font-medium leading-tight">{{ trans('main.review') }}</h3>
@@ -761,9 +761,9 @@
 
         <div class="pb-14 pt-8 flex ">
             <div class="block px-[2%]  mt-[5%]">
-                <ol class="relative text-gray-500 border-r border-gray-200 dark:border-gray-700 dark:text-gray-400">
-                    <li class="mb-10 mr-6">
-                        <span class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -right-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
+                <ol class="relative text-gray-500 border-{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "r":'l'}} border-gray-200 dark:border-gray-700 dark:text-gray-400">
+                    <li class="mb-10 m{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "r":'l'}}-6">
+                        <span class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "right":'left'}}-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
                             <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400 absolute" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a1 1 0 00-1 1v1a1 1 0 002 0V3a1 1 0 00-1-1zM4 4h3a3 3 0 006 0h3a2 2 0 012 2v9a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm2.5 7a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm2.45 4a2.5 2.5 0 10-4.9 0h4.9zM12 9a1 1 0 100 2h3a1 1 0 100-2h-3zm-1 4a1 1 0 011-1h2a1 1 0 110 2h-2a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                             <svg class="checkmark " viewBox="0 0 52 52">
                                 <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
@@ -773,8 +773,8 @@
                         <h3 class="font-medium leading-tight">{{ trans('main.account-info') }}</h3>
                         <p class="text-sm pt-2">{{ trans('main.account-info-details') }}</p>
                     </li>
-                    <li class="mb-10 mr-6">
-                            <span class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -right-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
+                    <li class="mb-10 m{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "r":'l'}}-6">
+                            <span class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "right":'left'}}-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
                                 <i class="fa-solid fa-user-shield absolute"></i>
                                 <svg class="checkmark" viewBox="0 0 52 52">
                                     <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
@@ -784,8 +784,8 @@
                         <h3 class="font-medium leading-tight">{{ trans('main.assign') }}</h3>
                         <p class="text-sm pt-2">{{ trans('main.assign-role-details') }}</p>
                     </li>
-                    <li class="mb-10 mr-6">
-                        <span class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -right-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
+                    <li class="mb-10 m{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "r":'l'}}-6">
+                        <span class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "right":'left'}}-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
                             <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400 absolute" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
                             <svg class="checkmark " viewBox="0 0 52 52">
                                 <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
@@ -795,8 +795,8 @@
                         <h3 class="font-medium leading-tight">{{ trans('main.personal-info') }}</h3>
                         <p class="text-sm pt-2">{{ trans('main.personal-info-details') }}</p>
                     </li>
-                    <li class="mr-6">
-                        <span class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -right-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
+                    <li class="m{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "r":'l'}}-6">
+                        <span class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -{{ str_replace('_', '-', app()->getLocale()) == "ar" ? "right":'left'}}-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
                             <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400 absolute" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                             <svg class="checkmark " viewBox="0 0 52 52">
                                 <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
@@ -814,219 +814,287 @@
 
 
             @if($user_created_role == "Parent")
-            <div  class="w-full sm:max-w-md lg:max-w-2xl mt-6 px-6 pt-4  pb-2 bg-white shadow-md overflow-hidden sm:rounded-lg mx-auto border-4">
-                <div class="pb-10 pt-2">
-                    <div class="text-2xl py-2 border-b-2">{{ trans('main.parent-info') }}</div>
-                    <div class="mt-6">
-                        <div class="relative z-0  group  p-2 grid grid-cols-1 md:gap-6">
-                            <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg border-b-2 ">{{trans('main.father-name')}} :  <span class="text-sm font-normal"> {{$user->parent->Name_Father ?? "undefined"}} </span> </h4>
-                            </div>
-                        </div>
-                        <div class="grid md:grid-cols-2 md:gap-6  p-2">
-                            <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg  border-b-2">{{ trans('main.father-national-id') }} :  <span class="text-sm font-normal"> {{$user->parent->National_ID_Father ?? "undefined"}} </span> </h4>
-                            </div>
-                        <div class="relative z-0 w-full  group">
-                            <h4 class="text-lg  border-b-2"> {{ trans('main.father-passport-id') }} :  <span class="text-sm font-normal"> {{$user->parent->Passport_ID_Father ?? "undefined"}} </span> </h4>
-                        </div>
-                        </div>
-                        <div class="p-2 grid md:grid-cols-2 md:gap-6 ">
-                            <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg  border-b-2">  {{ trans('main.father-address') }} :  <span class="text-sm font-normal"> {{$user->parent->Address_Father ?? "undefined"}} </span> </h4>
-                            </div>
-                            <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg  border-b-2"> {{ trans('father-phone') }} :  <span class="text-sm font-normal"> {{$user->parent->Phone_Father ?? "undefined"}} </span> </h4>
-                            </div>
-                        </div>
-                        <div class="grid md:grid-cols-2 md:gap-6 p-2">
-                            <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg border-b-2"> {{ trans('main.father-bloodtype') }} :  <span class="text-sm font-normal"> {{$user->parent->blood_type_father->name ?? "undefined"}} </span> </h4>
-                            </div>
-                            <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg border-b-2"> {{ trans('main.father-nationality') }} :  <span class="text-sm font-normal"> {{$user->parent->nationality_father->name ?? "undefined"}} </span> </h4>
-                            </div>
-                        </div>
-                        <div class="grid md:grid-cols-2 md:gap-6 p-2">
-                            <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg border-b-2"> {{trans('main.father-religion')}} :  <span class="text-sm font-normal"> {{$user->parent->religion_father->name ?? "undefined"}} </span> </h4>
-                            </div>
-                            <div class="relative z-0 w-full group ">
-                                <h4 class="text-lg border-b-2 ">  {{ trans('main.father-job') }} :  <span class="text-sm font-normal"> {{$user->parent->Job_Father ?? "undefined"}}</span> </h4>
-                            </div>
-                        </div>
+
+            <div class="overflow-hidden bg-white shadow sm:rounded-lg">
+                <div id="print-content">
+                <div class="px-4 py-5 sm:px-6">
+                    <div class="flex justify-between">
+                    <div>
+                        <h3 class="text-base font-semibold leading-6 text-gray-900">{{ trans('main.parent-form') }}</h3>
+                        <p class="mt-1 max-w-2xl text-sm text-gray-500">{{ trans('main.parent-form-info') }}</p>
                     </div>
-                    <div class="mt-6">
-                        <div class="relative z-0  group  p-2 grid grid-cols-1 md:gap-6">
-                            <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg border-b-2 "> {{ trans('main.mother-name') }} :  <span class="text-sm font-normal"> {{$user->parent->Name_Mother ?? "undefined"}} </span> </h4>
-                            </div>
-                        </div>
-                        <div class="grid md:grid-cols-2 md:gap-6  p-2">
-                            <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg  border-b-2">  {{ trans('main.mother-national-id') }} :  <span class="text-sm font-normal"> {{$user->parent->National_ID_Mother ?? "undefined"}} </span> </h4>
-                            </div>
-                        <div class="relative z-0 w-full  group">
-                            <h4 class="text-lg  border-b-2"> {{ trans('main.mother-passport-id') }} :  <span class="text-sm font-normal"> {{$user->parent->Passport_ID_Mother ?? "undefined"}} </span> </h4>
-                        </div>
-                        </div>
-                        <div class="p-2 grid md:grid-cols-2 md:gap-6 ">
-                            <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg  border-b-2"> {{ trans('main.mother-address') }} :  <span class="text-sm font-normal"> {{$user->parent->Address_Mother ?? "undefined"}} </span> </h4>
-                            </div>
-                            <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg  border-b-2">  {{ trans('main.mother-phone') }} :  <span class="text-sm font-normal"> {{$user->parent->Phone_Mother ?? "undefined"}} </span> </h4>
-                            </div>
-                        </div>
-                        <div class="grid md:grid-cols-2 md:gap-6 p-2">
-                            <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg border-b-2"> {{ trans('main.mother-bloodtype') }} :  <span class="text-sm font-normal"> {{$user->parent->blood_type_mother->name ?? "undefined"}} </span> </h4>
-                            </div>
-                            <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg border-b-2">  {{ trans('main.mother-nationality') }} :  <span class="text-sm font-normal"> {{$user->parent->nationality_mother->name ?? "undefined"}} </span> </h4>
-                            </div>
-                        </div>
-                        <div class="grid md:grid-cols-2 md:gap-6 p-2">
-                            <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg border-b-2">  {{ trans('main.mother-religion') }} :  <span class="text-sm font-normal"> {{$user->parent->religion_mother->name ?? "undefined"}} </span> </h4>
-                            </div>
-                            <div class="relative z-0 w-full group ">
-                                <h4 class="text-lg border-b-2 ">  {{ trans('main.mother-job') }} :  <span class="text-sm font-normal"> {{$user->parent->Job_Mother ?? "undefined"}}</span> </h4>
-                            </div>
-                        </div>
+                <div  class="flex items-center mx-8">
+                    <button id="print-btn" wire:click="print">
+                        <i id="print-icon" class="fa-solid fa-print fa-xl px-1"></i> {{trans('main.print')}}
+                    </button>
+                </div>
                     </div>
                 </div>
-                              <div class="col-md-6 offset-md-4">
-                                <a href="{{route('users.add')}}"  class="btn btn-primary bg-gray-800 text-white w-full" >
-                                {{ __('main.finish') }}
-                                </a>
-                            </div>
+                <div class="border-t border-gray-200 two-columns-print">
+                <dl>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt class="text-sm font-medium text-gray-500">{{trans('main.father-name')}}</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->parent->Name_Father ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt class="text-sm font-medium text-gray-500">{{ trans('main.father-national-id') }}</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->parent->National_ID_Father ?? trans('main.undefined') }}</dd>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt class="text-sm font-medium text-gray-500">{{ trans('main.father-passport-id') }}</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->parent->Passport_ID_Father ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt class="text-sm font-medium text-gray-500">{{trans('main.phone-father')}}</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->parent->Phone_Father ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt class="text-sm font-medium text-gray-500">{{ trans('main.father-job') }}</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->parent->Job_Father?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.father-nationality') }}</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->parent->nationality_father->name ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.father-bloodtype') }}</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->parent->blood_type_father->name ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.father-religion') }}</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->parent->religion_father->name ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.email') }}</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->parent->user->email ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.father-address') }}</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->parent->Address_Father ?? trans('main.undefined')}}</dd>
+                    </div>
+                </dl>
+                <dl>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt class="text-sm font-medium text-gray-500">{{trans('main.mother-name')}}</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->parent->Name_Mother ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt class="text-sm font-medium text-gray-500">{{ trans('main.mother-national-id') }}</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->parent->National_ID_Mother ?? trans('main.undefined') }}</dd>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt class="text-sm font-medium text-gray-500">{{ trans('main.mother-passport-id') }}</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->parent->Passport_ID_Mother ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt class="text-sm font-medium text-gray-500">{{trans('main.mother-phone')}}</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->parent->Phone_Mother ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt class="text-sm font-medium text-gray-500">{{ trans('main.mother-job') }}</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->parent->Job_Mother?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.mother-nationality') }}</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->parent->nationality_mother->name ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.mother-bloodtype') }}</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->parent->blood_type_mother->name ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.mother-religion') }}</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->parent->religion_mother->name ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.email') }}</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->parent->user->email ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.mother-address') }}</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->parent->Address_Mother ?? trans('main.undefined')}}</dd>
+                    </div>
+                </dl>
+                </div>
+                </div>
+                    <div class="col-md-6 offset-md-4">
+                        <a href="{{route('users.add')}}"  class="btn btn-primary bg-gray-800 text-white w-full" >
+                        {{ __('main.finish') }}
+                        </a>
+                    </div>
         </div>
             @endif
 
             @if($user_created_role == "Teacher")
 
-                <div  class="w-full sm:max-w-md lg:max-w-2xl mt-6 px-6 pt-4  pb-2 bg-white shadow-md overflow-hidden sm:rounded-lg mx-auto border-4">
-                    <div class="pb-10 pt-2">
-                        <div class="text-2xl py-2 border-b-2">{{ trans('main.teacher-info') }}</div>
-                        <div class="mt-6">
-                            <div class="relative z-0  group  p-2 grid grid-cols-2 md:gap-6">
-                                <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg border-b-2 ">{{ trans('main.name') }} :  <span class="text-sm font-normal"> {{$user->teacher->teacher_name ?? "undefined"}} </span> </h4>
-                                </div>
-                                <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg  border-b-2">{{ trans('main.national-id') }} :  <span class="text-sm font-normal"> {{$user->teacher->national_id_teacher ?? "undefined"}} </span> </h4>
-                                </div>
-                            </div>
-                            <div class="grid md:grid-cols-2 md:gap-6  p-2">
-                            <div class="relative z-0 w-full group ">
-                                <h4 class="text-lg border-b-2 "> {{ trans('main.joining-date') }} :  <span class="text-sm font-normal"> {{$user->teacher->joining_date ?? "undefined"}} </span> </h4>
-                            </div>
-                            <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg  border-b-2"> {{ trans('main.passport-id') }} :  <span class="text-sm font-normal"> {{$user->teacher->passport_id_teacher ?? "undefined"}} </span> </h4>
-                            </div>
-                            </div>
-                            <div class="p-2 grid md:grid-cols-2 md:gap-6 ">
-                                <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg  border-b-2"> {{ trans('main.specialization') }} :  <span class="text-sm font-normal"> {{$user->teacher->specialization->name ?? "undefined"}} </span> </h4>
-                                </div>
-                                <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg  border-b-2">{{ trans('main.phone') }} :  <span class="text-sm font-normal"> {{$user->teacher->phone_teacher ?? "undefined"}} </span> </h4>
-                                </div>
-                            </div>
-                            <div class="grid md:grid-cols-2 md:gap-6 p-2">
-                                <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg border-b-2"> {{ trans('main.blood-type') }} :  <span class="text-sm font-normal"> {{$user->teacher->blood_type->name ?? "undefined"}} </span> </h4>
-                                </div>
-                                <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg border-b-2"> {{ trans('main.nationality') }} :  <span class="text-sm font-normal"> {{$user->teacher->nationality->name ?? "undefined"}} </span> </h4>
-                                </div>
-                            </div>
-                            <div class="grid md:grid-cols-2 md:gap-6 p-2">
-                                <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg border-b-2"> {{ trans('main.religion') }} :  <span class="text-sm font-normal"> {{$user->teacher->religion->name ?? "undefined"}} </span> </h4>
-                                </div>
-                                <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg border-b-2"> {{ trans('main.gender') }} :  <span class="text-sm font-normal"> {{$user->teacher->gender->name?? "undefined"}} </span> </h4>
-                                </div>
-                            </div>
 
-                        </div>
-
+            <div class="overflow-hidden bg-white shadow sm:rounded-lg">
+                <div id="print-content">
+                <div class="px-4 py-5 sm:px-6">
+                    <div class="flex justify-between">
+                    <div>
+                        <h3 class="text-base font-semibold leading-6 text-gray-900">{{ trans('main.teacher-form') }}</h3>
+                        <p class="mt-1 max-w-2xl text-sm text-gray-500">{{ trans('main.teacher-form-info',['name'=>$user->teacher->teacher_name]) }}</p>
+                    </div>
+                <div  class="flex items-center mx-8">
+                    <button id="print-btn" wire:click="print">
+                        <i id="print-icon" class="fa-solid fa-print fa-xl px-1"></i> {{trans('main.print')}}
+                    </button>
                 </div>
-                       <div class="col-md-6 offset-md-4">
-                                <a href="{{route('users.add')}}"  class="btn btn-primary bg-gray-800 text-white w-full" >
-                                {{ __('main.finish') }}
-                                </a>
-                            </div>
+                    </div>
+                </div>
+                <div class="border-t border-gray-200 two-columns-print">
+                <dl>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt class="text-sm font-medium text-gray-500">{{trans('main.name')}}</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->teacher->teacher_name ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt class="text-sm font-medium text-gray-500">{{ trans('main.national-id') }}</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->teacher->national_id_teacher ?? trans('main.undefined') }}</dd>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt class="text-sm font-medium text-gray-500">{{ trans('main.passport-id') }}</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->teacher->passport_id_teacher ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt class="text-sm font-medium text-gray-500">{{trans('main.gender')}}</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->teacher->gender->name ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt class="text-sm font-medium text-gray-500">{{ trans('main.specialization') }}</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->teacher->specialization->name ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.address') }}</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->teacher->address ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.joining-date') }}</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->teacher->joining_date ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.nationality') }}</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->teacher->nationality->name ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.email') }}</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->teacher->user->email ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.blood-type') }}</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->teacher->blood_type->name ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.religion') }}</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->teacher->religion->name ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.phone') }}</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->teacher->phone_teacher ?? trans('main.undefined')}}</dd>
+                    </div>
+
+
+                </dl>
+                </div>
+                </div>
+                <div class="col-md-6 offset-md-4 mx-4">
+                         <a href="{{route('users.add')}}"  class="btn btn-primary bg-gray-800 text-white w-full" >
+                         {{ __('main.finish') }}
+                         </a>
+                     </div>
             </div>
 
 
             @endif
             @if($user_created_role == "Student")
 
-                <div  class="w-full sm:max-w-md lg:max-w-2xl mt-6 px-6 pt-4  pb-2 bg-white shadow-md overflow-hidden sm:rounded-lg mx-auto border-4">
-                    <div class="pb-10 pt-2">
-                        <div class="text-2xl py-2 border-b-2">{{ trans('main.student-infp') }}</div>
-                        <div class="mt-6">
-                            <div class="relative z-0  group  p-2 grid grid-cols-2 md:gap-6">
-                                <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg border-b-2 ">{{ trans('main.studentname') }} :  <span class="text-sm font-normal"> {{$user->student->name ?? "undefined"}} </span> </h4>
-                                </div>
-                                <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg  border-b-2"> {{ trans('main.grade') }} :  <span class="text-sm font-normal"> {{$user->student->grade->name ?? "undefined"}} </span> </h4>
-                                </div>
-                            </div>
-                            <div class="grid md:grid-cols-2 md:gap-6  p-2">
-                            <div class="relative z-0 w-full group ">
-                                <h4 class="text-lg border-b-2 "> {{ trans('main.classoom') }} :  <span class="text-sm font-normal"> {{$user->student->classroom->name?? "undefined"}} </span> </h4>
-                            </div>
-                            <div class="relative z-0 w-full  group">
-                                <h4 class="text-lg border-b-2"> {{ trans('main.student-email') }} :  <span class="text-sm font-normal"> {{$user->email ?? "undefined"}} </span> </h4>
-                            </div>
-                            </div>
-                            <div class="p-2 grid md:grid-cols-2 md:gap-6 ">
-                                <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg  border-b-2"> {{ trans('main.academic-year') }} :  <span class="text-sm font-normal"> {{$user->student->academic_year ?? "undefined"}} </span> </h4>
-                                </div>
-                                <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg  border-b-2"> {{ trans('main.date-birth') }} :  <span class="text-sm font-normal"> {{$user->student->date_birth ?? "undefined"}} </span> </h4>
-                                </div>
-                            </div>
-                            <div class="grid md:grid-cols-2 md:gap-6 p-2">
-                                <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg border-b-2"> {{ trans('main.blood-type') }} :  <span class="text-sm font-normal"> {{$user->student->blood_type->name ?? "undefined"}} </span> </h4>
-                                </div>
-                                <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg border-b-2"> {{ trans('main.nationality') }} :  <span class="text-sm font-normal"> {{$user->student->nationality->name ?? "undefined"}} </span> </h4>
-                                </div>
-                            </div>
-                            <div class="grid md:grid-cols-2 md:gap-6 p-2">
-                                <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg border-b-2"> {{ trans('main.religion') }} :  <span class="text-sm font-normal"> {{$user->student->religion->name ?? "undefined"}} </span> </h4>
-                                </div>
-                                <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg border-b-2"> {{ trans('main.gender') }} :  <span class="text-sm font-normal"> {{$user->student->gender->name?? "undefined"}} </span> </h4>
-                                </div>
-                            </div>
-                            <div class="grid md:grid-cols-2 md:gap-6 p-2">
-                                <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg border-b-2"> {{ trans('main.mother-name') }} :  <span class="text-sm font-normal"> {{$user->student->parent->Name_Mother ?? "undefined"}} </span> </h4>
-                                </div>
-                                <div class="relative z-0 w-full  group">
-                                    <h4 class="text-lg  border-b-2"> {{ trans('main.father-name') }} :  <span class="text-sm font-normal"> {{$user->student->parent->Name_Father ?? "undefined"}} </span> </h4>
-                                </div>
-                            </div>
 
-                        </div>
 
+            <div class="overflow-hidden bg-white shadow sm:rounded-lg">
+                <div id="print-content">
+                <div class="px-4 py-5 sm:px-6">
+                    <div class="flex justify-between">
+                    <div>
+                        <h3 class="text-base font-semibold leading-6 text-gray-900">{{ trans('main.student-form') }}</h3>
+                        <p class="mt-1 max-w-2xl text-sm text-gray-500">{{ trans('main.student-form-info') }}</p>
+                    </div>
+                <div  class="flex items-center mx-8">
+                    <button id="print-btn" wire:click="print">
+                        <i id="print-icon" class="fa-solid fa-print fa-xl px-1"></i> {{trans('main.print')}}
+                    </button>
                 </div>
-                       <div class="col-md-6 offset-md-4">
-                                <a href="{{route('users.add')}}"  class="btn btn-primary bg-gray-800 text-white w-full" >
-                                {{ __('main.finish') }}
-                                </a>
-                            </div>
+                    </div>
+                </div>
+                <div class="border-t border-gray-200 two-columns-print">
+                <dl>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt class="text-sm font-medium text-gray-500">{{trans('main.studentname')}}</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->student->name ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt class="text-sm font-medium text-gray-500">{{ trans('main.father-name') }}</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->student->parent->Name_Father ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt class="text-sm font-medium text-gray-500">{{ trans('main.mother-name') }}</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->student->parent->Name_Mother ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt class="text-sm font-medium text-gray-500">{{trans('main.gender')}}</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->student->gender->name ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt class="text-sm font-medium text-gray-500">{{ trans('main.grade') }}</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->student->grade->name ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.classroom') }}</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->student->classroom->name ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.date-birth') }}</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->student->date_birth ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.nationality') }}</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->student->nationality->name ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.academic-year') }}</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->student->academic_year ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.blood-type') }}</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->student->blood_type->name ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.religion') }}</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->student->religion->name ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.student-email') }}</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->student->user->email ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.created_at') }}</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->student->created_at ?? trans('main.undefined')}}</dd>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.phone-father') }}</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$user->student->parent->Phone_Father ?? trans('main.undefined')}}</dd>
+                    </div>
+                </dl>
+                </div>
+                </div>
+                <div class="col-md-6 offset-md-4 mx-4">
+                         <a href="{{route('users.add')}}"  class="btn btn-primary bg-gray-800 text-white w-full" >
+                         {{ __('main.finish') }}
+                         </a>
+                     </div>
             </div>
+
+
 
 
             @endif
@@ -1035,23 +1103,8 @@
 
     @endif
 
-        </div>
 
 
-{{-- Import Search Users and add user_id inside hidden input --}}
-<script type="module">
-
-    import { setupSearchParents } from "{{ asset('search.js') }}";
-
-    // Get the input elements
-    Livewire.on('parentSearched', function() {
-        let searchInput = document.getElementById('search_parent');
-        let userIdInput = document.getElementById('parent_id');
-
-        // Add Search for Users Function
-        setupSearchParents(searchInput, userIdInput);
-    });
-</script>
 
 </div>
 

@@ -29,9 +29,13 @@ return
     "nograderemoved" => "No grades were removed",
     'delete-selected'=>"Delete Selected",
     'father-info-empty'=>'The Parent Doesn\'t have information make sure you add this parent information before add student information.',
-    'student-updated'=>'The student information has been updated successfully.',
-    'teacher-updated'=>'The teacher :name information has been updated successfully.',
-
+    'student-updated'=>'The Student information has been updated successfully.',
+    'parent-updated'=>'The Parent information has been updated successfully.',
+    'teacher-updated'=>'The Teacher :name information has been updated successfully.',
+    'no_students_to_promote'=>'There is no Students in the selected Classroom to promote.',
+    'students_promoted'=>'Promoted Successfully! Students of grade :old_grade and classroom :old_classroom promoted to grade :new_grade and classroom :new_classroom. ',
+    'promotion_rollback'=>"Success, The student :name promotion has been reversed.",
+    'promotions_rollback'=>"Success, The selected students promotion has been reversed.",
 
 
 

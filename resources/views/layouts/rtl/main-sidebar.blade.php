@@ -15,7 +15,7 @@
         <hr class="h-px mt-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent" />
 
 
-        <div class="items-center block w-auto h-sidenav-no-pro grow basis-full" >
+        <div class="items-center block w-auto h-sidenav-no-pro grow basis-full " >
             <ul class="flex flex-col pl-0 mb-0 max-w-64 overflow-y-auto max-h-[calc(100vh-8rem)] " >
 
                 <li class="mt-0.5 w-full ">
@@ -124,6 +124,28 @@
                             <i class="fa-solid  fa-user-group  {{in_array(Route::currentRouteName(),['parents.index','parent.info','parent.edit','parent.email.edit']) ? 'text-white' : ''}}"></i>
                             </div>
                             <div  class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.parents")}}</span></div>
+                        </a>
+                    </li>
+                    <li class="w-full mt-2 ">
+                        <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                            {{ in_array(Route::currentRouteName(),['students.promotions.classroom']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                            href="{{ route('students.promotions.classroom') }}">
+                            <div
+                            class="{{ in_array(Route::currentRouteName(),['students.promotions.classroom']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                            <i class="fa-solid  fa-user-group  {{in_array(Route::currentRouteName(),['students.promotions.classroom']) ? 'text-white' : ''}}"></i>
+                            </div>
+                            <div  class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.students.promotions.classroom")}}</span></div>
+                        </a>
+                    </li>
+                    <li class="w-full mt-2 ">
+                        <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                            {{ in_array(Route::currentRouteName(),['students.promotions.table']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                            href="{{ route('students.promotions.table') }}">
+                            <div
+                            class="{{ in_array(Route::currentRouteName(),['students.promotions.table']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                            <i class="fa-solid  fa-user-group  {{in_array(Route::currentRouteName(),['students.promotions.table']) ? 'text-white' : ''}}"></i>
+                            </div>
+                            <div  class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.students.promotions.index")}}</span></div>
                         </a>
                     </li>
                     @endif

@@ -8,6 +8,6 @@
 
 @section('Content')
 
-<livewire:teachers-table>
+<livewire:teachers.teachers-table>
 
 @endsection

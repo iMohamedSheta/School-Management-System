@@ -1,27 +1,27 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Students;
 
-use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
+use Illuminate\Support\Facades\Hash;
 
-class TeacherEmailEdit extends Component
+
+class StudentEmailEdit extends Component
 {
-    public $teacher_user;
+    public $student_user;
     public $name;
     public $email;
     public $password;
     public $password_confirmation;
 
-    public function mount($teacher_user)
+    public function mount($student_user)
     {
-        $this->teacher_user = $teacher_user;
-        $this->name = $teacher_user->name;
-        $this->email = $teacher_user->email;
+        $this->student_user = $student_user;
+        $this->name = $student_user->name;
+        $this->email = $student_user->email;
     }
 
-
-      public function editUserEmail()
+    public function editUserEmail()
     {
         $validatedData = $this->validate([
             'name' => 'required|string',
@@ -32,20 +32,19 @@ class TeacherEmailEdit extends Component
         if($validatedData)
         {
 
-          $updateTeacherEmail = $this->teacher_user
+          $updateStudentEmail = $this->student_user
           ->update([
                     "name" => $this->name,
                     'email'=>$this->email,
                 ]);
         }
 
-        if($updateTeacherEmail)
+        if($updateStudentEmail)
         {
-            return redirect()->route('teacher.email.edit',$this->teacher_user->id)->with('success',trans('alert.teacher-updated',['name'=>$this->teacher_user->teacher->teacher_name]));
+            return redirect()->route('student.email.edit',$this->student_user->id)->with('success',trans('alert.student-updated'));
         }
     }
-
-        public function editUserPassword()
+    public function editUserPassword()
     {
         $validatedData = $this->validate([
             'password' => [
@@ -60,20 +59,20 @@ class TeacherEmailEdit extends Component
 
         if($validatedData)
         {
-          $updateTeacherPassword = $this->teacher_user
+          $updateStudentPassword = $this->student_user
           ->update([
                     "password" => Hash::make($this->password),
                 ]);
         }
 
-        if($updateTeacherPassword)
+        if($updateStudentPassword)
         {
-            return redirect()->route('teacher.email.edit',$this->teacher_user->id)->with('success',trans('alert.teacher-updated',['name'=>$this->teacher_user->teacher->teacher_name]));
+            return redirect()->route('student.email.edit',$this->student_user->id)->with('success',trans('alert.student-updated'));
         }
     }
 
     public function render()
     {
-        return view('livewire.teacher-email-edit');
+        return view('livewire.student-email-edit');
     }
 }

@@ -8,6 +8,6 @@
 
 @section('Content')
 
-<livewire:parents-table>
+<livewire:parents.parents-table>
 
 @endsection

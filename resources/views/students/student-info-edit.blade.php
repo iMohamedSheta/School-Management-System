@@ -9,7 +9,7 @@
 
 @section('Content')
 
-<livewire:student-info-edit :student="$student">
+<livewire:students.student-info-edit :student="$student">
 
 
 

@@ -8,7 +8,7 @@
 @section('Content')
 
 
-<livewire:student-email-edit :student_user="$student_user">
+<livewire:students.student-email-edit :student_user="$student_user">
 
 
 
