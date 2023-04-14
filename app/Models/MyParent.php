@@ -36,7 +36,12 @@ class MyParent extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class)->unique();
+        return $this->belongsTo(User::class);
+    }
+
+    public function students()
+    {
+        return $this->hasMany(Student::class,'parent_id');
     }
 
 

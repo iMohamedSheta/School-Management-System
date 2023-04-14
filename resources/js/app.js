@@ -6,6 +6,7 @@ window.Alpine = Alpine;
 import "@fortawesome/fontawesome-free/css/all.css";
 import 'simplebar/dist/simplebar.min.css';
 Alpine.plugin(focus);
+
 import flatpickr from "flatpickr";
 
 
@@ -151,7 +152,7 @@ sidebariconOnly.onclick = function myFunction() {
           }
         }
       }
-      
+
 
 
 
@@ -235,7 +236,7 @@ sidebariconOnly.onclick = function myFunction() {
 
 // CheckAll For Checkbox in tables
     const headerCheckbox = document.getElementById('checkboxAll');
-    const bodyCheckboxes = document.querySelectorAll('#classrooms-table tbody input[type="checkbox"]');
+    const bodyCheckboxes = document.querySelectorAll('#multiselect-table tbody input[type="checkbox"]');
 
     headerCheckbox.addEventListener('click', () => {
         bodyCheckboxes.forEach(checkbox => {
@@ -247,11 +248,11 @@ sidebariconOnly.onclick = function myFunction() {
         // Your code here
 
 
-    document.querySelectorAll('#classrooms-table input[type="checkbox"]').forEach(function(checkbox) {
+    document.querySelectorAll('#multiselect-table input[type="checkbox"]').forEach(function(checkbox) {
         checkbox.addEventListener('change', function() {
           // Check if any checkboxes are checked
           var isChecked = false;
-          document.querySelectorAll('#classrooms-table input[type="checkbox"]').forEach(function(checkbox) {
+          document.querySelectorAll('#multiselect-table input[type="checkbox"]').forEach(function(checkbox) {
             if (checkbox.checked) {
               isChecked = true;
             }
@@ -271,20 +272,23 @@ sidebariconOnly.onclick = function myFunction() {
 
 
     let deleteAllbtn =  document.getElementById('delete-selected-btn');
-    let selected_classrooms_ids = document.getElementById('selected_classrooms_ids');
+    let selected_ids = document.getElementById('selected_ids');
     deleteAllbtn.onclick = function()
     {
         let selected = new Array();
 
-        document.querySelectorAll('#classrooms-table input[type="checkbox"]:checked').forEach(function(checkbox) {
+        document.querySelectorAll('#multiselect-table input[type="checkbox"]:checked').forEach(function(checkbox) {
             selected.push(checkbox.value);
         });
 
         if(selected.length > 0)
         {
-            selected_classrooms_ids.value = selected;
+            selected_ids.value = selected;
         }
     }
+
+
+
 
 
 

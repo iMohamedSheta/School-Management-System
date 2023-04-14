@@ -2,7 +2,7 @@
 
 
 @extends('layouts.master')
-@section('title','Post')
+@section('Pagetitle',"Discussion")
 
 @section('Content')
 

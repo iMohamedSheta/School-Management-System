@@ -26,6 +26,7 @@ class PostShow extends Component
     public function render()
     {
         $post = Post::findorfail($this->post_id);
+        $post->comments = $post->comments->sortByDesc('created_at');
         return view('livewire.post-show',compact('post'));
     }
 

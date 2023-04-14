@@ -193,19 +193,20 @@ class AddUser extends Component
 
     public function insertParentInfo()
     {
+
         $validatedData = $this->validate([
             'user_created_id' => 'required|exists:users,id',
             'Name_Father' => 'required|string',
-            'National_ID_Father' => "required_if:Passport_ID_Father,null",
-            'Passport_ID_Father' => 'required_if:National_ID_Father,null',
+            'National_ID_Father' => "required_if:Passport_ID_Father,Null",
+            'Passport_ID_Father' => 'required_if:National_ID_Father,Null',
             'Phone_Father' => 'required',
             'Address_Father' => 'required',
             'Nationality_Father_id' => 'required',
             'Religion_Father_id' => 'required',
 
             'Name_Mother' => 'required|string',
-            'National_ID_Mother' => "required_if:Passport_ID_Mother,null",
-            'Passport_ID_Mother' => 'required_if:National_ID_Mother,null',
+            'National_ID_Mother' => "required_if:Passport_ID_Mother,Null",
+            'Passport_ID_Mother' => 'required_if:National_ID_Mother,Null',
             'Phone_Mother' => 'required',
             'Address_Mother' => 'required',
             'Nationality_Mother_id' => 'required',
@@ -237,7 +238,7 @@ class AddUser extends Component
                     "Job_Mother" => $this->Job_Mother,
                     "Nationality_Mother_id" => $this->Nationality_Mother_id,
                     "Religion_Mother_id" => $this->Religion_Mother_id,
-                    "Blood_Type_Father_id" => $this->Blood_Type_Mother_id,
+                    "Blood_Type_Mother_id" => $this->Blood_Type_Mother_id,
 
                 ]
                 );
@@ -298,7 +299,7 @@ class AddUser extends Component
             'name_student' => 'required|string',
             'academic_year' => 'required',
             'date_birth' => 'required',
-            'blood_type_id' => 'required|exists:type__bloods,id',
+            'blood_type_id' => 'exists:type__bloods,id',
             'nationality_id' => 'required|exists:nationalities,id',
             'grade_id' => 'required|exists:grades,id',
             'classroom_id' => 'required|exists:classrooms,id',
@@ -317,7 +318,7 @@ class AddUser extends Component
             }
             else
             {
-                return redirect()->route('users.add')->with('error','The Parent Doesn\'t have information make sure you add this parent information before add student information.');
+                return redirect()->route('users.add')->with('error',trans('alert.father-info-empty'));
             }
 
             $createStudent = Student::create(
@@ -356,6 +357,10 @@ class AddUser extends Component
         }
     }
 
+    public function print()
+    {
+        $this->dispatchBrowserEvent('print');
+    }
 
 
         public function render()

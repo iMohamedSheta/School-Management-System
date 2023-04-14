@@ -25,9 +25,6 @@ return new class extends Migration
             $table->foreign('grade_id')->references('id')->on('grades');
         });
 
-        Schema::table('users', function (Blueprint $table) {
-            $table->foreign('classroom_id')->references('id')->on('classrooms')->onDelete('set null');
-        });
 
         Schema::table('my_parents', function (Blueprint $table) {
 
@@ -43,6 +40,8 @@ return new class extends Migration
 
         Schema::table('posts', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('grade_id')->references('id')->on('grades')->onDelete('cascade');
+            $table->foreign('classroom_id')->references('id')->on('classrooms')->onDelete('cascade');
         });
 
         Schema::table('post_upvotes', function (Blueprint $table) {
@@ -76,6 +75,13 @@ return new class extends Migration
             $table->foreign('parent_id')->references('id')->on('my_parents')->onDelete('cascade');
             $table->foreign('religion_id')->references('id')->on('religions');
         });
+        Schema::table('promotions', function (Blueprint $table) {
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
+            $table->foreign('from_grade')->references('id')->on('grades')->onDelete('cascade');
+            $table->foreign('from_classroom')->references('id')->on('classrooms')->onDelete('cascade');
+            $table->foreign('to_grade')->references('id')->on('grades')->onDelete('cascade');
+            $table->foreign('to_classroom')->references('id')->on('classrooms')->onDelete('cascade');
+        });
 
     }
 
@@ -98,9 +104,7 @@ return new class extends Migration
             $table->dropForeign(['grade_id']);
         });
 
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropForeign(['classroom_id']);
-        });
+
         Schema::table('my_parents', function (Blueprint $table) {
             $table->dropForeign(['user_id']);
             $table->dropForeign(['Nationality_Father_id']);
@@ -112,6 +116,8 @@ return new class extends Migration
         });
         Schema::table('posts', function (Blueprint $table) {
             $table->dropForeign(['user_id']);
+            $table->dropForeign(['grade_id']);
+            $table->dropForeign(['classroom_id']);
         });
         Schema::table('post_upvotes', function (Blueprint $table) {
             $table->dropForeign(['post_id']);
@@ -141,6 +147,13 @@ return new class extends Migration
             $table->dropForeign(['classroom_id']);
             $table->dropForeign(['parent_id']);
             $table->dropForeign(['religion_id']);
+        });
+        Schema::table('promotions', function (Blueprint $table) {
+            $table->dropForeign(['student_id']);
+            $table->dropForeign(['from_grade']);
+            $table->dropForeign(['from_classroom']);
+            $table->dropForeign(['to_grade']);
+            $table->dropForeign(['to_classroom']);
         });
 
 

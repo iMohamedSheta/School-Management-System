@@ -21,4 +21,9 @@ class Classroom extends Model
         return $this->belongsTo(Grade::class);
     }
 
+    public static function countClassrooms()
+    {
+        return self::count();
+    }
+
 }

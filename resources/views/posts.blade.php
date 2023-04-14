@@ -2,6 +2,8 @@
 
 
 @extends('layouts.master')
+@section('Pagetitle',"Discussions")
+
 
 @section('Content')
 
@@ -27,9 +29,7 @@
             <input type="text" name="title"  id="floating_outlined" wire:model="search" value="{{old('title')}}" class="search-input block px-4 pb-3 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
             <label for="floating_outlined"  class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 right-1">{{trans('main.title')}}</label>
             </div>
-        {{-- <input type="text"  name="title" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-100 focus:border-blue-500
-        block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-        placeholder="Title" value="{{old('title')}}"> --}}
+
 
         <textarea id="ckeditor"  rows="3" name="content" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border
          border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
@@ -40,9 +40,36 @@
 <livewire:post-component>
 
 
-<script>
-    const imageUploadRoute = "{{route('posts.image-upload')}}";
-    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-</script>
+@endsection
 
+@section('scripts')
+    <script>
+        const imageUploadRoute = "{{route('posts.image-upload')}}";
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    </script>
+
+<script>
+    // Add click event listener to copy link buttons
+    const copyBtns = document.querySelectorAll('.copy-link-btn');
+    copyBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const url = btn.dataset.url;
+
+        // Create temporary input element to copy URL
+        const tempInput = document.createElement('input');
+        tempInput.setAttribute('value', url);
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+
+        // Change button text to "Copied!" and then revert it back after a short delay
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check mx-1"></i> {{trans("main.copied")}}';
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+        }, 1000);
+      });
+    });
+  </script>
 @endsection

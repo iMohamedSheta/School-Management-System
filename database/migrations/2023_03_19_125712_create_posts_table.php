@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->bigInteger('grade_id')->unsigned()->nullable();
+            $table->bigInteger('classroom_id')->unsigned()->nullable();
             $table->string('title');
             $table->text('content');
             $table->integer('count_upvotes')->default(0);
