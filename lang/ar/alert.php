@@ -35,7 +35,11 @@ return
     'no_students_to_promote'=>"لا يوجد طلاب مسجلين في الفصل الدراسي لكي يتم ترقيتهم الي مرحلة اخري.",
     'students_promoted'=>'تم ترقية جميع الطلاب بالمرحلة :old_grade والفصل :old_classroom الي المرحلة :new_grade والفصل :new_classroom.',
     'promotion_rollback'=>'تم التراجع عن الترقية للطالب :name.',
-    'promotions_rollback'=>'تم التراجع عن الترقية للطلاب المحددين .',
+    'promotions_rollback'=>'تم التراجع عن الترقية للطلاب المحددين.',
+    'no_students_to_graduate'=>"لا يوجد طلاب مسجلين في الفصل الدراسي لكي يتم تخرجهم من النظام.",
+    'students_graduated'=>'تم تخرج جميع الطلاب بالمرحلة :grade والفصل :classroom.',
+    'graduation_rollback'=>'تم التراجع عن تخرج الطالب :name.',
+    'graduations_rollback'=>'تم التراجع عن تخرج الطلاب المحددين .',
 
 
 

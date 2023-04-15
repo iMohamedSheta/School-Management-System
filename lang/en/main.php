@@ -167,6 +167,8 @@ return
     'edit-father-info'=>"Edit Father Information",
     'edit-mother-info'=>"Edit Mother Information",
     'promote_classroom'=>"Promote Classroom",
+    'graduate_classroom'=>"Graduate Classroom",
+    'graduate'=>"Graduate",
     'promote_to'=>"Promote To",
     'promote'=>"Promote",
     'old_grade'=>'Old Grade',
@@ -178,7 +180,13 @@ return
     'promotion-date'=>'Promotion Date',
     'promotion_back_title'=>'Are you sure you want to cancel the promotion for the student :name ?',
     'selected_promotions_back_title'=>'Are you sure you want to cancel the promotion for the student :name ?',
-
+    'graduation_date'=>'Graduation Date',
+    'statues'=>'Statues',
+    'signed'=>'Student',
+    'leaved'=>'Leaved to another school',
+    'graduated_student'=>'Graduated',
+    'from-date'=>"From Date",
+    'to-date'=>"To Date",
 
 
 

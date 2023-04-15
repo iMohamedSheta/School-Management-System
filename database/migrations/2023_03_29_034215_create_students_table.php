@@ -24,6 +24,9 @@ return new class extends Migration
             $table->bigInteger('parent_id')->unsigned();
             $table->bigInteger('religion_id')->unsigned();
             $table->string('academic_year');
+            $table->boolean('graduated')->default(false);
+            $table->boolean('leaved')->default(false);
+            $table->softDeletes();
             $table->timestamps();
 
         });

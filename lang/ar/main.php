@@ -171,6 +171,8 @@ return
     'parent-edit-email-body'=>'في هذه الصفحة تستطيع تعديل معلومات المستخدم, المستخدم في تسجيل الدخول داخل النظام للابويين :father و :mother.',
     'sons'=>'الابناء',
     'promote_classroom'=>'ترقية فصل دراسي',
+    'graduate_classroom'=>'تخرج فصل دراسي',
+    'graduate'=>'تخرج',
     'promote_to'=>'ترقية الي',
     'promote'=>'ترقية',
     'old_grade'=>'المرحلة القديمة',
@@ -181,8 +183,18 @@ return
     'current_classroom'=>'الفصل الحالي',
     'promotion-date'=>'تاريخ الترقية',
     'promotion_back_title'=>'هل انت متأكد انك تريد التراجع عن الترقية للطالب :name ?',
+    'graduation_back_title'=>'هل انت متأكد انك تريد التراجع عن تخرج الطالب :name ?',
     'selected_promotions_back_title'=>'هل انت متأكد انك تريد التراجع عن الترقية للطلاب المحددين ?',
-
+    'selected_graduations_back_title'=>'هل انت متأكد انك تريد التراجع عن تخرج الطلاب المحددين ?',
+    'graduation_date'=>'تاريخ التخرج',
+    'statues'=>'الحالة',
+    'signed'=>'طالب',
+    'leaved'=>'انتقل الي مدرسة اخري',
+    'graduated_student'=>'متخرج',
+    'from-date'=>"من تاريخ",
+    'to-date'=>"الي تاريخ",
+    'no-graduates'=>'لا يوجد خريجين مسجلين في النظام.',
+    'no-promotions'=>'لا يوجد ترقيات للطلاب مسجلة في النظام.',
 
 
 

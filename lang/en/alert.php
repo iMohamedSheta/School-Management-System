@@ -36,6 +36,10 @@ return
     'students_promoted'=>'Promoted Successfully! Students of grade :old_grade and classroom :old_classroom promoted to grade :new_grade and classroom :new_classroom. ',
     'promotion_rollback'=>"Success, The student :name promotion has been reversed.",
     'promotions_rollback'=>"Success, The selected students promotion has been reversed.",
+    'no_students_to_graduate'=>'There is no Students in the selected Classroom to graduate.',
+    'students_graduated'=>'Graduated Successfully! Students of grade :grade and classroom :classroom Graduated from the system. ',
+    'graduation_rollback'=>"Success, The student :name graduation has been reversed.",
+    'graduations_rollback'=>"Success, The selected students graduation has been reversed.",
 
 
 

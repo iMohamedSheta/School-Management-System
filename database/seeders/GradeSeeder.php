@@ -10,6 +10,7 @@ class GradeSeeder extends Seeder
 {
     public function run()
     {
+        DB::table('classrooms')->delete();
         DB::table('grades')->delete();
 
         $grades = [
