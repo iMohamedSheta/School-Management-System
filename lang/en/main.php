@@ -187,6 +187,8 @@ return
     'graduated_student'=>'Graduated',
     'from-date'=>"From Date",
     'to-date'=>"To Date",
+    'graduate_classroom_info_one'=>'Welcome to the graduate classroom page! Please note that only the admin can graduate students from their current classroom. Once a student has graduated, their information will still be available on the system, and can be found on the graduated students table.',
+    'graduate_classroom_info_two'=>'To graduate a student, the admin needs to select the student\'s current grade and classroom from the dropdown menus provided and click the "Graduate" button. The student\'s information will then be updated on the system.',
 
 
 

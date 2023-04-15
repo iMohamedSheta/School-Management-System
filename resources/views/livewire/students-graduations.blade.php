@@ -3,7 +3,13 @@
 
 <div class="w-full sm:max-w-md lg:max-w-3xl mt-0 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg mx-auto">
     <div class="pb-4 pt-2 w-full">
-        <div class="text-xl pb-6 pt-2">{{ trans('main.graduate_classroom') }}</div>
+        <div class="text-xl font-semibold px-2 pb-3 pt-2">{{ trans('main.graduate_classroom') }}</div>
+        <div class="text-md px-6 pt-4 text-gray-500 border-t-2 mt-2">
+            {{ trans('main.graduate_classroom_info_one') }}
+        </div>
+        <div class="text-md px-6 pt-3 pb-8 text-gray-500 border-b-2">
+            {{ trans('main.graduate_classroom_info_two') }}
+        </div>
 
             <form action="{{route('students.graduations.store')}}" method="post">
                 @csrf

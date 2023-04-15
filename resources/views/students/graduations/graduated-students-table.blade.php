@@ -5,7 +5,7 @@
 
 @extends('layouts.master')
 
-@section('Pagetitle',"Students Graduations Table")
+@section('Pagetitle',"Graduated Students")
 
 @section('Content')
 
