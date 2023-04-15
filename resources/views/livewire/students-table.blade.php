@@ -116,7 +116,7 @@
                 <td class="px-6 py-3 whitespace-nowrap text-center overflow-auto simplebar" >
                     {{ $student->classroom->name ?? '-' }}
                 </td>
-                <td class="px-6 py-3 whitespace-nowrap">
+                <td class="px-6 py-3 whitespace-nowrap text-center">
                     <a href="{{route('student.info',$student->id)}}" target="_blank" class="mx-2">
                         <i class="fa-solid fa-file-lines fa-lg hover:text-gray-800"></i>
                     </a>

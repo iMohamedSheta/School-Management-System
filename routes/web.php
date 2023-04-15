@@ -33,6 +33,7 @@ use App\Http\Livewire\FormRepeater;
 use Laravel\Fortify\Features;
 use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserController;
 use App\Http\Controllers\Students\PromotionsController;
+use App\Http\Controllers\Students\GraduationController;
 use App\Http\Livewire\PostComponent;
 
 
@@ -107,12 +108,16 @@ use App\Http\Livewire\PostComponent;
                             Route::get('students/promotions',[PromotionsController::class,'index'])->name('students.promotions.classroom');
                             Route::post('student/promotion/back',[PromotionsController::class,'studentPromotionBack'])->name('student.promotion.back');
                             Route::post('students/promotions/back',[PromotionsController::class,'studentSelectedPromotionBack'])->name('students.promotions.back');
-                            Route::delete('student/promotion/delete',[PromotionsController::class,'studentPromotionDelete'])->name('student.promotion.delete');
                             Route::get('students/promotions/table',[PromotionsController::class,'studentsPromotionsTableView'])->name('students.promotions.table');
                             Route::post('students/promoteclassroom',[PromotionsController::class,'promoteClassroom'])->name('students.promotions.store');
-
-
-
+                            
+                            
+                            Route::get('students/graduation',[GraduationController::class,'index'])->name('students.graduations.classroom');
+                            Route::post('students/graduateclassroom',[GraduationController::class,'graduateclassroom'])->name('students.graduations.store');
+                            Route::get('students/graduated',[GraduationController::class,'studentsGraduatedTableView'])->name('students.graduated.table');
+                            Route::post('student/graduation/back',[GraduationController::class,'studentGraduationBack'])->name('student.graduation.back');
+                            Route::post('students/graduations/back',[GraduationController::class,'studentSelectedGraduationBack'])->name('students.graduations.back');
+                            
                         });
 
 

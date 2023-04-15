@@ -19,7 +19,7 @@ class StudentController extends Controller
 
     public function studentInfoView($id)
     {
-        $student = Student::findOrFail($id);
+        $student = Student::withTrashed()->findOrFail($id);
         return view('students.student-info',compact('student'));
     }
 

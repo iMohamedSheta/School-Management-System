@@ -41,8 +41,10 @@ return [
     'teacher.email.edit'=>"Edit Parent Email information",
     'students.promotions.index'=>'Students Promotions',
     'students.promotions.classroom'=>'Classroom Promotion',
+    'students.graduations.classroom'=>'Classroom Graduation',
     'students_promotions'=>'Students Promotions',
     'students.promotions.table'=>'Students Promotions',
+    'students.graduated.table'=>'Graduated Students',
 
 
 

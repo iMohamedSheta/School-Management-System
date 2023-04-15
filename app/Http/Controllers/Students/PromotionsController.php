@@ -116,15 +116,13 @@ class PromotionsController extends Controller
             ]);
 
             if($studentUpdate){
-            $promotionUpdate = $promotion->update([
-                'to_grade'=>$promotion->from_grade,
-                'to_classroom'=>$promotion->from_classroom,
-            ]);
+                $studentName =$promotion->student->name;
+                $promotionUpdate = $promotion->delete();
 
-            if($promotionUpdate)
-            {
-                return redirect()->back()->with('success',trans('alert.promotion_rollback',['name'=>$promotion->student->name]));
-            }
+                if($promotionUpdate)
+                {
+                    return redirect()->back()->with('success',trans('alert.promotion_rollback',['name'=>$studentName]));
+                }
 
             }
 
@@ -154,10 +152,7 @@ public function studentSelectedPromotionBack(Request $request)
                 ]);
 
                 if ($studentUpdate) {
-                    $promotionUpdate = $promotion->update([
-                        'to_grade' => $promotion->from_grade,
-                        'to_classroom' => $promotion->from_classroom,
-                    ]);
+                    $promotionUpdate = $promotion->delete();
 
                     if ($promotionUpdate) {
                         $successCount++;

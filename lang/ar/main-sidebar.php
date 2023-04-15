@@ -41,8 +41,10 @@ return [
     'parent.email.edit'=>"تعديل البريد الالكتروني للاباء",
     'students.promotions.index'=>'ترقيات الطلاب',
     'students.promotions.classroom'=>'ترقية فصل دراسي',
+    'students.graduations.classroom'=>'تخرج فصل دراسي',
     'students_promotions'=>'ترقيات الطلاب',
     'students.promotions.table'=>'ترقيات الطلاب',
+    'students.graduated.table'=>'الطلاب المتخرجين',
 
 
 
