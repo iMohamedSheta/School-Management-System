@@ -45,6 +45,9 @@ return [
     'students_promotions'=>'Students Promotions',
     'students.promotions.table'=>'Students Promotions',
     'students.graduated.table'=>'Graduated Students',
+    'fees.index'=>'Study Fees',
+    'fees'=>'Study Fees',
+    'fee.create'=>'Study Fees',
 
 
 

@@ -16,6 +16,11 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserRoleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\FormRepeater;
+use App\Http\Controllers\Students\PromotionsController;
+use App\Http\Controllers\Students\GraduationController;
+use App\Http\Controllers\Fees\FeeController;
+
+use App\Http\Livewire\PostComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,9 +37,7 @@ use App\Http\Livewire\FormRepeater;
 //Jetstream import for routes
 use Laravel\Fortify\Features;
 use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserController;
-use App\Http\Controllers\Students\PromotionsController;
-use App\Http\Controllers\Students\GraduationController;
-use App\Http\Livewire\PostComponent;
+
 
 
 // This comment section is a description of the purpose of the file and how it is used.
@@ -119,6 +122,15 @@ use App\Http\Livewire\PostComponent;
                             Route::post('students/graduations/back',[GraduationController::class,'studentSelectedGraduationBack'])->name('students.graduations.back');
                             
                         });
+
+                        Route::group(['namespace'=>"Fees"],function()
+                        {
+                            Route::get('fees',[FeeController::class,'index'])->name('fees.index');
+                            Route::get('fee/create',[FeeController::class,'createClassroomFee'])->name('fee.create');
+                            Route::post('fee',[FeeController::class,'storeClassroomFee'])->name('fee.store');
+
+                        });
+
 
 
                         //Teachers Page Routes

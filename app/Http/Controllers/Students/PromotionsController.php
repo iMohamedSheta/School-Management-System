@@ -134,41 +134,41 @@ class PromotionsController extends Controller
 
 
 
-public function studentSelectedPromotionBack(Request $request)
-{
-    $promotionIds = array_filter(explode(',', $request->selected_ids));
-    $successCount = 0;
+    public function studentSelectedPromotionBack(Request $request)
+    {
+        $promotionIds = array_filter(explode(',', $request->selected_ids));
+        $successCount = 0;
 
-    if (count($promotionIds) > 0) {
-        foreach ($promotionIds as $promotionId) {
-            if(!empty($promotionId)){
-            $promotion = Promotions::findOrFail($promotionId);
-            if ($promotion) {
-                $student = Student::findOrFail($promotion->student_id);
+        if (count($promotionIds) > 0) {
+            foreach ($promotionIds as $promotionId) {
+                if(!empty($promotionId)){
+                $promotion = Promotions::findOrFail($promotionId);
+                if ($promotion) {
+                    $student = Student::findOrFail($promotion->student_id);
 
-                $studentUpdate = $student->update([
-                    'grade_id' => $promotion->from_grade,
-                    'classroom_id' => $promotion->from_classroom,
-                ]);
+                    $studentUpdate = $student->update([
+                        'grade_id' => $promotion->from_grade,
+                        'classroom_id' => $promotion->from_classroom,
+                    ]);
 
-                if ($studentUpdate) {
-                    $promotionUpdate = $promotion->delete();
+                    if ($studentUpdate) {
+                        $promotionUpdate = $promotion->delete();
 
-                    if ($promotionUpdate) {
-                        $successCount++;
+                        if ($promotionUpdate) {
+                            $successCount++;
+                        }
                     }
                 }
             }
+            }
         }
-        }
-    }
 
-    if ($successCount == count($promotionIds) && $successCount > 0 ) {
-        return redirect()->back()->with('success', trans('alert.promotions_rollback'));
-    } else {
-        return redirect()->back()->with('error', trans('alert.error'));
+        if ($successCount == count($promotionIds) && $successCount > 0 ) {
+            return redirect()->back()->with('success', trans('alert.promotions_rollback'));
+        } else {
+            return redirect()->back()->with('error', trans('alert.error'));
+        }
     }
-}
 
 
 }

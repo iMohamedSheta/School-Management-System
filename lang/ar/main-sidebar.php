@@ -45,6 +45,9 @@ return [
     'students_promotions'=>'ترقيات الطلاب',
     'students.promotions.table'=>'ترقيات الطلاب',
     'students.graduated.table'=>'الطلاب المتخرجين',
+    'fees.index'=>'الرسوم الدراسية',
+    'fees'=>'الرسوم الدراسية',
+    'fee.create'=>'اضافة رسوم دراسية',
 
 
 
