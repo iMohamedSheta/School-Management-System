@@ -9,7 +9,15 @@
                         <img class="object-cover mx-1 w-10 h-10 rounded-full" src="{{ $post->user->profile_photo_url }}" alt="{{ $post->user->name }}" />
                         {{-- <span class="bottom-0 left-7 absolute  w-3.5 h-3.5 bg-green-500 border-2 border-white dark:border-gray-800 rounded-full"></span> --}}
                     </div>
-                    <p class="text-gray-500 ">{{$post->user->name}}</p>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-md font-semibold text-gray-900 truncate dark:text-white">
+                            {{$post->user->name}}
+                        </p>
+                        <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                            {{$post->created_at->diffForHumans()}}
+                        </p>
+                    </div>
+
                 </div>
                 <div data-popover id="popover-user-profile-{{$post->user->id}}" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm font-light text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:bg-gray-800 dark:border-gray-600">
                     <div class="p-3">
@@ -48,6 +56,7 @@
                     </div>
                     <div data-popper-arrow></div>
                 </div>
+                
                 <div class="flex flex-row-reverse justify-center items-center">
                     <div>
                         <button id="dropdownMenuIconHorizontalButton" data-dropdown-toggle="dropdownDotsHorizontal" class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button">
@@ -100,6 +109,7 @@
                         </div>
                     </div>
             </div>
+
         </div>
     <div data-modal-target="defaultModal-{{$post->id}}" data-modal-toggle="defaultModal-{{$post->id}}"  >
         @if(!empty($post->getFirstMediaUrl('Postsimages')))

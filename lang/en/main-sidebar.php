@@ -48,6 +48,8 @@ return [
     'fees.index'=>'Study Fees',
     'fees'=>'Study Fees',
     'fee.create'=>'Study Fees',
+    'fees.types.index'=>'Fees Types',
+    'fees-types'=>'Fees Types',
 
 
 

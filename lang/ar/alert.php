@@ -40,6 +40,17 @@ return
     'students_graduated'=>'تم تخرج جميع الطلاب بالمرحلة :grade والفصل :classroom.',
     'graduation_rollback'=>'تم التراجع عن تخرج الطالب :name.',
     'graduations_rollback'=>'تم التراجع عن تخرج الطلاب المحددين .',
+    'fee_created'=>'تم اضافة الرسوم الدراسية بنجاح.',
+    'fee_deleted'=>'تم حذف الرسوم الدراسية بنجاح.',
+    'feetype_deleted'=>'تم حذف  نوع الرسوم بنجاح.',
+    'feetypes_deleted'=>'تم حذف  انوع الرسوم المحددة بنجاح.',
+    'fees_deleted'=>'تم حذف الرسوم الدراسية المحددة بنجاح.',
+    'fee_updated'=>'تم تعديل بيانات الرسوم الدراسية للفصل الدراسي :name بنجاح.',
+    'deleted-success'=>'تم حذف العنصر بنجاح!',
+    'edited-success'=>'تم تعديل العنصر بنجاح!',
+    'create-success'=>'تم انشاء العنصر بنجاح!',
+    'success'=>'نجاح',
+    'error_title'=>'خطأ',
 
 
 

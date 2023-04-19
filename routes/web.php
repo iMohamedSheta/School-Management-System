@@ -113,22 +113,28 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                             Route::post('students/promotions/back',[PromotionsController::class,'studentSelectedPromotionBack'])->name('students.promotions.back');
                             Route::get('students/promotions/table',[PromotionsController::class,'studentsPromotionsTableView'])->name('students.promotions.table');
                             Route::post('students/promoteclassroom',[PromotionsController::class,'promoteClassroom'])->name('students.promotions.store');
-                            
-                            
+
+
                             Route::get('students/graduation',[GraduationController::class,'index'])->name('students.graduations.classroom');
                             Route::post('students/graduateclassroom',[GraduationController::class,'graduateclassroom'])->name('students.graduations.store');
                             Route::get('students/graduated',[GraduationController::class,'studentsGraduatedTableView'])->name('students.graduated.table');
                             Route::post('student/graduation/back',[GraduationController::class,'studentGraduationBack'])->name('student.graduation.back');
                             Route::post('students/graduations/back',[GraduationController::class,'studentSelectedGraduationBack'])->name('students.graduations.back');
-                            
+
                         });
 
                         Route::group(['namespace'=>"Fees"],function()
                         {
                             Route::get('fees',[FeeController::class,'index'])->name('fees.index');
+                            Route::get('fee/information/{id}',[FeeController::class,'feeInfoView'])->name('fee.info');
+                            Route::get('fee/edit/{id}',[FeeController::class,'feeInfoEditView'])->name('fee.edit');
                             Route::get('fee/create',[FeeController::class,'createClassroomFee'])->name('fee.create');
-                            Route::post('fee',[FeeController::class,'storeClassroomFee'])->name('fee.store');
+                            Route::delete('fee/delete',[FeeController::class,'destroy'])->name('fee.destroy');
+                            Route::delete('fees/delete',[FeeController::class,'deleteSelected'])->name('fees.selected.destroy');
 
+                            Route::get('fees/types',[FeeController::class,'feesTypeView'])->name('fees.types.index');
+                            Route::delete('fee/type/delete',[FeeController::class,'feesTypeDestroy'])->name('fee.type.destroy');
+                            Route::delete('fee/types/delete',[FeeController::class,'feeTypeSelectedDestroy'])->name('feetypes.selected.destroy');
                         });
 
 

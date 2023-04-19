@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('title', 100);
             $table->decimal('amount',8,2);
-            $table->unsignedBigInteger('grade_id');
-            $table->unsignedBigInteger('classroom_id');
+            $table->string('currency_code', 3);
+            $table->unsignedBigInteger('feetype_id');
+            $table->unsignedBigInteger('grade_id')->nullable();
+            $table->unsignedBigInteger('classroom_id')->nullable();
             $table->string('description')->nullable();
             $table->string('year')->nullable();
             $table->timestamp('due_date')->nullable();

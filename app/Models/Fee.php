@@ -14,7 +14,9 @@ class Fee extends Model
         'title',
         'amount',
         'grade_id',
+        'feetype_id',
         'classroom_id',
+        'currency_code',
         'description',
         'year',
         'due_date',
@@ -28,6 +30,15 @@ class Fee extends Model
     public function grade()
     {
         return $this->belongsTo(Grade::class)->withDefault();
+    }
+    public function feetype()
+    {
+        return $this->belongsTo(Feetype::class)->withDefault();
+    }
+
+    public function currency()
+    {
+        return $this->belongsTo(Currency::class,'currency_code','code')->withDefault();
     }
 
 

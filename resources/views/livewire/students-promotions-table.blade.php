@@ -133,7 +133,7 @@
                     {{ $promotion->new_classroom->name ?? '-' }}
                 </td>
                 <td class="px-6 py-3 whitespace-nowrap text-center overflow-auto simplebar" >
-                    {{ $promotion->created_at->format('d-m-Y')?? '-' }}
+                    {{ MyCarbon::parse($promotion->created_at)->format('d-m-Y')?? '-' }}
                 </td>
                 <td class="px-6 py-3 whitespace-nowrap">
                     <a href="{{route('student.info',$promotion->student->id)}}" target="_blank" class="mx-2">
