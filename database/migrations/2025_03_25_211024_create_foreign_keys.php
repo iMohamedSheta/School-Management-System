@@ -98,7 +98,15 @@ return new class extends Migration
         });
         Schema::table('student_accounts', function (Blueprint $table) {
             $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
-            $table->foreign('fee_invoice_id')->nullable()->references('id')->on('fee_invoices')->onDelete('cascade');
+            $table->foreign('fee_invoice_id')->references('id')->on('fee_invoices')->onDelete('cascade');
+            $table->foreign('receipt_id')->references('id')->on('receipt_students')->onDelete('cascade');
+
+        });
+        Schema::table('receipt_students', function (Blueprint $table) {
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
+        });
+        Schema::table('fund_accounts', function (Blueprint $table) {
+            $table->foreign('receipt_id')->references('id')->on('receipt_students')->onDelete('cascade');
         });
 
     }
@@ -189,6 +197,14 @@ return new class extends Migration
         });
         Schema::table('student_accounts', function (Blueprint $table) {
             $table->dropForeign(['student_id']);
+            $table->dropForeign(['fee_invoice_id']);
+            $table->dropForeign(['receipt_id']);
+        });
+        Schema::table('receipt_students', function (Blueprint $table) {
+            $table->dropForeign(['student_id']);
+        });
+        Schema::table('fund_accounts', function (Blueprint $table) {
+            $table->dropForeign(['receipt_id']);
         });
 
 

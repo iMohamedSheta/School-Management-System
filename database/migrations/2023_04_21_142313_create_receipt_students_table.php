@@ -11,16 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('student_accounts', function (Blueprint $table) {
+        Schema::create('receipt_students', function (Blueprint $table) {
             $table->id();
+            $table->date('date');
             $table->unsignedBigInteger('student_id');
-            $table->unsignedBigInteger('fee_invoice_id')->nullable();
-            $table->unsignedBigInteger('receipt_id')->nullable();
-            $table->decimal('debit', 8, 2)->nullable();
-            $table->decimal('credit', 8, 2)->nullable();
-            $table->string('description')->nullable();
+            $table->decimal('debit',8,2)->nullable();
+            $table->string('description');
             $table->timestamps();
-
         });
     }
 
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('student_accounts');
+        Schema::dropIfExists('receipt_students');
     }
 };

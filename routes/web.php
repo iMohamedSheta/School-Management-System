@@ -140,6 +140,10 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                             Route::get('feesinvoices',[FeeInvoiceController::class,'index'])->name('feesinvoices.index');
                             Route::get('feeinvoice/create/{id}',[FeeInvoiceController::class,'viewCreateFeeInvoice'])->name('feeinvoice.create');
                             Route::delete('feesinvoices/delete',[FeeInvoiceController::class,'feesInvoicesDeleteSelected'])->name('feesinvoices.selected.destroy');
+
+
+
+                            Route::get('receipt/create/{id}',[FeeInvoiceController::class,'viewCreateReceipt'])->name('receipt.create');
                         });
 
 
