@@ -224,6 +224,19 @@ return
     'delete_feetypes_title'=>"هل انت متأكد انك تريد حذف انوع الرسوم المحددة ?",
     'close'=>"اغلاق",
     'edit_feetype'=>'تعديل نوع الرسوم',
+    'edit_feeinvoice'=>'تعديل الفاتورة للطالب :name',
+    'add-feeinvoice-title'=>'اضافة فاتورة للطالب :name',
+    'add-feeinvoice'=>'اضافة الفاتورة',
+    'select-fee'=>'اختيار الرسوم',
+    'write_description_feeinvoice'=>'اكتب وصف ومعلومات عن فاتورة الرسوم المضافة هنا..',
+    'fee'=>'الرسوم',
+    'delete_feeinvoice'=>'حذف الفاتورة',
+    'delete_feeinvoice_title'=>'هل انت متأكد من انك تريد حذف هذه الفاتورة المسجلة للطالب :name ? ',
+    'delete-feesinvoices-title'=>'هل انت متأكد من انك تريد حذف الفواتر المحددة ؟',
+    'no-feeinvoicesinvoices'=>'لا توجد فواتير مسجلة.',
+    'allfees'=>'جمبع الرسوم',
+
+
 
 
 

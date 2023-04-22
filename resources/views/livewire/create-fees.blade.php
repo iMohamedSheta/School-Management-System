@@ -37,7 +37,7 @@
                                 @enderror
                             </div>
                             <div class="relative z-0 w-full mb-6 group ">
-                                <select id="currency_code" wire:model.defer="currency_code" name="currency_code" autocomplete="off" class="block py-2.5  px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-blue-600 peer" onchange="Livewire.emit('updatedGradeId', this.value)">
+                                <select id="currency_code" wire:model.defer="currency_code" name="currency_code" autocomplete="off" class="block py-2.5  px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-blue-600 peer" >
                                     <option value="">{{__('main.select-currency')}}</option>
                                 @foreach ($currencies as $currency)
                                     <option value="{{ $currency->code }}">{{ $currency->code }}</option>

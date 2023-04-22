@@ -50,6 +50,10 @@ return [
     'fee.create'=>'Study Fees',
     'fees.types.index'=>'Fees Types',
     'fees-types'=>'Fees Types',
+    'feeinvoice.create'=>'Create Fee Invoice',
+    'feesinvoices.index'=>'Fees Invoices',
+    'financial_accounts'=>'Financial Accounts',
+
 
 
 

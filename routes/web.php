@@ -15,10 +15,10 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserRoleController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\FormRepeater;
 use App\Http\Controllers\Students\PromotionsController;
 use App\Http\Controllers\Students\GraduationController;
 use App\Http\Controllers\Fees\FeeController;
+use App\Http\Controllers\Fees\FeeInvoiceController;
 
 use App\Http\Livewire\PostComponent;
 
@@ -135,6 +135,11 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                             Route::get('fees/types',[FeeController::class,'feesTypeView'])->name('fees.types.index');
                             Route::delete('fee/type/delete',[FeeController::class,'feesTypeDestroy'])->name('fee.type.destroy');
                             Route::delete('fee/types/delete',[FeeController::class,'feeTypeSelectedDestroy'])->name('feetypes.selected.destroy');
+
+
+                            Route::get('feesinvoices',[FeeInvoiceController::class,'index'])->name('feesinvoices.index');
+                            Route::get('feeinvoice/create/{id}',[FeeInvoiceController::class,'viewCreateFeeInvoice'])->name('feeinvoice.create');
+                            Route::delete('feesinvoices/delete',[FeeInvoiceController::class,'feesInvoicesDeleteSelected'])->name('feesinvoices.selected.destroy');
                         });
 
 

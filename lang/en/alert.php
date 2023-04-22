@@ -51,6 +51,9 @@ return
     'create-success'=>'Success, The item has been created successfully.',
     'success'=>'Success',
     'error_title'=>'error',
+    'student-feeinvoice-created'=>'Success,The fee invoice for student :name has been created successfully.',
+    'feeinvoices_deleted'=>"Success, Deleted selected fees invoices successfully!",
+
 
 
 

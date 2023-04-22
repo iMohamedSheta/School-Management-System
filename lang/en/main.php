@@ -224,7 +224,16 @@ return
     'delete_feetypes_title'=>'Are you sure you want to delete the Selected Fee types ?',
     'close'=>'Close',
     'edit_feetype'=>'Edit Fee Type',
-
+    'add-feeinvoice-title'=>'Add Fee Invoice for student :name',
+    'add-feeinvoice'=>'Add Fee Invoice',
+    'select-fee'=>'Select Fee',
+    'write_description_feeinvoice'=>'Write description and information about the created fee invoice here..',
+    'fee'=>'Fee',
+    'delete_feeinvoice'=>'Delete Fee Invoice',
+    'delete_feeinvoice_title'=>'Are you sure you want to delete this fee invoice for the student :name ?',
+    'delete-feesinvoices-title'=>'Are you sure you want to delete the selected fees invoices ?',
+    'no-feeinvoicesinvoices'=>'There is no fees invoices.',
+    'allfees'=>'All Fees',
 
 
 

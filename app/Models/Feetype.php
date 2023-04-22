@@ -14,4 +14,7 @@ class Feetype extends Model
         'name_en',
         'description',
     ];
+
+
+
 }

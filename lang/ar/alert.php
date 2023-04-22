@@ -51,6 +51,9 @@ return
     'create-success'=>'تم انشاء العنصر بنجاح!',
     'success'=>'نجاح',
     'error_title'=>'خطأ',
+    'student-feeinvoice-created'=>'تم انشاء فاتورة الطالب :name بنجاح.',
+    'feeinvoices_deleted'=>'تم حذف الفواتير المحددة بنجاح!',
+
 
 
 

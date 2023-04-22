@@ -51,6 +51,11 @@ return [
     'fee.info'=>'معلومات الرسوم الدراسية',
     'fees.types.index'=>'انواع الرسوم',
     'fees-types'=>'انواع الرسوم',
+    'feeinvoice.create'=>'اضافة فاتورة',
+    'feesinvoices.index'=>'الفواتير',
+    'financial_accounts'=>'الحسابات',
+
+
 
 
 
