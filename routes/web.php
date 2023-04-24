@@ -19,6 +19,7 @@ use App\Http\Controllers\Students\PromotionsController;
 use App\Http\Controllers\Students\GraduationController;
 use App\Http\Controllers\Fees\FeeController;
 use App\Http\Controllers\Fees\FeeInvoiceController;
+use App\Http\Controllers\Fees\ReceiptController;
 
 use App\Http\Livewire\PostComponent;
 
@@ -143,7 +144,9 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
 
 
 
-                            Route::get('receipt/create/{id}',[FeeInvoiceController::class,'viewCreateReceipt'])->name('receipt.create');
+                            Route::get('receipts',[ReceiptController::class,'index'])->name('receipts.index');
+                            Route::get('receipt/create/{id}',[ReceiptController::class,'viewCreateReceipt'])->name('receipt.create');
+                            Route::delete('receipts/delete',[ReceiptController::class,'receiptsDeleteSelected'])->name('receipts.selected.destroy');
                         });
 
 

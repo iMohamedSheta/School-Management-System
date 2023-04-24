@@ -211,9 +211,13 @@ return
     'delete-fees-title'=>'هل انت متأكد انك تريد حذف الرسوم الدراسية المحددة ؟',
     'updated-at'=>'تاريخ اخر تعديل',
     'fee-info'=>'معلومات الرسوم الدراسية للفصل الدراسي ( :name )',
+    'receipt-info'=>'معلومات سند القبض للطالب ( :name )',
     'feetype-info'=>'معلومات  نوع الرسوم  ( :name )',
+    'feeinvoice-info'=>'معلومات فاتورة الطالب ( :name )',
     'fee-info-description'=>'المعلومات الخاصة بالرسوم الدراسية ومبلغ الاستحقاق وتاريخ الاستحقاق والذي يحدد اخر تاريخ لدفع الفتورة.',
     'feetype-info-description'=>'المعلومات الخاصة بنوع الرسوم المختار.',
+    'receipt-info-description'=>'المعلومات الخاصة بسند القبض المختار للطالب :name.',
+    'feeinvoice-info-description'=>'المعلومات الخاصة بفاتورة المختار للطالب :name.',
     'name-en'=>"الاسم بالغة الانجليزية",
     'no-feetypes'=>'لا توجد انواع مسجلة للرسوم.',
     'add-feetype'=>'اضافة نوع جديد من الرسوم',
@@ -222,9 +226,11 @@ return
     'delete_feetype'=>"حذف نوع الرسوم",
     'delete_feetype_title'=>"هل انت متأكد انك تريد حذف نوع الرسوم :name ?",
     'delete_feetypes_title'=>"هل انت متأكد انك تريد حذف انوع الرسوم المحددة ?",
+    'delete-receipts-title'=>"هل انت متأكد انك تريد حذف سندات القبض المحددة ?",
     'close'=>"اغلاق",
     'edit_feetype'=>'تعديل نوع الرسوم',
     'edit_feeinvoice'=>'تعديل الفاتورة للطالب :name',
+    'edit_receipt'=>'تعديل سند القبض للطالب :name',
     'add-feeinvoice-title'=>'اضافة فاتورة للطالب :name',
     'add-receipt-title'=>'اضافة سند قبض للطالب :name',
     'add-feeinvoice'=>'اضافة الفاتورة',
@@ -233,9 +239,16 @@ return
     'fee'=>'الرسوم',
     'delete_feeinvoice'=>'حذف الفاتورة',
     'delete_feeinvoice_title'=>'هل انت متأكد من انك تريد حذف هذه الفاتورة المسجلة للطالب :name ? ',
+    'delete_receipt'=>'حذف سند القبض',
+    'delete_receipt_title'=>'هل انت متأكد من انك تريد حذف سند القبض المسجل للطالب :name ? ',
     'delete-feesinvoices-title'=>'هل انت متأكد من انك تريد حذف الفواتر المحددة ؟',
     'no-feeinvoicesinvoices'=>'لا توجد فواتير مسجلة.',
     'allfees'=>'جمبع الرسوم',
+    'add-receipt'=>'اضافة سند القبض',
+    'amount-of-money'=>'المبلغ',
+    'no-receipts'=>'لا يوجد سندات قبض مسجلة.',
+
+
 
 
 

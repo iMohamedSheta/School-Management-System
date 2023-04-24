@@ -54,6 +54,8 @@ return [
     'feeinvoice.create'=>'اضافة فاتورة',
     'feesinvoices.index'=>'الفواتير',
     'financial_accounts'=>'الحسابات',
+    'receipt.create'=>'اضافة سند قبض',
+    'receipts.index'=>'سندات القبض',
 
 
 

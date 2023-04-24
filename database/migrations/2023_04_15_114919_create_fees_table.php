@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('fees', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 100);
+            $table->string('title');
             $table->decimal('amount',8,2);
             $table->string('currency_code', 3);
             $table->unsignedBigInteger('feetype_id');

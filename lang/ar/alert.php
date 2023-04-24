@@ -52,7 +52,9 @@ return
     'success'=>'نجاح',
     'error_title'=>'خطأ',
     'student-feeinvoice-created'=>'تم انشاء فاتورة الطالب :name بنجاح.',
+    'student-receipt-created'=>'تم انشاء سند القبض للطالب :name بنجاح.',
     'feeinvoices_deleted'=>'تم حذف الفواتير المحددة بنجاح!',
+    'receipts_deleted'=>'تم حذف سندات القبض المحددة بنجاح!',
 
 
 

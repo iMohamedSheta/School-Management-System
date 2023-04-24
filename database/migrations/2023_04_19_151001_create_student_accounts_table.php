@@ -16,9 +16,12 @@ return new class extends Migration
             $table->unsignedBigInteger('student_id');
             $table->unsignedBigInteger('fee_invoice_id')->nullable();
             $table->unsignedBigInteger('receipt_id')->nullable();
+            $table->unsignedBigInteger('processing_id')->nullable();
+            $table->string('currency_code', 3)->nullable();
             $table->decimal('debit', 8, 2)->nullable();
             $table->decimal('credit', 8, 2)->nullable();
             $table->string('description')->nullable();
+            $table->string('type')->nullable();
             $table->timestamps();
 
         });

@@ -127,7 +127,7 @@
                             href="{{ route('students.promotions.table') }}">
                             <div
                             class="{{ in_array(Route::currentRouteName(),['students.promotions.table']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                            <i class="fa-solid  fa-user-group  {{in_array(Route::currentRouteName(),['students.promotions.table']) ? 'text-white' : ''}}"></i>
+                            <i class="fa-solid fa-file-arrow-up fa-lg {{in_array(Route::currentRouteName(),['students.promotions.table']) ? 'text-white' : ''}}"></i>
                             </div>
                             <div  class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.students.promotions.index")}}</span></div>
                         </a>
@@ -138,7 +138,7 @@
                             href="{{ route('students.promotions.classroom') }}">
                             <div
                             class="{{ in_array(Route::currentRouteName(),['students.promotions.classroom']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                            <i class="fa-solid  fa-user-group  {{in_array(Route::currentRouteName(),['students.promotions.classroom']) ? 'text-white' : ''}}"></i>
+                            <i class="fa-solid fa-arrow-up-wide-short fa-lg {{in_array(Route::currentRouteName(),['students.promotions.classroom']) ? 'text-white' : ''}}"></i>
                             </div>
                             <div  class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.students.promotions.classroom")}}</span></div>
                         </a>
@@ -149,7 +149,7 @@
                             href="{{ route('students.graduated.table') }}">
                             <div
                             class="{{ in_array(Route::currentRouteName(),['students.graduated.table']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                            <i class="fa-solid  fa-user-group  {{in_array(Route::currentRouteName(),['students.graduated.table']) ? 'text-white' : ''}}"></i>
+                            <i class="fa-solid fa-user-graduate fa-lg  {{in_array(Route::currentRouteName(),['students.graduated.table']) ? 'text-white' : ''}}"></i>
                             </div>
                             <div  class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.students.graduated.table")}}</span></div>
                         </a>
@@ -160,7 +160,7 @@
                             href="{{ route('students.graduations.classroom') }}">
                             <div
                             class="{{ in_array(Route::currentRouteName(),['students.graduations.classroom']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                            <i class="fa-solid  fa-user-group  {{in_array(Route::currentRouteName(),['students.graduations.classroom']) ? 'text-white' : ''}}"></i>
+                            <i class="fa-solid fa-graduation-cap fa-lg  {{in_array(Route::currentRouteName(),['students.graduations.classroom']) ? 'text-white' : ''}}"></i>
                             </div>
                             <div  class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.students.graduations.classroom")}}</span></div>
                         </a>
@@ -195,22 +195,22 @@
                     </li>
 
 
-                    <li class="w-full mt-2  listopennavbar " >
-                        <a  id="listopennavbar" aria-controls="data-accordion-icon3" data-collapse-toggle="data-accordion-icon3" class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center
-                            whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
-                            {{ in_array(Route::currentRouteName(),['fees.index','fee.info','fee.edit','fee.create','fees.types.index','feesinvoices.index']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
-                            href="#">
-                            <div
-                            class="{{ in_array(Route::currentRouteName(),['fees.index','fee.info','fee.edit','fee.create','fees.types.index','feesinvoices.index']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                            <i class="fa-solid fa-chalkboard-user fa-sharp {{in_array(Route::currentRouteName(),['fees.index','fee.info','fee.edit','fee.create','fees.types.index','feesinvoices.index']) ? 'text-white' : ''}}"></i>
-                        </div>
-                            <div id="sidebariconOnly13" class="sidebar-icon"> <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.financial_accounts")}}</span>
-                                <i  id="arrowicon" class="arrowicon fa-solid fa-chevron-down px-3  shrink-0 transition-transform duration-200"></i>
-                            </div>
-                            </a>
+            <li class="w-full mt-2  listopennavbar " >
+                <a  id="listopennavbar" aria-controls="data-accordion-icon3" data-collapse-toggle="data-accordion-icon3" class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center
+                    whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                    {{ in_array(Route::currentRouteName(),['fees.index','fee.info','fee.edit','fee.create','fees.types.index','feesinvoices.index','receipts.index']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                    href="#">
+                    <div
+                    class="{{ in_array(Route::currentRouteName(),['fees.index','fee.info','fee.edit','fee.create','fees.types.index','feesinvoices.index','receipts.index']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                    <i class="fa-solid fa-landmark fa-lg {{in_array(Route::currentRouteName(),['fees.index','fee.info','fee.edit','fee.create','fees.types.index','feesinvoices.index','receipts.index']) ? 'text-white' : ''}}"></i>
+                </div>
+                    <div id="sidebariconOnly13" class="sidebar-icon"> <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.financial_accounts")}}</span>
+                        <i  id="arrowicon" class="arrowicon fa-solid fa-chevron-down px-3  shrink-0 transition-transform duration-200"></i>
+                    </div>
+                    </a>
 
-                            <ul  id="data-accordion-icon3" class="hidden px-4  transition duration-1000  ">
-                                <div class="border-x-2 border-b rounded-xl border-gray-400  bg-gray-100 py-2">
+                    <ul  id="data-accordion-icon3" class="hidden px-4  transition duration-1000  ">
+                        <div class="border-x-2 border-b rounded-xl border-gray-400  bg-gray-100 py-2">
 
                     <li class="w-full mt-2 ">
                         <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
@@ -218,7 +218,7 @@
                             href="{{ route('fees.index') }}">
                             <div
                             class="{{ in_array(Route::currentRouteName(),['fees.index','fee.info','fee.edit']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                            <i class="fa-solid  fa-user-group  {{in_array(Route::currentRouteName(),['fees.index','fee.info','fee.edit']) ? 'text-white' : ''}}"></i>
+                            <i class="fa-solid fa-file-invoice-dollar fa-lg {{in_array(Route::currentRouteName(),['fees.index','fee.info','fee.edit']) ? 'text-white' : ''}}"></i>
                             </div>
                             <div  class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.fees.index")}}</span></div>
                         </a>
@@ -229,7 +229,7 @@
                             href="{{ route('fee.create') }}">
                             <div
                             class="{{ in_array(Route::currentRouteName(),['fee.create']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                            <i class="fa-solid  fa-user-group  {{in_array(Route::currentRouteName(),['fee.create']) ? 'text-white' : ''}}"></i>
+                            <i class="fa-solid fa-file-circle-plus fa-lg  {{in_array(Route::currentRouteName(),['fee.create']) ? 'text-white' : ''}}"></i>
                             </div>
                             <div  class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.fee.create")}}</span></div>
                         </a>
@@ -240,7 +240,7 @@
                             href="{{ route('fees.types.index') }}">
                             <div
                             class="{{ in_array(Route::currentRouteName(),['fees.types.index']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                            <i class="fa-solid  fa-user-group  {{in_array(Route::currentRouteName(),['fees.types.index']) ? 'text-white' : ''}}"></i>
+                            <i class="fa-solid fa-thumbtack fa-lg  {{in_array(Route::currentRouteName(),['fees.types.index']) ? 'text-white' : ''}}"></i>
                             </div>
                             <div  class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.fees.types.index")}}</span></div>
                         </a>
@@ -251,9 +251,20 @@
                             href="{{ route('feesinvoices.index') }}">
                             <div
                             class="{{ in_array(Route::currentRouteName(),['feesinvoices.index']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                            <i class="fa-solid  fa-user-group  {{in_array(Route::currentRouteName(),['feesinvoices.index']) ? 'text-white' : ''}}"></i>
+                            <i class="fa-solid fa-file-invoice fa-lg {{in_array(Route::currentRouteName(),['feesinvoices.index']) ? 'text-white' : ''}}"></i>
                             </div>
                             <div  class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.feesinvoices.index")}}</span></div>
+                        </a>
+                    </li>
+                    <li class="w-full mt-2 ">
+                        <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                            {{ in_array(Route::currentRouteName(),['receipts.index']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                            href="{{ route('receipts.index') }}">
+                            <div
+                            class="{{ in_array(Route::currentRouteName(),['receipts.index']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                            <i class="fa-solid fa-file-invoice fa-lg {{in_array(Route::currentRouteName(),['receipts.index']) ? 'text-white' : ''}}"></i>
+                            </div>
+                            <div  class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.receipts.index")}}</span></div>
                         </a>
                     </li>
 

@@ -126,6 +126,9 @@
                     <a href="{{route('feeinvoice.create',$student->id)}}" target="_blank" class="mx-2">
                         <i class="fa-sharp fa-solid fa-file-invoice-dollar fa-lg hover:text-gray-800"></i>
                     </a>
+                    <a href="{{route('receipt.create',$student->id)}}" target="_blank" class="mx-2">
+                        <i class="fa-sharp fa-solid fa-receipt fa-lg hover:text-gray-800"></i>
+                    </a>
                     <a href="{{route('student.email.edit',$student->user->id)}}" target="_blank" class="mx-2">
                         <i class="fa-solid fa-envelope-open-text fa-lg hover:text-gray-800"></i>
                     </a>

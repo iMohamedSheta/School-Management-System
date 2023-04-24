@@ -17,7 +17,8 @@ return new class extends Migration
             $table->unsignedBigInteger('receipt_id');
             $table->decimal('debit',8,2)->nullable();
             $table->decimal('credit',8,2)->nullable();
-            $table->string('description');
+            $table->string('currency_code', 3)->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

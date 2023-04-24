@@ -52,7 +52,9 @@ return
     'success'=>'Success',
     'error_title'=>'error',
     'student-feeinvoice-created'=>'Success,The fee invoice for student :name has been created successfully.',
+    'student-receipt-created'=>'Success,The receipt for student :name has been created successfully.',
     'feeinvoices_deleted'=>"Success, Deleted selected fees invoices successfully!",
+    'receipts_deleted'=>"Success, Deleted selected Receipts Vouchers successfully!",
 
 
 

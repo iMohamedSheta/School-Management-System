@@ -48,11 +48,15 @@ return [
     'fees.index'=>'Study Fees',
     'fees'=>'Study Fees',
     'fee.create'=>'Study Fees',
+    'fee.info'=>'Study Fee Information',
     'fees.types.index'=>'Fees Types',
     'fees-types'=>'Fees Types',
     'feeinvoice.create'=>'Create Fee Invoice',
     'feesinvoices.index'=>'Fees Invoices',
     'financial_accounts'=>'Financial Accounts',
+    'receipt.create'=>'Create Receipt',
+    'receipts.index'=>'Receipts Vouchers',
+
 
 
 

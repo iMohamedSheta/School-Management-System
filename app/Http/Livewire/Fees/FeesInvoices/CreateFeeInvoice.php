@@ -84,9 +84,11 @@ class CreateFeeInvoice extends Component
                 StudentAccount::create([
                     'student_id'=>$this->student->id,
                     'fee_invoice_id' => $feeInvoiceCreate->id,
+                    'currency_code'=>$feeInvoiceCreate->currency_code,
                     'debit'=>$this->amount,
                     'credit'=>0.00,
                     'description'=>$this->description,
+                    'type'=>"invoice",
                 ]);
             }
 

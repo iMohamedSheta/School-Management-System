@@ -28,8 +28,6 @@ class FeeInvoiceController extends Controller
         $feeinvoiceIds =array_filter(explode(',',$request->selected_ids));
         $successCount = 0;
 
-        if(auth()->user()->isAdmin())
-        {
             if (count($feeinvoiceIds) > 0) {
                 foreach ($feeinvoiceIds as $feeinvoiceId) {
                     if(!empty($feeinvoiceId)){
@@ -46,7 +44,6 @@ class FeeInvoiceController extends Controller
                 return redirect()->back()->with('success',trans('alert.feeinvoices_deleted'));
             }
 
-        }
 
         return redirect()->back()->with('error',trans('alert.error'));
 

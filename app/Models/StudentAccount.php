@@ -11,10 +11,13 @@ class StudentAccount extends Model
 
 
     protected $fillable = [
-        'debit',
-        'fee_invoice_id',
         'student_id',
+        'fee_invoice_id',
+        'receipt_id',
+        'currency_code',
+        'debit',
         'credit',
+        "type",
         'description',
     ];
 
@@ -28,6 +31,15 @@ class StudentAccount extends Model
         return $this->belongsTo(FeeInvoice::class)->withDefault();
     }
 
+    public function receipt()
+    {
+        return $this->belongsTo(ReceiptStudent::class)->withDefault();
+    }
+
+    public function currency()
+    {
+        return $this->belongsTo(Currency::class,'currency_code','code')->withDefault();
+    }
 
 
 }

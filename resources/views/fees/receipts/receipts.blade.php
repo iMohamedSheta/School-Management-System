@@ -8,12 +8,11 @@
 
 @extends('layouts.master')
 
-@section('Pagetitle',"Create Receipt")
+@section('Pagetitle',"Receipts")
 
 @section('Content')
 
-<livewire:fees.receipts.create-receipt :student="$student">
-
+<livewire:fees.receipts.receipts-table>
 
 @endsection
 
