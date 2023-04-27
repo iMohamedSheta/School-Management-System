@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Fees\Receipts;
 
 use App\Models\ReceiptStudent;
 use Livewire\Component;
+use Livewire\WithPagination;
 use Money\Currencies\ISOCurrencies;
 use Money\Currency;
 use Money\Formatter\IntlMoneyFormatter;
@@ -11,6 +12,7 @@ use Money\Money;
 
 class ReceiptsTable extends Component
 {
+    use WithPagination;
     public $search;
 
     public $listeners = ['deleted'=>'$refresh','edited'=>'$refresh'];

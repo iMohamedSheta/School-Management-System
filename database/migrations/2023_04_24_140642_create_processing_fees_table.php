@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->date('date');
             $table->unsignedBigInteger('student_id');
-            $table->decimal('amount',8,2)->nullable();
+            $table->decimal('amount',8,2);
             $table->string('currency_code', 3)->nullable();
             $table->string('description')->nullable();
             $table->timestamps();

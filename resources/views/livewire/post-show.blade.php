@@ -2,7 +2,7 @@
 <div class=' md:w-[90%] mx-auto mb-8 hs:w-full  '>
     <div class="max-w-3xl mx-auto bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <div class="border-b-4">
-            <div class="flex justify-between items-center bg-white rounded-lg  px-3 pt-4 pb-2  mx-auto">
+            <div class="flex justify-between items-center   px-3 pt-4 pb-2  mx-auto  bg-gray-800 text-white">
 
                 <div class="flex items-center" data-popover-target="popover-user-profile-{{$post->user->id}}" >
                     <div class="relative">
@@ -10,10 +10,10 @@
                         {{-- <span class="bottom-0 left-7 absolute  w-3.5 h-3.5 bg-green-500 border-2 border-white dark:border-gray-800 rounded-full"></span> --}}
                     </div>
                     <div class="flex-1 min-w-0">
-                        <p class="text-md font-semibold text-gray-900 truncate dark:text-white">
+                        <p class="text-md font-semibold  truncate dark:text-white">
                             {{$post->user->name}}
                         </p>
-                        <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                        <p class="text-sm truncate dark:text-gray-400">
                             {{$post->created_at->diffForHumans()}}
                         </p>
                     </div>
@@ -56,10 +56,10 @@
                     </div>
                     <div data-popper-arrow></div>
                 </div>
-                
+
                 <div class="flex flex-row-reverse justify-center items-center">
                     <div>
-                        <button id="dropdownMenuIconHorizontalButton" data-dropdown-toggle="dropdownDotsHorizontal" class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button">
+                        <button id="dropdownMenuIconHorizontalButton" data-dropdown-toggle="dropdownDotsHorizontal" class="text-white hover:text-gray-200" type="button">
                             <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path></svg>
                         </button>
 
@@ -77,7 +77,7 @@
                     </div>
                         <div>
                             @if((Auth::user()->id == $post->user->id) || (auth()->user()->isAdmin()))
-                            <button class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button" data-modal-target="delete-post-{{$post->id}}" id="delete-post-btn-{{$post->id}}"  data-modal-toggle="delete-post-{{$post->id}}">
+                            <button class="hover:text-red-500 mx-4" type="button" data-modal-target="delete-post-{{$post->id}}" id="delete-post-btn-{{$post->id}}"  data-modal-toggle="delete-post-{{$post->id}}">
                                 <i class="fa-regular fa-trash-can  fa-xl"></i>
                             </button>
                             <div>
@@ -135,9 +135,20 @@
     </div>
     </div>
     <div class="px-5 py-2">
-        <a href="#">
-                <h5 class="mb-2 border-b pb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{$post->title}}</h5>
-        </a>
+        <div class="mb-2 flex  items-center pb-2 border-b">
+            <h5 class=" text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{$post->title}}</h5>
+            @if($post->grade_id)
+            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-indigo-900 dark:text-indigo-300">
+                {{$post->grade->name}}
+            </span>
+
+            @endif
+            @if($post->classroom_id)
+            <span class="bg-purple-100 text-purple-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">
+                {{$post->classroom->name}}
+            </span>
+            @endif
+    </div>
             <p class="mb-2 font-normal text-gray-700 dark:text-gray-400">
                 {!! preg_replace('/<img[^>]+>/i', '', $post->content) !!}
             </p>
@@ -158,9 +169,9 @@
             {{$post->count_downvotes}}
         </div>
     </div>
-    <div class="px-5 py-1">
-        <div class="border-t-2 mb-4"></div>
-        <ul class="my-2">
+    <div class="">
+        <div class="border-t-4"></div>
+        <ul class="py-2 bg-gray-100 px-5">
             @forelse($post->comments as $comment)
             @if ($loop->index < $this->commentsShown)
             {{-- User Comment Pop up --}}
@@ -209,7 +220,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-11/12 relative border-2 shadow-lg my-3 rounded-2xl px-3 pb-3 pt-1 mx-2">
+                <div class="w-11/12 relative border-2 shadow-lg my-3 rounded-2xl bg-white px-3 pb-3 pt-1 mx-2">
                     <div class="">
                         <div class="inline-block" data-popover-target="popover-user-profile-{{$comment->user->id}}">
                             <p class="text-gray-500 text-md font-bold ">{{$comment->user->name}} </p>
@@ -292,9 +303,12 @@
 
                 </ul>
                 <form wire:submit.prevent="addComment({{$post->id}})">
-                    <div class="flex flex-col my-4">
-                        <textarea wire:model.defer="comment" class="form-input rounded-md shadow-sm mt-1 block w-full border-gray-300" rows="1" placeholder="{{trans('main.add-comment')}}"></textarea>
-                        <button class="btn btn-dark px-4 py-2 mt-4"><i class="fa-solid fa-message mx-2 fa-lg"></i>{{ trans('main.comment') }}</button>
+                    <div class="flex items-center px-3 py-2 rounded-lg bg-white dark:bg-gray-700 mb-4 pt-4   border-t-4">
+                        <textarea wire:model.defer="comment" rows="1" class="block mx-4 p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="{{trans('main.add-comment')}}"></textarea>
+                            <button type="submit" class="inline-flex justify-center m-2 text-gray-800 hover:text-gray-600  dark:text-blue-500 dark:hover:bg-gray-600">
+                            <svg aria-hidden="true" class="w-6 h-6 rotate-90" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path></svg>
+                            <span class="sr-only">{{ trans('main.comment') }}</span>
+                        </button>
                     </div>
                 </form>
             </div>

@@ -3,6 +3,8 @@
 namespace App\Http\Livewire;
 
 use App\Models\Post;
+use App\Models\Grade;
+use App\Models\Classroom;
 use App\Models\PostComment;
 use App\Notifications\ReceivedComment;
 use Illuminate\Http\Request;
@@ -19,7 +21,13 @@ class PostComponent extends Component
     public $upvote;
     public $downvote;
     public $comment;
+    public $editedComment;
     public $showMore = false;
+    public $classrooms=[];
+    public $grade_id;
+    public $classroom_id;
+    public $selectedGrade;
+    public $selectedClassroom;
 
     public $search = '';
 
@@ -29,21 +37,53 @@ public $commentsPerPage = 5;
 public $commentsShown = 2;
 
 
+protected $listeners = ['updatedGradeId'];
+
+
+    public function updatedGradeId($value)
+    {
+        if ($value) {
+            $this->classrooms = Classroom::where('grade_id', $value)->get();
+        } else {
+            $this->classrooms = [];
+        }
+    }
 
     public function render()
     {
 
-        $posts = Post::where('title', 'like', '%'.$this->search.'%')
-        ->orWhere('content', 'like', '%'.$this->search.'%')
-        ->orderByDesc(DB::raw('count_upvotes - count_downvotes'))
-        ->paginate(5);
+        $postsQuery = Post::query();
+
+        if ($this->selectedGrade && $this->selectedGrade !== 'AllGrades') {
+            $postsQuery->where('grade_id', $this->selectedGrade);
+        }
+
+        if ($this->selectedClassroom && $this->selectedClassroom !== 'AllClassrooms') {
+            $postsQuery->where('classroom_id', $this->selectedClassroom);
+        }
+
+        $posts = $postsQuery->orderByDesc(DB::raw('count_upvotes - count_downvotes'))->paginate(10);
 
         $posts->each(function ($post) {
             $post->comments = $post->comments->sortByDesc('created_at');
         });
-
-        return view('livewire.post-component',compact('posts'));
+        $grades = Grade::all();
+        return view('livewire.post-component',compact('posts','grades'));
     }
+
+
+
+    public function filterByGrade($gradeId)
+    {
+        $this->selectedGrade = $gradeId;
+        $this->selectedClassroom = null;
+    }
+
+    public function filterByClassroom($classroomId)
+    {
+        $this->selectedClassroom = $classroomId;
+    }
+
 
 
     public function uploadImage(Request $request)
@@ -61,29 +101,7 @@ public $commentsShown = 2;
     }
 
 
-    public function savePost(Request $request)
-    {
-        // Validate request data
-        $validatedData = $request->validate([
-            'title' => 'required|max:255',
-            'content' => 'required'
-        ]);
 
-        // Create the post and associate with authenticated user
-        $post = auth()->user()->posts()->create([
-            'title' => $validatedData['title'],
-            'content' => $validatedData['content']
-        ]);
-
-        // Retrieve the uploaded image from the Spatie Media Library and attach it to the post
-        $media = auth()->user()->getMedia('Postsimages')->last();
-        if ($media) {
-            $media->move($post,'Postsimages');
-            // $post->attachMedia($media, 'Posts-images');
-        }
-
-        return redirect()->back()->with('success','تم نشر المنشور بنجاح.');
-    }
 
 
 
@@ -142,6 +160,28 @@ public $commentsShown = 2;
             $comment->delete();
         }
 
+    }
+    public function updateComment($comment_id)
+    {
+        $comment = PostComment::findorfail($comment_id);
+        if( (auth()->user()->id == $comment->user->id) )
+        {
+            $validatedData = $this->validate([
+            'editedComment'=>'string|required',
+            ]);
+
+            if($validatedData)
+            {
+                $updateComment=$comment->update([
+                    'comment'=> $this->editedComment,
+                ]);
+                toastr()->success(trans('alert.edited-success'), trans('alert.success'), ['timeOut' => 3000]);
+            }
+        }
+        if(!$updateComment)
+        {
+            toastr()->error(trans('alert.error_title'), $e->getMessage(), ['timeOut' => 3000]);
+        }
     }
 
 

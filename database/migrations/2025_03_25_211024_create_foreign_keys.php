@@ -83,15 +83,15 @@ return new class extends Migration
             $table->foreign('to_classroom')->references('id')->on('classrooms')->onDelete('cascade');
         });
         Schema::table('fees', function (Blueprint $table) {
-            $table->foreign('grade_id')->references('id')->on('Grades')->onDelete('cascade');
-            $table->foreign('classroom_id')->references('id')->on('Classrooms')->onDelete('cascade');
+            $table->foreign('grade_id')->references('id')->on('grades')->onDelete('cascade');
+            $table->foreign('classroom_id')->references('id')->on('classrooms')->onDelete('cascade');
             $table->foreign('currency_code')->references('code')->on('currencies')->onDelete('cascade');
             $table->foreign('feetype_id')->references('id')->on('feetypes')->onDelete('cascade');
         });
         Schema::table('fee_invoices', function (Blueprint $table) {
             $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
-            $table->foreign('grade_id')->references('id')->on('Grades')->onDelete('cascade');
-            $table->foreign('classroom_id')->references('id')->on('Classrooms')->onDelete('cascade');
+            $table->foreign('grade_id')->references('id')->on('grades')->onDelete('cascade');
+            $table->foreign('classroom_id')->references('id')->on('classrooms')->onDelete('cascade');
             $table->foreign('fee_id')->references('id')->on('fees')->onDelete('cascade');
             $table->foreign('feetype_id')->references('id')->on('feetypes')->onDelete('cascade');
             $table->foreign('currency_code')->references('code')->on('currencies')->onDelete('cascade');
@@ -113,7 +113,7 @@ return new class extends Migration
             $table->foreign('currency_code')->references('code')->on('currencies')->onDelete('cascade');
         });
         Schema::table('processing_fees', function (Blueprint $table) {
-            $table->foreign('student_id')->references('id')->on('receipt_students')->onDelete('cascade');
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
             $table->foreign('currency_code')->references('code')->on('currencies')->onDelete('cascade');
         });
 

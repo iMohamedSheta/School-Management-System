@@ -56,6 +56,8 @@ return [
     'financial_accounts'=>'الحسابات',
     'receipt.create'=>'اضافة سند قبض',
     'receipts.index'=>'سندات القبض',
+    'processingfee.create'=>'استبعاد رسوم',
+    'processingfees.index'=>' الرسوم المستبعدة',
 
 
 

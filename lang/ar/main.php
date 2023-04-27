@@ -214,9 +214,11 @@ return
     'receipt-info'=>'معلومات سند القبض للطالب ( :name )',
     'feetype-info'=>'معلومات  نوع الرسوم  ( :name )',
     'feeinvoice-info'=>'معلومات فاتورة الطالب ( :name )',
+    'processingfee-info'=>'معلومات الرسوم المستبعدة عن الطالب ( :name )',
     'fee-info-description'=>'المعلومات الخاصة بالرسوم الدراسية ومبلغ الاستحقاق وتاريخ الاستحقاق والذي يحدد اخر تاريخ لدفع الفتورة.',
     'feetype-info-description'=>'المعلومات الخاصة بنوع الرسوم المختار.',
     'receipt-info-description'=>'المعلومات الخاصة بسند القبض المختار للطالب :name.',
+    'processingfee-info-description'=>'المعلومات الخاصة بالرسوم المستبعدة عن الطالب المحدد :name.',
     'feeinvoice-info-description'=>'المعلومات الخاصة بفاتورة المختار للطالب :name.',
     'name-en'=>"الاسم بالغة الانجليزية",
     'no-feetypes'=>'لا توجد انواع مسجلة للرسوم.',
@@ -232,6 +234,7 @@ return
     'edit_feeinvoice'=>'تعديل الفاتورة للطالب :name',
     'edit_receipt'=>'تعديل سند القبض للطالب :name',
     'add-feeinvoice-title'=>'اضافة فاتورة للطالب :name',
+    'add-processingfee-title'=>' استبعاد رسوم للطالب :name',
     'add-receipt-title'=>'اضافة سند قبض للطالب :name',
     'add-feeinvoice'=>'اضافة الفاتورة',
     'select-fee'=>'اختيار الرسوم',
@@ -240,18 +243,30 @@ return
     'delete_feeinvoice'=>'حذف الفاتورة',
     'delete_feeinvoice_title'=>'هل انت متأكد من انك تريد حذف هذه الفاتورة المسجلة للطالب :name ? ',
     'delete_receipt'=>'حذف سند القبض',
+    'delete_processingfee'=>'حذف الرسوم المسبعدة',
     'delete_receipt_title'=>'هل انت متأكد من انك تريد حذف سند القبض المسجل للطالب :name ? ',
+    'delete_processingfee_title'=>'هل انت متأكد من انك تريد اعادة الرسوم المستبعدة للطالب :name ? ',
     'delete-feesinvoices-title'=>'هل انت متأكد من انك تريد حذف الفواتر المحددة ؟',
     'no-feeinvoicesinvoices'=>'لا توجد فواتير مسجلة.',
     'allfees'=>'جمبع الرسوم',
     'add-receipt'=>'اضافة سند القبض',
     'amount-of-money'=>'المبلغ',
     'no-receipts'=>'لا يوجد سندات قبض مسجلة.',
-
-
-
-
-
+    'student-info-dropdown'=>'معلومات الطالب',
+    'edit-student-info-dropdown'=>'تعديل المعلومات',
+    'create-invoice-dropdown'=>'اضافة فاتورة',
+    'create-receipt-dropdown'=>'اضافة سند قبض',
+    'create-processingfee-dropdown'=>'استبعاد رسوم',
+    'edit-email-info-dropdown'=>'تعديل معلومات البريد',
+    'delete-student-dropdown'=>'حذف الطالب',
+    'add-processingfee'=>'استبعاد الرسوم',
+    'student_credit'=>'رصيد الطالب',
+    'amount-of-money-excluded'=>'المبلغ المستبعد',
+    'current-debit'=>'الدين الحالي',
+    'no-processingfees'=>'لا يوجد اي رسوم مستبعدة من اي طالب.',
+    'edit_processingfee'=>'تعديل الرسوم المستبعدة من الطالب :name',
+    'write_description'=>'اكتب هنا الوصف وما تريد من معلومات..',
+    "get-discussions-based-on-grade"=>'تصفح المناقشات علي حسب المرحلة والصف الدراسي',
 
 
 

@@ -213,10 +213,12 @@ return
     'fee-info'=>'Study Fee information for the classroom ( :name )',
     'receipt-info'=>'Receipt Voucher information for the student ( :name )',
     'feeinvoice-info'=>'Fee Invoice information for the student ( :name )',
+    'processingfee-info'=>'Excluded fee information for the student ( :name )',
     'feetype-info'=>'Study Fee Type ( :name ) information',
     'fee-info-description'=>'The information for the study fee, amount of fee and the due date which tell the last date to pay.',
     'feetype-info-description'=>'The information for the selected study fee type.',
     'receipt-info-description'=>'The information for the selected Receipt Voucher for the student :name.',
+    'processingfee-info-description'=>'The information for the selected  Excluded Fee for the student :name.',
     'feeinvoice-info-description'=>'The information for the selected Fee Invoice for the student :name.',
     'name-en'=>'English Name',
     'no-feetypes'=>'There is no Fee Types on the system',
@@ -231,6 +233,7 @@ return
     'edit_feeinvoice'=>'Edit Fee invoice for student :name',
     'edit_receipt'=>'Edit receipt voucher for student :name',
     'add-feeinvoice-title'=>'Add Fee Invoice for student :name',
+    'add-processingfee-title'=>'Exclude Fee for student :name',
     'add-receipt-title'=>'Add receipt voucher for student :name',
     'add-feeinvoice'=>'Add Fee Invoice',
     'select-fee'=>'Select Fee',
@@ -246,6 +249,22 @@ return
     'add-receipt'=>"Add Receipt Voucher",
     'amount-of-money'=>'Amount',
     'no-receipts'=>'There is no Receipts Vouchers on the system.',
+    'student-info-dropdown'=>'View Info ',
+    'edit-student-info-dropdown'=>'Edit Information',
+    'create-invoice-dropdown'=>'Create Fee Invoice',
+    'create-receipt-dropdown'=>'Create Receipt voucher',
+    'create-processingfee-dropdown'=>'Create Processing Fee',
+    'edit-email-info-dropdown'=>'Edit Email Information',
+    'delete-student-dropdown'=>'Delete Student',
+    'add-processingfee'=>'Exclude Fee',
+    'student_credit'=>'Student Credit',
+    'amount-of-money-excluded'=>'Excluded Amount',
+    'current-debit'=>'Current Debit',
+    'no-processingfees'=>'There is no Excluded Money for any student.',
+    'edit_processingfee'=>'Edit the excluded fee from the student :name',
+    'write_description'=>'Write here description and any information you need..',
+    'get-discussions-based-on-grade'=>'Get Disucussions based on Grade and Classroom'
+
 
 
 

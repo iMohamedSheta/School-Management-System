@@ -55,6 +55,9 @@ return
     'student-receipt-created'=>'Success,The receipt for student :name has been created successfully.',
     'feeinvoices_deleted'=>"Success, Deleted selected fees invoices successfully!",
     'receipts_deleted'=>"Success, Deleted selected Receipts Vouchers successfully!",
+    'student-processingfee-created'=>'Success,Excluded Fees for student :name has been created successfully.',
+    'processingfees_deleted'=>"Sucess, The selected excluded fees has been deleted successfully",
+    'student-processingfee-updated'=>'Success,Excluded Fees for student :name has been updated successfully.',
 
 
 

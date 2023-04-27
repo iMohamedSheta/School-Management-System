@@ -20,6 +20,7 @@ use App\Http\Controllers\Students\GraduationController;
 use App\Http\Controllers\Fees\FeeController;
 use App\Http\Controllers\Fees\FeeInvoiceController;
 use App\Http\Controllers\Fees\ReceiptController;
+use App\Http\Controllers\Fees\ProcessingFeeController;
 
 use App\Http\Livewire\PostComponent;
 
@@ -147,6 +148,11 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                             Route::get('receipts',[ReceiptController::class,'index'])->name('receipts.index');
                             Route::get('receipt/create/{id}',[ReceiptController::class,'viewCreateReceipt'])->name('receipt.create');
                             Route::delete('receipts/delete',[ReceiptController::class,'receiptsDeleteSelected'])->name('receipts.selected.destroy');
+
+
+                            Route::get('processingfees',[ProcessingFeeController::class,'index'])->name('processingfees.index');
+                            Route::get('processingfee/create/{id}',[ProcessingFeeController::class,'viewCreateProcessingFee'])->name('processingfee.create');
+                            Route::delete('processingfees/delete',[ProcessingFeeController::class,'processingfeesDeleteSelected'])->name('processingfees.selected.destroy');
                         });
 
 
@@ -199,7 +205,7 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                     Route::view('posts',"posts")->name('posts.index');
 
                     Route::post('posts',[PostComponent::class,'uploadImage'])->name('posts.image-upload');
-                    Route::post('posts/save',[PostComponent::class,'savePost'])->name('posts.save');
+                    Route::post('posts/save',[PostController::class,'savePost'])->name('posts.save');
                     Route::delete('post/delete',[PostController::class,'destroy'])->name('posts.destroy');
                     Route::get('post/{id}',[PostController::class,'index'])->name('post.show');
                     Route::delete('notification/read',[NotificationController::class,'removeNewCommmentNotification'])->name('notificationNewComment.remove');

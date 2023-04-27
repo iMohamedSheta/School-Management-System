@@ -56,7 +56,8 @@ return [
     'financial_accounts'=>'Financial Accounts',
     'receipt.create'=>'Create Receipt',
     'receipts.index'=>'Receipts Vouchers',
-
+    'processingfee.create'=>'Exclude Fees',
+    'processingfees.index'=>'Excluded Fees'
 
 
 

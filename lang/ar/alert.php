@@ -55,6 +55,9 @@ return
     'student-receipt-created'=>'تم انشاء سند القبض للطالب :name بنجاح.',
     'feeinvoices_deleted'=>'تم حذف الفواتير المحددة بنجاح!',
     'receipts_deleted'=>'تم حذف سندات القبض المحددة بنجاح!',
+    'student-processingfee-created'=>'تم استبعاد الرسوم علي الطالب :name بنجاح.',
+    'processingfees_deleted'=>'تم حذف الرسوم المستبعدة المحددة واعاداتها علي اصحابها بنجاح.',
+    'student-processingfee-updated'=>'تم تعديل الرسوم المستبعدة علي الطالب :name بنجاح.',
 
 
 
