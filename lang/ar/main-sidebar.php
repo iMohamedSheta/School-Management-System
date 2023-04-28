@@ -58,6 +58,8 @@ return [
     'receipts.index'=>'سندات القبض',
     'processingfee.create'=>'استبعاد رسوم',
     'processingfees.index'=>' الرسوم المستبعدة',
+    'payment.create'=>'اضافة سند صرف',
+    'payments.index'=>'سندات الصرف',
 
 
 

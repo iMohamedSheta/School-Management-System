@@ -101,6 +101,7 @@ return new class extends Migration
             $table->foreign('fee_invoice_id')->references('id')->on('fee_invoices')->onDelete('cascade');
             $table->foreign('receipt_id')->references('id')->on('receipt_students')->onDelete('cascade');
             $table->foreign('processing_id')->references('id')->on('processing_fees')->onDelete('cascade');
+            $table->foreign('payment_id')->references('id')->on('payment_students')->onDelete('cascade');
             $table->foreign('currency_code')->references('code')->on('currencies')->onDelete('cascade');
 
         });
@@ -110,9 +111,14 @@ return new class extends Migration
         });
         Schema::table('fund_accounts', function (Blueprint $table) {
             $table->foreign('receipt_id')->references('id')->on('receipt_students')->onDelete('cascade');
+            $table->foreign('payment_id')->references('id')->on('payment_students')->onDelete('cascade');
             $table->foreign('currency_code')->references('code')->on('currencies')->onDelete('cascade');
         });
         Schema::table('processing_fees', function (Blueprint $table) {
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
+            $table->foreign('currency_code')->references('code')->on('currencies')->onDelete('cascade');
+        });
+        Schema::table('payment_students', function (Blueprint $table) {
             $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
             $table->foreign('currency_code')->references('code')->on('currencies')->onDelete('cascade');
         });
@@ -209,6 +215,7 @@ return new class extends Migration
             $table->dropForeign(['currency_code']);
             $table->dropForeign(['receipt_id']);
             $table->dropForeign(['processing_id']);
+            $table->dropForeign(['payment_id']);
         });
         Schema::table('receipt_students', function (Blueprint $table) {
             $table->dropForeign(['student_id']);
@@ -220,6 +227,10 @@ return new class extends Migration
             $table->dropForeign(['currency_code']);
         });
         Schema::table('processing_fees', function (Blueprint $table) {
+            $table->dropForeign(['student_id']);
+            $table->dropForeign(['currency_code']);
+        });
+        Schema::table('payment_students', function (Blueprint $table) {
             $table->dropForeign(['student_id']);
             $table->dropForeign(['currency_code']);
         });

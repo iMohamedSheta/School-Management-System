@@ -54,10 +54,12 @@ return
     'student-feeinvoice-created'=>'Success,The fee invoice for student :name has been created successfully.',
     'student-receipt-created'=>'Success,The receipt for student :name has been created successfully.',
     'feeinvoices_deleted'=>"Success, Deleted selected fees invoices successfully!",
-    'receipts_deleted'=>"Success, Deleted selected Receipts Vouchers successfully!",
+    'payments_deleted'=>"Success, Deleted selected Payment Vouchers successfully!",
     'student-processingfee-created'=>'Success,Excluded Fees for student :name has been created successfully.',
     'processingfees_deleted'=>"Sucess, The selected excluded fees has been deleted successfully",
     'student-processingfee-updated'=>'Success,Excluded Fees for student :name has been updated successfully.',
+    'student-payment-created'=>'Success,Payment Voucher for student :name has been created successfully.',
+
 
 
 

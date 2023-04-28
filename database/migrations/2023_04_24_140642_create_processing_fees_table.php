@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('processing_fees', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->date('date');
             $table->unsignedBigInteger('student_id');
+            $table->string('title');
             $table->decimal('amount',8,2);
             $table->string('currency_code', 3)->nullable();
             $table->string('description')->nullable();
+            $table->date('date');
             $table->timestamps();
         });
     }

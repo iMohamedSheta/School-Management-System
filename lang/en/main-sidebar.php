@@ -55,9 +55,11 @@ return [
     'feesinvoices.index'=>'Fees Invoices',
     'financial_accounts'=>'Financial Accounts',
     'receipt.create'=>'Create Receipt',
-    'receipts.index'=>'Receipts Vouchers',
+    'receipts.index'=>'Receipt Vouchers',
     'processingfee.create'=>'Exclude Fees',
-    'processingfees.index'=>'Excluded Fees'
+    'processingfees.index'=>'Excluded Fees',
+    'payment.create'=>'Create Payment Voucher',
+    'payments.index'=>'Payment Vouchers'
 
 
 

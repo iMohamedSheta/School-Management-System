@@ -27,7 +27,7 @@ class CreateProcessingFee extends Component
     public function render()
     {
                 // Convert amount to cents (or the smallest unit of currency)
-                $this->student_current_debit = number_format($this->student->student_account->sum('debit') - $this->student->student_account->sum('credit'), 2);
+                $this->student_current_debit =$this->student->student_account->sum('debit') - $this->student->student_account->sum('credit');
                 $amount = (int)(round($this->student_current_debit,2) * 100);
                 $studentCurrency = FeeInvoice::where('student_id',$this->student->id)->first();
                 if($studentCurrency)

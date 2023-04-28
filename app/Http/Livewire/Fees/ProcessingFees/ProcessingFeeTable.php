@@ -45,7 +45,7 @@ class ProcessingFeeTable extends Component
         foreach($processingfees as $processingfee)
         {
             #-------------------------format Current Whole Debit------------------------------------
-            $processingfee->student_current_debit = number_format($processingfee->student->student_account->sum('debit') - $processingfee->student->student_account->sum('credit'), 2);
+            $processingfee->student_current_debit = $processingfee->student->student_account->sum('debit') - $processingfee->student->student_account->sum('credit');
 
             // Convert amount to cents (or the smallest unit of currency)
             $amount = (int)(round($processingfee->student_current_debit,2) * 100);

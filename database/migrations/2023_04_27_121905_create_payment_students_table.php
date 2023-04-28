@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('fund_accounts', function (Blueprint $table) {
+        Schema::create('payment_students', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
-            $table->unsignedBigInteger('receipt_id')->nullable();
-            $table->unsignedBigInteger('payment_id')->nullable();
-            $table->decimal('debit',8,2)->nullable();
-            $table->decimal('credit',8,2)->nullable();
+            $table->unsignedBigInteger('student_id');
+            $table->string('title');
+            $table->decimal('amount',8,2)->nullable();
             $table->string('currency_code', 3)->nullable();
             $table->string('description')->nullable();
+            $table->date('date');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('fund_accounts');
+        Schema::dropIfExists('payment_students');
     }
 };

@@ -21,6 +21,7 @@ use App\Http\Controllers\Fees\FeeController;
 use App\Http\Controllers\Fees\FeeInvoiceController;
 use App\Http\Controllers\Fees\ReceiptController;
 use App\Http\Controllers\Fees\ProcessingFeeController;
+use App\Http\Controllers\Fees\PaymentStudentController;
 
 use App\Http\Livewire\PostComponent;
 
@@ -145,14 +146,19 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
 
 
 
-                            Route::get('receipts',[ReceiptController::class,'index'])->name('receipts.index');
+                            Route::get('receipt/vouchers',[ReceiptController::class,'index'])->name('receipts.index');
                             Route::get('receipt/create/{id}',[ReceiptController::class,'viewCreateReceipt'])->name('receipt.create');
                             Route::delete('receipts/delete',[ReceiptController::class,'receiptsDeleteSelected'])->name('receipts.selected.destroy');
 
 
-                            Route::get('processingfees',[ProcessingFeeController::class,'index'])->name('processingfees.index');
-                            Route::get('processingfee/create/{id}',[ProcessingFeeController::class,'viewCreateProcessingFee'])->name('processingfee.create');
-                            Route::delete('processingfees/delete',[ProcessingFeeController::class,'processingfeesDeleteSelected'])->name('processingfees.selected.destroy');
+                            Route::get('fees/excluded',[ProcessingFeeController::class,'index'])->name('processingfees.index');
+                            Route::get('fee/exclude/{id}',[ProcessingFeeController::class,'viewCreateProcessingFee'])->name('processingfee.create');
+                            Route::delete('fees/excluded/delete',[ProcessingFeeController::class,'processingfeesDeleteSelected'])->name('processingfees.selected.destroy');
+
+
+                            Route::get('payment/vouchers',[PaymentStudentController::class,'index'])->name('payments.index');
+                            Route::get('payment/create/{id}',[PaymentStudentController::class,'viewCreatePayment'])->name('payment.create');
+                            Route::delete('payment/vouchers/delete',[PaymentStudentController::class,'paymentsDeleteSelected'])->name('payments.selected.destroy');
                         });
 
 

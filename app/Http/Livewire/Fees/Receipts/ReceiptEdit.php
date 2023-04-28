@@ -47,6 +47,7 @@ class ReceiptEdit extends Component
         {
 
             DB::beginTransaction();
+            try {
             $receiptUpdate = $this->receipt->update([
                 'title'=>$this->title,
                 'debit'=>$this->debit,
@@ -78,11 +79,17 @@ class ReceiptEdit extends Component
             }
 
             DB::commit();
-
             toastr()->success(trans('alert.edited-success'), trans('alert.success'), ['timeOut' => 3000]);
-
+            
             $this->emitUp('edited');
             $this->openModal=false;
+            }
+            catch (\Exception $e) {
+                DB::rollback();
+                toastr()->error(trans('alert.error_title'), trans('alert.error'), ['timeOut' => 3000]);
+            }            
+            
+
 
 
     }
