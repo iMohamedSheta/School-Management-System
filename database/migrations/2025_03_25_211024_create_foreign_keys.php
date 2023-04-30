@@ -122,6 +122,12 @@ return new class extends Migration
             $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
             $table->foreign('currency_code')->references('code')->on('currencies')->onDelete('cascade');
         });
+        Schema::table('attendances', function (Blueprint $table) {
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
+            $table->foreign('grade_id')->references('id')->on('grades')->onDelete('cascade');
+            $table->foreign('classroom_id')->references('id')->on('classrooms')->onDelete('cascade');
+            $table->foreign('teacher_id')->references('id')->on('teachers')->onDelete('cascade');
+        });
 
     }
 
@@ -233,6 +239,13 @@ return new class extends Migration
         Schema::table('payment_students', function (Blueprint $table) {
             $table->dropForeign(['student_id']);
             $table->dropForeign(['currency_code']);
+        });
+        Schema::table('attendances', function (Blueprint $table) {
+            $table->dropForeign(['student_id']);
+            $table->dropForeign(['grade_id']);
+            $table->dropForeign(['classroom_id']);
+            $table->dropForeign(['teacher_id']);
+
         });
 
 

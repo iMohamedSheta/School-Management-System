@@ -3,11 +3,16 @@
 
 <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-6">
 
-            <div class="p-6">
+            <div class="">
                 <div class="flex justify-between">
-
+                    <div>
+                    <div class="">
+                        <button wire:click='exportStudents()' class="btn  btn-dark " >
+                            <i class="fa-regular fa-file-excel fa-xl  mx-2"></i>{{ trans('main.export-student') }}
+                        </button>
+                    </div>
                     <div class="flex items-end  w-80 mb-2">
                         <div class="relative w-full">
                             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -16,14 +21,15 @@
                             <div class="relative ">
                                 <input type="search" id="floating_outlined" wire:model="search" autocomplete="off" class="search-input block px-4 pb-2 pt-2 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
                             <label for="floating_outlined"  class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 right-1">{{trans('main.search')}}</label>
+                            </div>
+                        </div>
+                        <div class="inline">
+                            <div class="" data-modal-target="modal-deleteAll" id="deleteAllbtn" hidden  data-modal-toggle="modal-deleteAll">
+                                <i class="fa-solid fa-trash fa-xl text-red-600 hover:text-red-500 m-3 mb-5 "></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="inline">
-                        <div class="" data-modal-target="modal-deleteAll" id="deleteAllbtn" hidden  data-modal-toggle="modal-deleteAll">
-                            <i class="fa-solid fa-trash fa-xl text-red-600 hover:text-red-500 m-3 mb-5 "></i>
-                        </div>
                     </div>
-                </div>
 
 
 
@@ -56,7 +62,7 @@
                 </div>
             </div>
         </div>
-
+            </div>
 
 <table class="min-w-full divide-y divide-gray-200 text-sm" id="multiselect-table">
     <thead class="bg-gray-800 text-white" wire:ignore>
@@ -130,7 +136,7 @@
                             <a href="{{route('student.edit',$student->id)}}" target="_blank" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"><i class="mx-2 fa-sharp fa-solid fa-pen-to-square fa-lg hover:text-gray-800"></i>{{ trans('main.edit-student-info-dropdown') }}</a>
                             <a href="{{route('feeinvoice.create',$student->id)}}" target="_blank" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"><i class="mx-2 fa-sharp fa-solid fa-file-invoice-dollar fa-lg hover:text-gray-800"></i>{{ trans('main.create-invoice-dropdown') }}</a>
                             <a href="{{route('receipt.create',$student->id)}}" target="_blank" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"><i class="mx-2 fa-sharp fa-solid fa-receipt fa-lg hover:text-gray-800"></i>{{ trans('main.create-receipt-dropdown') }}</a>
-                            <a href="{{route('payment.create',$student->id)}}" target="_blank" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"><i class="mx-2 fa-sharp fa-solid fa-hand-holding-dollar fa-lg hover:text-gray-800"></i>{{ trans('main.create-payment-dropdown') }}</a>
+                            <a href="{{route('payment.create',$student->id)}}" target="_blank" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"><i class="mx-2 fa-sharp fa-solid fa-money-bills fa-lg hover:text-gray-800"></i>{{ trans('main.create-payment-dropdown') }}</a>
                             <a href="{{route('processingfee.create',$student->id)}}" target="_blank" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"><i class="mx-2 fa-sharp fa-solid fa-hand-holding-dollar fa-lg hover:text-gray-800"></i>{{ trans('main.create-processingfee-dropdown') }}</a>
                             <a href="{{route('student.email.edit',$student->user->id)}}" target="_blank" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"><i class="mx-2 fa-solid fa-envelope-open-text fa-lg hover:text-gray-800"></i>{{ trans('main.edit-email-info-dropdown') }}</a>
                             <div x-data="{ showModal: false }">
@@ -219,5 +225,4 @@
         </div>
     </div>
 </div>
-
 

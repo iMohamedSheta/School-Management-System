@@ -275,6 +275,10 @@ return
     'get-discussions-based-on-grade'=>'Get Disucussions based on Grade and Classroom',
     'add-payment-title'=>"Add Payment Voucher for the student :name",
     'add-payment'=>'Add Payment Voucher',
+    'number'=>'Number',
+    'export-student'=>'Export Students Lists',
+    'students-list'=>'Students List',
+    'attendance-list'=>'Attendance List',
 
 
 

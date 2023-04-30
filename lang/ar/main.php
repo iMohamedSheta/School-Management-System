@@ -277,6 +277,12 @@ return
     "get-discussions-based-on-grade"=>'تصفح المناقشات علي حسب المرحلة والصف الدراسي',
     'add-payment-title'=>'اضافة سند صرف للطالب :name',
     'add-payment'=>'اضافة سند الصرف',
+    'number'=>'الرقم',
+    'export-student'=>'تصدير قائمة الطلاب',
+    'students-list'=>'قائمة الطلاب',
+    'attendance-list'=>"قائمة الغياب",
+
+
 
 
 

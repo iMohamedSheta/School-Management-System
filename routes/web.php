@@ -22,6 +22,7 @@ use App\Http\Controllers\Fees\FeeInvoiceController;
 use App\Http\Controllers\Fees\ReceiptController;
 use App\Http\Controllers\Fees\ProcessingFeeController;
 use App\Http\Controllers\Fees\PaymentStudentController;
+use App\Http\Controllers\Attendances\AttendancesController;
 
 use App\Http\Livewire\PostComponent;
 
@@ -175,6 +176,12 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                         });
 
 
+                        Route::group(['namespace'=>"Attendances"],function()
+                        {
+                            Route::get('attendances',[AttendancesController::class,'index'])->name('attendances.classrooms');
+                        });
+
+
                         //Parents Page Routes
                         Route::group(['namespace'=>'Parents'],function()
                         {
@@ -196,7 +203,7 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                                 Route::get('grade',[GradeController::class,'index'])->name('grade');
                                 // Define a route for the grade store action
                                 Route::post('grade',[GradeController::class,'store'])->name('grade.store');
-                                // Define a route for the grade delete action
+                                // Define a route for the gradSSe delete action
                                 Route::delete("grade/delete/{id}",[GradeController::class,'destroy'])->name('grade.destroy');
                             });
 
@@ -208,12 +215,12 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
 
                     // Define a route for the application's homepage
                     Route::get('/',[DashboardController::class,'index'])->name('master');
-                    Route::view('posts',"posts")->name('posts.index');
+                    Route::view('discussions',"posts")->name('posts.index');
 
-                    Route::post('posts',[PostComponent::class,'uploadImage'])->name('posts.image-upload');
-                    Route::post('posts/save',[PostController::class,'savePost'])->name('posts.save');
-                    Route::delete('post/delete',[PostController::class,'destroy'])->name('posts.destroy');
-                    Route::get('post/{id}',[PostController::class,'index'])->name('post.show');
+                    Route::post('discussions',[PostComponent::class,'uploadImage'])->name('posts.image-upload');
+                    Route::post('discussions/save',[PostController::class,'savePost'])->name('posts.save');
+                    Route::delete('discussion/delete',[PostController::class,'destroy'])->name('posts.destroy');
+                    Route::get('discussion/{id}',[PostController::class,'index'])->name('post.show');
                     Route::delete('notification/read',[NotificationController::class,'removeNewCommmentNotification'])->name('notificationNewComment.remove');
 
 
