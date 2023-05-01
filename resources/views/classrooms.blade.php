@@ -21,7 +21,7 @@
                     <div class="btn btn-sm btn-dark fs:hidden sm:block" data-modal-target="grade-modal"  data-modal-toggle="grade-modal" >
                         <i class="fa-solid fa-pen mx-1"></i>{{ trans('main.add-classroom') }}
                     </div>
-                    {{-- Phone Button with icon --}}
+                    {{-- Add Grade Mobile Button -> icon --}}
                     <div class="btn btn-sm btn-dark fs:block sm:hidden px-3 py-2 "  data-modal-target="grade-modal"  data-modal-toggle="grade-modal" >
                         <i class="fa-regular fa-pen-to-square"></i>
                     </div>

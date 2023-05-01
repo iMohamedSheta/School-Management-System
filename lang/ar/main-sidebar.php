@@ -45,6 +45,24 @@ return [
     'students_promotions'=>'ترقيات الطلاب',
     'students.promotions.table'=>'ترقيات الطلاب',
     'students.graduated.table'=>'الطلاب المتخرجين',
+    'fees.index'=>'الرسوم الدراسية',
+    'fees'=>'الرسوم الدراسية',
+    'fee.create'=>'اضافة رسوم دراسية',
+    'fee.info'=>'معلومات الرسوم الدراسية',
+    'fees.types.index'=>'انواع الرسوم',
+    'fees-types'=>'انواع الرسوم',
+    'feeinvoice.create'=>'اضافة فاتورة',
+    'feesinvoices.index'=>'الفواتير',
+    'financial_accounts'=>'الحسابات',
+    'receipt.create'=>'اضافة سند قبض',
+    'receipts.index'=>'سندات القبض',
+    'processingfee.create'=>'استبعاد رسوم',
+    'processingfees.index'=>' الرسوم المستبعدة',
+    'payment.create'=>'اضافة سند صرف',
+    'payments.index'=>'سندات الصرف',
+    'attendances.classrooms'=>'الحضور',
+
+
 
 
 

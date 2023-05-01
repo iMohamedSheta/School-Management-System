@@ -40,6 +40,29 @@ return
     'students_graduated'=>'Graduated Successfully! Students of grade :grade and classroom :classroom Graduated from the system. ',
     'graduation_rollback'=>"Success, The student :name graduation has been reversed.",
     'graduations_rollback'=>"Success, The selected students graduation has been reversed.",
+    'fee_created'=>'Success, The Study Fee has been created successfully.',
+    'fee_deleted'=>'Success, The Study Fee has been deleted successfully.',
+    'feetype_deleted'=>'Success, The Fee Type has been deleted successfully.',
+    'feetypes_deleted'=>'Success, The Selected Fee Types has been deleted successfully.',
+    'fees_deleted'=>'Success,The selected Study Fees has been deleted successfully.',
+    'fee_updated'=>'Success,The Study Fees for classroom :name has been updated successfully.',
+    'deleted-success'=>'Success, The item has been deleted successfully.',
+    'edited-success'=>'Success, The item has been edited successfully.',
+    'create-success'=>'Success, The item has been created successfully.',
+    'success'=>'Success',
+    'error_title'=>'error',
+    'student-feeinvoice-created'=>'Success,The fee invoice for student :name has been created successfully.',
+    'student-receipt-created'=>'Success,The receipt for student :name has been created successfully.',
+    'feeinvoices_deleted'=>"Success, Deleted selected fees invoices successfully!",
+    'payments_deleted'=>"Success, Deleted selected Payment Vouchers successfully!",
+    'student-processingfee-created'=>'Success,Excluded Fees for student :name has been created successfully.',
+    'processingfees_deleted'=>"Sucess, The selected excluded fees has been deleted successfully",
+    'student-processingfee-updated'=>'Success,Excluded Fees for student :name has been updated successfully.',
+    'student-payment-created'=>'Success,Payment Voucher for student :name has been created successfully.',
+    'discussion-deleted'=>'Success, Discussion has been deleted successfully!',
+
+
+
 
 
 

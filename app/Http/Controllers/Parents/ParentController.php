@@ -36,8 +36,7 @@ class ParentController extends Controller
 
     public function destroy(Request $request)
     {
-        if(auth()->user()->isAdmin())
-        {
+        
             $userId = $request->parentIdForDelete;
             $user = User::where('id',$userId)->first();
             $deleteParentUser = $user->delete();
@@ -46,7 +45,6 @@ class ParentController extends Controller
             {
                 return redirect()->back()->with('success', trans('alert.delete_parent_success'));
             }
-        }
 
         return redirect()->back()->with('error', trans('alert.error'));
 
@@ -56,8 +54,7 @@ class ParentController extends Controller
     public function deleteSelected(Request $request)
     {
 
-        if(auth()->user()->isAdmin())
-        {
+
             $selectedIds = explode(',', $request->selected_parents_ids);
 
         //Loop through the selected students to get the user account and put all the id in array
@@ -78,7 +75,6 @@ class ParentController extends Controller
                 User::destroy($idsToDelete);
                 return redirect()->back()->with('success', trans('alert.deletedselected'));
             }
-        }
 
         return redirect()->back()->with('error', trans('alert.error'));
     }

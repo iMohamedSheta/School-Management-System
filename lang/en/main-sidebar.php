@@ -45,6 +45,23 @@ return [
     'students_promotions'=>'Students Promotions',
     'students.promotions.table'=>'Students Promotions',
     'students.graduated.table'=>'Graduated Students',
+    'fees.index'=>'Study Fees',
+    'fees'=>'Study Fees',
+    'fee.create'=>'Study Fees',
+    'fee.info'=>'Study Fee Information',
+    'fees.types.index'=>'Fees Types',
+    'fees-types'=>'Fees Types',
+    'feeinvoice.create'=>'Create Fee Invoice',
+    'feesinvoices.index'=>'Fees Invoices',
+    'financial_accounts'=>'Financial Accounts',
+    'receipt.create'=>'Create Receipt',
+    'receipts.index'=>'Receipt Vouchers',
+    'processingfee.create'=>'Exclude Fees',
+    'processingfees.index'=>'Excluded Fees',
+    'payment.create'=>'Create Payment Voucher',
+    'payments.index'=>'Payment Vouchers',
+    'attendances.classrooms'=>'Classrooms Attendances',
+
 
 
 

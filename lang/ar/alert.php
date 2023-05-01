@@ -40,6 +40,28 @@ return
     'students_graduated'=>'تم تخرج جميع الطلاب بالمرحلة :grade والفصل :classroom.',
     'graduation_rollback'=>'تم التراجع عن تخرج الطالب :name.',
     'graduations_rollback'=>'تم التراجع عن تخرج الطلاب المحددين .',
+    'fee_created'=>'تم اضافة الرسوم الدراسية بنجاح.',
+    'fee_deleted'=>'تم حذف الرسوم الدراسية بنجاح.',
+    'feetype_deleted'=>'تم حذف  نوع الرسوم بنجاح.',
+    'feetypes_deleted'=>'تم حذف  انوع الرسوم المحددة بنجاح.',
+    'fees_deleted'=>'تم حذف الرسوم الدراسية المحددة بنجاح.',
+    'fee_updated'=>'تم تعديل بيانات الرسوم الدراسية للفصل الدراسي :name بنجاح.',
+    'deleted-success'=>'تم حذف العنصر بنجاح!',
+    'edited-success'=>'تم تعديل العنصر بنجاح!',
+    'create-success'=>'تم انشاء العنصر بنجاح!',
+    'success'=>'نجاح',
+    'error_title'=>'خطأ',
+    'student-feeinvoice-created'=>'تم انشاء فاتورة الطالب :name بنجاح.',
+    'student-receipt-created'=>'تم انشاء سند القبض للطالب :name بنجاح.',
+    'feeinvoices_deleted'=>'تم حذف الفواتير المحددة بنجاح!',
+    'receipts_deleted'=>'تم حذف سندات القبض المحددة بنجاح!',
+    'payments_deleted'=>'تم حذف سندات الصرف المحددة بنجاح!',
+    'student-processingfee-created'=>'تم استبعاد الرسوم علي الطالب :name بنجاح.',
+    'processingfees_deleted'=>'تم حذف الرسوم المستبعدة المحددة واعاداتها علي اصحابها بنجاح.',
+    'student-processingfee-updated'=>'تم تعديل الرسوم المستبعدة علي الطالب :name بنجاح.',
+    'student-payment-created'=>'تم أنشاء سند الصرف للطالب :name بنجاح.',
+    'discussion-deleted'=>'تم حذف المناقشة بنجاح!',
+
 
 
 

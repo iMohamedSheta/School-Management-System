@@ -82,6 +82,52 @@ return new class extends Migration
             $table->foreign('to_grade')->references('id')->on('grades')->onDelete('cascade');
             $table->foreign('to_classroom')->references('id')->on('classrooms')->onDelete('cascade');
         });
+        Schema::table('fees', function (Blueprint $table) {
+            $table->foreign('grade_id')->references('id')->on('grades')->onDelete('cascade');
+            $table->foreign('classroom_id')->references('id')->on('classrooms')->onDelete('cascade');
+            $table->foreign('currency_code')->references('code')->on('currencies')->onDelete('cascade');
+            $table->foreign('feetype_id')->references('id')->on('feetypes')->onDelete('cascade');
+        });
+        Schema::table('fee_invoices', function (Blueprint $table) {
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
+            $table->foreign('grade_id')->references('id')->on('grades')->onDelete('cascade');
+            $table->foreign('classroom_id')->references('id')->on('classrooms')->onDelete('cascade');
+            $table->foreign('fee_id')->references('id')->on('fees')->onDelete('cascade');
+            $table->foreign('feetype_id')->references('id')->on('feetypes')->onDelete('cascade');
+            $table->foreign('currency_code')->references('code')->on('currencies')->onDelete('cascade');
+        });
+        Schema::table('student_accounts', function (Blueprint $table) {
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
+            $table->foreign('fee_invoice_id')->references('id')->on('fee_invoices')->onDelete('cascade');
+            $table->foreign('receipt_id')->references('id')->on('receipt_students')->onDelete('cascade');
+            $table->foreign('processing_id')->references('id')->on('processing_fees')->onDelete('cascade');
+            $table->foreign('payment_id')->references('id')->on('payment_students')->onDelete('cascade');
+            $table->foreign('currency_code')->references('code')->on('currencies')->onDelete('cascade');
+
+        });
+        Schema::table('receipt_students', function (Blueprint $table) {
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
+            $table->foreign('currency_code')->references('code')->on('currencies')->onDelete('cascade');
+        });
+        Schema::table('fund_accounts', function (Blueprint $table) {
+            $table->foreign('receipt_id')->references('id')->on('receipt_students')->onDelete('cascade');
+            $table->foreign('payment_id')->references('id')->on('payment_students')->onDelete('cascade');
+            $table->foreign('currency_code')->references('code')->on('currencies')->onDelete('cascade');
+        });
+        Schema::table('processing_fees', function (Blueprint $table) {
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
+            $table->foreign('currency_code')->references('code')->on('currencies')->onDelete('cascade');
+        });
+        Schema::table('payment_students', function (Blueprint $table) {
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
+            $table->foreign('currency_code')->references('code')->on('currencies')->onDelete('cascade');
+        });
+        Schema::table('attendances', function (Blueprint $table) {
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
+            $table->foreign('grade_id')->references('id')->on('grades')->onDelete('cascade');
+            $table->foreign('classroom_id')->references('id')->on('classrooms')->onDelete('cascade');
+            $table->foreign('teacher_id')->references('id')->on('teachers')->onDelete('cascade');
+        });
 
     }
 
@@ -154,6 +200,52 @@ return new class extends Migration
             $table->dropForeign(['from_classroom']);
             $table->dropForeign(['to_grade']);
             $table->dropForeign(['to_classroom']);
+        });
+        Schema::table('fees', function (Blueprint $table) {
+            $table->dropForeign(['grade_id']);
+            $table->dropForeign(['classroom_id']);
+            $table->dropForeign(['currency_code']);
+            $table->dropForeign(['feetype_id']);
+        });
+        Schema::table('fee_invoices', function (Blueprint $table) {
+            $table->dropForeign(['grade_id']);
+            $table->dropForeign(['classroom_id']);
+            $table->dropForeign(['currency_code']);
+            $table->dropForeign(['fee_id']);
+            $table->dropForeign(['feetype_id']);
+            $table->dropForeign(['student_id']);
+        });
+        Schema::table('student_accounts', function (Blueprint $table) {
+            $table->dropForeign(['student_id']);
+            $table->dropForeign(['fee_invoice_id']);
+            $table->dropForeign(['currency_code']);
+            $table->dropForeign(['receipt_id']);
+            $table->dropForeign(['processing_id']);
+            $table->dropForeign(['payment_id']);
+        });
+        Schema::table('receipt_students', function (Blueprint $table) {
+            $table->dropForeign(['student_id']);
+            $table->dropForeign(['currency_code']);
+
+        });
+        Schema::table('fund_accounts', function (Blueprint $table) {
+            $table->dropForeign(['receipt_id']);
+            $table->dropForeign(['currency_code']);
+        });
+        Schema::table('processing_fees', function (Blueprint $table) {
+            $table->dropForeign(['student_id']);
+            $table->dropForeign(['currency_code']);
+        });
+        Schema::table('payment_students', function (Blueprint $table) {
+            $table->dropForeign(['student_id']);
+            $table->dropForeign(['currency_code']);
+        });
+        Schema::table('attendances', function (Blueprint $table) {
+            $table->dropForeign(['student_id']);
+            $table->dropForeign(['grade_id']);
+            $table->dropForeign(['classroom_id']);
+            $table->dropForeign(['teacher_id']);
+
         });
 
 

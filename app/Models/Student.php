@@ -92,4 +92,13 @@ class Student extends Model
     {
         return $this->belongsTo(Gender::class)->withDefault();
     }
+
+    public function student_account()
+    {
+        return $this->hasMany(StudentAccount::class);
+    }
+    public function attendances()
+    {
+        return $this->hasMany(Attendances::class);
+    }
 }

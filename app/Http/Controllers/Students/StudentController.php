@@ -40,8 +40,7 @@ class StudentController extends Controller
 
     public function destroy(Request $request)
     {
-        if(auth()->user()->isAdmin())
-        {
+
             $userId = $request->studentIdForDelete;
             $user = User::where('id',$userId)->first();
             $userName=$user->student->name;
@@ -51,7 +50,6 @@ class StudentController extends Controller
             {
                 return redirect()->back()->with('success', trans('alert.delete_student_success',['name'=>$userName]));
             }
-        }
 
         return redirect()->back()->with('error', trans('alert.error'));
 
@@ -61,8 +59,7 @@ class StudentController extends Controller
     public function deleteSelected(Request $request)
     {
 
-        if(auth()->user()->isAdmin())
-        {
+
             $selectedIds = explode(',', $request->selected_students_ids);
 
 
@@ -83,7 +80,6 @@ class StudentController extends Controller
 
                 return redirect()->back()->with('success', trans('alert.deletedselected'));
             }
-        }
 
         return redirect()->back()->with('error', trans('alert.error'));
     }

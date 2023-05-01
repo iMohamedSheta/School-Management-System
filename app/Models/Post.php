@@ -18,6 +18,8 @@ class Post extends Model  implements HasMedia
     protected $fillable = [
         'title',
         'content',
+        'grade_id',
+        'classroom_id',
     ];
 
 
@@ -47,6 +49,15 @@ class Post extends Model  implements HasMedia
     public function downvotes()
     {
         return $this->hasMany(PostDownvotes::class);
+    }
+
+    public function classroom()
+    {
+        return $this->belongsTo(Classroom::class)->withDefault();
+    }
+    public function grade()
+    {
+        return $this->belongsTo(Grade::class)->withDefault();
     }
 
     /*************************************** Relationships **************************************/

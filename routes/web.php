@@ -15,7 +15,16 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserRoleController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\FormRepeater;
+use App\Http\Controllers\Students\PromotionsController;
+use App\Http\Controllers\Students\GraduationController;
+use App\Http\Controllers\Fees\FeeController;
+use App\Http\Controllers\Fees\FeeInvoiceController;
+use App\Http\Controllers\Fees\ReceiptController;
+use App\Http\Controllers\Fees\ProcessingFeeController;
+use App\Http\Controllers\Fees\PaymentStudentController;
+use App\Http\Controllers\Attendances\AttendancesController;
+
+use App\Http\Livewire\PostComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,9 +41,7 @@ use App\Http\Livewire\FormRepeater;
 //Jetstream import for routes
 use Laravel\Fortify\Features;
 use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserController;
-use App\Http\Controllers\Students\PromotionsController;
-use App\Http\Controllers\Students\GraduationController;
-use App\Http\Livewire\PostComponent;
+
 
 
 // This comment section is a description of the purpose of the file and how it is used.
@@ -110,15 +117,51 @@ use App\Http\Livewire\PostComponent;
                             Route::post('students/promotions/back',[PromotionsController::class,'studentSelectedPromotionBack'])->name('students.promotions.back');
                             Route::get('students/promotions/table',[PromotionsController::class,'studentsPromotionsTableView'])->name('students.promotions.table');
                             Route::post('students/promoteclassroom',[PromotionsController::class,'promoteClassroom'])->name('students.promotions.store');
-                            
-                            
+
+
                             Route::get('students/graduation',[GraduationController::class,'index'])->name('students.graduations.classroom');
                             Route::post('students/graduateclassroom',[GraduationController::class,'graduateclassroom'])->name('students.graduations.store');
                             Route::get('students/graduated',[GraduationController::class,'studentsGraduatedTableView'])->name('students.graduated.table');
                             Route::post('student/graduation/back',[GraduationController::class,'studentGraduationBack'])->name('student.graduation.back');
                             Route::post('students/graduations/back',[GraduationController::class,'studentSelectedGraduationBack'])->name('students.graduations.back');
-                            
+
                         });
+
+                        Route::group(['namespace'=>"Fees"],function()
+                        {
+                            Route::get('fees',[FeeController::class,'index'])->name('fees.index');
+                            Route::get('fee/information/{id}',[FeeController::class,'feeInfoView'])->name('fee.info');
+                            Route::get('fee/edit/{id}',[FeeController::class,'feeInfoEditView'])->name('fee.edit');
+                            Route::get('fee/create',[FeeController::class,'createClassroomFee'])->name('fee.create');
+                            Route::delete('fee/delete',[FeeController::class,'destroy'])->name('fee.destroy');
+                            Route::delete('fees/delete',[FeeController::class,'deleteSelected'])->name('fees.selected.destroy');
+
+                            Route::get('fees/types',[FeeController::class,'feesTypeView'])->name('fees.types.index');
+                            Route::delete('fee/type/delete',[FeeController::class,'feesTypeDestroy'])->name('fee.type.destroy');
+                            Route::delete('fee/types/delete',[FeeController::class,'feeTypeSelectedDestroy'])->name('feetypes.selected.destroy');
+
+
+                            Route::get('feesinvoices',[FeeInvoiceController::class,'index'])->name('feesinvoices.index');
+                            Route::get('feeinvoice/create/{id}',[FeeInvoiceController::class,'viewCreateFeeInvoice'])->name('feeinvoice.create');
+                            Route::delete('feesinvoices/delete',[FeeInvoiceController::class,'feesInvoicesDeleteSelected'])->name('feesinvoices.selected.destroy');
+
+
+
+                            Route::get('receipt/vouchers',[ReceiptController::class,'index'])->name('receipts.index');
+                            Route::get('receipt/create/{id}',[ReceiptController::class,'viewCreateReceipt'])->name('receipt.create');
+                            Route::delete('receipts/delete',[ReceiptController::class,'receiptsDeleteSelected'])->name('receipts.selected.destroy');
+
+
+                            Route::get('fees/excluded',[ProcessingFeeController::class,'index'])->name('processingfees.index');
+                            Route::get('fee/exclude/{id}',[ProcessingFeeController::class,'viewCreateProcessingFee'])->name('processingfee.create');
+                            Route::delete('fees/excluded/delete',[ProcessingFeeController::class,'processingfeesDeleteSelected'])->name('processingfees.selected.destroy');
+
+
+                            Route::get('payment/vouchers',[PaymentStudentController::class,'index'])->name('payments.index');
+                            Route::get('payment/create/{id}',[PaymentStudentController::class,'viewCreatePayment'])->name('payment.create');
+                            Route::delete('payment/vouchers/delete',[PaymentStudentController::class,'paymentsDeleteSelected'])->name('payments.selected.destroy');
+                        });
+
 
 
                         //Teachers Page Routes
@@ -130,6 +173,12 @@ use App\Http\Livewire\PostComponent;
                             Route::get('teacher/email/edit/{id}',[TeacherController::class,"teacherEmailEditView"])->name('teacher.email.edit');
                             Route::delete('teacher/delete',[TeacherController::class,"destroy"])->name('teacher.destroy');
                             Route::delete('teachers/delete',[TeacherController::class,"deleteSelected"])->name('teachers.selected.destroy');
+                        });
+
+
+                        Route::group(['namespace'=>"Attendances"],function()
+                        {
+                            Route::get('attendances',[AttendancesController::class,'index'])->name('attendances.classrooms');
                         });
 
 
@@ -154,7 +203,7 @@ use App\Http\Livewire\PostComponent;
                                 Route::get('grade',[GradeController::class,'index'])->name('grade');
                                 // Define a route for the grade store action
                                 Route::post('grade',[GradeController::class,'store'])->name('grade.store');
-                                // Define a route for the grade delete action
+                                // Define a route for the gradSSe delete action
                                 Route::delete("grade/delete/{id}",[GradeController::class,'destroy'])->name('grade.destroy');
                             });
 
@@ -166,12 +215,12 @@ use App\Http\Livewire\PostComponent;
 
                     // Define a route for the application's homepage
                     Route::get('/',[DashboardController::class,'index'])->name('master');
-                    Route::view('posts',"posts")->name('posts.index');
+                    Route::view('discussions',"posts")->name('posts.index');
 
-                    Route::post('posts',[PostComponent::class,'uploadImage'])->name('posts.image-upload');
-                    Route::post('posts/save',[PostComponent::class,'savePost'])->name('posts.save');
-                    Route::delete('post/delete',[PostController::class,'destroy'])->name('posts.destroy');
-                    Route::get('post/{id}',[PostController::class,'index'])->name('post.show');
+                    Route::post('discussions',[PostComponent::class,'uploadImage'])->name('posts.image-upload');
+                    Route::post('discussions/save',[PostController::class,'savePost'])->name('posts.save');
+                    Route::delete('discussion/delete',[PostController::class,'destroy'])->name('posts.destroy');
+                    Route::get('discussion/{id}',[PostController::class,'index'])->name('post.show');
                     Route::delete('notification/read',[NotificationController::class,'removeNewCommmentNotification'])->name('notificationNewComment.remove');
 
 

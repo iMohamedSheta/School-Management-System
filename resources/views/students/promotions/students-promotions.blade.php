@@ -5,7 +5,7 @@
 
 @extends('layouts.master')
 
-@section('Pagetitle',"Students Promotions")
+@section('Pagetitle',"Promote Classroom")
 
 @section('Content')
 

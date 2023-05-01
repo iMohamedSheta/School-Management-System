@@ -2,15 +2,11 @@ import './bootstrap';
 import 'flowbite';
 import Alpine from 'alpinejs';
 import focus from '@alpinejs/focus';
-window.Alpine = Alpine;
 import "@fortawesome/fontawesome-free/css/all.css";
 import 'simplebar/dist/simplebar.min.css';
 Alpine.plugin(focus);
 
 import flatpickr from "flatpickr";
-
-
-Alpine.start();
 
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import "flowbite/dist/flowbite";

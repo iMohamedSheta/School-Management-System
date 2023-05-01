@@ -70,7 +70,7 @@
                 <td>
                     <div class="flex items-center mr-4">
                         <label for="red-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"></label>
-                        <input id="parent-{{ $parent->id }}" type="checkbox" value={{$parent->user_id}} style="color:#cb0c9f;" class="w-4 h-4  bg-gray-100 border-gray-300 rounded focus:ring-0   dark:ring-offset-gray-800 focus:ring-1 dark:bg-gray-700 dark:border-gray-600">
+                        <input id="parent-{{ $parent->id }}" type="checkbox" value={{$parent->user_id}} style="color:#cb0c9f;" class="w-4 h-4  bg-gray-100 border-gray-300 rounded focus:ring-0   dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600">
                     </div>
                 </td>
                 <td class="px-6 py-3 whitespace-nowrap text-center overflow-auto simplebar " >

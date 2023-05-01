@@ -83,6 +83,7 @@ class GraduationController extends Controller
 
         if($restoreStudent)
         {
+            $student->update(['graduated' => false]); 
             return redirect()->back()->with('success',trans('alert.graduation_rollback',['name'=>$studentName]));
         }
 
@@ -102,6 +103,7 @@ class GraduationController extends Controller
                 $student = Student::withTrashed()->findOrFail($studentId);
                 $restoreStudent = $student->restore();
                  if ($restoreStudent) {
+                        $student->update(['graduated' => false]); 
                         $successCount++;
                     }
             }
