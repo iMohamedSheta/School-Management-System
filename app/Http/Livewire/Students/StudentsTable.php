@@ -2,12 +2,14 @@
 
 namespace App\Http\Livewire\Students;
 
+use App\Exports\StudentsExport;
 use App\Models\Classroom;
 use App\Models\Grade;
 use App\Models\Student;
-use App\Models\User;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class StudentsTable extends Component
 {
@@ -21,6 +23,15 @@ class StudentsTable extends Component
     protected $listeners = ['updatedGradeId'];
 
 
+
+    public function exportStudents()
+    {
+        return Excel::download(new StudentsExport($this->selectedGrade, $this->selectedClassroom),'students.xlsx');
+    }
+
+
+
+
     public function updatedGradeId($value)
     {
         if ($value) {
@@ -29,6 +40,9 @@ class StudentsTable extends Component
             $this->classrooms = [];
         }
     }
+
+
+
 
 
     public function filterByGrade($gradeId)

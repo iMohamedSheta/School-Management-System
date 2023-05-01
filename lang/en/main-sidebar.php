@@ -59,7 +59,8 @@ return [
     'processingfee.create'=>'Exclude Fees',
     'processingfees.index'=>'Excluded Fees',
     'payment.create'=>'Create Payment Voucher',
-    'payments.index'=>'Payment Vouchers'
+    'payments.index'=>'Payment Vouchers',
+    'attendances.classrooms'=>'Classrooms Attendances',
 
 
 

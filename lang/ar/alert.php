@@ -60,6 +60,7 @@ return
     'processingfees_deleted'=>'تم حذف الرسوم المستبعدة المحددة واعاداتها علي اصحابها بنجاح.',
     'student-processingfee-updated'=>'تم تعديل الرسوم المستبعدة علي الطالب :name بنجاح.',
     'student-payment-created'=>'تم أنشاء سند الصرف للطالب :name بنجاح.',
+    'discussion-deleted'=>'تم حذف المناقشة بنجاح!',
 
 
 

@@ -98,10 +98,10 @@ class PostController extends Controller
             if((auth()->user()->id == $post->user->id) || (auth()->user()->isAdmin()))
             {
                 $post->delete();
-               return Redirect::route('posts.index')->with('success', 'Post deleted successfully.');
+               return Redirect::route('posts.index')->with('success', 'alert.discussion-deleted');
             }
 
-           return Redirect::route('posts.index')->with('error', 'You are not authorized to delete this post.');
+           return Redirect::route('posts.index')->with('error', 'alert.error');
 
     }
 }

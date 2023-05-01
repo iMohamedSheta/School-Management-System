@@ -59,6 +59,7 @@ return
     'processingfees_deleted'=>"Sucess, The selected excluded fees has been deleted successfully",
     'student-processingfee-updated'=>'Success,Excluded Fees for student :name has been updated successfully.',
     'student-payment-created'=>'Success,Payment Voucher for student :name has been created successfully.',
+    'discussion-deleted'=>'Success, Discussion has been deleted successfully!',
 
 
 

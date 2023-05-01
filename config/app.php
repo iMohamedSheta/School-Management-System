@@ -181,6 +181,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
+
 
 
         /*
@@ -219,7 +221,8 @@ return [
         "isStudent" =>\App\Http\Middleware\StudentMiddleware::class,
         "isTeacher" =>\App\Http\Middleware\TeacherMiddleware::class,
         "isParent" =>\App\Http\Middleware\ParentMiddleware::class,
-        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+
 
 
 
