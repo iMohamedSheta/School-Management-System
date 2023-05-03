@@ -178,7 +178,9 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
 
                         Route::group(['namespace'=>"Attendances"],function()
                         {
-                            Route::get('attendances',[AttendancesController::class,'index'])->name('attendances.classrooms');
+                            Route::get('attendances',[AttendancesController::class,'index'])->name('attendances.index');
+                            Route::get('attendance/classroom/{id}',[AttendancesController::class,'viewAttendanceClassroom'])->name('attendance.classroom');
+                            Route::post('attendance/classroom',[AttendancesController::class,'store'])->name('attendance.store');
                         });
 
 

@@ -26,4 +26,17 @@ class Classroom extends Model
         return self::count();
     }
 
+    public function attendances()
+    {
+        return $this->hasMany(Attendances::class);
+    }
+    public function students()
+    {
+        return $this->hasMany(Student::class);
+    }
+    public function countStudents()
+    {
+        return $this->students()->count();
+    }
+
 }

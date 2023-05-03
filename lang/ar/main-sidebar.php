@@ -60,7 +60,8 @@ return [
     'processingfees.index'=>' الرسوم المستبعدة',
     'payment.create'=>'اضافة سند صرف',
     'payments.index'=>'سندات الصرف',
-    'attendances.classrooms'=>'الحضور',
+    'attendances.index'=>'الحضور والغياب',
+    'attendance.classroom'=>'تسجيل الحضور والغياب',
 
 
 

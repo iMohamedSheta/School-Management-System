@@ -278,7 +278,19 @@ return
     'number'=>'Number',
     'export-student'=>'Export Students Lists',
     'students-list'=>'Students List',
-    'attendance-list'=>'Attendance List',
+    'attendance-check'=>'Check Attendance',
+    'attendance'=>'Attendance',
+    'absence-times'=>'Absence Times',
+    'student-count'=>'Student Count',
+    'attendence-date'=>'Attendence Date',
+    'attendence-status'=>'Attendence Status',
+    'export-attendance-for-today'=>'Export Attendance List',
+    'for-today'=>'in date :date',
+    'check-attendance-for-classroom'=>'Check attendance for classroom - :classroom',
+    'teacher-name'=>'Teacher Name',
+    'presence'=>'Presence',
+    'absent'=>'Absent',
+
 
 
 

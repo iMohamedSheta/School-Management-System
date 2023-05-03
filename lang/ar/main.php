@@ -280,7 +280,20 @@ return
     'number'=>'الرقم',
     'export-student'=>'تصدير قائمة الطلاب',
     'students-list'=>'قائمة الطلاب',
-    'attendance-list'=>"قائمة الغياب",
+    'attendance-check'=>"تسجيل الغياب",
+    'attendance'=>'الحضور والغياب',
+    'absence-times'=>'مرات الغياب',
+    'student-count'=>'عدد الطلاب',
+    'attendence-date'=>'تاريخ الغياب',
+    'attendence-status'=>'الحالة',
+    'export-attendance-for-today'=>'تصدير قائمة الغياب',
+    'for-date'=>'بتاريخ :date',
+    'check-attendance-for-classroom'=>'تسجيل الحضور والغياب للفصل الدراسي - :classroom',
+    'teacher-name'=>'اسم الاستاذ',
+    'presence'=>'حضور',
+    'absent'=>'غياب',
+
+
 
 
 

@@ -60,6 +60,7 @@ return
     'student-processingfee-updated'=>'Success,Excluded Fees for student :name has been updated successfully.',
     'student-payment-created'=>'Success,Payment Voucher for student :name has been created successfully.',
     'discussion-deleted'=>'Success, Discussion has been deleted successfully!',
+    'added-attendance-for-today'=>'Success, Attendance for today :day for classroom :classroom has been added successfully!',
 
 
 

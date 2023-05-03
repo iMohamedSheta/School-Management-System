@@ -101,4 +101,9 @@ class Student extends Model
     {
         return $this->hasMany(Attendances::class);
     }
+
+    public function countAbsentAttendances()
+    {
+        return $this->attendances()->where('attendence_status', 'absent')->count();
+    }
 }

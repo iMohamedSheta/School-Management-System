@@ -30,7 +30,7 @@
                             {{ __('main.classroomname') }}
                         </th>
                         <th scope="col" class="px-6 py-2 text-xs font-medium  uppercase tracking-wider text-center" >
-                            {{ __('main.description') }}
+                            {{ __('main.student-count') }}
                         </th>
 
                         <th scope="col" class="px-6 py-2 text-xs font-medium  uppercase tracking-wider text-center" >
@@ -51,12 +51,12 @@
                                 {{ $classroom->name }}
                             </td>
                             <td class="px-6 py-3 whitespace-nowrap text-center overflow-auto simplebar" style="max-width: 150px;">
-                                {{ $classroom->description }}
+                                {{ $classroom->countStudents() }}
                             </td>
 
                             <td class="px-6 py-3 whitespace-nowrap flex justify-center ">
 
-                                <a href="" target="_blank" class="block px-4 py-2 rounded border border-gray-500 bg-gray-800 text-sm text-white hover:bg-gray-100 hover:text-gray-900"><i class="mx-2 fa-solid fa-file-lines fa-lg hover:text-gray-800"></i>{{ trans('main.attendance-list') }}</a>
+                                <a href="{{route('attendance.classroom',$classroom->id)}}" target="_blank" class="block px-4 py-2 rounded border border-gray-500 bg-gray-800 text-sm text-white hover:bg-gray-100 hover:text-gray-900"><i class="mx-2 fa-solid fa-file-lines fa-lg hover:text-gray-800"></i>{{ trans('main.attendance-check') }}</a>
 
                             </td>
                         </tr>

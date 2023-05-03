@@ -61,6 +61,7 @@ return
     'student-processingfee-updated'=>'تم تعديل الرسوم المستبعدة علي الطالب :name بنجاح.',
     'student-payment-created'=>'تم أنشاء سند الصرف للطالب :name بنجاح.',
     'discussion-deleted'=>'تم حذف المناقشة بنجاح!',
+    'added-attendance-for-today'=>'تم اضافة غياب اليوم بتاريخ :day للفصل الدراسي :classroom.',
 
 
 
