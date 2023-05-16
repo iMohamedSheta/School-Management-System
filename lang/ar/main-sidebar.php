@@ -62,6 +62,12 @@ return [
     'payments.index'=>'سندات الصرف',
     'attendances.index'=>'الحضور والغياب',
     'attendance.classroom'=>'تسجيل الحضور والغياب',
+    'subjects.index'=>'المواد الدراسية',
+    'subjects.create'=>'اضافة مادة الدراسية',
+    'exams.index'=>'الامتحانات',
+    'exams.create'=>'اضافة امتحان',
+    'meetings.index'=>'حصص اونلاين',
+    'meetings.create'=>'اضافة حصة اونلاين',
 
 
 

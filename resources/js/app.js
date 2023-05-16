@@ -1,10 +1,12 @@
 import './bootstrap';
 import 'flowbite';
 import Alpine from 'alpinejs';
+window.Alpine = Alpine;
 import focus from '@alpinejs/focus';
+Alpine.plugin(focus);
+Alpine.start();
 import "@fortawesome/fontawesome-free/css/all.css";
 import 'simplebar/dist/simplebar.min.css';
-Alpine.plugin(focus);
 
 import flatpickr from "flatpickr";
 

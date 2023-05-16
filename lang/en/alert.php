@@ -61,6 +61,11 @@ return
     'student-payment-created'=>'Success,Payment Voucher for student :name has been created successfully.',
     'discussion-deleted'=>'Success, Discussion has been deleted successfully!',
     'added-attendance-for-today'=>'Success, Attendance for today :day for classroom :classroom has been added successfully!',
+    'subjects_deleted'=>"Success, Deleted selected Subjects successfully!",
+    'exam-created'=>'Success, Created new exam successfully.',
+    'exams_deleted'=>"Success, Deleted selected Exams successfully!",
+    'onlineclass-created'=>'Success, Created new online class :topic which start in :date successfully.',
+
 
 
 

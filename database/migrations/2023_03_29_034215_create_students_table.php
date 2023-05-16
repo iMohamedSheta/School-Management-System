@@ -28,7 +28,6 @@ return new class extends Migration
             $table->boolean('leaved')->default(false);
             $table->softDeletes();
             $table->timestamps();
-
         });
     }
 

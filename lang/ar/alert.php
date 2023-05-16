@@ -62,6 +62,10 @@ return
     'student-payment-created'=>'تم أنشاء سند الصرف للطالب :name بنجاح.',
     'discussion-deleted'=>'تم حذف المناقشة بنجاح!',
     'added-attendance-for-today'=>'تم اضافة غياب اليوم بتاريخ :day للفصل الدراسي :classroom.',
+    'subjects_deleted'=>'تم حذف المواد الدراسية المحددة بنجاح!',
+    'exam-created'=>'تم ادراج امتحان جديد بنجاح.',
+    'exams_deleted'=>"تم حذف الامتحانات المحددة بنجاح!",
+    'onlineclass-created'=>'تم اضافة حصة اونلاين بموضوع :topic في تاريخ وتوقيت :date .',
 
 
 

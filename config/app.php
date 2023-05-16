@@ -217,10 +217,6 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
-        "isAdmin" =>\App\Http\Middleware\AdminMiddleware::class,
-        "isStudent" =>\App\Http\Middleware\StudentMiddleware::class,
-        "isTeacher" =>\App\Http\Middleware\TeacherMiddleware::class,
-        "isParent" =>\App\Http\Middleware\ParentMiddleware::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
 

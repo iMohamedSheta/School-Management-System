@@ -292,6 +292,37 @@ return
     'teacher-name'=>'اسم الاستاذ',
     'presence'=>'حضور',
     'absent'=>'غياب',
+    'no-subjects'=>'لا توجد مواد دراسية مسجلة.',
+    'add-subject'=>'اضافة مادة دراسية',
+    'select-teacher-for-subject'=>'اختيار استاذ للمادة',
+    'add-the-subject'=>'اضافة المادة الدراسية',
+    'subject-teacher'=>'استاذ المادة',
+    'delete_subject'=>'حذف المادة الداسية',
+    'delete_exam'=>'حذف  الامتحان',
+    'delete_subject_title'=>'هل انت متأكد انك تريد حذف المادة الداسية :name ؟',
+    'delete_exam_title'=>' هل انت متأكد انك تريد حذف الامتحان المدرج باسم امتحان :name ؟',
+    'subject-info'=>'معلومات عن المادة الدراسية :name',
+    'exam-info'=>'معلومات عن الامتحان المدرج :name',
+    'edit_subject'=>'تعديل معلومات المادة الدراسية :name',
+    'edit_exam'=>'تعديل معلومات الامتحان المدرج :name',
+    'delete-subjects-title'=>'هل انت متأكد من انك تريد حذف المواد الدراسية المحددة ؟',
+    'delete-exams-title'=>'هل انت متأكد من انك تريد حذف الامتحانات المحددة ؟',
+    'term-num'=>'رقم الترم الدراسي',
+    'subject'=>'المادة الدراسية',
+    'no-exams'=>'لا توجد امتحانات مسجلة.',
+    'select-subject'=>'اختيار مادة دراسية',
+    'add-exam'=>'اضافة امتحان',
+    'add-the-exam'=>'اضافة الامتحان',
+    'subject-grade'=>'المرحلة الدراسية للمادة',
+    'subject-classroom'=>'الفصل الدراسي للمادة',
+    'topic-onlineclass'=>'عنوان الحصة',
+    'start-at-onlineclass'=>'تاريخ ووقت الحصة',
+    'duration-onlineclass'=>'مدة الحصة بالدقائق',
+    'add-onlineclass'=>'اضافة حصة اونلاين',
+    'add-the-onlineclass'=>'اضافة الحصة',
+
+
+
 
 
 

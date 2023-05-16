@@ -62,6 +62,12 @@ return [
     'payments.index'=>'Payment Vouchers',
     'attendances.index'=>'Attendances',
     'attendance.classroom'=>'Check Attendances',
+    'subjects.index'=>'Subjects',
+    'subjects.create'=>'Create Subject',
+    'exams.index'=>'Exams',
+    'exams.create'=>'Create Exam',
+    'meetings.index'=>'Online Classes',
+    'meetings.create'=>'Create Online Classes',
 
 
 

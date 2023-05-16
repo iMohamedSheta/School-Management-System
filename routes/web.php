@@ -1,4 +1,3 @@
-
 <?php
 
 // Import the necessary classes and libraries
@@ -23,6 +22,9 @@ use App\Http\Controllers\Fees\ReceiptController;
 use App\Http\Controllers\Fees\ProcessingFeeController;
 use App\Http\Controllers\Fees\PaymentStudentController;
 use App\Http\Controllers\Attendances\AttendancesController;
+use App\Http\Controllers\Subjects\SubjectController;
+use App\Http\Controllers\Exams\ExamController;
+use App\Http\Controllers\Meetings\OnlineClassController;
 
 use App\Http\Livewire\PostComponent;
 
@@ -99,7 +101,7 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                         Route::get('/parents/search', [SearchController::class, 'searchParents'])->name('parents.search');
 
 
-                        //Students Page Routes And Promotions
+                        //Students Routes
                         Route::group(['namespace'=>"Students"],function()
                         {
                             //students
@@ -110,7 +112,6 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                             Route::delete('student/delete',[StudentController::class,"destroy"])->name('student.destroy');
                             Route::delete('students/delete',[StudentController::class,"deleteSelected"])->name('students.selected.destroy');
 
-
                             //Students Promotions
                             Route::get('students/promotions',[PromotionsController::class,'index'])->name('students.promotions.classroom');
                             Route::post('student/promotion/back',[PromotionsController::class,'studentPromotionBack'])->name('student.promotion.back');
@@ -118,13 +119,12 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                             Route::get('students/promotions/table',[PromotionsController::class,'studentsPromotionsTableView'])->name('students.promotions.table');
                             Route::post('students/promoteclassroom',[PromotionsController::class,'promoteClassroom'])->name('students.promotions.store');
 
-
+                            //Students Graduation
                             Route::get('students/graduation',[GraduationController::class,'index'])->name('students.graduations.classroom');
                             Route::post('students/graduateclassroom',[GraduationController::class,'graduateclassroom'])->name('students.graduations.store');
                             Route::get('students/graduated',[GraduationController::class,'studentsGraduatedTableView'])->name('students.graduated.table');
                             Route::post('student/graduation/back',[GraduationController::class,'studentGraduationBack'])->name('student.graduation.back');
                             Route::post('students/graduations/back',[GraduationController::class,'studentSelectedGraduationBack'])->name('students.graduations.back');
-
                         });
 
                         Route::group(['namespace'=>"Fees"],function()
@@ -162,7 +162,18 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                             Route::delete('payment/vouchers/delete',[PaymentStudentController::class,'paymentsDeleteSelected'])->name('payments.selected.destroy');
                         });
 
-
+                        Route::group(['namespace'=>"Subjects"],function()
+                        {
+                            Route::get('subjects',[SubjectController::class,'index'])->name('subjects.index');
+                            Route::get('subjects/create',[SubjectController::class,'viewCreateSubject'])->name('subjects.create');
+                            Route::delete('subjects/delete',[SubjectController::class,'deleteSelected'])->name('subjects.selected.destroy');
+                        });
+                        Route::group(['namespace'=>"exams"],function()
+                        {
+                            Route::get('exams',[ExamController::class,'index'])->name('exams.index');
+                            Route::get('exams/create',[ExamController::class,'viewCreateExam'])->name('exams.create');
+                            Route::delete('exams/delete',[ExamController::class,'deleteSelected'])->name('exams.selected.destroy');
+                        });
 
                         //Teachers Page Routes
                         Route::group(['namespace'=>"Teachers"],function()
@@ -173,14 +184,6 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                             Route::get('teacher/email/edit/{id}',[TeacherController::class,"teacherEmailEditView"])->name('teacher.email.edit');
                             Route::delete('teacher/delete',[TeacherController::class,"destroy"])->name('teacher.destroy');
                             Route::delete('teachers/delete',[TeacherController::class,"deleteSelected"])->name('teachers.selected.destroy');
-                        });
-
-
-                        Route::group(['namespace'=>"Attendances"],function()
-                        {
-                            Route::get('attendances',[AttendancesController::class,'index'])->name('attendances.index');
-                            Route::get('attendance/classroom/{id}',[AttendancesController::class,'viewAttendanceClassroom'])->name('attendance.classroom');
-                            Route::post('attendance/classroom',[AttendancesController::class,'store'])->name('attendance.store');
                         });
 
 
@@ -197,7 +200,6 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                         });
 
 
-
                             // Define a route group for grade-related pages
                             Route::group(['namespace' => 'Grades'],function()
                             {
@@ -209,6 +211,22 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                                 Route::delete("grade/delete/{id}",[GradeController::class,'destroy'])->name('grade.destroy');
                             });
 
+                    });
+
+                    Route::middleware(['auth', 'checkRole:Admin,Teacher'])->group(function () {
+
+                        Route::group(['namespace'=>"Attendances"],function()
+                        {
+                            Route::get('attendances',[AttendancesController::class,'index'])->name('attendances.index');
+                            Route::get('attendance/classroom/{id}',[AttendancesController::class,'viewAttendanceClassroom'])->name('attendance.classroom');
+                            Route::post('attendance/classroom',[AttendancesController::class,'store'])->name('attendance.store');
+                        });
+                        Route::group(['namespace'=>"Meetings"],function()
+                        {
+                            Route::get('meetings',[OnlineClassController::class,'index'])->name('meetings.index');
+                            Route::get('meetings/create',[OnlineClassController::class,'create'])->name('meetings.create');
+                            Route::post('meetings/create',[OnlineClassController::class,'createOnlineClass'])->name('meetings.store');
+                        });
                     });
 
 
