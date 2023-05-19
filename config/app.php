@@ -69,7 +69,7 @@ return [
     |
     */
 
-    'timezone' => 'Africa/Cairo',
+    'timezone' => env('TIMEZONE','Africa/Cairo'),
 
     /*
     |--------------------------------------------------------------------------

@@ -26,7 +26,7 @@ class FeesInvoicesTable extends Component
     public $grade_id;
     public $classroom_id;
 
-    public $listeners = ['updatedGradeId','deleted'=>'$refresh','edited'=>'$refresh'];
+    protected $listeners = ['updatedGradeId','deleted'=>'$refresh','edited'=>'$refresh'];
 
 
 

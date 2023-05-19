@@ -299,7 +299,9 @@ return
     'subject-teacher'=>'استاذ المادة',
     'delete_subject'=>'حذف المادة الداسية',
     'delete_exam'=>'حذف  الامتحان',
+    'delete-online-class'=>'حذف الحصة الاونلاين',
     'delete_subject_title'=>'هل انت متأكد انك تريد حذف المادة الداسية :name ؟',
+    'delete-online-class-title'=>'هل انت متأكد انك تريد حذف الحصة الاونلاين بموضوع :name ؟',
     'delete_exam_title'=>' هل انت متأكد انك تريد حذف الامتحان المدرج باسم امتحان :name ؟',
     'subject-info'=>'معلومات عن المادة الدراسية :name',
     'exam-info'=>'معلومات عن الامتحان المدرج :name',
@@ -320,6 +322,10 @@ return
     'duration-onlineclass'=>'مدة الحصة بالدقائق',
     'add-onlineclass'=>'اضافة حصة اونلاين',
     'add-the-onlineclass'=>'اضافة الحصة',
+    'delete-meetings-title'=>'هل انت متأكد من انك تريد حذف  الحصص الاونلاين المحددة ؟',
+    'no-meetings'=>'لا توجد حصص اونلاين مسجلة في النظام.',
+    'start-url'=>'بدا الحصة',
+    'join-url'=>'الانضمام للحصة',
 
 
 

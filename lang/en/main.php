@@ -297,7 +297,9 @@ return
     'subject-teacher'=>'Subject Teacher',
     'delete_subject'=>'Delete subject',
     'delete_exam'=>'Delete Exam',
+    'delete-online-class'=>'Delete Online Class',
     'delete_subject_title'=>'Are you sure you want to delete this subject :name ?',
+    'delete-online-class-title'=>'Are you sure you want to delete this Online class with topic :name ?',
     'delete_exam_title'=>'Are you sure you want to delete this exam :name ?',
     'subject-info'=>'Subject Information for subject :name',
     'exam-info'=>'Exam Information for exam :name',
@@ -319,6 +321,10 @@ return
     'duration-onlineclass' => 'Class Duration (in minutes)',
     'add-onlineclass' => 'Add Online Class',
     'add-the-onlineclass' => 'Add Class',
+    'delete-meetings-title'=>'Are you sure you want to delete selected Online Classes ?',
+    'no-meetings'=>'There is no online classes on the system.',
+    'start-url'=>'Start Online Class',
+    'join-url'=>'Join Online Class',
 
 
 

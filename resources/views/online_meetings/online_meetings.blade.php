@@ -10,7 +10,7 @@
 
 @section('Content')
 
-
+<livewire:online-meeting.meeting-table>
 
 
 @endsection

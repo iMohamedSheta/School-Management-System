@@ -12,13 +12,14 @@ trait MeetingZoomTrait
         $user = Zoom::user()->first();
 
         $startDateTime = Carbon::parse($request->start_time); // Parse the input date with Carbon
+        $zoomTimezone = config('services.zoom.timezone');
 
         $meetingData = [
             'topic' => $request->topic,
             'duration' => $request->duration,
             'password' => $request->password,
             'start_time' => $startDateTime->format('Y-m-d\TH:i:s'), // Format the date for Zoom API
-            'timezone' => config('zoom.timezone')
+            'timezone' => $zoomTimezone
         ];
 
         $meeting = Zoom::meeting()->make($meetingData);

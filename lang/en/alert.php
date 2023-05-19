@@ -65,6 +65,8 @@ return
     'exam-created'=>'Success, Created new exam successfully.',
     'exams_deleted'=>"Success, Deleted selected Exams successfully!",
     'onlineclass-created'=>'Success, Created new online class :topic which start in :date successfully.',
+    'meetings_deleted'=>"Success, Deleted selected Omline Classes successfully!",
+
 
 
 

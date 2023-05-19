@@ -16,6 +16,7 @@ return [
     'user-role.index' => 'Users Roles',
     'profile.show' => 'Profile',
     "classrooms.index"=>'Classrooms',
+    'parents'=>'Parents',
     'parent'=>'Parents',
     'parent.index'=>'Parents',
     'parent.add'=>'Add Parents',
@@ -34,11 +35,9 @@ return [
     'teacher.info'=>"Teacher Information",
     'teacher.edit'=>"Edit Teacher Information",
     'teacher.email.edit'=>"Edit Teacher Email information",
-    'teachers'=>"Parents",
-    'teachers.index'=>"Parents",
-    'teacher.info'=>"Parent Information",
-    'teacher.edit'=>"Edit Parent Information",
-    'teacher.email.edit'=>"Edit Parent Email information",
+    'parent.info'=>"Parent Information",
+    'parent.edit'=>"Edit Parent Information",
+    'parent.email.edit'=>"Edit Parent Email information",
     'students.promotions.index'=>'Students Promotions',
     'students.promotions.classroom'=>'Classroom Promotion',
     'students.graduations.classroom'=>'Classroom Graduation',
@@ -47,7 +46,7 @@ return [
     'students.graduated.table'=>'Graduated Students',
     'fees.index'=>'Study Fees',
     'fees'=>'Study Fees',
-    'fee.create'=>'Study Fees',
+    'fee.create'=>'Create Study Fees',
     'fee.info'=>'Study Fee Information',
     'fees.types.index'=>'Fees Types',
     'fees-types'=>'Fees Types',
@@ -68,6 +67,7 @@ return [
     'exams.create'=>'Create Exam',
     'meetings.index'=>'Online Classes',
     'meetings.create'=>'Create Online Classes',
+
 
 
 

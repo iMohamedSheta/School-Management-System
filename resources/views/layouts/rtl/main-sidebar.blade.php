@@ -336,6 +336,7 @@
                             </div>
                         </ul>
                     </li>
+                    @endif
                 <li class="w-full mt-2  listopennavbar " >
                     <a  id="listopennavbar" aria-controls="data-accordion-icon5" data-collapse-toggle="data-accordion-icon5" class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center
                         whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
@@ -378,7 +379,6 @@
                             </div>
                         </ul>
                     </li>
-                    @endif
                 @if(auth()->user()->isAdmin() || auth()->user()->isTeacher())
 
                     <li class="w-full mt-2 ">
@@ -392,6 +392,7 @@
                             <div  class="sidebar-icon"><span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.attendances.index")}}</span></div>
                         </a>
                     </li>
+
                     <li class="w-full mt-2  listopennavbar " >
                         <a  id="listopennavbar" aria-controls="data-accordion-icon6" data-collapse-toggle="data-accordion-icon6" class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center
                             whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
@@ -399,7 +400,7 @@
                             href="#">
                             <div
                             class="{{ in_array(Route::currentRouteName(),['meetings.index','meetings.create']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                            <i class="fa-solid fa-book fa-lg {{in_array(Route::currentRouteName(),['meetings.index','meetings.create']) ? 'text-white' : ''}}"></i>
+                            <i class="sheta sheta-zoom-app text-2xl {{in_array(Route::currentRouteName(),['meetings.index','meetings.create']) ? 'text-white' : ''}}"></i>
                         </div>
                             <div id="sidebariconOnly13" class="sidebar-icon"> <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.meetings.index")}}</span>
                                 <i  id="arrowicon" class="arrowicon fa-solid fa-chevron-down px-3  shrink-0 transition-transform duration-200"></i>
@@ -415,7 +416,7 @@
                                             href="{{ route('meetings.index') }}">
                                             <div
                                             class="{{ in_array(Route::currentRouteName(),['meetings.index']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                                            <i class="fa-solid fa-book fa-lg {{ in_array(Route::currentRouteName(),['meetings.index']) ? 'text-white' : ''}}"></i>
+                                            <i class="fa-brands fa-readme text-xl {{ in_array(Route::currentRouteName(),['meetings.index']) ? 'text-white' : ''}}"></i>
                                             </div>
                                             <div  class="sidebar-icon"><span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.meetings.index")}}</span></div>
                                         </a>
@@ -426,7 +427,7 @@
                                             href="{{ route('meetings.create') }}">
                                             <div
                                             class="{{ in_array(Route::currentRouteName(),['meetings.create']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                                            <i class="fa-solid fa-book fa-lg {{ in_array(Route::currentRouteName(),['meetings.create']) ? 'text-white' : ''}}"></i>
+                                            <i class="sheta sheta-zoom-app text-2xl  {{ in_array(Route::currentRouteName(),['meetings.create']) ? 'text-white' : ''}}"></i>
                                             </div>
                                             <div  class="sidebar-icon"><span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.meetings.create")}}</span></div>
                                         </a>
@@ -435,8 +436,8 @@
                             </ul>
                         </li>
                 @endif
-
-                    {{-- -------------------------------------------------------------------------------------------------------------------------------------------------------------- --}}
+                {{-- -------------------------------------------------------------------------------------------------------------------------------------------------------------- --}}
+            @if(!auth()->user()->isParent())
                 <li class="w-full mt-2 ">
                     <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
                         {{ in_array(Route::currentRouteName(),['posts.index','post.show']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
@@ -448,11 +449,10 @@
                         <div  class="sidebar-icon"><span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.posts.index")}}</span></div>
                     </a>
                 </li>
+            @endif
 
 
-                @if(auth()->user()->isAdmin())
-
-
+            @if(auth()->user()->isAdmin())
                 <li class="w-full mt-2 ">
                     <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
                         {{ (Route::currentRouteName()== 'grade') ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"

@@ -1,3 +1,7 @@
+
+
+
+import flatpickr from "flatpickr";
 import './bootstrap';
 import 'flowbite';
 import Alpine from 'alpinejs';
@@ -7,11 +11,9 @@ Alpine.plugin(focus);
 Alpine.start();
 import "@fortawesome/fontawesome-free/css/all.css";
 import 'simplebar/dist/simplebar.min.css';
-
-import flatpickr from "flatpickr";
-
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import "flowbite/dist/flowbite";
+
+// import "flowbite/dist/flowbite";
 const locale = document.querySelector('meta[name="locale"]').getAttribute('content');
 
 
@@ -117,17 +119,17 @@ sidebariconOnly.onclick = function myFunction() {
       icon.style.display = "inline-block";
       aside.style.background = "transparent";
       if (typeof mainRight === 'undefined') {
-        mainLeft.style.marginLeft = "20vw";
+        mainLeft.style.marginLeft = "15vw";
       } else {
-        mainRight.style.marginRight = "20vw";
+        mainRight.style.marginRight = "15vw";
       }
     } else {
       icon.style.display = "none";
       aside.style.background = "white";
       if (typeof mainRight === 'undefined') {
-        mainLeft.style.marginLeft = "10vw";
+        mainLeft.style.marginLeft = "8vw";
       } else {
-        mainRight.style.marginRight = "10vw";
+        mainRight.style.marginRight = "8vw";
       }
     }
   }
@@ -144,9 +146,9 @@ sidebariconOnly.onclick = function myFunction() {
           }
           aside.style.background = "transparent";
           if (typeof mainRight === 'undefined') {
-            mainLeft.style.marginLeft = "20vw";
+            mainLeft.style.marginLeft = "15vw";
           } else {
-            mainRight.style.marginRight = "20vw";
+            mainRight.style.marginRight = "15vw";
           }
         }
       }

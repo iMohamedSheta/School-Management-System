@@ -27,7 +27,7 @@
                 </i>
 
               <div class="flex items-center mt-2 grow sm:mt-0 md:mr-0 lg:flex lg:basis-auto ">
-                  <div class="flex items-center md:ml-auto md:pr-4">
+                  {{-- <div class="flex items-center md:ml-auto md:pr-4">
                       <div class="hs:hidden md:flex  relative flex flex-wrap items-stretch w-full transition-all rounded-lg ease-soft">
                           <span
                               class="text-sm ease-soft leading-5.6 absolute z-50 -mr-px flex h-full items-center whitespace-nowrap rounded-lg rounded-tl-none rounded-bl-none border border-l-0 border-solid border-transparent bg-transparent py-2 px-2.5 text-center font-normal text-slate-500 transition-all">
@@ -37,7 +37,7 @@
                               class="text-sm px-8 focus:shadow-soft-primary-outline pr-8.75 ease-soft w-1/100 leading-5.6 relative -mr-px block min-w-0 flex-auto rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 pl-0 text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow" autocomplete="off"
                               placeholder="{{trans('header.search-placeholder')}}" />
                         </div>
-                  </div>
+                  </div> --}}
 
 
                   <ul class="flex flex-row justify-end pl-0 pr-10 mb-0 ml-0 mr-auto list-none md-max:w-full">

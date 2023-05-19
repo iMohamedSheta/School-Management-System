@@ -11,7 +11,7 @@ class ExamTable extends Component
     use WithPagination;
     public $search;
 
-    public $listeners = ['deleted'=>'$refresh','edited'=>'$refresh'];
+    protected $listeners = ['deleted'=>'$refresh','edited'=>'$refresh'];
 
     public function render()
     {

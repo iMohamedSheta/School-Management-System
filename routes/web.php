@@ -226,6 +226,8 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                             Route::get('meetings',[OnlineClassController::class,'index'])->name('meetings.index');
                             Route::get('meetings/create',[OnlineClassController::class,'create'])->name('meetings.create');
                             Route::post('meetings/create',[OnlineClassController::class,'createOnlineClass'])->name('meetings.store');
+                            Route::delete('meetings/delete',[OnlineClassController::class,"deleteSelected"])->name('meetings.selected.destroy');
+
                         });
                     });
 

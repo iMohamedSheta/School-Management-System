@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Traits\MeetingZoomTrait;
 use App\Models\OnlineClass;
-use Illuminate\Support\Str;
+use MacsiDigital\Zoom\Facades\Zoom;
 
 class OnlineClassController extends Controller
 {
@@ -17,7 +17,7 @@ class OnlineClassController extends Controller
     {
         return view('online_meetings.online_meetings');
     }
-    
+
     public function create()
     {
         return view('online_meetings.create_meeting');
@@ -53,4 +53,41 @@ class OnlineClassController extends Controller
 
         return redirect()->route('meetings.index')->with('success', trans('alert.onlineclass-created', ['topic' => $validatedData['topic'], 'date' => $request->start_time]));
     }
+
+
+
+    public function deleteSelected(Request $request)
+    {
+        $meetingsId=array_filter(explode(',',$request->selected_ids));
+        $successCount = 0;
+
+            if (count($meetingsId) > 0) {
+                foreach ($meetingsId as $meetingId) {
+                    if(!empty($meetingId)){
+                        $meeting = OnlineClass::findOrFail($meetingId);
+                        $zoomMeetingId = $meeting->meeting_id;
+                        $zoomMeeting= Zoom::meeting()->find($zoomMeetingId);
+                        $zoomMeetingDelete = $zoomMeeting->delete();
+                        if($zoomMeetingDelete)
+                        {
+                            $meetingDelete = $meeting->delete();
+                        }
+                        if ($meetingDelete && $zoomMeetingDelete) {
+                            $successCount++;
+                        }
+                    }
+                }
+            }
+
+            if ($successCount == count($meetingsId) && $successCount > 0 ) {
+                return redirect()->back()->with('success',trans('alert.meetings_deleted'));
+            }
+
+
+
+        return redirect()->back()->with('error',trans('alert.error'));
+    }
+
+
+
 }
