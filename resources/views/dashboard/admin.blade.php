@@ -101,7 +101,7 @@
     </div>
     <div class="bg-white z-10 w-full h-80 shadow-xl mt-8 rounded-2xl flex justify-center items-center overflow-hidden relative">
         <video class="w-full" autoplay loop>
-        <source src="{{asset('storage/videos/dashboard-1.mp4')}}" type="video/mp4">
+        <source src="{{asset('assets/videos/dashboard-1.mp4')}}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="absolute top-0 left-0  w-full h-full bg-gray-800 opacity-40"></div>
@@ -160,3 +160,4 @@
     </div>
 
 
+<livewire:calendar>

@@ -67,6 +67,7 @@ return
     'exams_deleted'=>"تم حذف الامتحانات المحددة بنجاح!",
     'onlineclass-created'=>'تم اضافة حصة اونلاين بموضوع :topic في تاريخ وتوقيت :date .',
     'meetings_deleted'=>'تم حذف الحصص الاونلاين المحددة بنجاح!',
+    'enter-event-title'=>'ادخال عنوان الحدث',
 
 
 

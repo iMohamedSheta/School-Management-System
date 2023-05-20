@@ -4,6 +4,11 @@
 
 @extends('layouts.master')
 
+@section('styles')
+<link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.3.1/main.min.css' rel='stylesheet' />
+
+@endsection
+
 @section('Pagetitle',"Dashboard")
 
 

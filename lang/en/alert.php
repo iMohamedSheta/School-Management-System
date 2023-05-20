@@ -66,6 +66,11 @@ return
     'exams_deleted'=>"Success, Deleted selected Exams successfully!",
     'onlineclass-created'=>'Success, Created new online class :topic which start in :date successfully.',
     'meetings_deleted'=>"Success, Deleted selected Omline Classes successfully!",
+    'enter-event-title'=>'Enter Event Title',
+    'event-db-change'=>'Great. Now, update database...',
+    'event-title-required'=>'Event Title Is Required',
+    'event-delete'=>'Are you sure you want to delete this event ?',
+    ''
 
 
 

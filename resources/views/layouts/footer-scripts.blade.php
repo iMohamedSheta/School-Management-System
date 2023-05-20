@@ -27,3 +27,4 @@
 
 
 @yield('scripts')
+@stack('scripts')
