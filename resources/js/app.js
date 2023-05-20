@@ -119,9 +119,9 @@ sidebariconOnly.onclick = function myFunction() {
       icon.style.display = "inline-block";
       aside.style.background = "transparent";
       if (typeof mainRight === 'undefined') {
-        mainLeft.style.marginLeft = "15vw";
+        mainLeft.style.marginLeft = "17vw";
       } else {
-        mainRight.style.marginRight = "15vw";
+        mainRight.style.marginRight = "17vw";
       }
     } else {
       icon.style.display = "none";
@@ -146,9 +146,9 @@ sidebariconOnly.onclick = function myFunction() {
           }
           aside.style.background = "transparent";
           if (typeof mainRight === 'undefined') {
-            mainLeft.style.marginLeft = "15vw";
+            mainLeft.style.marginLeft = "17vw";
           } else {
-            mainRight.style.marginRight = "15vw";
+            mainRight.style.marginRight = "17vw";
           }
         }
       }

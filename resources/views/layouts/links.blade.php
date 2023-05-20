@@ -50,6 +50,10 @@
         @case('en')
             <style>
                 html{direction:ltr;}
+                body {
+                    font-family: "Roboto", sans-serif !important;
+                }
+
             </style>
         @break
 

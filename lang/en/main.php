@@ -325,6 +325,8 @@ return
     'no-meetings'=>'There is no online classes on the system.',
     'start-url'=>'Start Online Class',
     'join-url'=>'Join Online Class',
+    'welcome-dash' => 'Welcome to the School Management System, :name!',
+    'thank-you-dash' => 'Thank you for logging into our School Management System. We are delighted to have you as part of our educational community. Enjoy the features and functions available to facilitate and enhance your school management experience and communication with students and parents. We wish you a pleasant and fruitful experience!',
 
 
 

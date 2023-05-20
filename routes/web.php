@@ -257,11 +257,14 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
 
 
 
-        // Import Jetstream Features routes
-        require_once(__DIR__.'/jetstreamFeatures.php');
-
-
-
+        Route::group(
+            [
+                'prefix' => LaravelLocalization::setLocale(),
+                'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+            ], function(){
+                // Import Jetstream Features routes
+                require_once(__DIR__.'/jetstreamFeatures.php');
+            });
 
 
 

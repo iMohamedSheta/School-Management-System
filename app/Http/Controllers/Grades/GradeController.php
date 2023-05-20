@@ -19,7 +19,7 @@ class GradeController extends Controller
     public function index(): View
     {
         //Return view for user
-        return view('layouts.grades');
+        return view('grades');
     }
     /**
      * Show the form for creating a new resource.

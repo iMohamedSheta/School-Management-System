@@ -337,6 +337,8 @@
                         </ul>
                     </li>
                     @endif
+                    @if(auth()->user()->isAdmin() || auth()->user()->isTeacher())
+
                 <li class="w-full mt-2  listopennavbar " >
                     <a  id="listopennavbar" aria-controls="data-accordion-icon5" data-collapse-toggle="data-accordion-icon5" class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center
                         whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
@@ -379,7 +381,6 @@
                             </div>
                         </ul>
                     </li>
-                @if(auth()->user()->isAdmin() || auth()->user()->isTeacher())
 
                     <li class="w-full mt-2 ">
                         <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
