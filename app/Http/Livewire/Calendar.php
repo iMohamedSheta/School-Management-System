@@ -40,7 +40,7 @@ class Calendar extends Component
         $eventdata->save();
     }
 
-    public function deleteevent($id)
+    public function deleteEvent($id)
     {
         $eventdata = Event::find($id);
         $eventdata->delete();

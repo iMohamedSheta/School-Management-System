@@ -141,6 +141,10 @@ return new class extends Migration
             $table->foreign('classroom_id')->references('id')->on('classrooms')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
+        Schema::table('teacher_classrooms', function (Blueprint $table) {
+            $table->foreign('teacher_id')->references('id')->on('teachers')->onDelete('cascade');
+            $table->foreign('classroom_id')->references('id')->on('classrooms')->onDelete('cascade');
+        });
 
     }
 
@@ -270,6 +274,10 @@ return new class extends Migration
         Schema::table('online_classes', function (Blueprint $table) {
             $table->dropForeign(['user_id']);
             $table->dropForeign(['grade_id']);
+            $table->dropForeign(['classroom_id']);
+        });
+        Schema::table('teacher_classrooms', function (Blueprint $table) {
+            $table->dropForeign(['teacher_id']);
             $table->dropForeign(['classroom_id']);
         });
 

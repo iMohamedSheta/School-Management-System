@@ -67,6 +67,10 @@ return [
     'exams.create'=>'Create Exam',
     'meetings.index'=>'Online Classes',
     'meetings.create'=>'Create Online Classes',
+    'teacher.assign.classroom'=>'Assign Classroom For Teacher',
+    'teachers.classrooms'=>'Teachers Classrooms',
+    'teacher.classrooms'=>'Teacher Classrooms',
+
 
 
 

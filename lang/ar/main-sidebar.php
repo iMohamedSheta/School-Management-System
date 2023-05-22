@@ -68,6 +68,11 @@ return [
     'exams.create'=>'اضافة امتحان',
     'meetings.index'=>'حصص اونلاين',
     'meetings.create'=>'اضافة حصة اونلاين',
+    'teacher.assign.classroom'=>'تعيين فصل دراسي للاستاذ',
+    'teachers.classrooms'=>'فصول المعلمين',
+    'teacher.classrooms'=>'فصول المعلم',
+
+
 
 
 

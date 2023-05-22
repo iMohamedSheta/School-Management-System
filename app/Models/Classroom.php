@@ -39,4 +39,9 @@ class Classroom extends Model
         return $this->students()->count();
     }
 
+    public function teachers()
+    {
+        return $this->belongsToMany(Teacher::class, 'teacher_classroom', 'classroom_id', 'teacher_id');
+    }
+
 }

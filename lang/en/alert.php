@@ -70,7 +70,9 @@ return
     'event-db-change'=>'Great. Now, update database...',
     'event-title-required'=>'Event Title Is Required',
     'event-delete'=>'Are you sure you want to delete this event ?',
-    ''
+    'assign-classroom-success'=>'The Teacher :name has been assigned to the classroom :classroom successfully.',
+    'remove-assign-classroom'=>'The Teacher :name has been removed for teaching the classroom :classroom successfully.',
+    'teacherclassrooms_deleted'=>"Success, removed selected teachers from teaching the selected classrooms successfully!",
 
 
 

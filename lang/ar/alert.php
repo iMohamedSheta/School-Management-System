@@ -68,6 +68,9 @@ return
     'onlineclass-created'=>'تم اضافة حصة اونلاين بموضوع :topic في تاريخ وتوقيت :date .',
     'meetings_deleted'=>'تم حذف الحصص الاونلاين المحددة بنجاح!',
     'enter-event-title'=>'ادخال عنوان الحدث',
+    'assign-classroom-success'=>"تم تعيين الاستاذ :name للفصل الدراسي :classroom بنجاح.",
+    'remove-assign-classroom'=>"تم التراجع عن تعيين الاستاذ :name للفصل الدراسي :classroom بنجاح.",
+    'teacherclassrooms_deleted'=>'تم التراجع عن تعيين الاستاذة المحددين للفصول الدراسية المحددة بنجاح.',
 
 
 

@@ -258,13 +258,17 @@ return
     'no-receipts'=>'There is no Receipt Vouchers on the system.',
     'no-payments'=>'There is no Payment Vouchers on the system.',
     'student-info-dropdown'=>'View Info ',
+    'teacher-info-dropdown'=>'View Info ',
     'edit-student-info-dropdown'=>'Edit Information',
+    'edit-teacher-info-dropdown'=>'Edit Information',
+    'assign-teacher-classrooms-dropdown'=>'Assign Classroom',
     'create-invoice-dropdown'=>'Create Fee Invoice',
     'create-receipt-dropdown'=>'Create Receipt Voucher',
     'create-processingfee-dropdown'=>'Create Processing Fee',
     'create-payment-dropdown'=>"Create Payment Voucher",
     'edit-email-info-dropdown'=>'Edit Email Information',
     'delete-student-dropdown'=>'Delete Student',
+    'delete-teacher-dropdown'=>'Delete Teacher',
     'add-processingfee'=>'Exclude Fee',
     'student_credit'=>'Student Credit',
     'amount-of-money-excluded'=>'Excluded Amount',
@@ -327,18 +331,21 @@ return
     'join-url'=>'Join Online Class',
     'welcome-dash' => 'Welcome to the School Management System, :name!',
     'thank-you-dash' => 'Thank you for logging into our School Management System. We are delighted to have you as part of our educational community. Enjoy the features and functions available to facilitate and enhance your school management experience and communication with students and parents. We wish you a pleasant and fruitful experience!',
-
-
-
-
-
-
-
-
-
-
-
-
+    'welcome-student' => 'Welcome to the School Management System, :name!',
+    'thank-you-student' => 'Thank you for logging into our School Management System. We are excited to have you as part of our educational community. Enjoy the features and functions available to enhance your learning experience and stay connected with your teachers and fellow students. We wish you a successful academic journey!',
+    'welcome-teacher' => 'Welcome to the School Management System, :name!',
+    'thank-you-teacher' => 'Thank you for logging into our School Management System. As a teacher, you play a crucial role in shaping the education of our students. Make use of the available features and functions to effectively manage your classes, communicate with students and parents, and facilitate their learning journey. We appreciate your dedication!',
+    'welcome-parent' => 'Welcome to the School Management System, :name!',
+    'thank-you-parent' => 'Thank you for using our School Management System. As a parent, you can stay updated with your child\'s academic progress, communicate with teachers, and access relevant information. We value your involvement in your child\'s education. Enjoy your experience!',
+    'assign_classroom_info_one' => 'This page allows you to assign classrooms to specific teachers. You can easily manage the allocation of classrooms and ensure that each teacher is assigned to the appropriate classroom.',
+    'assign_classroom_to' => 'Assign Classroom to Teacher :name',
+    'assign-classroom'=>'Assign Classroom',
+    'delete-teacher-classroom-assigned-dropdown'=>'Remove Assigned Classroom',
+    'classroom-assigned'=>'Classroom Assigned',
+    'no-teacherclassrooms'=>'There is no assigned teacher for specific classroom.',
+    'remove-teachers-assigned-classrooms-title'=>'Are you sure you want to remove the selected teachers from teaching the selected classrooms?',
+    'count-teacher-classrooms'=>'Classrooms Assigned Count',
+    'count-teacher-students'=>'Students Assigned Count',
 
 
 

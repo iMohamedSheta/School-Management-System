@@ -72,6 +72,7 @@ class Post extends Model  implements HasMedia
     /*************************************** Methods **************************************/
 
 
+
     // Define an upvote function to add an upvote for a post
     public function upvote()
     {

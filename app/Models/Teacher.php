@@ -31,6 +31,29 @@ class Teacher extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function classrooms()
+    {
+        return $this->belongsToMany(Classroom::class, 'teacher_classrooms', 'teacher_id', 'classroom_id');
+    }
+
+    public function countClassrooms()
+    {
+        return $this->classrooms()->count();
+    }
+
+    public function countStudents()
+    {
+        $classrooms = $this->classrooms()->withCount('students')->get();
+        $totalStudents = 0;
+
+        foreach ($classrooms as $classroom) {
+            $totalStudents += $classroom->students_count;
+        }
+
+        return $totalStudents;
+    }
+
+
     public static function countTeachers()
     {
         return self::count();

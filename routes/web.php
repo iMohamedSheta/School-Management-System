@@ -25,6 +25,8 @@ use App\Http\Controllers\Attendances\AttendancesController;
 use App\Http\Controllers\Subjects\SubjectController;
 use App\Http\Controllers\Exams\ExamController;
 use App\Http\Controllers\Meetings\OnlineClassController;
+use App\Http\Controllers\Teachers\TeacherClassroomController;
+
 
 use App\Http\Livewire\PostComponent;
 
@@ -43,8 +45,6 @@ use App\Http\Livewire\PostComponent;
 //Jetstream import for routes
 use Laravel\Fortify\Features;
 use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserController;
-
-
 
 // This comment section is a description of the purpose of the file and how it is used.
 
@@ -106,7 +106,6 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                         {
                             //students
                             Route::get('students',[StudentController::class,"index"])->name('students.index');
-                            Route::get('student/information/{id}',[StudentController::class,"studentInfoView"])->name('student.info');
                             Route::get('student/edit/{id}',[StudentController::class,"studentInfoEditView"])->name('student.edit');
                             Route::get('student/email/edit/{id}',[StudentController::class,"studentEmailEditView"])->name('student.email.edit');
                             Route::delete('student/delete',[StudentController::class,"destroy"])->name('student.destroy');
@@ -184,6 +183,14 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                             Route::get('teacher/email/edit/{id}',[TeacherController::class,"teacherEmailEditView"])->name('teacher.email.edit');
                             Route::delete('teacher/delete',[TeacherController::class,"destroy"])->name('teacher.destroy');
                             Route::delete('teachers/delete',[TeacherController::class,"deleteSelected"])->name('teachers.selected.destroy');
+
+                            Route::get('teachers/classrooms',[TeacherClassroomController::class,"index"])->name('teachers.classrooms');
+                            Route::get('teacher/assign-classroom/{id}',[TeacherClassroomController::class,"create"])->name('teacher.assign.classroom');
+                            Route::delete('teachers/assign-classroom',[TeacherClassroomController::class,"destroy"])->name('teacher.remove.assign.classroom');
+                            Route::delete('teachers/assign-classrooms',[TeacherClassroomController::class,"deleteSelected"])->name('teacher.remove.selected.assign.classroom');
+
+
+
                         });
 
 
@@ -229,6 +236,15 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                             Route::delete('meetings/delete',[OnlineClassController::class,"deleteSelected"])->name('meetings.selected.destroy');
 
                         });
+
+                        Route::group(['namespace'=>"Teachers"],function()
+                        {
+                            Route::get('teacher/classrooms',[TeacherClassroomController::class,"viewTeacherClassrooms"])->name('teacher.classrooms');
+                        });
+                        Route::group(['namespace'=>"Students"],function()
+                        {
+                            Route::get('student/information/{id}',[StudentController::class,"studentInfoView"])->name('student.info');
+                        });
                     });
 
 
@@ -265,7 +281,6 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                 // Import Jetstream Features routes
                 require_once(__DIR__.'/jetstreamFeatures.php');
             });
-
 
 
 
