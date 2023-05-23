@@ -31,15 +31,8 @@ class SubjectTable extends Component
                     ->orWhereHas('user', function ($query) {
                         $query->where('email', 'like', '%' . $this->search . '%');
                     });
-                })
-
-                ->orWhereHas('classroom', function ($query) {
-                    $query->where('name', 'like', '%' . $this->search . '%');
-                })
-
-                ->orWhereHas('grade', function ($query) {
-                    $query->where('name', 'like', '%' . $this->search . '%');
                 });
+
             });
         }
 

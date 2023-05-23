@@ -34,9 +34,6 @@ class AssignTeacherClassrooms extends Component
             'classroom_id' => 'required|exists:classrooms,id',
         ]);
 
-
-
-
         $classroomName=Classroom::findOrFail($this->classroom_id)->name;
         try
         {

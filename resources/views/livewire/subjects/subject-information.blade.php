@@ -27,14 +27,6 @@
                         <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$subject->name ?? trans('main.undefined')}}</dd>
                     </div>
                     <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.grade') }}</dt>
-                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0 ">{{ $subject->grade->name ??  trans('main.undefined')}}</dd>
-                    </div>
-                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">{{ trans('main.classroom') }}</dt>
-                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{$subject->classroom->name ?? trans('main.undefined')}}</dd>
-                    </div>
-                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                         <dt class="text-sm font-medium text-gray-500">{{ trans('main.subject-teacher') }}</dt>
                         <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0 ">{{ $subject->teacher->name ??  trans('main.undefined')}}</dd>
                     </div>

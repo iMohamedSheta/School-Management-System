@@ -71,6 +71,8 @@ return [
     'teacher.assign.classroom'=>'تعيين فصل دراسي للاستاذ',
     'teachers.classrooms'=>'فصول المعلمين',
     'teacher.classrooms'=>'فصول المعلم',
+    'attendance.report.export'=>'تصدير تقرير الغياب',
+    'subjects.associate.classroom'=>'ربط مادة دراسية بفصل دراسي',
 
 
 

@@ -346,6 +346,18 @@ return
     'remove-teachers-assigned-classrooms-title'=>'Are you sure you want to remove the selected teachers from teaching the selected classrooms?',
     'count-teacher-classrooms'=>'Classrooms Assigned Count',
     'count-teacher-students'=>'Students Assigned Count',
+    'export-attendance-on-date'=>'Export Attendance Report',
+    'export-report'=>'Export Report',
+    'report-name'=>'Report Name',
+    'date'=>'Date',
+    "assign_classroom_info_friendly" => "Welcome to the Attendance Export page! Here, teachers and admins can easily export attendance reports for a specific classroom and date. Simply choose the classroom and date, enter a name for the export file, and click export. Enjoy the convenience!",
+    'associate-subject-to-classroom'=>'Associate Subject To Classroom',
+    'associate-subject-to-classroom-description-one'=>'This page allows administrators to associate classrooms with specific subjects. Administrators can select a classroom and choose the subject that should be associated with it. This association determines which subjects will be taught in each classroom. It provides a convenient way for administrators to manage the curriculum and ensure that each classroom is assigned the appropriate subjects.',
+    'associate-subject-to-classroom-description-two'=>'You can use the provided form to assign a subject to a particular classroom. Just choose grade and classroom and click associate.',
+    'associate'=>'Associate',
+    'subject-name'=>'Subject Name',
+    'promote-classroom-description-one' => "Welcome to the Promote Classroom page! Here, You can easily promote students from one classroom to another. Select the source classroom, destination classroom, and the students you want to promote. Click the 'Promote' button to complete the process. It's that simple!",
+    'promote-classroom-description-two' => "Please ensure that you have selected the correct classrooms and students before promoting them. The promotion will update the student records and reflect the changes in the system.",
 
 
 

@@ -19,6 +19,13 @@ class AttendancesController extends Controller
         $grades=Grade::all();
         return view('attendances.attendances',compact('grades'));
     }
+
+    public function viewAttendanceReport()
+    {
+        return view('attendances.attendance-report.create-attendance-report');
+    }
+
+
     public function viewAttendanceClassroom($id)
     {
         $students=Student::where('classroom_id',$id)->get();
@@ -46,7 +53,7 @@ class AttendancesController extends Controller
                 $createAttendence->attendence_date = date('Y-m-d');
                 if(auth()->user()->isTeacher())
                 {
-                    $createAttendence->teacher_id = auth()->user()->id;
+                    $createAttendence->teacher_id = auth()->user()->teacher->id;
                 }
                 $createAttendence->save();
 

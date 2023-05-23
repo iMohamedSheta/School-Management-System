@@ -70,7 +70,8 @@ return [
     'teacher.assign.classroom'=>'Assign Classroom For Teacher',
     'teachers.classrooms'=>'Teachers Classrooms',
     'teacher.classrooms'=>'Teacher Classrooms',
-
+    'attendance.report.export'=>'Export Attendance Report',
+    'subjects.associate.classroom'=>'Associate Subject With Classroom',
 
 
 

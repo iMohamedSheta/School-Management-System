@@ -348,11 +348,11 @@
 
             <li class="mt-0.5 w-full" id="listopennavbar">
                 <a aria-controls="data-accordion-icon4" data-collapse-toggle="data-accordion-icon4" class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap
-                {{   in_array(Route::currentRouteName(),['subjects.index','subjects.create']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}
+                {{   in_array(Route::currentRouteName(),['subjects.index','subjects.create','subjects.associate.classroom']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}
                     px-4 font-semibold text-slate-700 transition-colors" href="#">
 
-                <div class="{{  in_array(Route::currentRouteName(),['subjects.index','subjects.create']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }}  shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                    <i class="fa-solid fa-book fa-lg {{   in_array(Route::currentRouteName(),['subjects.index','subjects.create']) ?'text-white' : ''}}"></i>
+                <div class="{{  in_array(Route::currentRouteName(),['subjects.index','subjects.create','subjects.associate.classroom']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }}  shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                    <i class="fa-solid fa-book fa-lg {{   in_array(Route::currentRouteName(),['subjects.index','subjects.create','subjects.associate.classroom']) ?'text-white' : ''}}"></i>
                 </div>
                 <div id="sidebariconOnly2" class="sidebar-icon">
                     <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.subjects.index")}}</span>
@@ -448,6 +448,20 @@
                     </div>
                     </a>
                 </li>
+                <li class="mt-0.5 w-full">
+                    <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap
+                    {{ in_array(Route::currentRouteName(),['attendance.report.export']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }} px-4 font-semibold text-slate-700 transition-colors"
+                        href="{{route("attendance.report.export")}}">
+                    <div class="{{ in_array(Route::currentRouteName(),['attendance.report.export']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                        <i class="fa-solid fa-download fa-lg  {{in_array(Route::currentRouteName(),['attendance.report.export']) ? 'text-white' : ''}}"></i>
+                    </div>
+                    <div  class="sidebar-icon">
+                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.attendance.report.export")}}</span>
+                    </div>
+                    </a>
+                </li>
+
+
 
 
                 <li class="mt-0.5 w-full" id="listopennavbar">

@@ -18,6 +18,11 @@ class SubjectController extends Controller
     {
         return view('subjects.create-subject');
     }
+    public function viewAssociateClassroom($id)
+    {
+        $subject = Subject::findOrFail($id);
+        return view('subjects.associate_subject_classroom.associate-subject-classroom',compact('subject'));
+    }
 
     public function deleteSelected(Request $request)
     {

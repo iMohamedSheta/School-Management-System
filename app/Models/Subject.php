@@ -13,8 +13,6 @@ class Subject extends Model
     [
         'name',
         'description',
-        'grade_id',
-        'classroom_id',
         'teacher_id',
     ];
 
@@ -24,9 +22,9 @@ class Subject extends Model
         return $this->belongsTo(Teacher::class,'teacher_id')->withDefault();
     }
 
-    public function classroom()
+    public function classrooms()
     {
-        return $this->belongsTo(Classroom::class)->withDefault();
+        return $this->belongsToMany(Classroom::class,'subject_id','classroom_id');
     }
     public function grade()
     {

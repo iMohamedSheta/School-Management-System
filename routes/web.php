@@ -166,6 +166,8 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                             Route::get('subjects',[SubjectController::class,'index'])->name('subjects.index');
                             Route::get('subjects/create',[SubjectController::class,'viewCreateSubject'])->name('subjects.create');
                             Route::delete('subjects/delete',[SubjectController::class,'deleteSelected'])->name('subjects.selected.destroy');
+
+                            Route::get('subjects/associate/classroom/{id}',[SubjectController::class,'viewAssociateClassroom'])->name('subjects.associate.classroom');
                         });
                         Route::group(['namespace'=>"exams"],function()
                         {
@@ -227,6 +229,8 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                             Route::get('attendances',[AttendancesController::class,'index'])->name('attendances.index');
                             Route::get('attendance/classroom/{id}',[AttendancesController::class,'viewAttendanceClassroom'])->name('attendance.classroom');
                             Route::post('attendance/classroom',[AttendancesController::class,'store'])->name('attendance.store');
+
+                            Route::get('attendance/report',[AttendancesController::class,'viewAttendanceReport'])->name('attendance.report.export');
                         });
                         Route::group(['namespace'=>"Meetings"],function()
                         {
@@ -237,15 +241,21 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
 
                         });
 
-                        Route::group(['namespace'=>"Teachers"],function()
-                        {
-                            Route::get('teacher/classrooms',[TeacherClassroomController::class,"viewTeacherClassrooms"])->name('teacher.classrooms');
-                        });
                         Route::group(['namespace'=>"Students"],function()
                         {
                             Route::get('student/information/{id}',[StudentController::class,"studentInfoView"])->name('student.info');
                         });
                     });
+
+                    Route::middleware(['auth', 'checkRole:Teacher'])->group(function () {
+
+                        Route::group(['namespace'=>"Teachers"],function()
+                        {
+                            Route::get('teacher/classrooms',[TeacherClassroomController::class,"viewTeacherClassrooms"])->name('teacher.classrooms');
+                        });
+
+                    });
+
 
 
                     // Import Jetstream authentication routes

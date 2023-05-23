@@ -332,11 +332,11 @@
                 <li class="w-full mt-2  listopennavbar " >
                     <a  id="listopennavbar" aria-controls="data-accordion-icon4" data-collapse-toggle="data-accordion-icon4" class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center
                         whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
-                        {{ in_array(Route::currentRouteName(),['subjects.index','subjects.create']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                        {{ in_array(Route::currentRouteName(),['subjects.index','subjects.create','subjects.associate.classroom']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
                         href="#">
                         <div
-                        class="{{ in_array(Route::currentRouteName(),['subjects.index','subjects.create']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                        <i class="fa-solid fa-book fa-lg {{in_array(Route::currentRouteName(),['subjects.index','subjects.create']) ? 'text-white' : ''}}"></i>
+                        class="{{ in_array(Route::currentRouteName(),['subjects.index','subjects.create','subjects.associate.classroom']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                        <i class="fa-solid fa-book fa-lg {{in_array(Route::currentRouteName(),['subjects.index','subjects.create','subjects.associate.classroom']) ? 'text-white' : ''}}"></i>
                     </div>
                         <div id="sidebariconOnly13" class="sidebar-icon"> <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.subjects.index")}}</span>
                             <i  id="arrowicon" class="arrowicon fa-solid fa-chevron-down px-3  shrink-0 transition-transform duration-200"></i>
@@ -426,6 +426,17 @@
                             <i class="fa-solid fa-clipboard-user fa-lg {{ in_array(Route::currentRouteName(),['attendances.index','attendance.classroom']) ? 'text-white' : ''}}"></i>
                             </div>
                             <div  class="sidebar-icon"><span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.attendances.index")}}</span></div>
+                        </a>
+                    </li>
+                    <li class="w-full mt-2 ">
+                        <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                            {{ in_array(Route::currentRouteName(),['attendance.report.export']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                            href="{{ route('attendance.report.export') }}">
+                            <div
+                            class="{{ in_array(Route::currentRouteName(),['attendance.report.export'])  ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                            <i class="fa-solid  fa-download fa-lg  {{ in_array(Route::currentRouteName(),['attendance.report.export']) ? 'text-white' : ''}}"></i>
+                            </div>
+                            <div  class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.attendance.report.export")}}</span></div>
                         </a>
                     </li>
 
@@ -523,7 +534,7 @@
                             href="{{ route('teacher.classrooms') }}">
                             <div
                             class="{{ in_array(Route::currentRouteName(),['teacher.classrooms','student.info'])  ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                            <i class="fa-solid  fa-user-group  {{ in_array(Route::currentRouteName(),['teacher.classrooms','student.info'])  ? 'text-white' : ''}}"></i>
+                            <i class="fa-solid  fa-user-group fa-lg {{ in_array(Route::currentRouteName(),['teacher.classrooms','student.info'])  ? 'text-white' : ''}}"></i>
                             </div>
                             <div  class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.teacher.classrooms")}}</span></div>
                         </a>

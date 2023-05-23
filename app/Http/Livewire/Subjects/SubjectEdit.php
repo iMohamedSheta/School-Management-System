@@ -13,22 +13,10 @@ class SubjectEdit extends Component
     public $subject;
     public $name;
     public $description;
-    public $grade_id;
-    public $classroom_id;
     public $teacher_id;
-    public $classrooms=[];
-
-    protected $listeners = ['updatedGradeId'];
 
 
-    public function updatedGradeId($value)
-    {
-        if ($value) {
-            $this->classrooms = Classroom::where('grade_id', $value)->get();
-        } else {
-            $this->classrooms = [];
-        }
-    }
+
 
     public function openModalToEdit()
     {
@@ -38,11 +26,8 @@ class SubjectEdit extends Component
     public function mount($subject)
     {
         $this->name = $subject->name;
-        $this->grade_id = $subject->grade_id;
-        $this->classroom_id = $subject->classroom_id;
         $this->teacher_id = $subject->teacher_id;
         $this->description = $subject->description;
-        $this->classrooms = $subject->grade->classrooms;
 
     }
 
@@ -51,8 +36,6 @@ class SubjectEdit extends Component
         $validatedData = $this->validate([
             'name'=>'string|required',
             'teacher_id' => 'nullable|exists:teachers,id',
-            'grade_id' => 'nullable|exists:grades,id',
-            'classroom_id' => 'nullable|exists:classrooms,id',
             'description' => 'nullable',
         ]);
 
@@ -61,8 +44,6 @@ class SubjectEdit extends Component
             $updateSubject = $this->subject->update([
                 'name'=>$this->name,
                 'teacher_id'=>$this->teacher_id,
-                'grade_id'=>$this->grade_id,
-                'classroom_id'=>$this->classroom_id,
                 'description'=>$this->description,
             ]);
 
@@ -84,8 +65,7 @@ class SubjectEdit extends Component
 
     public function render()
     {
-        $grades=Grade::all();
         $teachers=Teacher::all();
-        return view('livewire.subjects.subject-edit',compact('grades','teachers'));
+        return view('livewire.subjects.subject-edit',compact('teachers'));
     }
 }

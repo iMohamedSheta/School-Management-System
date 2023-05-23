@@ -53,12 +53,6 @@
                     {{ __('main.name') }}
                 </th>
                 <th scope="col" class="px-6 py-2 text-xs font-medium  uppercase tracking-wider text-center" >
-                    {{ __('main.grade') }}
-                </th>
-                <th scope="col" class="px-6 py-2 text-xs font-medium  uppercase tracking-wider text-center" >
-                    {{ __('main.classroom') }}
-                </th>
-                <th scope="col" class="px-6 py-2 text-xs font-medium  uppercase tracking-wider text-center" >
                     {{ __('main.subject-teacher') }}
                 </th>
                 <th scope="col" class="px-6 py-2 text-xs font-medium  uppercase tracking-wider text-center" >
@@ -86,19 +80,15 @@
                         </span>
                     </td>
                     <td class="px-6 py-3 whitespace-nowrap text-center overflow-auto simplebar" >
-                        {{ $subject->grade->name ?? '-' }}
-                    </td>
-                    <td class="px-6 py-3 whitespace-nowrap text-center overflow-auto simplebar" >
-                        {{ $subject->classroom->name ?? '-' }}
-                    </td>
-                    <td class="px-6 py-3 whitespace-nowrap text-center overflow-auto simplebar" >
                         {{ $subject->teacher->teacher_name ?? '-' }}
                     </td>
 
                     <td class="px-6 py-3 whitespace-nowrap text-center">
                         <livewire:subjects.subject-information :subject="$subject" :wire:key="'info'.$subject->id"/>
                         <livewire:subjects.subject-edit :subject='$subject' :wire:key="'edit'.$subject->id"/>
+                        <a href="{{route('subjects.associate.classroom',$subject->id)}}" class="mx-2"><i class="fa-solid  fa-user-group hover:text-gray-800 fa-lg"></i></a>
                         <livewire:subjects.subject-delete :subject="$subject" :wire:key="'delete'.$subject->id" />
+
 
                     </td>
                 </tr>

@@ -39,6 +39,11 @@ class Classroom extends Model
         return $this->students()->count();
     }
 
+    public function subjects()
+    {
+            return $this->belongsToMany(Subject::class,'classroom_subject','classroom_id','subject_id');
+    }
+
     public function teachers()
     {
         return $this->belongsToMany(Teacher::class, 'teacher_classroom', 'classroom_id', 'teacher_id');

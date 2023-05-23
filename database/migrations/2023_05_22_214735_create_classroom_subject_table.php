@@ -11,11 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('subjects', function (Blueprint $table) {
+        Schema::create('classroom_subject', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->unsignedBigInteger('teacher_id')->nullable();
-            $table->text('description')->nullable();
+            $table->unsignedBigInteger('classroom_id');
+            $table->unsignedBigInteger('subject_id');
+
+
+            // Add unique constraint to prevent duplicate entries
+            $table->unique(['classroom_id', 'subject_id']);
             $table->timestamps();
         });
     }
@@ -25,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('subjects');
+        Schema::dropIfExists('classroom_subject');
     }
 };
