@@ -16,9 +16,7 @@ class SubjectTable extends Component
 
     public function render()
     {
-
         $subjectQuery = Subject::query();
-
         if ($this->search) {
             $subjectQuery->where(function ($query) {
 
@@ -35,10 +33,7 @@ class SubjectTable extends Component
 
             });
         }
-
-
         $subjects= $subjectQuery->paginate(10);
-
         return view('livewire.subjects.subject-table',compact('subjects'));
     }
 }

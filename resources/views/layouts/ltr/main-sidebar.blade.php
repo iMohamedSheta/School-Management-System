@@ -563,6 +563,19 @@
             </li>
             @endif
 
+            @if(auth()->user()->isStudent())
+            <li class="mt-0.5 w-full">
+                <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap {{ in_array(Route::currentRouteName(),['student.subjects.index']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }} px-4 font-semibold text-slate-700 transition-colors" href="{{route('student.subjects.index')}}">
+                <div class="{{ in_array(Route::currentRouteName(),['student.subjects.index']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                    <i class="fa-solid fa-pen-to-square fa-lg {{ in_array(Route::currentRouteName(),['student.subjects.index']) ? 'text-white' : ''}}"></i>
+                </div>
+                <div  class="sidebar-icon">
+                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.student.subjects.index")}}</span>
+                </div>
+                </a>
+            </li>
+            @endif
+
 
 
         </ul>

@@ -73,7 +73,11 @@ return
     'assign-classroom-success'=>'The Teacher :name has been assigned to the classroom :classroom successfully.',
     'remove-assign-classroom'=>'The Teacher :name has been removed for teaching the classroom :classroom successfully.',
     'teacherclassrooms_deleted'=>"Success, removed selected teachers from teaching the selected classrooms successfully!",
-    'associate-subject-to-classroom'=>'Success, Associate Subject :name to The classroom :classroom.'
+    'associate-subject-to-classroom'=>'Success, Associate Subject :name to The classroom :classroom.',
+    'classroom-subjects-selected-removed'=>'Success, The selected subjects has been removed from the classroom. ',
+    'classroom-subject-removed'=>'Success, Subject :subject has beem removed from classroom :classroom successfully!',
+    'subject-created'=>'Success, Create new subject :name successfully.',
+
 
 
 

@@ -19,6 +19,11 @@
     -o-transform: rotate(90deg);
 }
 
+.hide-on-loading
+{
+    display:none;
+}
+
 
 .checkmark__circle {
     stroke-dasharray: 166;

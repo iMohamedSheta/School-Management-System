@@ -169,12 +169,10 @@
                         </div>
                         </div>
                 </div>
+                        <a href="{{route('classroom.subjects.index',$classroom->id)}}" class="mx-2"><i class="fa-solid fa-book hover:text-gray-800 fa-lg"></i></a>
 
-                                    <form action="{{ route('classroom.destroy', $classroom) }}" method="POST" class="inline">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="mx-4 my-1"><i class="fa-solid fa-trash text-red-600 hover:text-red-500 fa-lg"></i></button>
-                                    </form>
+                        <livewire:classroom.classroom-delete :classroom="$classroom" :wire:key="'delete-classroom-'.$classroom->id" />
+
                                 </td>
                             </tr>
                         @empty

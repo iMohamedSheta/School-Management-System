@@ -358,8 +358,14 @@ return
     'subject-name'=>'Subject Name',
     'promote-classroom-description-one' => "Welcome to the Promote Classroom page! Here, You can easily promote students from one classroom to another. Select the source classroom, destination classroom, and the students you want to promote. Click the 'Promote' button to complete the process. It's that simple!",
     'promote-classroom-description-two' => "Please ensure that you have selected the correct classrooms and students before promoting them. The promotion will update the student records and reflect the changes in the system.",
-
-
+    'delete_classroom' => 'Delete Classroom',
+    'delete_classroom_title' => 'Are you sure you want to delete this classroom?',
+    'delete_classroom_info' => 'Note that if you delete the classroom, all enrolled students will be deleted as well!',
+    'delete-classroom-subjects-title' => 'Are you sure you want to remove the selected subject from this classroom?',
+    'delete-classroom-subject-title' => 'Are you sure you want to remove subject :subject from this classroom?',
+    'classroom-subjects-title'=>'The Subjects For The Classroom - :classroom',
+    'student.subjects.index'=>'Subjects',
+    'student-subjects-title'=>'My Subjects'
 
 
 

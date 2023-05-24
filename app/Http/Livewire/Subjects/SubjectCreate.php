@@ -42,7 +42,7 @@ class SubjectCreate extends Component
 
             if($createSubject)
             {
-                return redirect()->route('subjects.index')->with('success',trans('alert.subject-created'));
+                return redirect()->route('subjects.index')->with('success',trans('alert.subject-created',['name'=>$createSubject->name]));
             }
         }
 

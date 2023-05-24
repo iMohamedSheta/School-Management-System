@@ -22,10 +22,12 @@ use App\Http\Controllers\Fees\ReceiptController;
 use App\Http\Controllers\Fees\ProcessingFeeController;
 use App\Http\Controllers\Fees\PaymentStudentController;
 use App\Http\Controllers\Attendances\AttendancesController;
+use App\Http\Controllers\Classrooms\ClassroomSubjectController;
 use App\Http\Controllers\Subjects\SubjectController;
 use App\Http\Controllers\Exams\ExamController;
 use App\Http\Controllers\Meetings\OnlineClassController;
 use App\Http\Controllers\Teachers\TeacherClassroomController;
+use App\Http\Controllers\Subjects\StudentSubjects\StudentSubjectController;
 
 
 use App\Http\Livewire\PostComponent;
@@ -94,6 +96,11 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                             Route::put('classrooms/{id}', [ClassroomController::class, 'update'])->name('classroom.update');
                             Route::delete('classrooms/{classroom}', [ClassroomController::class, 'destroy'])->name('classroom.destroy');
                             Route::delete('classrooms', [ClassroomController::class, 'deleteSelected'])->name('classroom.deleteselected');
+
+                            Route::get('classroom/{id}/subjects', [ClassroomSubjectController::class, 'index'])->name('classroom.subjects.index');
+                            Route::delete('classroom/subjects/remove/', [ClassroomSubjectController::class, 'deleteSelected'])->name('classroom.subjects.remove');
+
+
                         });
 
                         //Create User Page Routes
@@ -238,7 +245,6 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                             Route::get('meetings/create',[OnlineClassController::class,'create'])->name('meetings.create');
                             Route::post('meetings/create',[OnlineClassController::class,'createOnlineClass'])->name('meetings.store');
                             Route::delete('meetings/delete',[OnlineClassController::class,"deleteSelected"])->name('meetings.selected.destroy');
-
                         });
 
                         Route::group(['namespace'=>"Students"],function()
@@ -271,6 +277,14 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                     Route::get('discussion/{id}',[PostController::class,'index'])->name('post.show');
                     Route::delete('notification/read',[NotificationController::class,'removeNewCommmentNotification'])->name('notificationNewComment.remove');
 
+                    Route::middleware(['auth', 'checkRole:Student'])->group(function () {
+
+                        Route::group(['namespace'=>"Subjects/StudentSubjects"],function()
+                        {
+                            Route::get('student/subjects/',[StudentSubjectController::class,"index"])->name('student.subjects.index');
+                        });
+
+                    });
 
                 });
 

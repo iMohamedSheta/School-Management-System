@@ -72,6 +72,9 @@ return
     'remove-assign-classroom'=>"تم التراجع عن تعيين الاستاذ :name للفصل الدراسي :classroom بنجاح.",
     'teacherclassrooms_deleted'=>'تم التراجع عن تعيين الاستاذة المحددين للفصول الدراسية المحددة بنجاح.',
     'associate-subject-to-classroom'=>"تم ربط المادة الدراسية :name بالفصل الدراسي :classroom بنجاح.",
+    'classroom-subjects-selected-removed'=>'تم الغاء ارتباط المواد الدراسية المحددة بالفصل الدراسي بنجاح.',
+    'classroom-subject-removed'=>'تم الغاء تسجيل المادة الدراسية :subject للفصل الدراسي :classroom بنجاح.',
+    'subject-created'=>'تم اضافة مادة دراسية جديد بعنوان :name بنجاح.',
 
 
 

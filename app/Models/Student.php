@@ -106,4 +106,10 @@ class Student extends Model
     {
         return $this->attendances()->where('attendence_status', 'absent')->count();
     }
+
+    public function subjects()
+    {
+        return $this->classroom->subjects();
+    }
+
 }

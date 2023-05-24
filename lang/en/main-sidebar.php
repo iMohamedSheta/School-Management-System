@@ -72,6 +72,9 @@ return [
     'teacher.classrooms'=>'Teacher Classrooms',
     'attendance.report.export'=>'Export Attendance Report',
     'subjects.associate.classroom'=>'Associate Subject With Classroom',
+    'classroom.subjects.index'=>'Classroom Subjects',
+    'student.subjects.index'=>'My Subjects',
+
 
 
 
