@@ -20,8 +20,23 @@ class StudentController extends Controller
     public function studentInfoView($id)
     {
         $student = Student::withTrashed()->findOrFail($id);
-        return view('students.student-info',compact('student'));
+
+        if(auth()->user()->isAdmin())
+        {
+            return view('students.student-info',compact('student'));
+        }
+        elseif(auth()->user()->isTeacher() && auth()->user()->teacher->students->contains($student))
+        {
+            return view('students.student-info',compact('student'));
+        }
+        elseif(auth()->user()->isParent() && auth()->user()->parent->students->contains($student))
+        {
+            return view('students.student-info',compact('student'));
+        }
+
+        abort(403, 'Unauthorized action');
     }
+
 
     public function studentInfoEditView($id)
     {

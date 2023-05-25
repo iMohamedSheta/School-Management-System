@@ -26,6 +26,7 @@ use App\Http\Controllers\Classrooms\ClassroomSubjectController;
 use App\Http\Controllers\Subjects\SubjectController;
 use App\Http\Controllers\Exams\ExamController;
 use App\Http\Controllers\Meetings\OnlineClassController;
+use App\Http\Controllers\Parents\ParentStudents\ParentStudentController;
 use App\Http\Controllers\Teachers\TeacherClassroomController;
 use App\Http\Controllers\Subjects\StudentSubjects\StudentSubjectController;
 
@@ -247,10 +248,7 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                             Route::delete('meetings/delete',[OnlineClassController::class,"deleteSelected"])->name('meetings.selected.destroy');
                         });
 
-                        Route::group(['namespace'=>"Students"],function()
-                        {
-                            Route::get('student/information/{id}',[StudentController::class,"studentInfoView"])->name('student.info');
-                        });
+
                     });
 
                     Route::middleware(['auth', 'checkRole:Teacher'])->group(function () {
@@ -284,6 +282,23 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                             Route::get('student/subjects/',[StudentSubjectController::class,"index"])->name('student.subjects.index');
                         });
 
+                    });
+
+                    Route::middleware(['auth', 'checkRole:Parent'])->group(function () {
+
+                        Route::group(['namespace'=>"Parents/ParentStudents"],function()
+                        {
+                            Route::get('parent/students',[ParentStudentController::class,"index"])->name('parent.students.index');
+
+                        });
+                    });
+
+                    Route::middleware(['auth', 'checkRole:Admin,Parent,Teacher'])->group(function () {
+
+                        Route::group(['namespace'=>"Students"],function()
+                        {
+                            Route::get('student/information/{id}',[StudentController::class,"studentInfoView"])->name('student.info');
+                        });
                     });
 
                 });

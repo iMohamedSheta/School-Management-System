@@ -74,6 +74,7 @@ return [
     'subjects.associate.classroom'=>'Associate Subject With Classroom',
     'classroom.subjects.index'=>'Classroom Subjects',
     'student.subjects.index'=>'My Subjects',
+    'parent.students.index'=>'My Children',
 
 
 

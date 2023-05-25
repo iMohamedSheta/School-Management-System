@@ -1,7 +1,7 @@
 
 
 
-<div class="bg-white z-10 w-full h-80 shadow-xl mt-8 rounded-2xl flex justify-center items-center overflow-hidden relative">
+<div class="bg-white w-full h-80 shadow-xl mt-8 rounded-2xl flex justify-center items-center overflow-hidden relative">
     <video class="w-full" autoplay loop>
     <source src="{{asset('assets/videos/dashboard-1.mp4')}}" type="video/mp4">
         Your browser does not support the video tag.

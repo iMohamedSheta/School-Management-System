@@ -75,7 +75,9 @@ return [
     'subjects.associate.classroom'=>'ربط مادة دراسية بفصل دراسي',
     'classroom.subjects.index'=>'المواد الدراسية المسجلة للفصل الدراسي',
     'student.subjects.index'=>'المواد الدراسية',
-    
+    'parent.students.index'=>'الابناء',
+
+
 
 
 
