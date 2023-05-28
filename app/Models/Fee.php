@@ -4,10 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use OwenIt\Auditing\Auditable as AuditingAuditable;
+use OwenIt\Auditing\Contracts\Auditable;
 
-class Fee extends Model
+class Fee extends Model implements Auditable
 {
     use HasFactory;
+    use AuditingAuditable;
+
 
     // Define the $fillable property, indicating which fields can be mass-assigned
     protected $fillable = [

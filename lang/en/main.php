@@ -365,7 +365,28 @@ return
     'delete-classroom-subject-title' => 'Are you sure you want to remove subject :subject from this classroom?',
     'classroom-subjects-title'=>'The Subjects For The Classroom - :classroom',
     'student.subjects.index'=>'Subjects',
-    'student-subjects-title'=>'My Subjects'
+    'student-subjects-title'=>'My Subjects',
+    'event-type'=>'Event',
+    'auditable-type'=>'Auditable Type',
+    'user'=>'User',
+    'auditing-title'=>'Auditing of System Operations',
+    'created'=>'Created',
+    'deleted'=>'Deleted',
+    'updated'=>'Updated',
+    'new-values'=>'New Values',
+    'old-values'=>'Old Values',
+    'user-agent'=>'User Agent',
+    'url'=>'URL',
+    'ip-address'=>'User IP Address ',
+    'audit-info'=>'Auditing Of user :name operation',
+    'audit-info-description',
+    'audit-info-description'=>'Auditing of user :name, Operation type :type in the table :table .',
+    'tags'=>'Tags',
+
+
+
+
+
 
 
 

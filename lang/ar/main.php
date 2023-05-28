@@ -367,6 +367,23 @@ return
     'delete-classroom-subject-title'=>'هل انت متأكد من انك تريد الغاء تسجيل المادة الدراسية :subject للفصل الدراسي الحالي ?',
     'classroom-subjects-title'=>'المواد الدراسية المرتبطة بالفصل الدراسي - :classroom ',
     'student-subjects-title'=>'المواد الدراسية المسجلة',
+    'event-type'=>'نوع الحدث',
+    'auditable-type'=>'الجدول المدقق',
+    'user'=>'المستخدم',
+    'auditing-title'=>'التدقيق في العمليات التي تتم علي النظام',
+    'created'=>'أنشاء',
+    'deleted'=>'حذف',
+    'updated'=>'تعديل',
+    'new-values'=>'القيم الجديدة',
+    'old-values'=>'القيم القديمة',
+    'user-agent'=>'مضيف المستخدم',
+    'url'=>'الرابط',
+    'ip-address'=>'IP المستخدم',
+    'audit-info'=>'التدقيق في عملية المستخدم :name',
+    'audit-info-description'=>'التدقيق في عملية المستخدم :name, نوع العملية :type للجدول :table .',
+    'tags'=>'العلامات',
+
+
 
 
 

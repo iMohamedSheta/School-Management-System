@@ -76,6 +76,8 @@ return [
     'classroom.subjects.index'=>'المواد الدراسية المسجلة للفصل الدراسي',
     'student.subjects.index'=>'المواد الدراسية',
     'parent.students.index'=>'الابناء',
+    'auditlogs.index'=>'التدقيق في العمليات',
+
 
 
 

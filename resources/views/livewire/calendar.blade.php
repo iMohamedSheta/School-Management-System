@@ -1,15 +1,7 @@
 <div>
 
     <div id='calendar-container' class="bg-white p-8 shadow-xl mt-8 rounded-2xl m-auto" wire:ignore>
-        <div class="flex justify-end m-4">
-            <select id="viewSelector" class=" py-2.5 px-0 w-[30%] text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
-                <option value="dayGridMonth">Month View</option>
-                <option value="dayGridWeek">Week View</option>
-                <option value="dayGridDay">Day View</option>
-                <option value="timeGridWeek">Week View with Time</option>
-                <option value="timeGridDay">Day View with Time</option>
-            </select>
-        </div>
+
         <div id='calendar'></div>
     </div>
 </div>
@@ -26,6 +18,11 @@
             var data = @this.events;
 
             var calendarOptions = {
+                headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+                },
                 initialView: 'dayGridMonth', // Set the initial view to month view
                 locale: '{{ App::getLocale() }}',
                 events: JSON.parse(data),

@@ -13,9 +13,8 @@ export default defineConfig({
                 ...refreshPaths,
                 'app/Http/Livewire/**',
             ],
-        }
-        ),
+            
+        }),
 
     ]
-
 });

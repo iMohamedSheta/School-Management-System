@@ -29,6 +29,7 @@ use App\Http\Controllers\Meetings\OnlineClassController;
 use App\Http\Controllers\Parents\ParentStudents\ParentStudentController;
 use App\Http\Controllers\Teachers\TeacherClassroomController;
 use App\Http\Controllers\Subjects\StudentSubjects\StudentSubjectController;
+use App\Http\Controllers\AuditLogs\AuditLogController;
 
 
 use App\Http\Livewire\PostComponent;
@@ -68,6 +69,14 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
 
 
                     Route::middleware(['auth', 'isAdmin'])->group(function () {
+
+                        Route::group(['namespace' => 'AuditLogs'], function () {
+
+                            Route::get('auditlogs',[AuditLogController::class,'index'])->name('auditlogs.index');
+
+                        });
+
+
                         Route::get('roles',[UserRoleController::class,'index'])->name('user-role.index');
                         Route::post('roles',[UserRoleController::class,'assignrole'])->name('user-role.assign');
                         Route::get('/user/search', [SearchController::class, 'searchUsers'])->name('user.search');

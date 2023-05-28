@@ -23,6 +23,8 @@
         <link rel="stylesheet" href="{{ asset('assets/fonts/sheta/sheta.ttf') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/sheta-icons.css') }}">
 
+
+
         @yield('styles')
 
 

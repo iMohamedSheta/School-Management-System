@@ -13,6 +13,7 @@ import "@fortawesome/fontawesome-free/css/all.css";
 import 'simplebar/dist/simplebar.min.css';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
+
 // import "flowbite/dist/flowbite";
 const locale = document.querySelector('meta[name="locale"]').getAttribute('content');
 
