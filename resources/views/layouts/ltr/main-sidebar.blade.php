@@ -597,6 +597,39 @@
                 </div>
                 </a>
             </li>
+            <li class="mt-0.5 w-full">
+                <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap {{ in_array(Route::currentRouteName(),['parent.students.attendances']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }} px-4 font-semibold text-slate-700 transition-colors"
+                 href="{{route('parent.students.attendances')}}">
+                <div class="{{ in_array(Route::currentRouteName(),['parent.students.attendances']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                    <i class="fa-solid fa-clipboard-user fa-lg {{ in_array(Route::currentRouteName(),['parent.students.attendances']) ? 'text-white' : ''}}"></i>
+                </div>
+                <div  class="sidebar-icon">
+                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.parent.students.attendances")}}</span>
+                </div>
+                </a>
+            </li>
+            <li class="mt-0.5 w-full">
+                <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap {{ in_array(Route::currentRouteName(),['parent.students.invoices']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }} px-4 font-semibold text-slate-700 transition-colors"
+                 href="{{route('parent.students.invoices')}}">
+                <div class="{{ in_array(Route::currentRouteName(),['parent.students.invoices']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                    <i class="fa-sharp fa-solid fa-file-invoice-dollar fa-lg   {{ in_array(Route::currentRouteName(),['parent.students.invoices']) ? 'text-white' : ''}}"></i>
+                </div>
+                <div  class="sidebar-icon">
+                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.parent.students.invoices")}}</span>
+                </div>
+                </a>
+            </li>
+            <li class="mt-0.5 w-full">
+                <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap {{ in_array(Route::currentRouteName(),['parent.students.receipts']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }} px-4 font-semibold text-slate-700 transition-colors"
+                 href="{{route('parent.students.receipts')}}">
+                <div class="{{ in_array(Route::currentRouteName(),['parent.students.receipts']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                    <i class="fa-sharp fa-solid fa-receipt fa-lg  {{ in_array(Route::currentRouteName(),['parent.students.receipts']) ? 'text-white' : ''}}"></i>
+                </div>
+                <div  class="sidebar-icon">
+                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.parent.students.receipts")}}</span>
+                </div>
+                </a>
+            </li>
             @endif
 
 

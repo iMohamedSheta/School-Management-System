@@ -297,7 +297,10 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
 
                         Route::group(['namespace'=>"Parents/ParentStudents"],function()
                         {
-                            Route::get('parent/students',[ParentStudentController::class,"index"])->name('parent.students.index');
+                            Route::get('parent/children',[ParentStudentController::class,"index"])->name('parent.students.index');
+                            Route::get('parent/children/attendances',[ParentStudentController::class,"viewChildrenAttendance"])->name('parent.students.attendances');
+                            Route::get('parent/children/invoices',[ParentStudentController::class,"viewChildrenInvoice"])->name('parent.students.invoices');
+                            Route::get('parent/children/receipts',[ParentStudentController::class,"viewChildrenReceipt"])->name('parent.students.receipts');
 
                         });
                     });

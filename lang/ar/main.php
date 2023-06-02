@@ -382,6 +382,15 @@ return
     'audit-info'=>'التدقيق في عملية المستخدم :name',
     'audit-info-description'=>'التدقيق في عملية المستخدم :name, نوع العملية :type للجدول :table .',
     'tags'=>'العلامات',
+    'child'=>'الابن',
+    'select-child'=>'اختيار ابن',
+    'no-children-feeinvoicesinvoices'=>'لا توجد فواتير مسجلة علي الابناء.',
+    'all-children'=>'جميع الابناء',
+    'select-attendnace-type'=>'اختيار الغياب او الحضور',
+    'all-types'=>'جميع الانواع',
+    'no-attendance-children'=>'لا يوجد غياب مسجل علي الابن.',
+
+
 
 
 

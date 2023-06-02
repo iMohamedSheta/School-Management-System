@@ -382,7 +382,13 @@ return
     'audit-info-description',
     'audit-info-description'=>'Auditing of user :name, Operation type :type in the table :table .',
     'tags'=>'Tags',
-
+    'child'=>'Child',
+    'select-child'=>'Select Child',
+    'no-children-feeinvoicesinvoices'=>'There is no invoices on the system for your children.',
+    'all-children'=>'All Children',
+    'select-attendnace-type'=>'Select Attendance Type',
+    'all-types'=>'All Types',
+    'no-attendance-children'=>'There is no attendance on the system for your children.',
 
 
 

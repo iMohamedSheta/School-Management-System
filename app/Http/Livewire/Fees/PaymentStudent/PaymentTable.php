@@ -39,6 +39,7 @@ class PaymentTable extends Component
         $payments= $paymentQuery->paginate(10);
 
         foreach ($payments as $payment) {
+
             // Convert amount to cents (or the smallest unit of currency)
             $amount = (int)(round($payment->amount,2) * 100);
             $currencyCode = $payment->currency_code;

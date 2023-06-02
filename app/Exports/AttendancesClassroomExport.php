@@ -57,7 +57,7 @@ class AttendancesClassroomExport implements FromCollection , WithHeadings , With
                 'Grade' => $attendanceStudent->grade->name,
                 'Classroom' => $attendanceStudent->classroom->name,
                 'Attendence Date' => $attendanceStudent->attendence_date,
-                'Status' => $attendanceStudent->attendence_status ? 'حضور' : 'غياب',
+                'Status' => $attendanceStudent->attendence_status ?  trans('main.presence')  : trans('main.absent'),
                 "Teacher Name" => $attendanceStudent->teacher_id ? $attendanceStudent->teacher->teacher_name : null,
                 'Created At' => $attendanceStudent->created_at->format('Y-m-d'),
                 'Updated At' => $attendanceStudent->updated_at->format('Y-m-d'),

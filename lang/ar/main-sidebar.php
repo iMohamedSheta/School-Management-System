@@ -77,6 +77,10 @@ return [
     'student.subjects.index'=>'المواد الدراسية',
     'parent.students.index'=>'الابناء',
     'auditlogs.index'=>'التدقيق في العمليات',
+    'parent.students.attendances'=>'غياب الابناء',
+    'parent.students.invoices'=>'فواتير الابناء',
+    'parent.students.receipts'=>'مدفوعات الابناء',
+
 
 
 

@@ -76,6 +76,9 @@ return [
     'student.subjects.index'=>'My Subjects',
     'parent.students.index'=>'My Children',
     'auditlogs.index'=>'Audit Logs',
+    'parent.students.attendances'=>'Children Attendances',
+    'parent.students.invoices'=>'Children Invoices',
+    'parent.students.receipts'=>'Children Receipts',
 
 
 
