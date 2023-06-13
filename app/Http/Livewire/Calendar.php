@@ -44,7 +44,7 @@ class Calendar extends Component
     {
         $eventdata = Event::find($id);
         $eventdata->delete();
-        return json_encode($eventdata);
+
     }
 
     public function render()

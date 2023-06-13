@@ -79,6 +79,9 @@ return [
     'parent.students.attendances'=>'Children Attendances',
     'parent.students.invoices'=>'Children Invoices',
     'parent.students.receipts'=>'Children Receipts',
+    'settings.academic_years.index'=>'Academic Years',
+    'meetings.student.index'=>'Online Classes',
+
 
 
 

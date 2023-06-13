@@ -30,7 +30,7 @@ use App\Http\Controllers\Parents\ParentStudents\ParentStudentController;
 use App\Http\Controllers\Teachers\TeacherClassroomController;
 use App\Http\Controllers\Subjects\StudentSubjects\StudentSubjectController;
 use App\Http\Controllers\AuditLogs\AuditLogController;
-
+use App\Http\Controllers\SchoolSettings\AcademicYearController;
 
 use App\Http\Livewire\PostComponent;
 
@@ -73,6 +73,13 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                         Route::group(['namespace' => 'AuditLogs'], function () {
 
                             Route::get('auditlogs',[AuditLogController::class,'index'])->name('auditlogs.index');
+
+                        });
+
+                        Route::group(['namespace' => 'SchoolSettings'], function () {
+
+                            Route::get('academic_years',[AcademicYearController::class,'index'])->name('settings.academic_years.index');
+                            Route::delete('academic_years',[AcademicYearController::class,'deleteSelected'])->name('settings.academic_years.selected.destroy');
 
                         });
 
@@ -207,9 +214,6 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                             Route::get('teacher/assign-classroom/{id}',[TeacherClassroomController::class,"create"])->name('teacher.assign.classroom');
                             Route::delete('teachers/assign-classroom',[TeacherClassroomController::class,"destroy"])->name('teacher.remove.assign.classroom');
                             Route::delete('teachers/assign-classrooms',[TeacherClassroomController::class,"deleteSelected"])->name('teacher.remove.selected.assign.classroom');
-
-
-
                         });
 
 
@@ -289,6 +293,11 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                         Route::group(['namespace'=>"Subjects/StudentSubjects"],function()
                         {
                             Route::get('student/subjects/',[StudentSubjectController::class,"index"])->name('student.subjects.index');
+                        });
+
+                        Route::group(['namespace'=>"Meetings"],function()
+                        {
+                            Route::get('student/meetings',[OnlineClassController::class,'viewStudentOnlineClasses'])->name('meetings.student.index');
                         });
 
                     });

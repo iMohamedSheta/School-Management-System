@@ -80,6 +80,8 @@ return [
     'parent.students.attendances'=>'غياب الابناء',
     'parent.students.invoices'=>'فواتير الابناء',
     'parent.students.receipts'=>'مدفوعات الابناء',
+    'settings.academic_years.index'=>'العام الاكاديمي',
+    'meetings.student.index'=>'الحصص الاونلاين',
 
 
 

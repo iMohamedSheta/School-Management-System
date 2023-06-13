@@ -76,7 +76,9 @@ return
     'associate-subject-to-classroom'=>'Success, Associate Subject :name to The classroom :classroom.',
     'classroom-subjects-selected-removed'=>'Success, The selected subjects has been removed from the classroom. ',
     'classroom-subject-removed'=>'Success, Subject :subject has beem removed from classroom :classroom successfully!',
-    'subject-created'=>'Success, Create new subject :name successfully.',
+    'subject-created'=>'Success, Created new subject :name successfully.',
+    'academic-year-created'=>'Success, Created new academic year :name successfully.',
+    'selected-academic-years-deleted'=>'Success, The selected academic years has been deleted successfully!',
 
 
 

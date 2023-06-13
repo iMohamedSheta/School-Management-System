@@ -1,6 +1,6 @@
 <div>
 
-    <div id='calendar-container' class="bg-white p-8 shadow-xl mt-8 rounded-2xl m-auto" wire:ignore>
+    <div id='calendar-container' class="bg-white p-8 shadow-xl mt-8 rounded-2xl m-auto" >
 
         <div id='calendar'></div>
     </div>

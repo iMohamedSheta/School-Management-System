@@ -23,6 +23,11 @@ class OnlineClassController extends Controller
         return view('online_meetings.create_meeting');
     }
 
+    public function viewStudentOnlineClasses()
+    {
+        return view('online_meetings.student_online_meetings.student_online_meetings');
+    }
+
 
     public function createOnlineClass(Request $request)
     {

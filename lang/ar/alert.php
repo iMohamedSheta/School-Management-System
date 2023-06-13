@@ -75,6 +75,10 @@ return
     'classroom-subjects-selected-removed'=>'تم الغاء ارتباط المواد الدراسية المحددة بالفصل الدراسي بنجاح.',
     'classroom-subject-removed'=>'تم الغاء تسجيل المادة الدراسية :subject للفصل الدراسي :classroom بنجاح.',
     'subject-created'=>'تم اضافة مادة دراسية جديد بعنوان :name بنجاح.',
+    'academic-year-created'=>'تم اضافة عام دراسي جديد بنجاح باسم :name.',
+    'selected-academic-years-deleted'=>'تم حذف الاعوام الاكاديمية المحددة بنجاح!',
+
+
 
 
 

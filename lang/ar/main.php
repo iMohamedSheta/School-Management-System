@@ -389,6 +389,22 @@ return
     'select-attendnace-type'=>'اختيار الغياب او الحضور',
     'all-types'=>'جميع الانواع',
     'no-attendance-children'=>'لا يوجد غياب مسجل علي الابن.',
+    'no-academic_years'=>'لا توجد اعوام دراسية مسجلة في النظام.',
+    'start-year'=>'بداية العام الدراسي',
+    'end-year'=>'نهاية العام الدراسي',
+    'create-academic-year'=>'اضافة عام اكاديمي',
+    'term'=>'الترم',
+    'create'=>'اضافة',
+    'delete_academic_year'=>'حذف العام الاكاديمي',
+    'delete_academic_year_title'=>'هل انت متأكد من انك تريد حذف العام الاكاديمي :name ?',
+    'delete-academic-years-title'=>'هل انت متأكد من انك تريد حذف الاعوام الاكاديمية المحددة ؟',
+    'count-parent-children'=>'عدد الابناء',
+    'get-total-children-debit'=>'مجموع ديون الابناء',
+    
+
+    
+
+
 
 
 

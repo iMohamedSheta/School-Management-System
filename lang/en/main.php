@@ -389,6 +389,20 @@ return
     'select-attendnace-type'=>'Select Attendance Type',
     'all-types'=>'All Types',
     'no-attendance-children'=>'There is no attendance on the system for your children.',
+    'no-academic_years'=>'There is no Academic years on the system.',
+    'start-year'=>'Start Of The Year',
+    'end-year'=>'End Of The Year',
+    'create-academic-year'=>'Create Academic Year',
+    'term'=>'Term',
+    'create'=>'Create',
+    'delete_academic_year_title'=>'Are you sure you want to delete the academic year :name ?',
+    'delete-academic-years-title'=>'Are you sure you want to delete the selected academic years ?',
+    'count-parent-children'=>'Children',
+    'get-total-children-debit'=>'Children Total Debit',
+
+
+
+
 
 
 
