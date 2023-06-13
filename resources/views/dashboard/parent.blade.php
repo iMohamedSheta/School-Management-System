@@ -14,7 +14,7 @@
                     <div>
                     <p class="mb-0 font-semibold leading-normal text-sm">{{ trans('main.count-parent-children') }} </p>
                     <h5 class="mb-0 font-bold">
-                        {{auth()->user()->parent->countChildren()}}
+                        {{auth()->user()->parent->countChildren() ?? __('-') }}
                     </h5>
                     </div>
                 </div>
@@ -35,8 +35,8 @@
                 <div class="flex-none w-2/3 max-w-full px-3">
                     <div>
                     <p class="mb-0 font-semibold leading-normal text-sm">{{ trans('main.get-total-children-debit') }}</p>
-                    <h5 class="mb-0 font-extrabold font-mono  {{ auth()->user()->parent->getTotalChildrenDebit() >= 0 ? 'text-red-600' : 'text-green-500' }}">
-                            {{auth()->user()->parent->getTotalChildrenDebit()}}
+                    <h5 class="mb-0 font-extrabold font-mono  {{ auth()->user()->parent->getTotalChildrenDebit() > 0 ? 'text-red-600' : 'text-green-500' }}">
+                            {{auth()->user()->parent->getTotalChildrenDebit() ?? __('-') }}
                     </h5>
                     </div>
                 </div>
