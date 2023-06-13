@@ -82,7 +82,5 @@ class CreateFees extends Component
         }
 
         return redirect()->route('fee.create')->with('error',trans('alert.error'));
-
-
     }
 }

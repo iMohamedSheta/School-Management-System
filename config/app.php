@@ -69,7 +69,7 @@ return [
     |
     */
 
-    'timezone' => 'Africa/Cairo',
+    'timezone' => env('TIMEZONE','Africa/Cairo'),
 
     /*
     |--------------------------------------------------------------------------
@@ -182,6 +182,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        OwenIt\Auditing\AuditingServiceProvider::class,
+
 
 
 
@@ -217,10 +219,6 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
-        "isAdmin" =>\App\Http\Middleware\AdminMiddleware::class,
-        "isStudent" =>\App\Http\Middleware\StudentMiddleware::class,
-        "isTeacher" =>\App\Http\Middleware\TeacherMiddleware::class,
-        "isParent" =>\App\Http\Middleware\ParentMiddleware::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
 

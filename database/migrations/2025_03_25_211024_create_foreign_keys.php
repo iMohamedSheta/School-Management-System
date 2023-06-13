@@ -128,6 +128,25 @@ return new class extends Migration
             $table->foreign('classroom_id')->references('id')->on('classrooms')->onDelete('cascade');
             $table->foreign('teacher_id')->references('id')->on('teachers')->onDelete('cascade');
         });
+        Schema::table('subjects', function (Blueprint $table) {
+            $table->foreign('teacher_id')->references('id')->on('teachers')->onDelete('cascade');
+        });
+        Schema::table('exams', function (Blueprint $table) {
+            $table->foreign('subject_id')->references('id')->on('subjects')->onDelete('cascade');
+        });
+        Schema::table('online_classes', function (Blueprint $table) {
+            $table->foreign('grade_id')->references('id')->on('grades')->onDelete('cascade');
+            $table->foreign('classroom_id')->references('id')->on('classrooms')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        });
+        Schema::table('teacher_classrooms', function (Blueprint $table) {
+            $table->foreign('teacher_id')->references('id')->on('teachers')->onDelete('cascade');
+            $table->foreign('classroom_id')->references('id')->on('classrooms')->onDelete('cascade');
+        });
+        Schema::table('classroom_subject', function (Blueprint $table) {
+            $table->foreign('classroom_id')->references('id')->on('classrooms')->onDelete('cascade');
+            $table->foreign('subject_id')->references('id')->on('subjects')->onDelete('cascade');
+        });
 
     }
 
@@ -245,7 +264,25 @@ return new class extends Migration
             $table->dropForeign(['grade_id']);
             $table->dropForeign(['classroom_id']);
             $table->dropForeign(['teacher_id']);
-
+        });
+        Schema::table('subjects', function (Blueprint $table) {
+            $table->dropForeign(['teacher_id']);
+        });
+        Schema::table('exams', function (Blueprint $table) {
+            $table->dropForeign(['subject_id']);
+        });
+        Schema::table('online_classes', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+            $table->dropForeign(['grade_id']);
+            $table->dropForeign(['classroom_id']);
+        });
+        Schema::table('teacher_classrooms', function (Blueprint $table) {
+            $table->dropForeign(['teacher_id']);
+            $table->dropForeign(['classroom_id']);
+        });
+        Schema::table('classroom_subject', function (Blueprint $table) {
+            $table->dropForeign(['subject_id']);
+            $table->dropForeign(['classroom_id']);
         });
 
 

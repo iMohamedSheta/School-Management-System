@@ -20,8 +20,23 @@ class StudentController extends Controller
     public function studentInfoView($id)
     {
         $student = Student::withTrashed()->findOrFail($id);
-        return view('students.student-info',compact('student'));
+
+        if(auth()->user()->isAdmin())
+        {
+            return view('students.student-info',compact('student'));
+        }
+        elseif(auth()->user()->isTeacher() && auth()->user()->teacher->students->contains($student))
+        {
+            return view('students.student-info',compact('student'));
+        }
+        elseif(auth()->user()->isParent() && auth()->user()->parent->students->contains($student))
+        {
+            return view('students.student-info',compact('student'));
+        }
+
+        abort(403, 'Unauthorized action');
     }
+
 
     public function studentInfoEditView($id)
     {
@@ -41,15 +56,15 @@ class StudentController extends Controller
     public function destroy(Request $request)
     {
 
-            $userId = $request->studentIdForDelete;
-            $user = User::where('id',$userId)->first();
-            $userName=$user->student->name;
-            $deleteStudentUser = $user->delete();
+        $userId = $request->studentIdForDelete;
+        $user = User::where('id',$userId)->first();
+        $userName=$user->student->name;
+        $deleteStudentUser = $user->delete();
 
-            if($deleteStudentUser)
-            {
-                return redirect()->back()->with('success', trans('alert.delete_student_success',['name'=>$userName]));
-            }
+        if($deleteStudentUser)
+        {
+            return redirect()->back()->with('success', trans('alert.delete_student_success',['name'=>$userName]));
+        }
 
         return redirect()->back()->with('error', trans('alert.error'));
 

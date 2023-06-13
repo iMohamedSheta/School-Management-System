@@ -171,17 +171,52 @@
             </ul>
         </li>
 
-                    <li class="w-full mt-2 ">
-                        <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
-                            {{ in_array(Route::currentRouteName(),['teachers.index','teacher.info','teacher.edit','teacher.email.edit']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
-                            href="{{ route('teachers.index') }}">
-                            <div
-                            class="{{ in_array(Route::currentRouteName(),['teachers.index','teacher.info','teacher.edit','teacher.email.edit']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                            <i class="fa-solid fa-person-chalkboard  {{in_array(Route::currentRouteName(),['teachers.index','teacher.info','teacher.edit','teacher.email.edit']) ? 'text-white' : ''}}"></i>
-                            </div>
-                            <div  class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.teachers")}}</span></div>
-                        </a>
-                    </li>
+        <li class="w-full mt-2  listopennavbar" >
+            <a  id="listopennavbar" aria-controls="data-accordion-icon7" data-collapse-toggle="data-accordion-icon7" class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center
+                whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                {{in_array(Route::currentRouteName(),['teachers.index','teacher.info','teacher.edit','teacher.email.edit','teacher.assign.classroom','teachers.classrooms']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                href="#">
+                <div
+                class="{{ in_array(Route::currentRouteName(),['teachers.index','teacher.info','teacher.edit','teacher.email.edit','teacher.assign.classroom','teachers.classrooms']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                <i class="fa-solid fa-person-chalkboard {{ in_array(Route::currentRouteName(),['teachers.index','teacher.info','teacher.edit','teacher.email.edit','teacher.assign.classroom','teachers.classrooms']) ?'text-white' : ''}}"></i>
+                </div>
+                <div id="sidebariconOnly13" class="sidebar-icon"> <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.teachers")}}</span>
+                    <i  id="arrowicon" class="arrowicon fa-solid fa-chevron-down px-3  shrink-0 transition-transform duration-200"></i>
+                </div>
+                </a>
+
+                <ul  id="data-accordion-icon7" class="hidden px-4">
+                    <div class="border-x-2 border-b rounded-xl border-gray-400  bg-gray-100 py-2">
+
+                        <li class="w-full mt-2 ">
+                            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                                {{ in_array(Route::currentRouteName(),['teachers.index','teacher.info','teacher.edit','teacher.email.edit']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                                href="{{ route('teachers.index') }}">
+                                <div
+                                class="{{ in_array(Route::currentRouteName(),['teachers.index','teacher.info','teacher.edit','teacher.email.edit']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                                <i class="fa-solid fa-person-chalkboard  {{in_array(Route::currentRouteName(),['teachers.index','teacher.info','teacher.edit','teacher.email.edit']) ? 'text-white' : ''}}"></i>
+                                </div>
+                                <div  class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.teachers")}}</span></div>
+                            </a>
+                        </li>
+                        <li class="w-full mt-2 ">
+                            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                                {{ in_array(Route::currentRouteName(),['teachers.classrooms']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                                href="{{ route('teachers.classrooms') }}">
+                                <div
+                                class="{{ in_array(Route::currentRouteName(),['teachers.classrooms']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                                <i class="fas fa-chalkboard-teacher {{ in_array(Route::currentRouteName(),['teachers.classrooms']) ? 'text-white' : ''}}"></i>
+                                </div>
+                                <div  class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.teachers.classrooms")}}</span></div>
+                            </a>
+                        </li>
+
+                    </div>
+                </ul>
+            </li>
+
+
+
                     <li class="w-full mt-2 ">
                         <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
                             {{ in_array(Route::currentRouteName(),['parents.index','parent.info','parent.edit','parent.email.edit']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
@@ -290,50 +325,199 @@
                         </a>
                     </li>
 
-
-
                 </div>
             </ul>
         </li>
 
+                <li class="w-full mt-2  listopennavbar " >
+                    <a  id="listopennavbar" aria-controls="data-accordion-icon4" data-collapse-toggle="data-accordion-icon4" class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center
+                        whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                        {{ in_array(Route::currentRouteName(),['subjects.index','subjects.create','subjects.associate.classroom']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                        href="#">
+                        <div
+                        class="{{ in_array(Route::currentRouteName(),['subjects.index','subjects.create','subjects.associate.classroom']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                        <i class="fa-solid fa-book fa-lg {{in_array(Route::currentRouteName(),['subjects.index','subjects.create','subjects.associate.classroom']) ? 'text-white' : ''}}"></i>
+                    </div>
+                        <div id="sidebariconOnly13" class="sidebar-icon"> <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.subjects.index")}}</span>
+                            <i  id="arrowicon" class="arrowicon fa-solid fa-chevron-down px-3  shrink-0 transition-transform duration-200"></i>
+                        </div>
+                        </a>
 
-        <li class="w-full mt-2 ">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
-                {{ in_array(Route::currentRouteName(),['attendances.index','attendances.classrooms']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
-                href="{{ route('attendances.classrooms') }}">
-                <div
-                class="{{ in_array(Route::currentRouteName(),['attendances.index','attendances.classrooms']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-cente? 'text-white' : ''r justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                <i class="fa-solid fa-pen-to-square {{ in_array(Route::currentRouteName(),['attendances.index','attendances.classrooms']) ? 'text-white' : ''}}"></i>
-                </div>
-                <div  class="sidebar-icon"><span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.attendances.classrooms")}}</span></div>
-            </a>
-        </li>
+                        <ul  id="data-accordion-icon4" class="hidden px-4  transition duration-1000  ">
+                            <div class="border-x-2 border-b rounded-xl border-gray-400  bg-gray-100 py-2">
+
+                                <li class="w-full mt-2 ">
+                                    <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                                        {{ in_array(Route::currentRouteName(),['subjects.index']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                                        href="{{ route('subjects.index') }}">
+                                        <div
+                                        class="{{ in_array(Route::currentRouteName(),['subjects.index']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                                        <i class="fa-solid fa-book fa-lg {{ in_array(Route::currentRouteName(),['subjects.index']) ? 'text-white' : ''}}"></i>
+                                        </div>
+                                        <div  class="sidebar-icon"><span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.subjects.index")}}</span></div>
+                                    </a>
+                                </li>
+                                <li class="w-full mt-2 ">
+                                    <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                                        {{ in_array(Route::currentRouteName(),['subjects.create']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                                        href="{{ route('subjects.create') }}">
+                                        <div
+                                        class="{{ in_array(Route::currentRouteName(),['subjects.create']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                                        <i class="fa-solid fa-book-open fa-lg {{ in_array(Route::currentRouteName(),['subjects.create']) ? 'text-white' : ''}}"></i>
+                                        </div>
+                                        <div  class="sidebar-icon"><span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.subjects.create")}}</span></div>
+                                    </a>
+                                </li>
+                            </div>
+                        </ul>
+                    </li>
                     @endif
+                    @if(auth()->user()->isAdmin() || auth()->user()->isTeacher())
 
-                    {{-- -------------------------------------------------------------------------------------------------------------------------------------------------------------- --}}
+                <li class="w-full mt-2  listopennavbar " >
+                    <a  id="listopennavbar" aria-controls="data-accordion-icon5" data-collapse-toggle="data-accordion-icon5" class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center
+                        whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                        {{ in_array(Route::currentRouteName(),['exams.index','exams.create']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                        href="#">
+                        <div
+                        class="{{ in_array(Route::currentRouteName(),['exams.index','exams.create']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                        <i class="fa-solid fa-book fa-lg {{in_array(Route::currentRouteName(),['exams.index','exams.create']) ? 'text-white' : ''}}"></i>
+                    </div>
+                        <div id="sidebariconOnly13" class="sidebar-icon"> <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.exams.index")}}</span>
+                            <i  id="arrowicon" class="arrowicon fa-solid fa-chevron-down px-3  shrink-0 transition-transform duration-200"></i>
+                        </div>
+                        </a>
+
+                        <ul  id="data-accordion-icon5" class="hidden px-4  transition duration-1000  ">
+                            <div class="border-x-2 border-b rounded-xl border-gray-400  bg-gray-100 py-2">
+
+                                <li class="w-full mt-2 ">
+                                    <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                                        {{ in_array(Route::currentRouteName(),['exams.index']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                                        href="{{ route('exams.index') }}">
+                                        <div
+                                        class="{{ in_array(Route::currentRouteName(),['exams.index']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                                        <i class="fa-solid fa-book fa-lg {{ in_array(Route::currentRouteName(),['exams.index']) ? 'text-white' : ''}}"></i>
+                                        </div>
+                                        <div  class="sidebar-icon"><span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.exams.index")}}</span></div>
+                                    </a>
+                                </li>
+                                <li class="w-full mt-2 ">
+                                    <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                                        {{ in_array(Route::currentRouteName(),['exams.create']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                                        href="{{ route('exams.create') }}">
+                                        <div
+                                        class="{{ in_array(Route::currentRouteName(),['exams.create']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                                        <i class="fa-solid fa-book fa-lg {{ in_array(Route::currentRouteName(),['exams.create']) ? 'text-white' : ''}}"></i>
+                                        </div>
+                                        <div  class="sidebar-icon"><span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.exams.create")}}</span></div>
+                                    </a>
+                                </li>
+                            </div>
+                        </ul>
+                    </li>
+
+                    <li class="w-full mt-2 ">
+                        <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                            {{ in_array(Route::currentRouteName(),['attendances.index','attendance.classroom']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                            href="{{ route('attendances.index') }}">
+                            <div
+                            class="{{ in_array(Route::currentRouteName(),['attendances.index','attendance.classroom']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                            <i class="fa-solid fa-clipboard-user fa-lg {{ in_array(Route::currentRouteName(),['attendances.index','attendance.classroom']) ? 'text-white' : ''}}"></i>
+                            </div>
+                            <div  class="sidebar-icon"><span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.attendances.index")}}</span></div>
+                        </a>
+                    </li>
+                    <li class="w-full mt-2 ">
+                        <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                            {{ in_array(Route::currentRouteName(),['attendance.report.export']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                            href="{{ route('attendance.report.export') }}">
+                            <div
+                            class="{{ in_array(Route::currentRouteName(),['attendance.report.export'])  ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                            <i class="fa-solid  fa-download fa-lg  {{ in_array(Route::currentRouteName(),['attendance.report.export']) ? 'text-white' : ''}}"></i>
+                            </div>
+                            <div  class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.attendance.report.export")}}</span></div>
+                        </a>
+                    </li>
+
+                    <li class="w-full mt-2  listopennavbar " >
+                        <a  id="listopennavbar" aria-controls="data-accordion-icon6" data-collapse-toggle="data-accordion-icon6" class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center
+                            whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                            {{ in_array(Route::currentRouteName(),['meetings.index','meetings.create']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                            href="#">
+                            <div
+                            class="{{ in_array(Route::currentRouteName(),['meetings.index','meetings.create']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                            <i class="sheta sheta-zoom-app text-2xl {{in_array(Route::currentRouteName(),['meetings.index','meetings.create']) ? 'text-white' : ''}}"></i>
+                        </div>
+                            <div id="sidebariconOnly13" class="sidebar-icon"> <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.meetings.index")}}</span>
+                                <i  id="arrowicon" class="arrowicon fa-solid fa-chevron-down px-3  shrink-0 transition-transform duration-200"></i>
+                            </div>
+                            </a>
+
+                            <ul  id="data-accordion-icon6" class="hidden px-4  transition duration-1000  ">
+                                <div class="border-x-2 border-b rounded-xl border-gray-400  bg-gray-100 py-2">
+
+                                    <li class="w-full mt-2 ">
+                                        <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                                            {{ in_array(Route::currentRouteName(),['meetings.index']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                                            href="{{ route('meetings.index') }}">
+                                            <div
+                                            class="{{ in_array(Route::currentRouteName(),['meetings.index']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                                            <i class="fa-brands fa-readme text-xl {{ in_array(Route::currentRouteName(),['meetings.index']) ? 'text-white' : ''}}"></i>
+                                            </div>
+                                            <div  class="sidebar-icon"><span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.meetings.index")}}</span></div>
+                                        </a>
+                                    </li>
+                                    <li class="w-full mt-2 ">
+                                        <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                                            {{ in_array(Route::currentRouteName(),['meetings.create']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                                            href="{{ route('meetings.create') }}">
+                                            <div
+                                            class="{{ in_array(Route::currentRouteName(),['meetings.create']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                                            <i class="sheta sheta-zoom-app text-2xl  {{ in_array(Route::currentRouteName(),['meetings.create']) ? 'text-white' : ''}}"></i>
+                                            </div>
+                                            <div  class="sidebar-icon"><span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.meetings.create")}}</span></div>
+                                        </a>
+                                    </li>
+                                </div>
+                            </ul>
+                        </li>
+                @endif
+                {{-- -------------------------------------------------------------------------------------------------------------------------------------------------------------- --}}
+            @if(!auth()->user()->isParent())
                 <li class="w-full mt-2 ">
                     <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
                         {{ in_array(Route::currentRouteName(),['posts.index','post.show']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
                         href="{{ route('posts.index') }}">
                         <div
-                        class="{{ in_array(Route::currentRouteName(),['posts.index','post.show']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-cente? 'text-white' : ''r justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                        <i class="fa-solid fa-pen-to-square {{ in_array(Route::currentRouteName(),['posts.index','post.show']) ? 'text-white' : ''}}"></i>
+                        class="{{ in_array(Route::currentRouteName(),['posts.index','post.show']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                        <i class="fa-solid fa-pen-to-square fa-lg {{ in_array(Route::currentRouteName(),['posts.index','post.show']) ? 'text-white' : ''}}"></i>
                         </div>
                         <div  class="sidebar-icon"><span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.posts.index")}}</span></div>
                     </a>
                 </li>
+            @endif
 
 
-                @if(auth()->user()->isAdmin())
-
-
+            @if(auth()->user()->isAdmin())
+                <li class="w-full mt-2 ">
+                    <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                        {{ (Route::currentRouteName()== 'settings.academic_years.index') ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                        href="{{ route('settings.academic_years.index') }}">
+                        <div
+                        class="{{ Route::currentRouteName() == 'settings.academic_years.index' ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                        <i class="fa-solid fa-calendar fa-lg {{Route::currentRouteName() == 'settings.academic_years.index' ? 'text-white' : ''}}"></i>
+                        </div>
+                        <div id="sidebariconOnly10" class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.settings.academic_years.index")}}</span></div>
+                    </a>
+                </li>
                 <li class="w-full mt-2 ">
                     <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
                         {{ (Route::currentRouteName()== 'grade') ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
                         href="{{ route('grade') }}">
                         <div
                         class="{{ Route::currentRouteName() == 'grade' ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                        <i class="fa-solid fa-graduation-cap {{Route::currentRouteName() == 'grade' ? 'text-white' : ''}}"></i>
+                        <i class="fa-solid fa-users-viewfinder fa-lg {{Route::currentRouteName() == 'grade' ? 'text-white' : ''}}"></i>
                         </div>
                         <div id="sidebariconOnly10" class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.grades")}}</span></div>
                     </a>
@@ -345,64 +529,110 @@
                         href="{{ route("classrooms.index") }}">
                         <div
                         class="{{ Route::currentRouteName() == 'classrooms.index' ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                        <i class="fas fa-chalkboard-teacher {{Route::currentRouteName() == "classrooms.index" ? 'text-white' : ''}}"></i>
+                        <i class="fa-solid fa-chalkboard fa-lg {{Route::currentRouteName() == "classrooms.index" ? 'text-white' : ''}}"></i>
                         </div>
                         <div  class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.classes")}}</span></div>
                     </a>
                 </li>
+                <li class="w-full mt-2 ">
+                    <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                        {{ (Route::currentRouteName()== "auditlogs.index") ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                        href="{{ route("auditlogs.index") }}">
+                        <div
+                        class="{{ Route::currentRouteName() == 'auditlogs.index' ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                        <i class="fa-solid fa-clipboard-check fa-lg {{Route::currentRouteName() == "auditlogs.index" ? 'text-white' : ''}}"></i>
+                        </div>
+                        <div  class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.auditlogs.index")}}</span></div>
+                    </a>
+                </li>
+                @endif
 
 
+                @if(auth()->user()->isTeacher())
 
-
-
-
-
-                    {{-- --------------------------------------------------------------------------------------------------- --}}
-                    {{-- <li class="listopennavbar w-full mt-2 " id="listopennavbar" >
-                        <a  aria-controls="data-accordion-icon" data-collapse-toggle="data-accordion-icon" class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center
-                            whitespace-nowrap px-4 transition-colors font-semibold text-slate-700 {{  in_array(Route::currentRouteName(), ['parent.index', 'parent.add']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
-                            href="#">
+                    <li class="w-full mt-2 ">
+                        <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                            {{ in_array(Route::currentRouteName(),['teacher.classrooms','student.info']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                            href="{{ route('teacher.classrooms') }}">
                             <div
-                            class="{{ in_array(Route::currentRouteName(), ['parent.index', 'parent.add']) ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                            <i class="fa-solid fa-house {{  in_array(Route::currentRouteName(), ['parent.index', 'parent.add']) ?'text-white' : ''}}"></i>
+                            class="{{ in_array(Route::currentRouteName(),['teacher.classrooms','student.info'])  ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                            <i class="fa-solid  fa-user-group fa-lg {{ in_array(Route::currentRouteName(),['teacher.classrooms','student.info'])  ? 'text-white' : ''}}"></i>
                             </div>
-                            <div id="sidebariconOnly7" class="sidebar-icon"> <span class=" mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.parent")}}</span>
-                                <i  id="arrowicon" class="arrowicon fa-solid fa-chevron-down px-3  shrink-0 transition-transform duration-200"></i>
+                            <div  class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.teacher.classrooms")}}</span></div>
+                        </a>
+                    </li>
+                @endif
+                @if(auth()->user()->isStudent())
+                    <li class="w-full mt-2 ">
+                        <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                            {{ in_array(Route::currentRouteName(),['student.subjects.index']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                            href="{{ route('student.subjects.index') }}">
+                            <div
+                            class="{{ in_array(Route::currentRouteName(),['student.subjects.index'])  ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                            <i class="fa-solid fa-book fa-lg {{ in_array(Route::currentRouteName(),['student.subjects.index'])  ? 'text-white' : ''}}"></i>
                             </div>
-                            </a>
+                            <div  class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.student.subjects.index")}}</span></div>
+                        </a>
+                    </li>
+                    <li class="w-full mt-2 ">
+                        <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                            {{ in_array(Route::currentRouteName(),['meetings.student.index']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                            href="{{ route('meetings.student.index') }}">
+                            <div
+                            class="{{ in_array(Route::currentRouteName(),['meetings.student.index'])  ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                            <i class="fa-brands fa-readme text-xl {{ in_array(Route::currentRouteName(),['meetings.student.index'])  ? 'text-white' : ''}}"></i>
+                            </div>
+                            <div  class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.meetings.student.index")}}</span></div>
+                        </a>
+                    </li>
+                @endif
+                @if(auth()->user()->isParent())
+                    <li class="w-full mt-2 ">
+                        <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                            {{ in_array(Route::currentRouteName(),['parent.students.index','student.info']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                            href="{{ route('parent.students.index') }}">
+                            <div
+                            class="{{ in_array(Route::currentRouteName(),['parent.students.index','student.info'])  ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                            <i class="fa-solid fa-chalkboard-user fa-sharp fa-lg {{ in_array(Route::currentRouteName(),['parent.students.index','student.info'])  ? 'text-white' : ''}}"></i>
+                            </div>
+                            <div  class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.parent.students.index")}}</span></div>
+                        </a>
+                    </li>
+                    <li class="w-full mt-2 ">
+                        <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                            {{ in_array(Route::currentRouteName(),['parent.students.attendances']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                            href="{{ route('parent.students.attendances') }}">
+                            <div
+                            class="{{ in_array(Route::currentRouteName(),['parent.students.attendances'])  ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                            <i class="fa-solid fa-clipboard-user fa-lg {{ in_array(Route::currentRouteName(),['parent.students.attendances'])  ? 'text-white' : ''}}"></i>
+                            </div>
+                            <div  class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.parent.students.attendances")}}</span></div>
+                        </a>
+                    </li>
+                    <li class="w-full mt-2 ">
+                        <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                            {{ in_array(Route::currentRouteName(),['parent.students.invoices']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                            href="{{ route('parent.students.invoices') }}">
+                            <div
+                            class="{{ in_array(Route::currentRouteName(),['parent.students.invoices'])  ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                            <i class="fa-sharp fa-solid fa-file-invoice-dollar fa-lg {{ in_array(Route::currentRouteName(),['parent.students.invoices'])  ? 'text-white' : ''}}"></i>
+                            </div>
+                            <div  class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.parent.students.invoices")}}</span></div>
+                        </a>
+                    </li>
+                    <li class="w-full mt-2 ">
+                        <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors font-semibold text-slate-700
+                            {{ in_array(Route::currentRouteName(),['parent.students.receipts']) ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
+                            href="{{ route('parent.students.receipts') }}">
+                            <div
+                            class="{{ in_array(Route::currentRouteName(),['parent.students.receipts'])  ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                            <i class="fa-sharp fa-solid fa-receipt fa-lg  {{ in_array(Route::currentRouteName(),['parent.students.receipts'])  ? 'text-white' : ''}}"></i>
+                            </div>
+                            <div  class="sidebar-icon">  <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{ trans("main-sidebar.parent.students.receipts")}}</span></div>
+                        </a>
+                    </li>
+                @endif
 
-                            <ul  id="data-accordion-icon" class="hidden px-4">
-                                <div class="border-r-2 border-gray-400 ">
-                                <li class="w-full mt-2 ">
-                                    <a aria-controls="dropdown-example" data-collapse-toggle="dropdown-example" class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center
-                                    whitespace-nowrap px-4 transition-colors font-semibold text-slate-700 {{ (Route::currentRouteName()== 'parent.index') ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
-                                        href="">
-                                        <div
-                                        class="{{ Route::currentRouteName() == 'parent.index' ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                                        <i class="fa-solid fa-house {{ Route::currentRouteName() == 'parent.index' ? 'text-white' : ''}}"></i>
-                                        </div>
-                                        <div id="sidebariconOnly5" class="sidebar-icon"> <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.parent")}}</span></div>
-                                    </a>
-                                </li>
-                                <li class="w-full mt-2 ">
-                                    <a aria-controls="dropdown-example" data-collapse-toggle="dropdown-example" class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center
-                                    whitespace-nowrap px-4 transition-colors font-semibold text-slate-700 {{ (Route::currentRouteName()== 'parent.add') ? 'shadow-soft-xl rounded-lg bg-white' : '' }}"
-                                        href="{{ route('users.add') }}">
-                                        <div
-                                        class="{{ Route::currentRouteName() == 'parent.add' ? 'bg-gradient-to-tl from-purple-700 to-pink-500' : '' }} shadow-soft-2xl ml-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                                        <i class="fa-solid fa-house {{ Route::currentRouteName() == 'parent.add' ? 'text-white' : ''}}"></i>
-                                        </div>
-                                        <div id="sidebariconOnly6" class="sidebar-icon">
-                                            <span class="mr-1 duration-300 opacity-100 pointer-events-none ease-soft">{{trans("main-sidebar.parent.add")}}</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                </div>
-                            </ul>
-                        </li> --}}
-
-        {{-- ------------------------------------------------------------------------------------------------------------------------------------- --}}
-                        @endif
 
 
             </ul>

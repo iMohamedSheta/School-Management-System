@@ -18,7 +18,7 @@ class FeeTypes extends Component
 
 
 
-public $listeners = ['deleted'=>'$refresh','edited'=>'$refresh'];
+    protected $listeners = ['deleted'=>'$refresh','edited'=>'$refresh'];
 
 
     public function render()

@@ -60,7 +60,34 @@ return [
     'processingfees.index'=>' الرسوم المستبعدة',
     'payment.create'=>'اضافة سند صرف',
     'payments.index'=>'سندات الصرف',
-    'attendances.classrooms'=>'الحضور',
+    'attendances.index'=>'الحضور والغياب',
+    'attendance.classroom'=>'تسجيل الحضور والغياب',
+    'subjects.index'=>'المواد الدراسية',
+    'subjects.create'=>'اضافة مادة الدراسية',
+    'exams.index'=>'الامتحانات',
+    'exams.create'=>'اضافة امتحان',
+    'meetings.index'=>'حصص اونلاين',
+    'meetings.create'=>'اضافة حصة اونلاين',
+    'teacher.assign.classroom'=>'تعيين فصل دراسي للاستاذ',
+    'teachers.classrooms'=>'فصول المعلمين',
+    'teacher.classrooms'=>'فصول المعلم',
+    'attendance.report.export'=>'تصدير تقرير الغياب',
+    'subjects.associate.classroom'=>'ربط مادة دراسية بفصل دراسي',
+    'classroom.subjects.index'=>'المواد الدراسية المسجلة للفصل الدراسي',
+    'student.subjects.index'=>'المواد الدراسية',
+    'parent.students.index'=>'الابناء',
+    'auditlogs.index'=>'التدقيق في العمليات',
+    'parent.students.attendances'=>'غياب الابناء',
+    'parent.students.invoices'=>'فواتير الابناء',
+    'parent.students.receipts'=>'مدفوعات الابناء',
+    'settings.academic_years.index'=>'العام الاكاديمي',
+    'meetings.student.index'=>'الحصص الاونلاين',
+
+
+
+
+
+
 
 
 

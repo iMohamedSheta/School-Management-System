@@ -21,7 +21,7 @@ class ProcessingFeeTable extends Component
     public $description;
     public $currency_code;
 
-    public $listeners = ['deleted'=>'$refresh','edited'=>'$refresh'];
+    protected $listeners = ['deleted'=>'$refresh','edited'=>'$refresh'];
 
     public function render()
     {

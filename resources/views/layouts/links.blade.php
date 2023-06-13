@@ -1,10 +1,9 @@
-      <!-- Font Awesome Icons -->
+
+<!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <!-- Nucleo Icons -->
     <link href="{{ asset('assets/css/nucleo-icons.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/nucleo-svg.css') }}" rel="stylesheet" />
-    {{-- Language Switcher Flags --}}
-    <link rel="stylesheet" href="path/to/flag-icon-css/css/flag-icon.min.css">
 
     <!-- Popper -->
     <script src="https://unpkg.com/@popperjs/core@2"></script>
@@ -21,9 +20,13 @@
 
         @vite(['resources/css/app.css','resources/js/app.js'])
 
+        <link rel="stylesheet" href="{{ asset('assets/fonts/sheta/sheta.ttf') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/sheta-icons.css') }}">
 
 
-    @yield('styles')
+
+        @yield('styles')
+
 
 
 
@@ -33,6 +36,7 @@
 
         @case('ar')
             <style>
+
                 html{direction:rtl;}
                 @font-face
                 {
@@ -48,6 +52,10 @@
         @case('en')
             <style>
                 html{direction:ltr;}
+                body {
+                    font-family: "Roboto", sans-serif !important;
+                }
+
             </style>
         @break
 

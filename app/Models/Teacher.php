@@ -4,10 +4,13 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use OwenIt\Auditing\Auditable as AuditingAuditable;
+use OwenIt\Auditing\Contracts\Auditable;
 
-class Teacher extends Model
+class Teacher extends Model implements Auditable
 {
     use HasFactory;
+    use AuditingAuditable;
 
 
     protected $fillable = [
@@ -30,6 +33,29 @@ class Teacher extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function classrooms()
+    {
+        return $this->belongsToMany(Classroom::class, 'teacher_classrooms', 'teacher_id', 'classroom_id');
+    }
+
+    public function countClassrooms()
+    {
+        return $this->classrooms()->count();
+    }
+
+    public function countStudents()
+    {
+        $classrooms = $this->classrooms()->withCount('students')->get();
+        $totalStudents = 0;
+
+        foreach ($classrooms as $classroom) {
+            $totalStudents += $classroom->students_count;
+        }
+
+        return $totalStudents;
+    }
+
 
     public static function countTeachers()
     {

@@ -37,14 +37,14 @@ class PromotionsController extends Controller
         if($validatedData)
         {
             try {
-                DB::beginTransaction();
 
-                $students = Student::where('Grade_id',$request->from_grade)->where('Classroom_id',   $request->from_classroom)->get();
+                $students = Student::where('Grade_id',$request->from_grade)->where('Classroom_id',$request->from_classroom)->get();
 
                 if($students->count() < 1){
-                    return redirect()->back()->with('error', __('alert.no_students_to_promote'));
+                    return redirect()->back()->with('error', trans('alert.no_students_to_promote'));
                 }
 
+                DB::beginTransaction();
                 // update in table student
                 foreach ($students as $student){
                     $ids = explode(',',$student->id);

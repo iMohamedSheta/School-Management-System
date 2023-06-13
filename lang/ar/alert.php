@@ -61,6 +61,24 @@ return
     'student-processingfee-updated'=>'تم تعديل الرسوم المستبعدة علي الطالب :name بنجاح.',
     'student-payment-created'=>'تم أنشاء سند الصرف للطالب :name بنجاح.',
     'discussion-deleted'=>'تم حذف المناقشة بنجاح!',
+    'added-attendance-for-today'=>'تم اضافة غياب اليوم بتاريخ :day للفصل الدراسي :classroom.',
+    'subjects_deleted'=>'تم حذف المواد الدراسية المحددة بنجاح!',
+    'exam-created'=>'تم ادراج امتحان جديد بنجاح.',
+    'exams_deleted'=>"تم حذف الامتحانات المحددة بنجاح!",
+    'onlineclass-created'=>'تم اضافة حصة اونلاين بموضوع :topic في تاريخ وتوقيت :date .',
+    'meetings_deleted'=>'تم حذف الحصص الاونلاين المحددة بنجاح!',
+    'enter-event-title'=>'ادخال عنوان الحدث',
+    'assign-classroom-success'=>"تم تعيين الاستاذ :name للفصل الدراسي :classroom بنجاح.",
+    'remove-assign-classroom'=>"تم التراجع عن تعيين الاستاذ :name للفصل الدراسي :classroom بنجاح.",
+    'teacherclassrooms_deleted'=>'تم التراجع عن تعيين الاستاذة المحددين للفصول الدراسية المحددة بنجاح.',
+    'associate-subject-to-classroom'=>"تم ربط المادة الدراسية :name بالفصل الدراسي :classroom بنجاح.",
+    'classroom-subjects-selected-removed'=>'تم الغاء ارتباط المواد الدراسية المحددة بالفصل الدراسي بنجاح.',
+    'classroom-subject-removed'=>'تم الغاء تسجيل المادة الدراسية :subject للفصل الدراسي :classroom بنجاح.',
+    'subject-created'=>'تم اضافة مادة دراسية جديد بعنوان :name بنجاح.',
+    'academic-year-created'=>'تم اضافة عام دراسي جديد بنجاح باسم :name.',
+    'selected-academic-years-deleted'=>'تم حذف الاعوام الاكاديمية المحددة بنجاح!',
+
+
 
 
 

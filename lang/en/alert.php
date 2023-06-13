@@ -60,6 +60,28 @@ return
     'student-processingfee-updated'=>'Success,Excluded Fees for student :name has been updated successfully.',
     'student-payment-created'=>'Success,Payment Voucher for student :name has been created successfully.',
     'discussion-deleted'=>'Success, Discussion has been deleted successfully!',
+    'added-attendance-for-today'=>'Success, Attendance for today :day for classroom :classroom has been added successfully!',
+    'subjects_deleted'=>"Success, Deleted selected Subjects successfully!",
+    'exam-created'=>'Success, Created new exam successfully.',
+    'exams_deleted'=>"Success, Deleted selected Exams successfully!",
+    'onlineclass-created'=>'Success, Created new online class :topic which start in :date successfully.',
+    'meetings_deleted'=>"Success, Deleted selected Omline Classes successfully!",
+    'enter-event-title'=>'Enter Event Title',
+    'event-db-change'=>'Great. Now, update database...',
+    'event-title-required'=>'Event Title Is Required',
+    'event-delete'=>'Are you sure you want to delete this event ?',
+    'assign-classroom-success'=>'The Teacher :name has been assigned to the classroom :classroom successfully.',
+    'remove-assign-classroom'=>'The Teacher :name has been removed for teaching the classroom :classroom successfully.',
+    'teacherclassrooms_deleted'=>"Success, removed selected teachers from teaching the selected classrooms successfully!",
+    'associate-subject-to-classroom'=>'Success, Associate Subject :name to The classroom :classroom.',
+    'classroom-subjects-selected-removed'=>'Success, The selected subjects has been removed from the classroom. ',
+    'classroom-subject-removed'=>'Success, Subject :subject has beem removed from classroom :classroom successfully!',
+    'subject-created'=>'Success, Created new subject :name successfully.',
+    'academic-year-created'=>'Success, Created new academic year :name successfully.',
+    'selected-academic-years-deleted'=>'Success, The selected academic years has been deleted successfully!',
+
+
+
 
 
 

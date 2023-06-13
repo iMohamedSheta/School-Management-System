@@ -3,9 +3,7 @@
 namespace App\Http\Livewire\Students;
 
 use Livewire\Component;
-use App\Models\Classroom;
 use App\Models\Student;
-use App\Models\Grade;
 use Livewire\WithPagination;
 use Carbon\Carbon;
 

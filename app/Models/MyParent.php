@@ -4,10 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use OwenIt\Auditing\Auditable as AuditingAuditable;
+use OwenIt\Auditing\Contracts\Auditable;
 
-class MyParent extends Model
+use Money\Currencies\ISOCurrencies;
+use Money\Currency;
+use Money\Formatter\IntlMoneyFormatter;
+use Money\Money;
+
+class MyParent extends Model implements Auditable
 {
     use HasFactory;
+    use AuditingAuditable;
+
     protected $fillable = [
         'user_id',
         'Name_Father',
@@ -42,6 +51,39 @@ class MyParent extends Model
     public function students()
     {
         return $this->hasMany(Student::class,'parent_id');
+    }
+
+    public function countChildren()
+    {
+        return $this->students()->count();
+    }
+    public function getTotalChildrenDebit()
+    {
+        $children = $this->students;
+        $total_debit= 0;
+        foreach($children as $child)
+        {
+            $debit = $child->student_account->sum('debit') - $child->student_account->sum('credit');
+            $total_debit += $debit;
+        }
+         // Convert amount to cents (or the smallest unit of currency)
+         $amount = (int)(round($total_debit,2) * 100);
+         $currencyCode = $children->first()->student_account->first()->currency->code;
+
+         $money = new Money($amount, new Currency($currencyCode));
+
+         // Create number formatter and currency object
+         $locale = app()->getLocale(); // Set the locale to whatever you need
+         $numberFormatter = new \NumberFormatter($locale, \NumberFormatter::CURRENCY);
+         $currencies = new ISOCurrencies();
+
+         // Create the money formatter
+         $moneyFormatter = new IntlMoneyFormatter($numberFormatter, $currencies);
+
+         // Format the money object and set the formatted_student_current_debit property
+         $formattedAmount = $moneyFormatter->format($money);
+         $total_debit = $formattedAmount;
+        return $total_debit;
     }
 
 

@@ -1,8 +1,11 @@
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @import 'flatpickr/dist/flatpickr.css';
 @import 'flatpickr/dist/themes/dark.css';
+
 
 
 
@@ -14,6 +17,11 @@
     -moz-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     -o-transform: rotate(90deg);
+}
+
+.hide-on-loading
+{
+    display:none;
 }
 
 

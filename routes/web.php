@@ -1,4 +1,3 @@
-
 <?php
 
 // Import the necessary classes and libraries
@@ -23,6 +22,15 @@ use App\Http\Controllers\Fees\ReceiptController;
 use App\Http\Controllers\Fees\ProcessingFeeController;
 use App\Http\Controllers\Fees\PaymentStudentController;
 use App\Http\Controllers\Attendances\AttendancesController;
+use App\Http\Controllers\Classrooms\ClassroomSubjectController;
+use App\Http\Controllers\Subjects\SubjectController;
+use App\Http\Controllers\Exams\ExamController;
+use App\Http\Controllers\Meetings\OnlineClassController;
+use App\Http\Controllers\Parents\ParentStudents\ParentStudentController;
+use App\Http\Controllers\Teachers\TeacherClassroomController;
+use App\Http\Controllers\Subjects\StudentSubjects\StudentSubjectController;
+use App\Http\Controllers\AuditLogs\AuditLogController;
+use App\Http\Controllers\SchoolSettings\AcademicYearController;
 
 use App\Http\Livewire\PostComponent;
 
@@ -41,8 +49,6 @@ use App\Http\Livewire\PostComponent;
 //Jetstream import for routes
 use Laravel\Fortify\Features;
 use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserController;
-
-
 
 // This comment section is a description of the purpose of the file and how it is used.
 
@@ -63,6 +69,21 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
 
 
                     Route::middleware(['auth', 'isAdmin'])->group(function () {
+
+                        Route::group(['namespace' => 'AuditLogs'], function () {
+
+                            Route::get('auditlogs',[AuditLogController::class,'index'])->name('auditlogs.index');
+
+                        });
+
+                        Route::group(['namespace' => 'SchoolSettings'], function () {
+
+                            Route::get('academic_years',[AcademicYearController::class,'index'])->name('settings.academic_years.index');
+                            Route::delete('academic_years',[AcademicYearController::class,'deleteSelected'])->name('settings.academic_years.selected.destroy');
+
+                        });
+
+
                         Route::get('roles',[UserRoleController::class,'index'])->name('user-role.index');
                         Route::post('roles',[UserRoleController::class,'assignrole'])->name('user-role.assign');
                         Route::get('/user/search', [SearchController::class, 'searchUsers'])->name('user.search');
@@ -92,6 +113,11 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                             Route::put('classrooms/{id}', [ClassroomController::class, 'update'])->name('classroom.update');
                             Route::delete('classrooms/{classroom}', [ClassroomController::class, 'destroy'])->name('classroom.destroy');
                             Route::delete('classrooms', [ClassroomController::class, 'deleteSelected'])->name('classroom.deleteselected');
+
+                            Route::get('classroom/{id}/subjects', [ClassroomSubjectController::class, 'index'])->name('classroom.subjects.index');
+                            Route::delete('classroom/subjects/remove/', [ClassroomSubjectController::class, 'deleteSelected'])->name('classroom.subjects.remove');
+
+
                         });
 
                         //Create User Page Routes
@@ -99,17 +125,15 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                         Route::get('/parents/search', [SearchController::class, 'searchParents'])->name('parents.search');
 
 
-                        //Students Page Routes And Promotions
+                        //Students Routes
                         Route::group(['namespace'=>"Students"],function()
                         {
                             //students
                             Route::get('students',[StudentController::class,"index"])->name('students.index');
-                            Route::get('student/information/{id}',[StudentController::class,"studentInfoView"])->name('student.info');
                             Route::get('student/edit/{id}',[StudentController::class,"studentInfoEditView"])->name('student.edit');
                             Route::get('student/email/edit/{id}',[StudentController::class,"studentEmailEditView"])->name('student.email.edit');
                             Route::delete('student/delete',[StudentController::class,"destroy"])->name('student.destroy');
                             Route::delete('students/delete',[StudentController::class,"deleteSelected"])->name('students.selected.destroy');
-
 
                             //Students Promotions
                             Route::get('students/promotions',[PromotionsController::class,'index'])->name('students.promotions.classroom');
@@ -118,13 +142,12 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                             Route::get('students/promotions/table',[PromotionsController::class,'studentsPromotionsTableView'])->name('students.promotions.table');
                             Route::post('students/promoteclassroom',[PromotionsController::class,'promoteClassroom'])->name('students.promotions.store');
 
-
+                            //Students Graduation
                             Route::get('students/graduation',[GraduationController::class,'index'])->name('students.graduations.classroom');
                             Route::post('students/graduateclassroom',[GraduationController::class,'graduateclassroom'])->name('students.graduations.store');
                             Route::get('students/graduated',[GraduationController::class,'studentsGraduatedTableView'])->name('students.graduated.table');
                             Route::post('student/graduation/back',[GraduationController::class,'studentGraduationBack'])->name('student.graduation.back');
                             Route::post('students/graduations/back',[GraduationController::class,'studentSelectedGraduationBack'])->name('students.graduations.back');
-
                         });
 
                         Route::group(['namespace'=>"Fees"],function()
@@ -162,7 +185,20 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                             Route::delete('payment/vouchers/delete',[PaymentStudentController::class,'paymentsDeleteSelected'])->name('payments.selected.destroy');
                         });
 
+                        Route::group(['namespace'=>"Subjects"],function()
+                        {
+                            Route::get('subjects',[SubjectController::class,'index'])->name('subjects.index');
+                            Route::get('subjects/create',[SubjectController::class,'viewCreateSubject'])->name('subjects.create');
+                            Route::delete('subjects/delete',[SubjectController::class,'deleteSelected'])->name('subjects.selected.destroy');
 
+                            Route::get('subjects/associate/classroom/{id}',[SubjectController::class,'viewAssociateClassroom'])->name('subjects.associate.classroom');
+                        });
+                        Route::group(['namespace'=>"exams"],function()
+                        {
+                            Route::get('exams',[ExamController::class,'index'])->name('exams.index');
+                            Route::get('exams/create',[ExamController::class,'viewCreateExam'])->name('exams.create');
+                            Route::delete('exams/delete',[ExamController::class,'deleteSelected'])->name('exams.selected.destroy');
+                        });
 
                         //Teachers Page Routes
                         Route::group(['namespace'=>"Teachers"],function()
@@ -173,12 +209,11 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                             Route::get('teacher/email/edit/{id}',[TeacherController::class,"teacherEmailEditView"])->name('teacher.email.edit');
                             Route::delete('teacher/delete',[TeacherController::class,"destroy"])->name('teacher.destroy');
                             Route::delete('teachers/delete',[TeacherController::class,"deleteSelected"])->name('teachers.selected.destroy');
-                        });
 
-
-                        Route::group(['namespace'=>"Attendances"],function()
-                        {
-                            Route::get('attendances',[AttendancesController::class,'index'])->name('attendances.classrooms');
+                            Route::get('teachers/classrooms',[TeacherClassroomController::class,"index"])->name('teachers.classrooms');
+                            Route::get('teacher/assign-classroom/{id}',[TeacherClassroomController::class,"create"])->name('teacher.assign.classroom');
+                            Route::delete('teachers/assign-classroom',[TeacherClassroomController::class,"destroy"])->name('teacher.remove.assign.classroom');
+                            Route::delete('teachers/assign-classrooms',[TeacherClassroomController::class,"deleteSelected"])->name('teacher.remove.selected.assign.classroom');
                         });
 
 
@@ -195,7 +230,6 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                         });
 
 
-
                             // Define a route group for grade-related pages
                             Route::group(['namespace' => 'Grades'],function()
                             {
@@ -208,6 +242,37 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                             });
 
                     });
+
+                    Route::middleware(['auth', 'checkRole:Admin,Teacher'])->group(function () {
+
+                        Route::group(['namespace'=>"Attendances"],function()
+                        {
+                            Route::get('attendances',[AttendancesController::class,'index'])->name('attendances.index');
+                            Route::get('attendance/classroom/{id}',[AttendancesController::class,'viewAttendanceClassroom'])->name('attendance.classroom');
+                            Route::post('attendance/classroom',[AttendancesController::class,'store'])->name('attendance.store');
+
+                            Route::get('attendance/report',[AttendancesController::class,'viewAttendanceReport'])->name('attendance.report.export');
+                        });
+                        Route::group(['namespace'=>"Meetings"],function()
+                        {
+                            Route::get('meetings',[OnlineClassController::class,'index'])->name('meetings.index');
+                            Route::get('meetings/create',[OnlineClassController::class,'create'])->name('meetings.create');
+                            Route::post('meetings/create',[OnlineClassController::class,'createOnlineClass'])->name('meetings.store');
+                            Route::delete('meetings/delete',[OnlineClassController::class,"deleteSelected"])->name('meetings.selected.destroy');
+                        });
+
+
+                    });
+
+                    Route::middleware(['auth', 'checkRole:Teacher'])->group(function () {
+
+                        Route::group(['namespace'=>"Teachers"],function()
+                        {
+                            Route::get('teacher/classrooms',[TeacherClassroomController::class,"viewTeacherClassrooms"])->name('teacher.classrooms');
+                        });
+
+                    });
+
 
 
                     // Import Jetstream authentication routes
@@ -223,6 +288,39 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
                     Route::get('discussion/{id}',[PostController::class,'index'])->name('post.show');
                     Route::delete('notification/read',[NotificationController::class,'removeNewCommmentNotification'])->name('notificationNewComment.remove');
 
+                    Route::middleware(['auth', 'checkRole:Student'])->group(function () {
+
+                        Route::group(['namespace'=>"Subjects/StudentSubjects"],function()
+                        {
+                            Route::get('student/subjects/',[StudentSubjectController::class,"index"])->name('student.subjects.index');
+                        });
+
+                        Route::group(['namespace'=>"Meetings"],function()
+                        {
+                            Route::get('student/meetings',[OnlineClassController::class,'viewStudentOnlineClasses'])->name('meetings.student.index');
+                        });
+
+                    });
+
+                    Route::middleware(['auth', 'checkRole:Parent'])->group(function () {
+
+                        Route::group(['namespace'=>"Parents/ParentStudents"],function()
+                        {
+                            Route::get('parent/children',[ParentStudentController::class,"index"])->name('parent.students.index');
+                            Route::get('parent/children/attendances',[ParentStudentController::class,"viewChildrenAttendance"])->name('parent.students.attendances');
+                            Route::get('parent/children/invoices',[ParentStudentController::class,"viewChildrenInvoice"])->name('parent.students.invoices');
+                            Route::get('parent/children/receipts',[ParentStudentController::class,"viewChildrenReceipt"])->name('parent.students.receipts');
+
+                        });
+                    });
+
+                    Route::middleware(['auth', 'checkRole:Admin,Parent,Teacher'])->group(function () {
+
+                        Route::group(['namespace'=>"Students"],function()
+                        {
+                            Route::get('student/information/{id}',[StudentController::class,"studentInfoView"])->name('student.info');
+                        });
+                    });
 
                 });
 
@@ -235,12 +333,14 @@ use App\Http\Controllers\RegisteredUserController as ControllersRegisteredUserCo
 
 
 
-        // Import Jetstream Features routes
-        require_once(__DIR__.'/jetstreamFeatures.php');
-
-
-
-
+        Route::group(
+            [
+                'prefix' => LaravelLocalization::setLocale(),
+                'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+            ], function(){
+                // Import Jetstream Features routes
+                require_once(__DIR__.'/jetstreamFeatures.php');
+            });
 
 
 

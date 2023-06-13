@@ -12,8 +12,11 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use OwenIt\Auditing\Auditable as AuditingAuditable;
+use OwenIt\Auditing\Contracts\Auditable;
 
-class User extends Authenticatable implements HasMedia
+
+class User extends Authenticatable implements HasMedia, Auditable
 {
     use HasApiTokens;
     use HasFactory;
@@ -21,6 +24,8 @@ class User extends Authenticatable implements HasMedia
     use Notifiable;
     use TwoFactorAuthenticatable;
     use InteractsWithMedia;
+    use AuditingAuditable;
+
 
 
     /**

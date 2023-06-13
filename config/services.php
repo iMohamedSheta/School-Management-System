@@ -14,6 +14,11 @@ return [
     |
     */
 
+    'zoom' => [
+        'timezone' => config('app.timezone'),
+    ],
+
+
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),

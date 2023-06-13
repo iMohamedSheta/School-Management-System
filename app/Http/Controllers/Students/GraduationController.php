@@ -9,6 +9,8 @@ use App\Models\Classroom;
 use App\Models\Grade;
 use App\Models\Promotions;
 use App\Models\Student;
+use App\Http\Traits\MeetingZoomTrait;
+use Illuminate\Support\Str;
 
 
 class GraduationController extends Controller
@@ -35,7 +37,6 @@ class GraduationController extends Controller
         if($validatedData)
         {
             try {
-                DB::beginTransaction();
 
                 $students = Student::where('Grade_id',$request->grade_id)->where('Classroom_id',   $request->classroom_id)->get();
 
@@ -43,17 +44,19 @@ class GraduationController extends Controller
                     return redirect()->back()->with('error', __('alert.no_students_to_graduate'));
                 }
 
+                DB::beginTransaction();
+
                 // update in table student
                 foreach ($students as $student){
                     $ids = explode(',',$student->id);
-                    student::whereIn('id', $ids)->update(['graduated' => true]); 
-                    $graduate = student::whereIn('id', $ids)->delete(); 
+                    student::whereIn('id', $ids)->update(['graduated' => true]);
+                    $graduate = student::whereIn('id', $ids)->delete();
                     if($graduate){
                         $promotion = Promotions::where('student_id', $student->id)->first();
                         if ($promotion) {
                             $promotion->delete();
                         }
-                    }                           
+                    }
                 }
 
 
@@ -83,7 +86,7 @@ class GraduationController extends Controller
 
         if($restoreStudent)
         {
-            $student->update(['graduated' => false]); 
+            $student->update(['graduated' => false]);
             return redirect()->back()->with('success',trans('alert.graduation_rollback',['name'=>$studentName]));
         }
 
@@ -103,7 +106,7 @@ class GraduationController extends Controller
                 $student = Student::withTrashed()->findOrFail($studentId);
                 $restoreStudent = $student->restore();
                  if ($restoreStudent) {
-                        $student->update(['graduated' => false]); 
+                        $student->update(['graduated' => false]);
                         $successCount++;
                     }
             }
