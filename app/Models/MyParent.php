@@ -61,28 +61,33 @@ class MyParent extends Model implements Auditable
     {
         $children = $this->students;
         $total_debit= 0;
-        foreach($children as $child)
-        {
-            $debit = $child->student_account->sum('debit') - $child->student_account->sum('credit');
-            $total_debit += $debit;
-        }
-         // Convert amount to cents (or the smallest unit of currency)
-         $amount = (int)(round($total_debit,2) * 100);
-         $currencyCode = $children->first()->student_account->first()->currency->code;
+        if($children->count() > 0)
+            foreach($children as $child)
+            {
+                $debit = $child->student_account->sum('debit') - $child->student_account->sum('credit');
+                $total_debit += $debit;
+            }
+            if($total_debit !== 0)
+            {
+                // Convert amount to cents (or the smallest unit of currency)
+                $amount = (int)(round($total_debit,2) * 100);
+                $currencyCode = $children->first()->student_account->first()->currency->code;
 
-         $money = new Money($amount, new Currency($currencyCode));
+                $money = new Money($amount, new Currency($currencyCode));
 
-         // Create number formatter and currency object
-         $locale = app()->getLocale(); // Set the locale to whatever you need
-         $numberFormatter = new \NumberFormatter($locale, \NumberFormatter::CURRENCY);
-         $currencies = new ISOCurrencies();
+                // Create number formatter and currency object
+                $locale = app()->getLocale(); // Set the locale to whatever you need
+                $numberFormatter = new \NumberFormatter($locale, \NumberFormatter::CURRENCY);
+                $currencies = new ISOCurrencies();
 
-         // Create the money formatter
-         $moneyFormatter = new IntlMoneyFormatter($numberFormatter, $currencies);
+                // Create the money formatter
+                $moneyFormatter = new IntlMoneyFormatter($numberFormatter, $currencies);
 
-         // Format the money object and set the formatted_student_current_debit property
-         $formattedAmount = $moneyFormatter->format($money);
-         $total_debit = $formattedAmount;
+                // Format the money object and set the formatted_student_current_debit property
+                $formattedAmount = $moneyFormatter->format($money);
+                $total_debit = $formattedAmount;
+            }
+
         return $total_debit;
     }
 

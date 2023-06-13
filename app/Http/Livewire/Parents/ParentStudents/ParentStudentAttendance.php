@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Parents\ParentStudents;
 
 use App\Models\Attendances;
 use Carbon\Carbon;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -52,22 +53,31 @@ class ParentStudentAttendance extends Component
         }
         else
         {
-            $firstChildId = auth()->user()->parent->students->first()->id;
-            $query = Attendances::query()->where('student_id', $firstChildId);
-            if ($this->start_date && $this->end_date) {
-                $end_date = Carbon::parse($this->end_date)->addDay()->toDateString();
-                $query->whereBetween('attendence_date', [$this->start_date, $end_date]);
-            }
-            if($this->selectedAttendanceType == '1')
-            {
-                $query->where('attendence_status',true);
-            }
-            elseif($this->selectedAttendanceType == '0')
-            {
-                $query->where('attendence_status',false);
-            }
-            $attendances = $query->paginate(10);
 
+            if(auth()->user()->parent->students->count() > 0 )
+            {
+                $firstChildId = auth()->user()->parent->students->first()->id;
+                $query = Attendances::query()->where('student_id', $firstChildId);
+
+                if ($this->start_date && $this->end_date) {
+                    $end_date = Carbon::parse($this->end_date)->addDay()->toDateString();
+                    $query->whereBetween('attendence_date', [$this->start_date, $end_date]);
+                }
+                if($this->selectedAttendanceType == '1')
+                {
+                    $query->where('attendence_status',true);
+                }
+                elseif($this->selectedAttendanceType == '0')
+                {
+                    $query->where('attendence_status',false);
+                }
+
+                $attendances = $query->paginate(10);
+            }
+            else
+            {
+                $attendances = new LengthAwarePaginator([], 0, 10);
+            }
 
         }
         return view('livewire.parents.parent-students.parent-student-attendance',compact('attendances'));
