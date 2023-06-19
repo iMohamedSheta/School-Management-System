@@ -28,18 +28,31 @@
                 events: JSON.parse(data),
                 dateClick: function(info) {
                     if (!isUserAdmin()) return; // Check if user is admin
-
                     var title = prompt('Enter Event Title');
-                    var date = new Date(info.dateStr + 'T00:00:00');
+                    var start = new Date(info.dateStr); // Use the clicked date as the start date
+
                     if (title != null && title != '') {
-                        calendar.addEvent({
-                            title: title,
-                            start: date,
-                            allDay: true
-                        });
-                        var eventAdd = { title: title, start: date };
-                        @this.addevent(eventAdd);
-                        alert('Great. Now, update database...');
+                        var endTimeString = prompt('Enter Event End Time (HH:mm)');
+                        var endTime;
+                        if (endTimeString) {
+                            endTime = new Date(start.toDateString() + ' ' + endTimeString); // Combine date and time to create the end time
+                        } else {
+                            start.setHours(0, 0, 0, 0); // Set start time to midnight (00:00:00)
+                            endTime = new Date(start.getFullYear(), start.getMonth(), start.getDate(), 23, 59, 59); // Set the end time to the end of the selected date
+                        }
+
+                        if (!isNaN(endTime.getTime())) { // Check if the end time is valid
+                            calendar.addEvent({
+                                title: title,
+                                start: start,
+                                end: endTime,
+                            });
+                            var eventAdd = { title: title, start: start , end: endTime};
+                            @this.addevent(eventAdd);
+                            alert('Great. Now, update the database...');
+                        } else {
+                            alert('Invalid End Time');
+                        }
                     } else {
                         alert('Event Title Is Required');
                     }

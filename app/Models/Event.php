@@ -13,5 +13,5 @@ class Event extends Model implements Auditable
     use HasFactory;
     use AuditingAuditable;
 
-    protected $fillable=['title','start'];
+    protected $fillable=['title','start','end'];
 }
