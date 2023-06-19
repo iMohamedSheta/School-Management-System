@@ -11,7 +11,7 @@ class Calendar extends Component
 
     public function getevent()
     {
-        $events = Event::select('id','title','start')->get();
+        $events = Event::select('id','title','start','end')->get();
 
         return  json_encode($events);
     }
@@ -25,6 +25,7 @@ class Calendar extends Component
     {
         $input['title'] = $event['title'];
         $input['start'] = $event['start'];
+        $input['end'] = $event['end'];
         Event::create($input);
     }
 
@@ -50,7 +51,7 @@ class Calendar extends Component
     public function render()
     {
         $this->dispatchBrowserEvent('livewire:load');
-        $events = Event::select('id','title','start')->get();
+        $events = Event::select('id','title','start','end')->get();
 
         $this->events = json_encode($events);
 
