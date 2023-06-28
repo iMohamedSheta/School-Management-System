@@ -37,7 +37,9 @@ extension=gd
 ```
 If you are using a web server such as Apache or Nginx, you can use the following command to find the path to the php.ini file used by PHP on the server:
 
-```php -i | grep "Loaded Configuration File"```
+```
+php -i | grep "Loaded Configuration File"
+```
 
 After cloning or downloading the project from GitHub, you will find a file named .env-example in the main project folder. This file contains the basic configuration settings that can vary for each project, such as database connection and email server connection.
 
@@ -54,7 +56,9 @@ DB_PASSWORD=database_password
 
 After configuring the environment variables, open a command line interface and navigate to the project folder.
 
-```cd "path/to/School-Management-System"```
+```
+cd "path/to/School-Management-System"
+```
 
 Run the following commands:
 ```
