@@ -14,7 +14,7 @@ This is a school management system built using the TALL stack (Tailwind CSS, Alp
 
 ##Watch Video Of The System
 
-youtube : `https://youtu.be/Y-OdhH_uzGU`
+[Youtube](https://youtu.be/Y-OdhH_uzGU)
 
 ## Requirements
 
