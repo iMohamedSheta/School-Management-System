@@ -64,8 +64,8 @@ Run the following commands:
 ```
 composer update
 npm update
+npm run build
 php artisan migrate
-npm run dev
 php artisan db:seed
 php artisan key:generate
 php artisan storage:link
