@@ -8,7 +8,7 @@
 </p>
 
 
-#School Management System
+# School Management System
 
 This is a school management system built using the TALL stack (Tailwind CSS, Alpine.js, Laravel, and Livewire).
 
