@@ -7,60 +7,100 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# School Management System
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+This is a school management system built using the TALL stack (Tailwind CSS, Alpine.js, Laravel, and Livewire).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Requirements
 
-## Learning Laravel
+Before proceeding with the installation, ensure that your system meets the following requirements:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- PHP version +8.1: Ensure you have PHP version 8.1 or higher installed.
+- PHP Extension "intl": Install the "intl" extension for PHP.
+- PHP Extension "gd": Install the "gd" extension for PHP.
+- MySQL version +5.5: Make sure you have MySQL version 5.5 or higher installed.
+- Composer latest version: Install the latest version of Composer.
+- NPM latest version: Install the latest version of Node.js, which includes NPM.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Installation
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Step 1: Configure PHP
 
-## Laravel Sponsors
+After downloading PHP, navigate to the PHP installation folder and open the `php.ini` file using a text editor.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Uncomment the following lines by removing the semicolon at the beginning of each line (if present), or add them if they don't exist:
 
-### Premium Partners
+```ini
+extension=intl
+extension=gd
+```
+If you are using a web server such as Apache or Nginx, you can use the following command to find the path to the php.ini file used by PHP on the server:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+`php -i | grep "Loaded Configuration File"`
 
-## Contributing
+After cloning or downloading the project from GitHub, you will find a file named .env-example in the main project folder. This file contains the basic configuration settings that can vary for each project, such as database connection and email server connection.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Make a copy of the .env-example file and rename it to .env.
 
-## Code of Conduct
+Open the .env file and update the database settings based on your database. If you are using the default settings, leave them as they are and only change the DB_DATABASE to the one you will create.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=database_name
+DB_USERNAME=database_username
+DB_PASSWORD=database_password
 
-## Security Vulnerabilities
+After configuring the environment variables, open a command line interface and navigate to the project folder.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+`cd "path/to/School-Management-System"`
+
+Run the following commands:
+```
+composer update
+npm update
+php artisan migrate
+npm run dev
+php artisan db:seed
+php artisan key:generate
+php artisan storage:link
+php artisan serve
+
+```
+Access the application by visiting http://localhost:8000 or http://127.0.0.1:8000 in your web browser. If port 8000 is busy, you can specify a different port using the php artisan serve --port command.
+
+## Zoom Integration
+School Management System allows integration with Zoom for creating and deleting meetings. To enable this integration, follow these steps:
+
+Obtain your Zoom API Keys by creating an account on the Zoom Developer Portal.
+Once you have your API Keys, open the .env file in the project's root folder.
+
+Add your Zoom API Keys to the file:
+`ZOOM_CLIENT_KEY=your_zoom_client_key
+ZOOM_CLIENT_SECRET=your_zoom_client_secret`
+
+
+## Login Credentials
+
+Use the following credentials to log in to the system:
+
+- Admin: admin@admin.com / 123456789@#
+- Teacher: teacher@test.com / 123456789@#
+- Student: student@test.com / 123456789@#
+- Parent: parent@test.com / 123456789@#
+  
+## Support
+
+If you encounter any issues or have any questions, please feel free to contact Mohamed Sheta at mohamed15.sheta15@gmail.com or open an issue in the repository.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project School-Management-System is licensed under the MIT License. See the LICENSE file for details.
+
+## Acknowledgements
+
+School Management System was created by Mohamed Sheta.
+
+
+
