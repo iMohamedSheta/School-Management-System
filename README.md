@@ -8,9 +8,13 @@
 </p>
 
 
-# School Management System
+#School Management System
 
 This is a school management system built using the TALL stack (Tailwind CSS, Alpine.js, Laravel, and Livewire).
+
+##Watch Video Of The System
+
+youtube : `https://youtu.be/Y-OdhH_uzGU`
 
 ## Requirements
 
